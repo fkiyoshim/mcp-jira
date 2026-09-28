@@ -1,0 +1,3 @@
+# Scripts locais de migracao de cenarios, com escritas em casos Zephyr especificos.
+convert-recon-bdd.mjs
+refine-recon-h01-04.mjs

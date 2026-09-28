@@ -1,0 +1,37 @@
+[mcp_servers.cpqd_bitbucket]
+env = { BITBUCKET_ALLOWED_PROJECTS = "GPT,GP" }
+command = "node"
+args = ["mcp-bitbucket/server.mjs"]
+env_vars = [
+  "BITBUCKET_TOKEN",
+  "BITBUCKET_USERNAME",
+  "BITBUCKET_PASSWORD",
+  "BITBUCKET_BASE_URL",
+  "BITBUCKET_PROJECT_KEY",
+  "BITBUCKET_TIMEOUT_MS",
+  "NODE_EXTRA_CA_CERTS",
+]
+startup_timeout_sec = 10
+tool_timeout_sec = 60
+enabled = true
+required = false
+default_tools_approval_mode = "auto"
+
+[mcp_servers.cpqd_jira]
+command = "node"
+args = ["mcp-jira/server.mjs", "--write"]
+env_vars = [
+  "JIRA_TOKEN",
+  "JIRA_USERNAME",
+  "JIRA_PASSWORD",
+  "JIRA_BASE_URL",
+  "JIRA_PROJECT_KEY",
+  "JIRA_ALLOWED_PROJECTS",
+  "JIRA_TIMEOUT_MS",
+  "NODE_EXTRA_CA_CERTS",
+]
+startup_timeout_sec = 10
+tool_timeout_sec = 60
+enabled = true
+required = false
+default_tools_approval_mode = "writes"

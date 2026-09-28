@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "testCaseIssueLinkList": {
+      "type": "array",
+      "required": true,
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "testCaseKey": {
+            "type": "string",
+            "required": true
+          },
+          "issueKey": {
+            "type": "string",
+            "required": true
+          }
+        }
+      }
+    }
+  }
+}

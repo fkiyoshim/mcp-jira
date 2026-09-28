@@ -1,0 +1,66 @@
+// Simple request, using only required fields
+{
+  "name": "Full regression",
+  "projectKey": "JQA"
+}
+
+// Simple request, using custom fields
+{
+  "projectKey": "JQA",
+  "name": "Full regression",
+  "customFields": {
+    "single choice": "Propulsion engines",
+    "multichoice": "Brazil, England",
+    "checkbox": "false",
+    "datepicker": "2017-03-02T16:15:00.000Z",
+    "decimal number": 12.12,
+    "number": 100,
+    "multi line text": "<h1>Ensure the axial-flow pump is enabled</h1><p>Ignite the secondary propulsion engines</p>",
+    "single line": "Ignite the secondary propulsion engines"
+  }
+}
+
+// Full request
+{
+  "projectKey": "JQA",
+  "testPlanKey": "JQA-P123",
+  "name": "Full regression",
+  "status": "In Progress",
+  "iteration": "Sprint 1",
+  "version": "1.1.0",
+  "folder": "/root folder/child folder",
+  "issueKey": "JQA-123",
+  "issueLinks": ["JQA-123", "JQA-456"],
+  "owner": "admin",
+  "plannedStartDate": "2016-01-11T00:00:00-0300",
+  "plannedEndDate": "2016-04-13T00:00:00-0300",
+  "customFields": {
+    "single choice": "Propulsion engines",
+    "multichoice": "Brazil, England"
+  },
+  "items": [
+    {
+      "testCaseKey": "JQA-T123",
+      "status": "Pass",
+      "environment": "Chrome",
+      "comment": "The test has failed on some automation tool procedure.",
+      "userKey": "JIRAUSER10000",
+      "executionTime": 180000,
+      "executionDate": "2016-01-30T14:54:00Z",
+      "customFields": {
+        "single choice": "Propulsion engines",
+        "multichoice": "Brazil, England"
+      },
+      "scriptResults": [
+        {
+          "index": 0,
+          "status": "Fail",
+          "comment": "This step has failed."
+        }
+      ]
+    },
+    {
+      "testCaseKey": "JQA-T456"
+    }
+  ]
+}

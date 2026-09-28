@@ -1,0 +1,84 @@
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "key": {
+      "type": "string",
+      "required": true
+    },
+    "projectKey": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "objective": {
+      "type": "string"
+    },
+    "precondition": {
+      "type": "string"
+    },
+    "folder": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "priority": {
+      "type": "string",
+      "required": true
+    },
+    "component": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "estimatedTime": {
+      "type": "integer"
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "testScript": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "type": {
+          "type": "string",
+          "required": true
+        },
+        "text": {
+          "type": "string"
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "index": {
+                "type": "integer",
+                "required": true
+              },
+              "description": {
+                "type": "string"
+              },
+              "testData": {
+                "type": "string"
+              },
+              "expectedResult": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

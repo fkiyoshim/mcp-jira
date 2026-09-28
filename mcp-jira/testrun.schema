@@ -1,0 +1,56 @@
+{
+  "type": "object",
+  "required": true,
+  "properties": {
+    "projectKey": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "testPlanKey": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "folder": {
+      "type": "string"
+    },
+    "iteration": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "plannedStartDate": {
+      "type": "date"
+    },
+    "plannedEndDate": {
+      "type": "date"
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "testCaseKey": {
+            "type": "string",
+            "required": true
+          },
+          "environment": {
+            "type": "string"
+          },
+          "userKey": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

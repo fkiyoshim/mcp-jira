@@ -1,0 +1,136 @@
+// Simple request, using only required fields
+{
+  "projectKey": "JQA",
+  "name": "Ensure the axial-flow pump is enabled"
+}
+
+// Simple request, using only required fields and a step by step test script
+{
+  "projectKey": "JQA",
+  "name": "Ensure the axial-flow pump is enabled",
+  "testScript": {
+    "type": "STEP_BY_STEP",
+    "steps": [
+      {
+        "description": "Ignite the secondary propulsion engines.",
+        "testData": "Combustion chamber's initial pressure: 10",
+        "expectedResult": "Ensure the high-pressure combustion chamber's pressure is around 3000 psi."
+      }
+    ]
+  }
+}
+
+// Simple request, using only required fields and a plain text test script
+{
+  "projectKey": "JQA",
+  "name": "Ensure the axial-flow pump is enabled",
+  "testScript": {
+    "type": "PLAIN_TEXT",
+    "text": "Ignite the secondary propulsion engines and ensure the high-pressure combustion chamber's pressure is around 3000 psi."
+  }
+}
+
+// Simple request, using custom fields
+{
+  "projectKey": "JQA",
+  "name": "Ensure the axial-flow pump is enabled",
+  "customFields": {
+    "single choice": "Propulsion engines",
+    "multichoice": "Brazil, England",
+    "checkbox": "false",
+    "datepicker": "2017-03-02T16:15:00.000Z",
+    "decimal number": 12.12,
+    "number": 100,
+    "multi line text": "<h1>Ensure the axial-flow pump is enabled</h1><p>Ignite the secondary propulsion engines</p>",
+    "single line": "Ignite the secondary propulsion engines"
+  }
+}
+
+// Simple request, with call to tests
+{
+  "projectKey": "JQA",
+  "name": "Ensure the axial-flow pump is enabled",
+  "testScript": {
+    "type": "STEP_BY_STEP",
+    "steps": [
+      {
+        "testCaseKey": "JQA-123"
+      },
+      {
+        "description": "Ignite the secondary propulsion engines.",
+        "testData": "Combustion chamber's initial pressure: 10",
+        "expectedResult": "Ensure the high-pressure combustion chamber's pressure is around 3000 psi."
+      },
+      {
+        "testCaseKey": "JQA-789"
+      }
+    ]
+  }
+}
+
+// Simple request, with parameters
+{
+  "projectKey": "JQA",
+  "name": "Ensure the axial-flow pump is enabled",
+  "parameters": {
+    "variables": [
+      {
+        "name": "Username",
+        "type": "FREE_TEXT"
+      },
+      {
+        "name": "Country",
+        "type": "DATA_SET",
+        "dataSet": "Country"
+      }
+    ],
+    "entries": [
+      {
+      	"Username": "Admin",
+        "Country": "England"
+      },
+      {
+      	"Username": "Tester",
+        "Country": "Brazil"
+      }
+    ]
+  },
+  "testScript": {
+    "type": "STEP_BY_STEP",
+    "steps": [
+      {
+        "description": "User {Username} is from {Country}"
+      }
+    ]
+  }
+}
+
+// Full request
+{
+  "projectKey": "JQA",
+  "name": "Ensure the axial-flow pump is enabled",
+  "precondition": "The precondition.",
+  "objective": "The objective.",
+  "folder": "/Orbiter/Cargo Bay",
+  "status": "Approved",
+  "priority": "Low",
+  "component": "Valves",
+  "owner": "JIRAUSER10000",
+  "estimatedTime": 138000,
+  "labels": ["Smoke", "Functional"],
+  "issueLinks": ["JQA-123", "JQA-456"],
+  "customFields": {
+    "single choice": "Propulsion engines",
+    "multichoice": "Brazil, England"
+  },
+  "testScript": {
+    "type": "STEP_BY_STEP",
+    "steps": [
+      {
+        "description": "Ignite the secondary propulsion engines.",
+        "testData": "Combustion chamber's initial pressure: 10",
+        "expectedResult": "Ensure the high-pressure combustion chamber's pressure is around 3000 psi."
+      }
+    ]
+  }
+}
