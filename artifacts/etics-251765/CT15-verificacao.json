@@ -1,0 +1,74 @@
+{
+  "id": "CT15",
+  "key": "ETICS-T8208",
+  "before": {
+    "keyNumber": 8208,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:24.932Z",
+    "objective": "Validar alterar tipo conectado com capacidade maior. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.3 e regras detalhadas do §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92606,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then o tipo é alterado para o novo tipo de 24 fibras\nThen o estado persistido corresponde ao resultado verificado",
+          "index": 0,
+          "description": "When solicitar por Corrigir inventário a mudança para o tipo de 24 fibras e salvar",
+          "id": 210985
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT15 | Alterar tipo conectado com capacidade maior",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8208",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8208,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T18:58:29.235Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:24.932Z",
+    "objective": "Validar alterar tipo conectado com capacidade maior. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.3 e regras detalhadas do §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um lance conectado de tipo com 12 fibras, com identificadores, contagens e conexões registrados\nAnd existe um tipo alternativo válido com 24 fibras\nWhen solicitar por Corrigir inventário a mudança para o tipo de 24 fibras e salvar\nThen o tipo é alterado para o novo tipo de 24 fibras\nAnd as fibras de 1 a 12 preservam seus identificadores, contagens e conexões\nAnd somente as fibras faltantes de 13 a 24 são criadas automaticamente\nAnd as novas fibras ficam disponíveis para criação manual de contagem e conexão, sem herdar automaticamente as contagens e conexões existentes\nWhen consultar novamente o lance e suas fibras\nThen o estado persistido corresponde ao resultado verificado",
+      "id": 17556,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT15 | Alterar tipo conectado com capacidade maior",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8208",
+    "status": "Draft"
+  }
+}

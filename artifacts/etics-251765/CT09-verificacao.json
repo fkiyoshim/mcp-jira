@@ -1,0 +1,74 @@
+{
+  "id": "CT09",
+  "key": "ETICS-T8202",
+  "before": {
+    "keyNumber": 8202,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:57:00.374Z",
+    "objective": "Validar preservar edição de observações. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92600,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then Observações apresenta o novo valor ao consultar novamente o lance",
+          "index": 0,
+          "description": "When alterar Observações por Corrigir inventário para o novo valor válido e salvar",
+          "id": 210979
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT09 | Preservar edição de Observações",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8202",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8202,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T18:57:03.046Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:57:00.374Z",
+    "objective": "Validar preservar edição de observações. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Observações diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Observações por Corrigir inventário para o novo valor válido e salvar\nThen Observações apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "id": 17550,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT09 | Preservar edição de Observações",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8202",
+    "status": "Draft"
+  }
+}

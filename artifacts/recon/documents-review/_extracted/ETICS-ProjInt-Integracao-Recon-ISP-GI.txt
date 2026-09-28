@@ -1,0 +1,966 @@
+Projeto e-TICS 6.2
+Projeto de Integração - CPqD e-TICS x CPqD-GI-FTTx
+DSSO
+Versão deste documento: 01.01
+Data desta impressão: 18/Jul/08 11:27
+© Fundação CPqD
+Reservados todos os direitos
+Este documento não deve ser reproduzido sem a expressa autorização da Fundação CPqD.
+Qualquer reprodução, sem prévia autorização, infringe os direitos de copyright
+Sumário
+1 Objetivo do Documento4
+2 Definições e abreviaturas4
+3 Descrição Funcional4
+3.1 Sistemas envolvidos5
+4 Periodicidade de atualização5
+5 Definição do mecanismo de integração6
+6 Definição dos fluxos7
+7 Definição dos dados10
+7.1 Dados de entrada10
+7.1.1 Busca de Nomes de Equipamentos10
+7.2 Dados de Saída11
+7.2.1 Busca de Nomes de Equipamentos11
+7.2.2 Busca de Configuração de Equipamentos11
+7.3 Mensagens de Erro18
+7.3.1 Busca de Nomes de Equipamentos18
+7.3.2 Busca de Configuração de Equipamentos18
+8 Segurança18
+9 Referências18
+10 Histórico de alterações deste documento18
+11 Anexos19
+11.1 Anexo I – Definição do WSDL 19
+# Objetivo do Documento
+Esse documento objetiva a especificação das integrações realizadas entre o módulo Reconciliador do CPqD e-TICS e o CPqD GI-FTTx.
+# Definições e abreviaturas
+Abreviatura
+Definições
+e-TICS ou CPqD e-TICS
+Sistema CPqD de gerência de inventário de planta externa e interna
+GI-FTTx ou CPqD GI-FTTx
+Sistema CPqD de gerência de rede, com funções de gerência de falhas, desempenho e configuração (de recursos e serviços)
+OLT
+Optical Line Terminal
+GPON
+Gigabit Passive Optical Network
+ONT
+Optical Network Terminal
+ISP
+Módulo de gerência de planta interna do e-TICS
+e-TICS Reconciling Service ou Recon ou Reconciliador
+Módulo do e-TICS responsável pela reconciliação que consiste no processo de comparação do cadastro de rede (ISP) com as informações oriundas dos sistemas de gerência de rede (GI-FTTx). Este processo tem como objetivo, checar se as informações do cadastro são compatíveis com as informações obtidas pelos sistemas de gerência.
+WSDL
+Web Service Definition Language
+NMS
+Network Management System
+# Descrição Funcional
+A integração permitirá que o módulo e-TICS Reconciling Service possa se comunicar com o GI-FTTx a fim de recuperar os dados dos equipamentos e realizar o batimentos das informações obtidas em cada sistema.
+Através desta integração, o e-TICS deverá consumir os web-services disponibilizados pelo GI para obter os equipamentos GPON a partir de um intervalo de IPs.
+Para isto, o GI disponibilizará um web-service que retorna os identificadores dos equipamentos descobertos na rede a partir do intervalo de IPs, e outro que, a partir do identificador, retorne os detalhes do OLT, bem como, toda a hierarquia abaixo dele, que será composta pelos seguintes elementos:
+GPON;
+Placas de cada slot do GPON;
+Para placas com função “OLT” ou “Switch”:
+Portas de cada placa;
+Para portas de placas com função “OLT”:
+ONTs conectados às portas;
+Portas de cada ONT;
+A Figura 01 contém uma visão geral do Reconciliador com suas integrações. A parte destacada em vermelho, se refere à integração que será descrita através deste documento.
+Fig. 01 – Visão geral do Reconciliador. A parte da figura destacada em vermelho se refere ao escopo deste documento.
+# Sistemas envolvidos
+GI-FTTx – Será responsável por validar os parâmetros de entrada, e a partir deles realizar a descoberta dos equipamentos no intervalo de IPs, retornando suas configurações
+e-TICS Reconciling Service – Será responsável por acionar os serviços disponibilizados pelo GI para obter os equipamentos descobertos na rede através dos intervalos de IP, e realizar o batimento das informações.
+# Periodicidade de atualização
+Sob demanda do GI-FTTx.
+# Definição do mecanismo de integração
+A solução adotada para a integração será a utilização de serviços, através dos quais o GI-FTTx disponibilizará ao e-TICS, os dados sobre os equipamentos GPON existentes na rede para que o reconciliador possa realizar o batimento dos dados existentes na rede com os dados de inventário cadastrados no ISP. Neste contexto, a tecnologia adotada será a utilização de web-services, conforme Figura 02.
+Para consumo do Reconciliador ao web-service do GI, foi adotado o padrão Axis.
+Fig. 02 – Detalhamento do mecanismo de integração, baseado em serviços
+Os dados dos equipamentos serão obtidos através dos mecanismos de descoberta do GI.
+Para identificação única dos elementos dos GPON do GI foi estabelecido o seguinte padrão:
+GPON - nome do GPON
+Placas do GPON - IP:número do slot
+Portas das placas – IP:número do slot:número da porta
+ONTs conectados às portas – IP:número do slot:número da porta:identificação da ONT
+Através deste padrão, o Reconciliador poderá associar os elementos do GI com os elementos correspondentes no ISP, para, posteriormente efetuar a comparação de seus dados.
+Devido ao alto volume de dados, o Reconciliador utiliza dois serviços disponibilizados pelo GI para obter os dados do equipamentos GPON a partir dos IPs:
+O primeiro serviço retorna apenas os nomes dos equipamentos encontrados que correspondem aos filtros informados. O detalhamento deste serviço se encontra na seção 6 - item a, deste documento.
+O segundo serviço retorna toda a configuração dos equipamentos a partir de seus nomes (retornados pelo serviço de nomes descrito anteriormente). Estas informações são utilizadas pelo Reconciliador para que haja o batimento entre o cadastro do inventário e a descoberta do equipamento na rede. O detalhamento deste serviço se encontra na seção 6 - item b, deste documento.
+Para realizar a correspondência entre equipamentos GPON será utilizado o IP do equipamento GPON no GI-FTTx e o IP do OLT no ISP. Eles serão obtidos da seguinte forma:
+No GI-FTTx: O IP não é um atributo do GPON. Ele é um componente do nome dos slots do GPON (conforme padrão descrito anteriormente). Como todos os slots de um equipamento possuem o mesmo IP, e todos os equipamentos GPON retornados pelo serviço terão slots com placas associadas, ele será extraído a partir do nome de um dos slots daquele equipamento. Este dado será obtido através do serviço de configuração de equipamentos.
+No ISP: O IP do equipamento GPON se encontra cadastrado no atributo “IP da gerência” presente no objeto “OLT”.
+Na especificação dos serviços do GI-FTTx, não foi estabelecido um limite de registros disponibilizados em uma consulta.
+# Definição dos fluxos
+A solicitação ocorre sempre no sentido CPqD e-TICS - GI-FTTx, que por sua vez responde ao CPqD e-TICS de acordo com o solicitado. Detalhes sobre as informações trocadas entre os fluxos encontram-se na seção 7 – Definição dos Dados e [Ref. 01].
+No total temos dois fluxos, descritos a seguir e representados na Figura 03:
+a) fluxo Busca de Nomes de Equipamentos: Através deste serviço disponibilizado pelo GI-FTTx, é possível recuperar os equipamentos por nome do fabricante, por IPs ou ainda por faixa de IPs. Ele é responsável por retornar apenas os nomes dos equipamentos OLTs e dos seus slots a partir dos filtros de entrada utilizados que podem ser Fabricante ou por IPs ou faixa de IPs (estes filtros se encontram detalhados na seção 7.1.1 deste documento).
+Para os filtros de entrada definidos, são associados os seguintes tratamentos:
+Não há filtro de entrada definido: Serão considerados todos os equipamentos GPON descobertos pelo GI-FTTx;
+Apenas filtro de fabricante foi definido: Serão considerados todos os equipamentos GPON, descobertos pelo GI-FTTx que sejam do fabricante definido. É permitido acionar o serviço utilizando no máximo um fabricante por solicitação;
+Apenas filtro por IP ou intervalo de IPs foi definido: Serão considerados todos os equipamentos GPON cujo endereço IP atenda ao critério de filtro, independentemente de seus fabricantes. É permitido acionar o serviço utilizando mais de um IPs ou intervalos de IPs, utilizando neste caso uma lista de IPs ou de intervalos de IPs, ou ambos;
+Se ambos os filtros forem fornecidos: Serão considerados todos os equipamentos GPON com endereço IP que atenda aos critérios da lista de IPs/intervalos de IPs e que sejam do fabricante definido.
+É possível que o retorno deste serviço seja uma lista vazia, caso não sejam descobertos equipamentos com os filtros de entrada utilizados.
+Caso ocorra um erro de processamento no GI-FTTx, ele retornará uma exceção, invalidando todo o retorno.
+Através deste serviço, o Reconciliador recupera os equipamentos pelos intervalos de IPs requeridos. O parâmetro Fabricante não é utilizado atualmente na integração com o GI-FTTx.
+b) fluxo Busca de Configuração dos Equipamentos: Através deste serviço, disponibilizado pelo GI-FTTx, é possível recuperar a configuração dos recursos, a partir do nome do recurso (este filtro se encontra detalhado na seção 7.1.2 deste documento).
+Para o filtro de entrada definido, são associados os seguintes tratamentos:
+É necessária a entrada de pelo menos um parâmetro válido para a realização deste serviço;
+É possível incluir, como filtro de entrada, um ou mais nomes de recursos de tipos iguais ou diferentes;
+Para cada recurso da lista de nomes de recursos, será considerado o próprio recurso e todos os recursos hierarquicamente abaixo dele.
+Para cada recurso especificado nos parâmetros de entrada, devem ser retornados os dados de configuração de todos os recursos (vide seção 7.2.2 deste documento) que estão hierarquicamente abaixo do recurso, conforme descrito abaixo:
+Se o parâmetro de entrada for um equipamento NE GPON: o serviço deverá retornar os dados de configuração de todas as placas associadas ao equipamento e para cada placa OLT, as portas GPON associadas e para cada porta GPON, as ONTs associadas e suas respectivas portas. Caso a placa seja Switch, Controladora+Switch ou TDM, suas portas também deverão ser retornadas.
+Se o parâmetro de entrada for uma placa: o serviço deverá retornar os dados da placa. Caso a placa seja OLT, deverá retornar todas as portas GPON e ONTs associadas e suas respectivas portas. Caso a placa seja Switch, Controladora+Switch ou TDM, suas portas também deverão ser retornadas. Caso a placa tenha outro tipo, somente os dados da placa em questão serão retornados.
+Conforme especificado acima, este serviço permite busca de configuração, somente a partir de um equipamento NE GPON ou de uma placa.
+Assim sendo, a hierarquia de elementos, que este serviço retorna, segue abaixo:
+Equipamento GPON;
+Slots com placas associadas do equipamento;
+Caso o slot seja do tipo Switch, Controladora+Switch, TDM ou OLT: portas do slot;
+Caso a porta seja de um OLT: ONTs conectados às portas;
+Caso haja ONTs: portas dos ONTs.
+Caso não sejam encontrados recursos, a partir do filtro de entrada, será retornada uma lista vazia.
+Caso ocorra um erro de processamento no GI-FTTx, ele retornará uma exceção, invalidando todo o retorno.
+Através deste serviço, o Reconciliador recupera a configuração dos equipamentos utilizando como parâmetro de entrada o nome de um equipamento NE GPON. A busca através de nomes de placas não é utilizada. Com base no retorno deste serviço, o Reconciliador recupera todos os dados que serão comparados para que o batimento dos dados seja feito com o cadastro de inventário.
+Fig. 03 – Fluxos do GI-FTTx destacados em vermelho.
+# Definição dos dados
+A definição do WSDL para os dados de entrada e saída, bem como de seus tipos encontra-se no Anexo I neste documento.
+Nota 1: O WSDL atual, disponibilizado pelo GI-FTTx, não trata a obrigatoriedade dos campos. Sendo assim, a obrigatoriedade dos campos, exposta nas tabelas a seguir, foi definida com base nos documentos de Requisitos do Reconciliador [Ref.1] disponibilizado pelo GI, e no documento de Integração FTTx, sendo validadas através do serviço do GI-FTTx disponibilizado pela DRC. A obtenção dos nomes, tipos e domínios dos campos foi realizada com base no WSDL.
+Nota 2: Os tamanhos dos campos não foram definidos nos documentos, como também não existe definição no WSDL. Portanto esta informação não será apresentada nas tabelas que seguem.
+# Dados de entrada
+# Busca de Nomes de Equipamentos
+Esta solicitação corresponde, no WSDL, à mensagem “getCardNames”. Objetos do tipo getCardNames contém as seguintes informações:
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+arg0
+String
+-
+Não
+Fabricante
+Não
+arg1
+String
+-
+Não
+IP ou Intervalo de IPs. Se a String possuir o caractere “-” entre os IPs, este parâmetro será considerado uma faixa de IPs. (IP inicial – IP final). Se houver espaços entre os IPs e o caractere “-”, eles serão ignorados, não interferindo na sintaxe da faixa. Exemplo de faixa de IPs: 192.168.0.2-192.168.0.5
+Sim. Este campo é utilizado para filtro por intervalo de IPs.
+Busca de Configuração dos Equipamentos
+Esta solicitação corresponde, no WSDL, à mensagem “configService”. Objetos do tipo configService que contém as seguintes informações:
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+arg0
+String
+-
+Sim
+Nome do equipamento retornado pelo serviço de busca de nomes ou qualquer outro serviço da hierarquia GI-FTTx.
+Sim
+# Dados de Saída
+# Busca de Nomes de Equipamentos
+Objetos do tipo “getCardNamesResponse” que contém objetos do tipo “eqptNamesResponse” (WSDL/Schema), composto pelas seguintes informações:
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+equipment
+String
+-
+Sim
+Identificação do Equipamento (atualmente este valor corresponde ao nome do equipamento que também é retornado pelo campo name, porém pode ser que este campo seja destinado a alguma outra informação em um futuro)
+Não
+name
+String
+-
+Sim
+Nome do Equipamento. Apesar de conter o mesmo valor do campo equipment, o Reconciliador utiliza o valor deste campo para obter o nome do equipamento do GI-FTTx.
+Sim
+type
+eqptTypesEnum
+NeGPON;
+OltCardType;
+ControlCardType;
+SwitchCardType;
+ControlSwitchCardType;
+PowerSupplyType;
+TDMCardType;
+FunType;
+Sim
+Tipo do Equipamento / Placa do Equipamento
+Sim. O Reconciliador utiliza esta informação para recuperar apenas os nomes dos OLTs, que são os registros com type = “NeGPON”
+# Busca de Configuração de Equipamentos
+Objetos do tipo “configServiceResponse” que contém objetos do tipo abstrato “baseGPonResource” composto por.
+Tipo: baseGPonResource
+Herda de: não possui herança
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Nome do Equipamento.
+Sim
+No caso do Reconciliador, a busca é feita por OLTs, e por este motivo, serão retornados objetos do tipo “neGPon” que estendem o tipo “baseGPonResource” e são compostos por:
+Tipo: neGPon
+Herda de: baseGPonResource
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Não
+Nome do Equipamento. Este atributo é proveniente do tipo “baseGPonResource”.
+Não
+alias
+String
+-
+Não
+Alias do Equipamento. Obs.: Não foi encontrado este atributo no documento de integração do GI-FTTx
+Não
+internalId
+String
+-
+Não
+Id Interno do equipamento no GI-FTTx.
+Sim
+manufacturer
+String
+-
+Sim
+Nome do Fabricante do equipamento. Ex.: Huawei, ZTE
+Sim
+model
+String
+-
+Sim
+Nome do modelo do equipamento. Ex.: MA5600T, OLTS-M, ALTS-M
+Sim
+serialNumber
+String
+-
+Não
+Número de série do equipamento.
+Sim
+site
+String
+-
+Não
+Localidade onde se encontra o equipamento.
+Não
+station
+String
+-
+Não
+Site onde se encontra o equipamento.
+Não
+cardList
+Representa um slot do tipo baseGPonCard. Para cada slot de um GPON haverá um cardList correspondente.
+-
+Sim
+Slot do equipamento que deve conter placa associada.
+Sim
+O cardList representa apenas um slot. Como um equipamento GPON pode conter vários slots, o elemento cardList é replicado para cada slot existente. Porém, cada cardList poderá vir com o atributo xsi:type que determinará se o elemento é um baseGPonCard ou se é de um tipo que estenda um baseGPonCard. A tabela abaixo contém o mapeamento do xsi:type para o tipo do elemento no WSDL.
+Atributo xsi:type de cardList
+Tipo de elemento no WSDL
+ns2:olt
+Olt (estende baseGPonCard)
+ns2:switchCard
+SwitchCard (estende baseGPonCard)
+Não contém este atributo
+baseGPonCard
+Tipo: baseGPonCard
+Herda de: baseGPonResource
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação do slot. Segue o formato: IP:número do slot.
+Este atributo é proveniente do tipo “baseGPonResource”.
+Sim
+manufacturer
+String
+-
+Sim, apenas para ControlCardType e ControlSwitchCardType
+Nome do Fabricante do slot. Ex.: Huawei, ZTE
+Sim
+model
+String
+-
+Sim, apenas para ControlCardType e ControlSwitchCardType
+Nome do modelo do slot.
+Sim
+slot
+Integer
+-
+Sim
+Número sequencial do slot no GPON.
+Sim
+type
+eqptUnitEnum
+ControlCardType;
+ControlSwitchCardType;
+PowerSupplyType;
+TDMCardType;
+FunType;
+Sim
+Função da placa
+Sim
+ports
+Representa uma porta do tipo: port
+Para cada porta do slot haverá um item ports correspondente.
+-
+Não. Este item é válido apenas quando o type for igual a: SwitchCardType , OltCardType, TDMCardType ou ControlSwitchCardType
+Porta associada à placa.
+Sim
+Tipo: port
+Herda de: baseGPonResource
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação da porta slot. Segue o formato: IP:número do slot:número da porta
+Este atributo é proveniente do tipo “baseGPonResource”.
+Sim
+port
+Integer
+-
+Sim
+Número sequencial da porta na placa do slot.
+Sim
+type
+portsTypeEnum
+E1;
+ElcGe;
+OptGe;
+Sim
+Tipo da porta
+Não
+Tipo: switchCard
+Herda de: baseGPonCard
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação do slot. Segue o formato: IP:número do slot.
+Este atributo é proveniente do tipo “baseGPonResource”.
+Sim
+manufacturer
+String
+-
+Sim
+Nome do Fabricante do slot. Ex.: Huawei, ZTE
+Este atributo é proveniente do tipo “baseGPonCard”.
+Sim
+model
+String
+-
+Sim
+Nome do modelo do slot. Ex.: H801GICF, EHTN-B
+Este atributo é proveniente do tipo “baseGPonCard”, descrito anteriormente.
+Sim
+slot
+Integer
+-
+Sim
+Número sequencial do slot no GPON.
+Sim
+type
+eqptUnitEnum
+SwitchCardType
+Sim
+Função da placa switch.
+Sim
+ports
+Representa uma porta do tipo: port
+Para cada porta do slot haverá um item ports correspondente.
+-
+Não
+Porta genérica associada à placa switch.
+Sim
+portList
+Representa uma porta do tipo: switchPort
+Para cada porta de switch do slot haverá um item portList correspondente.
+-
+Não
+Porta da placa Switch que tenha estado administrativo definido.
+Não
+Tipo: switchPort
+Herda de: baseGPonResource
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação da porta slot. Segue o formato: IP:número do slot:número da porta
+Este atributo é proveniente do tipo “baseGPonResource”.
+Sim
+port
+Integer
+-
+Sim
+Número sequencial da porta na placa do slot.
+Sim
+state
+portStateEnum
+Up;
+Down;
+Não
+Estado administrativo da porta
+Não
+Tipo: olt
+Herda de: baseGPonCard
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação do slot. Segue o formato: IP:número do slot.
+Este atributo é proveniente do tipo “baseGPonResource”.
+Sim
+manufacturer
+String
+-
+Sim
+Nome do Fabricante do slot. Ex.: Huawei, ZTE
+Este atributo é proveniente do tipo “baseGPonCard”.
+Sim
+model
+String
+-
+Sim
+Nome do modelo do slot. Ex.: H801GPBC, GLT4-A, GLT2-A
+Este atributo é proveniente do tipo “baseGPonCard”, descrito anteriormente.
+Sim
+slot
+Integer
+-
+Sim
+Número sequencial do slot no GPON.
+Sim
+type
+eqptUnitEnum
+OltCardType
+Sim
+Função da placa olt
+Sim
+ports
+Representa uma porta do tipo: port
+Para cada porta do slot haverá um item ports correspondente.
+-
+Não
+Porta genérica da placa olt
+Sim
+portList
+Representa uma porta do tipo: oltPort
+Para cada porta de olt do slot haverá um item portList correspondente.
+-
+Não
+Porta da placa Olt que contém onts associados a ela.
+Sim
+Tipo: oltPort
+Herda de: baseGPonResource
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação da porta slot. Segue o formato: IP:número do slot:número da porta
+Este atributo é proveniente do tipo “baseGPonResource”.
+Sim
+port
+Integer
+-
+Sim
+Número sequencial da porta na placa do slot.
+Sim
+state
+portStateEnum
+Up;
+Down;
+Não
+Estado administrativo da porta
+Não
+ontList
+Representa um ont. Para cada ont conectado à porta, haverá um item ontList
+-
+Não
+Ont conectado à porta do slot olt.
+Sim
+Tipo: ont
+Herda de: baseGPonResource
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação do ont. Segue o formato: IP:número do slot:número da porta:número do ont. Este atributo é proveniente do tipo “baseGPonResource”.
+Não
+manufacturer
+String
+-
+Sim
+Nome do Fabricante do equipamento. Ex.: Huawei, ZTE
+Sim
+model
+String
+-
+Sim
+Nome do modelo do equipamento. Ex.: HG850, HG863
+Sim
+olt
+String
+-
+Não
+Identificador do slot olt da porta à qual o ont está conectado. Segue o formato: IP:número do slot.
+Não
+ontId
+Integer
+-
+Sim
+Número sequencial do ont na porta
+Sim
+port
+Integer
+Sim
+serial
+String
+-
+Não
+Número de série do equipamento.
+Sim
+portList
+Representa uma porta do tipo ontPort. Para cada porta de um ONT haverá um portList correspondente.
+-
+Não
+Porta do ONT.
+Sim
+Tipo: ontPort
+Herda de: baseGPonResource
+Nome do campo
+Tipo
+Domínio
+Obrigatoriedade
+Descrição
+Utilizado pelo Reconciliador
+name
+String
+-
+Sim
+Identificação da porta ont. Este atributo é proveniente do tipo “baseGPonResource”.
+Não
+port
+Integer
+-
+Sim
+Número sequencial da porta na placa do slot.
+Não
+type
+String
+-
+Não
+Tipo da porta. Exemplo: Ethernet, E1 (TDM)
+Não
+Nota 3: Apesar do Reconciliador não utilizar nenhum atributo de ontPort, o item portList é utilizado apenas para que o número de portas do ont seja contabilizado e reconciliado.
+# Mensagens de Erro
+# Busca de Nomes de Equipamentos
+Nos casos de erro, são retornados objetos do tipo “GiFTTxException”, porém não temos documentação referente aos possíveis erros que esta exceção pode retornar.
+# Busca de Configuração de Equipamentos
+Nos casos de erro, são retornados objetos do tipo “GiFTTxException”, porém não temos documentação referente aos possíveis erros que esta exceção pode retornar.
+# Segurança
+Não foi especificado nenhum mecanismo de segurança que exija qualquer tipo de autenticação para acesso aos serviços do GI-FTTX.
+# Referências
+UC-ExecutarReconciliacaoIinventarioPlantaInterna.odt
+# Histórico de alterações deste documento
+Data de elaboração
+Versão
+Autor
+Descrições das alterações realizadas
+09/02/12
+1.00
+Amanda Castro Quaglio
+Versão inicial do documento
+# Anexos
+# Anexo I – Definição do WSDL
+Arquivo: GIFTTxService.wsdl
+URL: http://<servidor>:<porta>/gi-fttx-ejb/GIFTTxService.wsdl
+<?xml version="1.0" encoding="UTF-8" ?>
+<wsdl:definitions
+name="GIFTTxService"
+targetNamespace="http://ws.gifttx.cpqd.com/"
+xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+xmlns:tns="http://ws.gifttx.cpqd.com/"
+xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<wsdl:types>
+<xs:schema
+attributeFormDefault="unqualified"
+elementFormDefault="unqualified"
+targetNamespace="http://ws.gifttx.cpqd.com/"
+xmlns:tns="http://ws.gifttx.cpqd.com/"
+xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="activeONTService" type="tns:activeONTService" />
+<xs:element name="activeONTServiceResponse" type="tns:activeONTServiceResponse" />
+<xs:element name="configService" type="tns:configService" />
+<xs:element name="configServiceResponse" type="tns:configServiceResponse" />
+<xs:element name="getCardNames" type="tns:getCardNames" />
+<xs:element name="getCardNamesResponse" type="tns:getCardNamesResponse" />
+<xs:element name="statusActiveONTService" type="tns:statusActiveONTService" />
+<xs:element name="statusActiveONTServiceResponse" type="tns:statusActiveONTServiceResponse" />
+<xs:complexType name="configService">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="configServiceResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:baseGPonResource" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType abstract="true" name="baseGPonResource">
+<xs:sequence>
+<xs:element minOccurs="0" name="name" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="statusActiveONTService">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="statusActiveONTServiceResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:statusResponse" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="statusResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="message" type="xs:string" />
+<xs:element minOccurs="0" name="ontId" type="xs:string" />
+<xs:element minOccurs="0" name="serviceId" type="xs:string" />
+<xs:element minOccurs="0" name="status" type="tns:status" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCardNames">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="arg1" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="getCardNamesResponse">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:eqptNamesResponse" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="eqptNamesResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="equipment" type="xs:string" />
+<xs:element minOccurs="0" name="name" type="xs:string" />
+<xs:element minOccurs="0" name="type" type="tns:eqptUnitEnum" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="activeONTService">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string" />
+<xs:element minOccurs="0" name="arg1" type="xs:string" />
+<xs:element minOccurs="0" name="arg2" type="xs:string" />
+<xs:element minOccurs="0" name="arg3" type="xs:string" />
+<xs:element minOccurs="0" name="arg4" type="xs:string" />
+<xs:element minOccurs="0" name="arg5" type="xs:string" />
+<xs:element minOccurs="0" name="arg6" type="xs:string" />
+<xs:element minOccurs="0" name="arg7" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="activeONTServiceResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="tns:statusResponse" />
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="olt">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonCard">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="portList" nillable="true" type="tns:oltPort" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="baseGPonCard">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonResource">
+<xs:sequence>
+<xs:element minOccurs="0" name="manufacturer" type="xs:string" />
+<xs:element minOccurs="0" name="model" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ports" nillable="true" type="tns:port" />
+<xs:element name="slot" type="xs:int" />
+<xs:element minOccurs="0" name="type" type="tns:eqptUnitEnum" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="oltPort">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonResource">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="ontList" nillable="true" type="tns:ont" />
+<xs:element name="port" type="xs:int" />
+<xs:element minOccurs="0" name="state" type="tns:portStateEnum" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="ont">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonResource">
+<xs:sequence>
+<xs:element minOccurs="0" name="manufacturer" type="xs:string" />
+<xs:element minOccurs="0" name="model" type="xs:string" />
+<xs:element minOccurs="0" name="olt" type="xs:string" />
+<xs:element name="ontId" type="xs:int" />
+<xs:element name="port" type="xs:int" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="portList" nillable="true" type="tns:ontPort" />
+<xs:element minOccurs="0" name="serial" type="xs:string" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="ontPort">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonResource">
+<xs:sequence>
+<xs:element name="port" type="xs:int" />
+<xs:element minOccurs="0" name="type" type="xs:string" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="port">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonResource">
+<xs:sequence>
+<xs:element name="port" type="xs:int" />
+<xs:element minOccurs="0" name="type" type="tns:portsTypeEnum" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="switchCard">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonCard">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="portList" nillable="true" type="tns:switchPort" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="switchPort">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonResource">
+<xs:sequence>
+<xs:element name="port" type="xs:int" />
+<xs:element minOccurs="0" name="state" type="tns:portStateEnum" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:complexType name="neGPon">
+<xs:complexContent>
+<xs:extension base="tns:baseGPonResource">
+<xs:sequence>
+<xs:element minOccurs="0" name="alias" type="xs:string" />
+<xs:element maxOccurs="unbounded" minOccurs="0" name="cardList" nillable="true" type="tns:baseGPonCard" />
+<xs:element minOccurs="0" name="internalId" type="xs:string" />
+<xs:element minOccurs="0" name="manufacturer" type="xs:string" />
+<xs:element minOccurs="0" name="model" type="xs:string" />
+<xs:element minOccurs="0" name="serialNumber" type="xs:string" />
+<xs:element minOccurs="0" name="site" type="xs:string" />
+<xs:element minOccurs="0" name="station" type="xs:string" />
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+<xs:simpleType name="status">
+<xs:restriction base="xs:string">
+<xs:enumeration value="InProgress" />
+<xs:enumeration value="FinishedOk" />
+<xs:enumeration value="FinishedError" />
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="eqptUnitEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="NeGPON" />
+<xs:enumeration value="OltCardType" />
+<xs:enumeration value="ControlCardType" />
+<xs:enumeration value="SwitchCardType" />
+<xs:enumeration value="ControlSwitchCardType" />
+<xs:enumeration value="PowerSupplyType" />
+<xs:enumeration value="TDMCardType" />
+<xs:enumeration value="FunType" />
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="portStateEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="Up" />
+<xs:enumeration value="Down" />
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="portsTypeEnum">
+<xs:restriction base="xs:string">
+<xs:enumeration value="E1" />
+<xs:enumeration value="ElcGe" />
+<xs:enumeration value="OptGe" />
+</xs:restriction>
+</xs:simpleType>
+<xs:element name="GiFttxException" type="tns:GiFttxException" />
+<xs:complexType name="GiFttxException">
+<xs:sequence />
+</xs:complexType>
+</xs:schema>
+</wsdl:types>
+<wsdl:message name="statusActiveONTServiceResponse">
+<wsdl:part element="tns:statusActiveONTServiceResponse" name="parameters" />
+</wsdl:message>
+<wsdl:message name="configService">
+<wsdl:part element="tns:configService" name="parameters" />
+</wsdl:message>
+<wsdl:message name="getCardNamesResponse">
+<wsdl:part element="tns:getCardNamesResponse" name="parameters" />
+</wsdl:message>
+<wsdl:message name="GiFttxException">
+<wsdl:part element="tns:GiFttxException" name="GiFttxException" />
+</wsdl:message>
+<wsdl:message name="configServiceResponse">
+<wsdl:part element="tns:configServiceResponse" name="parameters" />
+</wsdl:message>
+<wsdl:message name="statusActiveONTService">
+<wsdl:part element="tns:statusActiveONTService" name="parameters" />
+</wsdl:message>
+<wsdl:message name="activeONTServiceResponse">
+<wsdl:part element="tns:activeONTServiceResponse" name="parameters" />
+</wsdl:message>
+<wsdl:message name="getCardNames">
+<wsdl:part element="tns:getCardNames" name="parameters" />
+</wsdl:message>
+<wsdl:message name="activeONTService">
+<wsdl:part element="tns:activeONTService" name="parameters" />
+</wsdl:message>
+<wsdl:portType name="GIFTTxServiceInterf">
+<wsdl:operation name="configService">
+<wsdl:input message="tns:configService" name="configService" />
+<wsdl:output message="tns:configServiceResponse" name="configServiceResponse" />
+<wsdl:fault message="tns:GiFttxException" name="GiFttxException" />
+</wsdl:operation>
+<wsdl:operation name="statusActiveONTService">
+<wsdl:input message="tns:statusActiveONTService" name="statusActiveONTService" />
+<wsdl:output message="tns:statusActiveONTServiceResponse" name="statusActiveONTServiceResponse" />
+</wsdl:operation>
+<wsdl:operation name="getCardNames">
+<wsdl:input message="tns:getCardNames" name="getCardNames" />
+<wsdl:output message="tns:getCardNamesResponse" name="getCardNamesResponse" />
+<wsdl:fault message="tns:GiFttxException" name="GiFttxException" />
+</wsdl:operation>
+<wsdl:operation name="activeONTService">
+<wsdl:input message="tns:activeONTService" name="activeONTService" />
+<wsdl:output message="tns:activeONTServiceResponse" name="activeONTServiceResponse" />
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="GIFTTxServiceSoapBinding" type="tns:GIFTTxServiceInterf">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+<wsdl:operation name="configService">
+<soap:operation soapAction="" style="document" />
+<wsdl:input name="configService">
+<soap:body use="literal" />
+</wsdl:input>
+<wsdl:output name="configServiceResponse">
+<soap:body use="literal" />
+</wsdl:output>
+<wsdl:fault name="GiFttxException">
+<soap:fault name="GiFttxException" use="literal" />
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="statusActiveONTService">
+<soap:operation soapAction="" style="document" />
+<wsdl:input name="statusActiveONTService">
+<soap:body use="literal" />
+</wsdl:input>
+<wsdl:output name="statusActiveONTServiceResponse">
+<soap:body use="literal" />
+</wsdl:output>
+</wsdl:operation>
+<wsdl:operation name="getCardNames">
+<soap:operation soapAction="" style="document" />
+<wsdl:input name="getCardNames">
+<soap:body use="literal" />
+</wsdl:input>
+<wsdl:output name="getCardNamesResponse">
+<soap:body use="literal" />
+</wsdl:output>
+<wsdl:fault name="GiFttxException">
+<soap:fault name="GiFttxException" use="literal" />
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="activeONTService">
+<soap:operation soapAction="" style="document" />
+<wsdl:input name="activeONTService">
+<soap:body use="literal" />
+</wsdl:input>
+<wsdl:output name="activeONTServiceResponse">
+<soap:body use="literal" />
+</wsdl:output>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="GIFTTxService">
+<wsdl:port binding="tns:GIFTTxServiceSoapBinding" name="GIFTTxServicePort">
+<soap:address location="http://drc-deploy01:8280/gi-fttx-ejb/GIFTTxService/GIFTTxService" />
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,1417 @@
+[
+  {
+    "id": "RECON-H01-01",
+    "story": "ETICS-252410",
+    "title": "Ignorar atributo configurado com 0",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "Atributo reconciliável A: GP=valor_GP, IM=valor_IM; configuração A=0.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar a reconciliação e abrir o detalhamento.",
+        "expected": "A diferença em A não gera divergência."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "A permanece com valor_GP; o atributo ignorado não é sincronizado."
+      }
+    ],
+    "source": "H01; comentário de 28/08/2026",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8036",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H01-02",
+    "story": "ETICS-252410",
+    "title": "Comparar atributo configurado com 1",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "Atributo A: GP=valor_GP, IM=valor_IM; A=1.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar a reconciliação e detalhar o equipamento.",
+        "expected": "A diferença aparece na comparação IM x GP."
+      },
+      {
+        "number": 2,
+        "action": "Consultar o inventário sem acionar atualização.",
+        "expected": "O GP mantém valor_GP; a comparação não efetiva atualização."
+      }
+    ],
+    "source": "H01; comentário de 28/08/2026",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8037",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H01-03",
+    "story": "ETICS-252410",
+    "title": "Sincronizar atributo 2 sem divergência nem exibição",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "Atributo A: GP=valor_GP, IM=valor_IM; A=2.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar a reconciliação e abrir a árvore.",
+        "expected": "A não gera divergência nem aparece na árvore."
+      },
+      {
+        "number": 2,
+        "action": "Consultar o GP antes de atualizar.",
+        "expected": "A permanece com valor_GP."
+      },
+      {
+        "number": 3,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "A passa a valor_IM."
+      }
+    ],
+    "source": "H01; comentário de 28/08/2026",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8038",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H01-04",
+    "story": "ETICS-252410",
+    "title": "Aplicar os três modos no mesmo equipamento",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. B é um atributo cuja atualização pelo fluxo existente é permitida; os valores recebidos são válidos e nenhuma regra de negócio impede a atualização do roteador.",
+    "testData": "A=0, B=1, C=2; GP: A=valor_GP_A, B=valor_GP_B, C=valor_GP_C; IM: A=valor_IM_A, B=valor_IM_B, C=valor_IM_C; valores GP e IM diferentes para cada atributo.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar a reconciliação e abrir o detalhamento do roteador.",
+        "expected": "Somente B apresenta divergência na comparação IM x GP, com valor_GP_B e valor_IM_B; A e C não geram divergência e C não aparece na árvore."
+      },
+      {
+        "number": 2,
+        "action": "Consultar o inventário antes de acionar Atualizar inventário.",
+        "expected": "A=valor_GP_A, B=valor_GP_B e C=valor_GP_C; a comparação e a consulta não alteram os valores no GP."
+      },
+      {
+        "number": 3,
+        "action": "Selecionar a divergência de B para resolução com o dado do IM pelo fluxo existente, acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "A permanece com valor_GP_A; B passa a valor_IM_B pela atualização da divergência selecionada; C passa a valor_IM_C silenciosamente, sem exigir seleção de C na árvore."
+      }
+    ],
+    "source": "H01/H02; visão 01.01, seções 3 e 9",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8039",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H01-05",
+    "story": "ETICS-252410",
+    "title": "Manter atributos silenciosos inalterados durante consultas",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "A=2 e valores diferentes no GP e IM.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação e abrir/fechar o detalhamento duas vezes.",
+        "expected": "A não aparece nem gera divergência."
+      },
+      {
+        "number": 2,
+        "action": "Executar Consultar inventário e conferir A.",
+        "expected": "Valor GP original preservado até Atualizar inventário."
+      }
+    ],
+    "source": "H01; visão §§3 e 8",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8040",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H01-06",
+    "story": "ETICS-252410",
+    "title": "Reexecutar sincronização com o mesmo valor",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "A=2; valor IM já aplicado no GP.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar novamente a reconciliação com a mesma resposta.",
+        "expected": "Não há divergência de A nem exibição de A."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "A mantém o valor IM, sem duplicação do objeto atualizado."
+      }
+    ],
+    "source": "H01",
+    "notes": "Teste de regressão derivado da semântica de atualização.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8041",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H02-01",
+    "story": "ETICS-252562",
+    "title": "Apresentar lista com as três opções por atributo",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Usuário com acesso à configuração de atributos.",
+    "testData": "Configuração de teste existente.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Abrir Configuração/Atributos reconciliáveis e editar.",
+        "expected": "Cada atributo configurável é apresentado como lista de seleção."
+      },
+      {
+        "number": 2,
+        "action": "Abrir a lista de cada categoria de atributo disponível.",
+        "expected": "Opções exatamente 0=Ignorar, 1=Comparar IM x GP, 2=Sincronizar IM -> GP; seleção única."
+      }
+    ],
+    "source": "H02 AC1–2",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8042",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H02-02",
+    "story": "ETICS-252562",
+    "title": "Persistir os valores numéricos 0, 1 e 2",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Usuário autorizado; consulta técnica de RECON_ATRIB_CFG disponível.",
+    "testData": "Três atributos A, B e C.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Selecionar A=0, B=1, C=2 e salvar.",
+        "expected": "Gravação concluída."
+      },
+      {
+        "number": 2,
+        "action": "Reabrir a configuração e consultar os valores persistidos.",
+        "expected": "Seleções preservadas; valores numéricos 0, 1 e 2 em RECON_ATRIB_CFG."
+      }
+    ],
+    "source": "H02 AC2–3",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8043",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H02-03",
+    "story": "ETICS-252562",
+    "title": "Abrir e salvar configuração legada sem migração",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Configuração criada antes da alteração, contendo valores 0 e 1.",
+    "testData": "Cópia de configuração legada, sem conversão prévia de dados.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Abrir a configuração legada.",
+        "expected": "Valores 0 e 1 aparecem nas opções correspondentes."
+      },
+      {
+        "number": 2,
+        "action": "Salvar sem alterar e reabrir.",
+        "expected": "Valores e comportamento existentes preservados sem migração."
+      }
+    ],
+    "source": "H02 AC4",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8044",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H02-04",
+    "story": "ETICS-252562",
+    "title": "Alterar sucessivamente o modo de um atributo",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Usuário autorizado; configuração de teste.",
+    "testData": "A inicialmente 0.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Alterar A para 1, salvar e reabrir.",
+        "expected": "A=1 persistido e selecionado."
+      },
+      {
+        "number": 2,
+        "action": "Alterar A para 2, salvar e reabrir.",
+        "expected": "A=2 persistido e selecionado."
+      },
+      {
+        "number": 3,
+        "action": "Alterar A para 0, salvar e reabrir.",
+        "expected": "A=0 persistido e selecionado, sem múltiplas opções ativas."
+      }
+    ],
+    "source": "H02 AC2–3",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8045",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H02-05",
+    "story": "ETICS-252562",
+    "title": "Comparar somente atributos com valor 1",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "Configuração com A=0, B=1, C=2; valores diferentes entre GP e IM.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Salvar a configuração pela nova lista e executar reconciliação.",
+        "expected": "Configuração aceita pelo consumidor atual."
+      },
+      {
+        "number": 2,
+        "action": "Abrir o detalhamento.",
+        "expected": "Somente B gera divergência por comparação; A e C não são comparados."
+      }
+    ],
+    "source": "H02 AC5–6",
+    "notes": "A sincronização funcional de C é coberta pela H01.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8046",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-01",
+    "story": "ETICS-252569",
+    "title": "Inserir singleton inexistente",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Tipo S registrado sem chave; documento válido sem S; fragmento S com attributes={valor:'novo'}.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Aplicar upsert unitário de S.",
+        "expected": "Documento final contém uma ocorrência de S com os atributos recebidos."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar o resultado da operação.",
+        "expected": "Resultado estruturado informa INSERT para S."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8047",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-02",
+    "story": "ETICS-252569",
+    "title": "Substituir singleton inteiro sem merge parcial",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "S existente com attributes={valor:'antigo',obsoleto:true,lista:[1,2]}; entrada S={valor:'novo',lista:[3]}.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Aplicar upsert de S.",
+        "expected": "Uma ocorrência de S permanece."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar atributos e resultado.",
+        "expected": "valor=novo, lista=[3], obsoleto ausente; resultado UPDATE."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8048",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-03",
+    "story": "ETICS-252569",
+    "title": "Inserir e atualizar objetos por chave natural",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Tipo T com chave registrada id; documento T/id=A; entradas T/id=A e T/id=B.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Aplicar lote com A atualizado e B novo.",
+        "expected": "A substituído integralmente; B inserido."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar resultados por item.",
+        "expected": "UPDATE para A e INSERT para B, com os respectivos objetos finais."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8049",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-04",
+    "story": "ETICS-252569",
+    "title": "Preservar objetos ausentes do lote",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Documento contém T/id=A e T/id=B; lote altera somente A.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Aplicar lote com nova versão de A.",
+        "expected": "Operação concluída."
+      },
+      {
+        "number": 2,
+        "action": "Comparar B com o snapshot.",
+        "expected": "B preservado integralmente; não há exclusão por ausência na entrada."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8050",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-05",
+    "story": "ETICS-252569",
+    "title": "Validar o lote inteiro antes de qualquer alteração",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Primeiro fragmento válido; segundo fragmento viola formato canônico.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Aplicar os dois fragmentos no mesmo lote.",
+        "expected": "Lote rejeitado com erro tipado."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar documento e snapshots.",
+        "expected": "Nenhuma alteração parcial é aplicada; primeiro item não deixa resultado persistido."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8051",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-06",
+    "story": "ETICS-252569",
+    "title": "Rejeitar documento JSON malformado",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Documento atual com sintaxe JSON inválida e fragmento válido.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Invocar upsert.",
+        "expected": "Erro tipado identifica documento inválido."
+      },
+      {
+        "number": 2,
+        "action": "Verificar diagnóstico e ausência de resultado de sucesso.",
+        "expected": "Nenhum documento final parcialmente atualizado; mensagem útil sem despejar conteúdo sensível."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8052",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-07",
+    "story": "ETICS-252569",
+    "title": "Rejeitar ausência de chave natural obrigatória",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Tipo T tem chave id; fragmento T contém attributes sem id.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Aplicar fragmento sem id.",
+        "expected": "Falha de validação de chave; não deve tratar T como singleton."
+      },
+      {
+        "number": 2,
+        "action": "Comparar documento com snapshot.",
+        "expected": "Documento inalterado e erro tipado."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8053",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-08",
+    "story": "ETICS-252569",
+    "title": "Executar componente sem dependências de infraestrutura",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Consumidor mínimo com JAR e dependências declaradas; sem GP, IM, CDK ou banco configurados.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Resolver o artefato via gerenciamento de dependências do OSS Commons.",
+        "expected": "Módulo disponível no reator e para o consumidor."
+      },
+      {
+        "number": 2,
+        "action": "Executar INSERT e UPDATE válidos.",
+        "expected": "Operações funcionam em memória sem exigir serviços externos."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8054",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-09",
+    "story": "ETICS-252569",
+    "title": "Produzir resultado determinístico em chamadas independentes",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Mesmo documento inicial e mesmo lote em duas execuções novas.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar duas vezes a mesma operação a partir de cópias do documento inicial.",
+        "expected": "Ambas terminam com sucesso."
+      },
+      {
+        "number": 2,
+        "action": "Comparar documentos finais e resultados por item.",
+        "expected": "Resultados equivalentes; uma execução não contamina a outra."
+      }
+    ],
+    "source": "H03",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8055",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H03-10",
+    "story": "ETICS-252569",
+    "title": "Não validar regras de domínio no componente genérico",
+    "priority": "Alta",
+    "type": "Componente",
+    "preconditions": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "testData": "Tipo registrado; chave válida; atributo interno opaco com texto que não representa um IPv4.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Aplicar fragmento estruturalmente válido.",
+        "expected": "Componente aceita o atributo interno sem validar IPv4."
+      },
+      {
+        "number": 2,
+        "action": "Consultar o resultado.",
+        "expected": "Valor opaco preservado; validação de domínio permanece no consumidor."
+      }
+    ],
+    "source": "H03 exclusões",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8056",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-01",
+    "story": "ETICS-252611",
+    "title": "Coletar fragmentos em CLOB sem alterar GP",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Acesso técnico somente de consulta a RECON_EQPT.",
+    "testData": "GP contém objeto antigo X; IM retorna dois fragmentos novos Y e Z.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar a reconciliação.",
+        "expected": "Coleta concluída."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar CLOB de RECON_EQPT e JSON do GP.",
+        "expected": "CLOB contém array apenas de Y e Z, cada fragmento com objectType e attributes; não contém cópia de X; GP mantém snapshot inicial."
+      }
+    ],
+    "source": "H04 RN2–3,11",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8057",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-02",
+    "story": "ETICS-252611",
+    "title": "Aplicar lote misto com única atualização",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy de NestedRuleCaller disponível.",
+    "testData": "GP contém singleton S e T/id=A; IM atualiza S e A e insere T/id=B.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "S e A substituídos integralmente; B inserido."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar o contador e o argumento do NestedRuleCaller.",
+        "expected": "Exatamente uma chamada para o equipamento, contendo JSON final com os três resultados."
+      }
+    ],
+    "source": "H04 RN4–8",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8058",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-03",
+    "story": "ETICS-252611",
+    "title": "Abortar lote quando qualquer fragmento é inválido",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy de NestedRuleCaller disponível.",
+    "testData": "Lote com fragmento válido seguido de fragmento inválido.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Atualização rejeitada; nenhum fragmento aplicado."
+      },
+      {
+        "number": 2,
+        "action": "Conferir GP e contador.",
+        "expected": "Snapshot original preservado; zero chamadas ao NestedRuleCaller."
+      }
+    ],
+    "source": "H04 RN7,9",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8059",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-04",
+    "story": "ETICS-252611",
+    "title": "Abortar atualização com documento GP inválido",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy disponível; fixture controlada para JSON inválido.",
+    "testData": "Documento GP malformado e lote IM válido.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Falha diagnosticada sem aplicar fragmentos."
+      },
+      {
+        "number": 2,
+        "action": "Conferir contador e inventário.",
+        "expected": "Zero chamadas ao NestedRuleCaller; conteúdo anterior não substituído parcialmente."
+      }
+    ],
+    "source": "H04 RN9",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8060",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-05",
+    "story": "ETICS-252611",
+    "title": "Distinguir chaves por maiúsculas e minúsculas",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "Tipo T registrado com chave id; GP tem id=abc; IM retorna id=ABC.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Objeto id=ABC inserido separadamente; id=abc preservado."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar o documento final.",
+        "expected": "Não há conversão de caixa nem colisão entre as duas identidades."
+      }
+    ],
+    "source": "H04 RN5–6",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8061",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-06",
+    "story": "ETICS-252611",
+    "title": "Não normalizar objectType",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Registro com dois tipos válidos que diferem somente em caixa.",
+    "testData": "Tipos T e t registrados; GP contém T/id=A; IM retorna t/id=A.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "T/id=A preservado; t/id=A tratado como identidade distinta."
+      },
+      {
+        "number": 2,
+        "action": "Comparar nomes dos tipos no JSON final.",
+        "expected": "Caixa original mantida."
+      }
+    ],
+    "source": "H04 RN6",
+    "notes": "Requer dois tipos válidos registrados; não presumir aceitação de tipo desconhecido.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8062",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-07",
+    "story": "ETICS-252611",
+    "title": "Preservar configurações ausentes na resposta IM",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "GP contém A e B; IM retorna somente atualização de A.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "A atualizado."
+      },
+      {
+        "number": 2,
+        "action": "Conferir B no GP.",
+        "expected": "B permanece integralmente, sem exclusão por ausência na resposta."
+      }
+    ],
+    "source": "H04 RN10",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8063",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-08",
+    "story": "ETICS-252611",
+    "title": "Aceitar resposta IM sem objetos HW",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "GP com configurações existentes; resposta IM válida sem fragmentos HW.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar a reconciliação e consultar resultado.",
+        "expected": "Ausência de objetos HW não causa erro de parsing."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Configurações existentes preservadas, sem inserção artificial nem exclusão."
+      }
+    ],
+    "source": "H04 RN1,10",
+    "notes": "Quantidade de chamadas para lote vazio não definida; não impor esse resultado.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8064",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-09",
+    "story": "ETICS-252611",
+    "title": "Combinar com inventário atual no momento da atualização",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "testData": "Coletar atualização de A; após coleta, inserir objeto B no GP por operação permitida.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Concluir coleta e inserir B no GP antes de Atualizar inventário.",
+        "expected": "GP contém B novo; CLOB contém somente fragmentos coletados."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "A atualizado e B preservado: merge usa documento GP atual, não snapshot da coleta."
+      }
+    ],
+    "source": "H04 contexto; visão §8",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8065",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H04-10",
+    "story": "ETICS-252611",
+    "title": "Rejeitar chave inválida sem atualizar equipamento",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy disponível.",
+    "testData": "Lote canônico de tipo com chave registrada, mas fragmento sem a chave.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Lote rejeitado por chave inválida."
+      },
+      {
+        "number": 2,
+        "action": "Verificar GP e contador.",
+        "expected": "GP preservado; zero chamadas ao NestedRuleCaller."
+      }
+    ],
+    "source": "H04 RN9",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8066",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H05-01",
+    "story": "ETICS-252614",
+    "title": "Converter cada registry de zona em um objeto",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04 e H05 disponíveis; fixture XML validada pelo contrato de zona.",
+    "testData": "equipment/additionalInfo/group/key=zona com duas registry de zonas distintas e suas interfaces.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação e consultar CLOB.",
+        "expected": "Dois fragmentos de zona correspondem às duas registry, preservando a associação de interfaces."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "As duas zonas são inseridas no mesmo documento JSON do roteador."
+      }
+    ],
+    "source": "H05",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8067",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H05-02",
+    "story": "ETICS-252614",
+    "title": "Atualizar zona existente integralmente",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Chave de zona confirmada no contrato de H05.",
+    "testData": "Zona já existente; IM retorna mesma identidade com outra lista de interfaces.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Zona substituída pela versão recebida."
+      },
+      {
+        "number": 2,
+        "action": "Comparar zona e interfaces.",
+        "expected": "Uma ocorrência para a identidade; lista final igual à recebida, sem merge com interfaces antigas."
+      }
+    ],
+    "source": "H05; H04 RN5",
+    "notes": "Nome da chave de zona depende do contrato técnico referenciado, ainda não acessível.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8068",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H05-03",
+    "story": "ETICS-252614",
+    "title": "Manter zonas fora da árvore de divergências",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H05 disponível.",
+    "testData": "Zona existente no GP com interfaces diferentes das retornadas no IM.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação e detalhar.",
+        "expected": "Zona não aparece na árvore de divergências."
+      },
+      {
+        "number": 2,
+        "action": "Consultar GP antes e depois de Atualizar inventário.",
+        "expected": "Antes mantém valor original; depois reflete zona recebida."
+      }
+    ],
+    "source": "H05",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8069",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H05-04",
+    "story": "ETICS-252614",
+    "title": "Restringir conversor de zona ao grupo zona",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Harness do conversor H05.",
+    "testData": "XML contendo zona, HA, rotas, BGP, OSPF, RIP, port, card, vlan e pseudowire.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar o conversor de H05 isoladamente.",
+        "expected": "Somente registry do grupo zona geram fragmentos."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar os fragmentos produzidos.",
+        "expected": "Nenhum fragmento produzido por H05 para os demais grupos."
+      }
+    ],
+    "source": "H05 escopo",
+    "notes": "No fluxo integrado, outros conversores habilitados podem tratar seus próprios grupos.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8070",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H05-05",
+    "story": "ETICS-252614",
+    "title": "Abortar conjunto de zonas diante de fragmento inválido",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H05; spy disponível.",
+    "testData": "Uma zona válida e outra que gere fragmento inválido conforme contrato.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Lote do equipamento rejeitado integralmente."
+      },
+      {
+        "number": 2,
+        "action": "Consultar GP e spy.",
+        "expected": "Nenhuma das zonas aplicada; zero chamadas ao NestedRuleCaller."
+      }
+    ],
+    "source": "H05 infraestrutura H04",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8071",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H06-01",
+    "story": "ETICS-252615",
+    "title": "Converter os quatro atributos HA de additionalInfo",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H06 disponíveis.",
+    "testData": "group-name=SPO-HA-121; hbdev-1=port1; hbdev-2=port2; monitor=[x3,x4], diretamente em additionalInfo.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação e inspecionar fragmento.",
+        "expected": "Configuração device contém os quatro atributos e ambos os valores de monitor."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Configuração device persistida no campo HW_OBJECTS_JSON do roteador."
+      }
+    ],
+    "source": "H06 exemplo XML",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8072",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H06-02",
+    "story": "ETICS-252615",
+    "title": "Atualizar device preservando zonas existentes",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H05/H06 disponíveis.",
+    "testData": "GP contém device antigo e zona válida; IM retorna novos quatro atributos HA.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Configuração device atualizada no documento compartilhado."
+      },
+      {
+        "number": 2,
+        "action": "Comparar zona com snapshot.",
+        "expected": "Zona preservada; não é criado documento paralelo para HA."
+      }
+    ],
+    "source": "H06",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8073",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H06-03",
+    "story": "ETICS-252615",
+    "title": "Converter somente os quatro atributos HA previstos",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Harness do conversor H06.",
+    "testData": "additionalInfo com quatro atributos HA e atributo extra; grupos zona/BGP; atributos HA homônimos dentro de port.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar conversor H06.",
+        "expected": "Somente os quatro atributos diretos de equipment/additionalInfo alimentam device."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar attributes de device.",
+        "expected": "Atributo extra, grupos e atributos da porta não foram indevidamente convertidos."
+      }
+    ],
+    "source": "H06 escopo",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8074",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H06-04",
+    "story": "ETICS-252615",
+    "title": "Persistir HA e zonas no mesmo lote",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H05/H06 disponíveis; spy de NestedRuleCaller.",
+    "testData": "Resposta IM com zona válida e quatro atributos HA válidos.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação e acionar Atualizar inventário.",
+        "expected": "Documento final contém zona e device."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar chamadas por equipamento.",
+        "expected": "Uma chamada ao NestedRuleCaller com o documento combinado."
+      }
+    ],
+    "source": "H06; H04 RN8",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8075",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H06-05",
+    "story": "ETICS-252615",
+    "title": "Substituir lista de interfaces monitoradas",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H06 disponível.",
+    "testData": "device contém monitor=[x3,x4]; IM retorna monitor=[x5] e demais atributos HA válidos.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "device atualizado."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar monitor.",
+        "expected": "Lista final contém apenas x5; x3 e x4 não são retidos por merge parcial."
+      }
+    ],
+    "source": "H06; H04 substituição integral",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8076",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H07-01",
+    "story": "ETICS-252629",
+    "title": "Inserir rota estática recebida do IM",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H07 disponível; XML e mapeamento de rota aprovados.",
+    "testData": "Rota de teste: destination-address-mask=192.0.2.0/24, priority=10, ip-address=192.0.2.1; demais campos obrigatórios conforme contrato.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Coletar rota via reconciliação.",
+        "expected": "GP permanece inalterado antes do comando de atualização."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Rota recebida está presente no documento JSON do roteador com valores mapeados corretamente."
+      }
+    ],
+    "source": "H07; visão §6.30",
+    "notes": "Fixture XML e objectType canônico ainda dependem do contrato técnico.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8077",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H07-02",
+    "story": "ETICS-252629",
+    "title": "Atualizar rota com a mesma chave composta",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Mapeamento da chave da visão confirmado para H07.",
+    "testData": "GP e IM com destino 192.0.2.0/24 e prioridade 10; próximo salto muda de 192.0.2.1 para 192.0.2.2.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Rota existente atualizada, sem duplicação."
+      },
+      {
+        "number": 2,
+        "action": "Verificar destino, prioridade e próximo salto.",
+        "expected": "Mesma chave composta; próximo salto final 192.0.2.2."
+      }
+    ],
+    "source": "H07; visão §6.30",
+    "notes": "Confirmar correspondência entre chave do modelo da visão e chave do JSON.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8078",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H07-03",
+    "story": "ETICS-252629",
+    "title": "Distinguir rotas por prioridade",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Mapeamento da chave da visão confirmado para H07.",
+    "testData": "Duas rotas com destino 192.0.2.0/24, prioridades 10 e 20 e próximos saltos distintos.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Duas rotas persistidas."
+      },
+      {
+        "number": 2,
+        "action": "Conferir identidades e atributos.",
+        "expected": "Não há colisão por considerar somente o destino; prioridade participa da identidade."
+      }
+    ],
+    "source": "H07; visão §6.30",
+    "notes": "Confirmar chave no contrato do JSON.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8079",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H07-04",
+    "story": "ETICS-252629",
+    "title": "Atualizar rotas junto das demais configurações",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04–H07 disponíveis.",
+    "testData": "GP contém device e zona; IM retorna rota estática nova.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Rota inserida no documento compartilhado."
+      },
+      {
+        "number": 2,
+        "action": "Comparar device e zona com snapshot.",
+        "expected": "Configurações não alteradas pelo lote permanecem intactas."
+      }
+    ],
+    "source": "H07; H04 RN10",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8080",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H08-01",
+    "story": "ETICS-252632",
+    "title": "Sincronizar configuração BGP do IM",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture BGP homologada e mapeamento canônico definido.",
+    "testData": "Configuração BGP válida para equipamento suportado, com valores distintos do GP.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação com a resposta controlada.",
+        "expected": "Coleta concluída sem alterar o documento GP."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Configuração BGP recebida presente no documento JSON do roteador com os valores previstos no mapeamento."
+      }
+    ],
+    "source": "H08",
+    "notes": "A visão §6.28 marca diversos atributos Discovery=NÃO, enquanto H08 solicita sincronização; confirmar mapeamento antes de executar.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8081",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H08-02",
+    "story": "ETICS-252632",
+    "title": "Sincronizar configuração OSPF do IM",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture OSPF homologada e mapeamento canônico definido.",
+    "testData": "Configuração OSPF válida para equipamento suportado, com valores distintos do GP.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação com a resposta controlada.",
+        "expected": "Coleta concluída sem alterar o documento GP."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Configuração OSPF recebida presente no documento JSON do roteador com os valores previstos no mapeamento."
+      }
+    ],
+    "source": "H08",
+    "notes": "A visão §6.28 marca diversos atributos Discovery=NÃO, enquanto H08 solicita sincronização; confirmar mapeamento antes de executar.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8082",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H08-03",
+    "story": "ETICS-252632",
+    "title": "Sincronizar configuração RIP do IM",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture RIP homologada e mapeamento canônico definido.",
+    "testData": "Configuração RIP válida para equipamento suportado, com valores distintos do GP.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Executar reconciliação com a resposta controlada.",
+        "expected": "Coleta concluída sem alterar o documento GP."
+      },
+      {
+        "number": 2,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Configuração RIP recebida presente no documento JSON do roteador com os valores previstos no mapeamento."
+      }
+    ],
+    "source": "H08",
+    "notes": "A história inclui RIP; detalhamento ausente na visão. Fixture e critérios de mapeamento pendentes.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8083",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H08-04",
+    "story": "ETICS-252632",
+    "title": "Sincronizar BGP, OSPF e RIP no mesmo equipamento",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 e os três contratos de conversão disponíveis; spy.",
+    "testData": "IM retorna configurações válidas de BGP, OSPF e RIP para equipamento suportado.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "As três configurações são aplicadas ao documento JSON do equipamento."
+      },
+      {
+        "number": 2,
+        "action": "Inspecionar configurações e chamadas.",
+        "expected": "Nenhum protocolo sobrescreve outro indevidamente; uma chamada final por equipamento."
+      }
+    ],
+    "source": "H08; H04 RN7–8",
+    "notes": "Confirmar cardinalidade e identidade de cada protocolo no contrato.",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8084",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  },
+  {
+    "id": "RECON-H08-05",
+    "story": "ETICS-252632",
+    "title": "Preservar rotas estáticas, zonas e HA ao atualizar protocolo",
+    "priority": "Alta",
+    "type": "Funcional/Integração",
+    "preconditions": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04–H08 disponíveis.",
+    "testData": "GP contém rota estática, zona, device e protocolo; IM altera somente o protocolo.",
+    "steps": [
+      {
+        "number": 1,
+        "action": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+        "expected": "Protocolo atualizado."
+      },
+      {
+        "number": 2,
+        "action": "Comparar os demais objetos com snapshot.",
+        "expected": "Rotas estáticas, zonas e HA preservados integralmente."
+      }
+    ],
+    "source": "H08; H04 RN10",
+    "notes": "",
+    "executionStatus": "Não executado",
+    "publicationStatus": "Cadastrado, convertido para BDD e verificado",
+    "zephyrKey": "ETICS-T8085",
+    "cycleKey": "ETICS-C646",
+    "scriptType": "BDD"
+  }
+]

@@ -1,0 +1,74 @@
+{
+  "id": "CT13",
+  "key": "ETICS-T8206",
+  "before": {
+    "keyNumber": 8206,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Levantar obrigatoriedade, formato, domínio e dependências que efetivamente se aplicam a cada campo. O documento determina preservação das regras, mas não lista limites nem textos de mensagens.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:02.751Z",
+    "objective": "Validar manter validações de consistência dos campos. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92604,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then o sistema apresenta a validação correspondente e impede persistir o valor inválido\nThen o valor válido persiste",
+          "index": 0,
+          "description": "When tentar salvar por Corrigir inventário um valor que viola uma regra vigente, repetindo para cada regra aplicável",
+          "id": 210983
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT13 | Manter validações de consistência dos campos",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8206",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8206,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Levantar obrigatoriedade, formato, domínio e dependências que efetivamente se aplicam a cada campo. O documento determina preservação das regras, mas não lista limites nem textos de mensagens.",
+    "updatedOn": "2026-09-23T18:58:06.356Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:02.751Z",
+    "objective": "Validar manter validações de consistência dos campos. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given a matriz de atributos não bloqueados contém as regras de consistência vigentes e exemplos de valores inválidos\nAnd os valores persistidos do lance foram registrados antes da tentativa\nWhen tentar salvar por Corrigir inventário um valor que viola uma regra vigente, repetindo para cada regra aplicável\nThen o sistema apresenta a validação correspondente e impede persistir o valor inválido\nAnd o atributo permanece com seu valor anterior ao consultar novamente o lance\nWhen informar um valor válido para o mesmo atributo e salvar\nThen o valor válido persiste",
+      "id": 17554,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT13 | Manter validações de consistência dos campos",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8206",
+    "status": "Draft"
+  }
+}

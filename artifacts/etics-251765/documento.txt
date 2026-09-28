@@ -1,0 +1,579 @@
+  |  | 
+DOCUMENTO DE VISÃO
+Flexibilização de Projeto
+OSS Suíte / Sistema de Gerência da Planta
+ ASK "Nome_documento" Insira o nome do documento \d <Nome do documento><Nome
+DPS
+
+Versão deste documento: 01.01 ASK "Versão" Insira a versão do documento \d <Versão><Versão> |  | 
+
+
+
+
+
+
+
+
+
+
+
+
+ |  |         | RESERVADO |  | 
+
+
+
+
+
+
+
+
+© Fundação CPqD
+Reservados todos os direitos
+
+
+
+
+
+
+
+
+Este documento não deve ser reproduzido sem a expressa autorização da Fundação CpqD.
+Qualquer reprodução, sem prévia autorização, infringe os direitos de copyright
+
+
+
+Sumário
+
+ TOC \o "1-3" \h \z \u  HYPERLINK \l "_Toc233986823" 1	Objetivo	 PAGEREF _Toc233986823 \h 5
+ HYPERLINK \l "_Toc233986824" 2	Definições e Abreviações	 PAGEREF _Toc233986824 \h 5
+ HYPERLINK \l "_Toc233986825" 2.1	Abreviaturas	 PAGEREF _Toc233986825 \h 5
+ HYPERLINK \l "_Toc233986826" 2.2	Conceitos	 PAGEREF _Toc233986826 \h 5
+ HYPERLINK \l "_Toc233986827" 3	Necessidades	 PAGEREF _Toc233986827 \h 6
+ HYPERLINK \l "_Toc233986828" 4	Escopo	 PAGEREF _Toc233986828 \h 6
+ HYPERLINK \l "_Toc233986829" 5	Não Escopo	 PAGEREF _Toc233986829 \h 7
+ HYPERLINK \l "_Toc233986830" 6	Cenário Operacional	 PAGEREF _Toc233986830 \h 8
+ HYPERLINK \l "_Toc233986831" 6.1	Flexibilização de operações em fibras	 PAGEREF _Toc233986831 \h 8
+ HYPERLINK \l "_Toc233986832" 6.1.1 – Rede Existente – Conexão/desconexão de fibras	 PAGEREF _Toc233986832 \h 8
+ HYPERLINK \l "_Toc233986833" 6.1.2 – Rede Existente – Divisão de cabo	 PAGEREF _Toc233986833 \h 8
+ HYPERLINK \l "_Toc233986834" 6.1.3 – Rede Existente – Reassociação de pontos de acesso	 PAGEREF _Toc233986834 \h 9
+ HYPERLINK \l "_Toc233986835" 6.1.4 – Rede Existente – Instalação de splitter	 PAGEREF _Toc233986835 \h 9
+ HYPERLINK \l "_Toc233986836" 6.1.5 – Rede Projetada – Conexão/desconexão de fibras	 PAGEREF _Toc233986836 \h 10
+ HYPERLINK \l "_Toc233986837" 6.1.6 – Rede Projetada – Divisão de cabo	 PAGEREF _Toc233986837 \h 11
+ HYPERLINK \l "_Toc233986838" 6.1.7 – Rede Projetada – Reassociação de pontos de acesso	 PAGEREF _Toc233986838 \h 11
+ HYPERLINK \l "_Toc233986839" 6.1.8 – Rede Projetada – Instalação de splitter	 PAGEREF _Toc233986839 \h 12
+ HYPERLINK \l "_Toc233986840" 6.2	Alteração de atributos para correção do inventário	 PAGEREF _Toc233986840 \h 12
+ HYPERLINK \l "_Toc233986841" 6.2.1 - Alteração em atributos distintos	 PAGEREF _Toc233986841 \h 12
+ HYPERLINK \l "_Toc233986847" 6.2.2 - Alteração no mesmo atributo	 PAGEREF _Toc233986847 \h 13
+ HYPERLINK \l "_Toc233986853" 6.2.3 - Alteração no Tipo de Lance de Cabo Óptico conectado	 PAGEREF _Toc233986853 \h 15
+ HYPERLINK \l "_Toc233986854" 6.3	Reposicionamento de objetos no mapa	 PAGEREF _Toc233986854 \h 16
+ HYPERLINK \l "_Toc233986855" 6.3.1 - Reposicionar objeto com OT	 PAGEREF _Toc233986855 \h 16
+ HYPERLINK \l "_Toc233986861" 6.3.2 - Reposicionar objeto sem OT	 PAGEREF _Toc233986861 \h 17
+ HYPERLINK \l "_Toc233986865" 6.3.3 - Reposicionar objeto com OT e sem OT	 PAGEREF _Toc233986865 \h 17
+ HYPERLINK \l "_Toc233986866" 7	Requisitos Funcionais	 PAGEREF _Toc233986866 \h 19
+ HYPERLINK \l "_Toc233986867" 7.1 - Flexibilização de operações em fibras	 PAGEREF _Toc233986867 \h 19
+ HYPERLINK \l "_Toc233986868" 7.2 - Alteração de atributos para correção do inventário	 PAGEREF _Toc233986868 \h 20
+ HYPERLINK \l "_Toc233986869" 7.3 - Reposicionamento de objetos no mapa	 PAGEREF _Toc233986869 \h 21
+ HYPERLINK \l "_Toc233986870" 8	Requisitos Não-Funcionais	 PAGEREF _Toc233986870 \h 21
+ HYPERLINK \l "_Toc233986871" 9	Suposições e Dependências	 PAGEREF _Toc233986871 \h 22
+ HYPERLINK \l "_Toc233986872" 10	Referências	 PAGEREF _Toc233986872 \h 22
+ HYPERLINK \l "_Toc233986873" 11	Histórico de alterações deste documento	 PAGEREF _Toc233986873 \h 22
+Objetivo
+O objetivo desse documento é descrever a solução para flexibilizar o GPL para minimizar os conflitos entre Ordens de Trabalho causados pelas alterações da rede feitas pelos projetos.
+
+Definições e Abreviações
+Abreviaturas
+
+GPL: CPQD Gerência da Planta 
+OT – Ordem de Trabalho
+TFO – Terminal de Fibra Óptica
+GPON - Gigabit Passive Optical Network
+
+Conceitos
+Não se aplica.
+
+
+
+Necessidades
+Atualmente, existem várias frentes de trabalho alterando a rede no Gerência da Planta ao mesmo tempo. Enquanto algumas equipes fazem projetos, outras atualizam dados do inventário para refletir as informações de campo.
+Por exemplo: 
+Móvel fazendo um projeto de anel para atender as antenas;
+Empresarial usando uma fibra para atender um cliente, saindo de um GPON;
+Outra frente atualizando todo o inventário.
+
+Com este volume grande de projetos em paralelo, alterando os mesmos trechos da rede, estão ocorrendo conflitos entre as Ordens de Trabalho (OTs).
+
+Outro fator que contribui para o aumento dos conflitos é o fato de que alguns projetos ficam abertos por um longo período.
+
+A CLARO necessita de uma solução para minimizar os conflitos das OTs causados pelas alterações da rede feitas pelos projetos.
+
+Escopo
+Para atender a necessidade da CLARO, será necessário alterar alguns comportamentos da aplicação para dar maior flexibilidade na elaboração dos projetos.
+Escopo original da solução:
+
+Flexibilização das funcionalidades de divisão, reassociação de pontos de acesso, conexão e desconexão de fibras de redes Existentes e Projetadas para reduzir o nível de dependência dos objetos afetados com a OT; 
+Permitir a alteração de alguns atributos do Lance de Cabo Óptico e Terminal de Fibras (TFO) para ajuste do inventário sem necessidade de OT para não gerar dependência com outros projetos. Para isso, deverá ser criada uma nova operação de atualização do inventário, permitindo a alteração controlada de atributos de objetos Existentes ou Projetados/Modificação, sem a necessidade de uma Ordem de Trabalho (OT). 
+Permitir o reposicionamento de Lance de Cabo Óptico e TFO sem necessidade de OT para não gerar dependência com outros projetos. 
+
+Foi solicitado que fossem tratados mais alguns itens. Segue o escopo adicional:
+
+Para os itens 2 e 3, tratar também a Sobra de Cabo Óptico;
+Para o item 2, permitir a alteração de todos os atributos não bloqueados dos objetos Lance de Cabo Óptico, Terminal de Fibras e Sobra de Cabo Óptico;
+Para o item 2, restringir a operação para usuários associados a um perfil que será informado pela Claro.
+
+
+Este documento descreve a solução completa, que será entregue em 3 fases:
+
+Entrega 1
+Para o item 1, será entregue a solução para rede existente, exceto cenário 6.1.4 - de instalação de Splitter 
+Para os itens 2 e 3, será entregue o tratamento para o Lance de Cabo Óptico
+
+
+
+Entrega 2
+Para o item 1, será entregue a solução para rede projetada + cenário 6.1.4 - de instalação de Splitter
+Para os itens 2 e 3, será entregue o tratamento para o Terminal de Fibras
+
+Entrega 3
+Entrega dos itens do escopo adicional.
+
+
+
+
+
+Não Escopo
+
+Qualquer funcionalidade não incluída explicitamente neste documento está fora do escopo do projeto.
+
+Cenário Operacional
+
+Flexibilização de operações em fibras
+
+6.1.1 – Rede Existente – Conexão/desconexão de fibras
+
+Em alguns casos, diferentes equipes precisam trabalhar na mesma caixa de emenda, cada uma realizando conexões em fibras distintas, porém pertencentes ao mesmo lance de cabo. Atualmente, o sistema vincula o lance de cabo à primeira Ordem de Trabalho (OT) que realizou uma conexão, impedindo que outras equipes executem suas conexões nesse mesmo lance.
+
+Para solucionar este problema, será permitido que por exemplo, uma OT A e uma OT B derivem redes a partir de diferentes fibras do mesmo lance de cabo na mesma caixa de emenda. Para isso, em cada OT deve-se:
+desconectar a fibra existente;
+reconectar a fibra com o novo cabo projetado;
+inserir contagem na fibra.
+A contagem é propagada para a esquerda, ou seja, para a fibra existente.
+
+
+
+
+
+6.1.2 – Rede Existente – Divisão de cabo
+Enquanto estão sendo feitos projetos para atender, por exemplo, uma antena do móvel ou um cliente (OT A), pode ocorrer uma manutenção em campo que demandará uma divisão do cabo existente (OT B).
+
+
+
+Para solucionar este problema, será permitido que um lance de cabo existente seja dividido em uma emenda com a OT B e em outra emenda, uma fibra existente seja desconectada e reconectada com um novo cabo projetado na OT A. 
+
+6.1.3 – Rede Existente – Reassociação de pontos de acesso
+Em função de uma correção do cadastro, pode ser necessário reassociar os pontos de acesso de algum lance de cabo da rede existente (OT C), enquanto estão sendo feitos projetos para atender uma antena do móvel ou um cliente (OT A e OT D).
+
+
+
+Para solucionar este problema, será permitido que seja feita a reassociação de ponto de acesso do cabo Existente com a OT C e em outra emenda, uma fibra existente seja desconectada e reconectada com um novo cabo projetado na OT A. 
+
+
+6.1.4 – Rede Existente – Instalação de splitter
+Pode ser necessário instalar um splitter em uma fibra da rede existente para atender clientes  GPON (OT E), enquanto outros projetos fazem conexões em outras fibras do mesmo lance de cabo (OT D).
+
+
+Para solucionar este problema, será permitido que seja instalado um Splitter com a OT E na caixa de emenda para derivar a rede para atendimento de um cliente e na mesma emenda, uma fibra existente seja desconectada e reconectada com um novo cabo projetado na OT D. 
+
+6.1.5 – Rede Projetada – Conexão/desconexão de fibras
+O lance de cabo está projetado com a OT A. É necessário derivar uma nova rede a partir de uma fibra com a OT B e derivar uma nova rede a partir de uma fibra com a OT C, na mesma caixa de emenda. 
+
+
+Antes de fazer a desconexão da fibra da “OT A” com uma OT diferente (B ou C), o usuário deverá executar a operação de Reabertura/Fechamento no TFO (emenda) com a “OT B” ou “OT C” para indicar que haverá uma intervenção naquele ponto.
+A fibra projetada deve ser então desconectada e reconectada com um novo cabo projetado na “OT B” ou “OT C”.
+
+6.1.6 – Rede Projetada – Divisão de cabo
+Durante a elaboração do projeto “OT B” abaixo, se for identificada a necessidade de dividir um cabo projetado de outra OT para derivar a rede a partir da nova caixa de emenda, deverá ser solicitada a divisão para o time que está projetando a “OT A”.
+Não será possível dividir um cabo projetado com uma OT diferente da sua.
+
+
+
+
+6.1.7 – Rede Projetada – Reassociação de pontos de acesso
+Durante a elaboração do projeto “OT B” abaixo, se for identificada a necessidade de reassociar os pontos de acesso de um cabo projetado de outra OT, deverá ser solicitada a reassociação para o time que está projetando a “OT A”.
+Não será possível reassociar os pontos de acesso de um cabo projetado com uma OT diferente da sua.
+
+
+6.1.8 – Rede Projetada – Instalação de splitter
+O lance de cabo está projetado com a OT A. É necessário derivar uma nova rede a partir de uma fibra com a OT C e derivar a rede para atendimento de um cliente com a OT B na mesma caixa de emenda. 
+
+
+
+O sistema permitirá a instalação de splitter em uma caixa de emenda e conexão com fibra projetada em outra OT.
+Também será necessário executar a operação de Reabertura/Fechamento no TFO antes de fazer a desconexão/conexão das fibras.
+
+Alteração de atributos para correção do inventário
+
+Em algumas situações, o inventário nem sempre reflete com precisão as condições reais observadas em campo. Nestes casos, é necessário atualizar alguns atributos para manter a coerência entre os dados do sistema e a realidade operacional.
+Além disso, diferentes frentes de trabalho podem atuar simultaneamente — por exemplo, uma equipe desenvolvendo novos projetos (como anéis ópticos para atender antenas móveis) e outra atualizando o inventário existente. Essa atuação paralela pode gerar dependências indesejadas entre as OTs das equipes.
+Para tratar este cenário, deverá ser criada uma nova operação de atualização do inventário, permitindo a alteração controlada de atributos de objetos Existentes ou Projetados/Modificação, sem a necessidade de uma Ordem de Trabalho (OT). Esta operação será chamada “Corrigir inventário” e estará disponível para Lance de Cabo Óptico e Terminal de Fibras (TFO).
+
+
+6.2.1 - Alteração em atributos distintos
+Tomando como exemplo:
+
+Lance de Cabo Óptico id 10
+
+Usuário a efetua a operação “Modificar atributos” com a OT A
+Atributo atualizado: Lote de Fabricação ( de “123” para “456”
+
+Usuário b efetua a operação “Corrigir inventário” sem OT
+Atributo atualizado: Rota ( de “XYZ” para “ABC”
+
+
+Como as operações atualizam atributos distintos, a ordem de execução das operações e da implantação da OT A não afetam o resultado final.
+Cancelar ou desfazer a OT A só afeta a atualização da operação 1.
+
+Resultado Final (se a OT A for implantada)
+Lance de Cabo Óptico id 10
+Lote de Fabricação = 456
+Rota = ABC
+
+Histórico:
+Modificar atributos: Lote de Fabricação ( de “123” para “456”
+Corrigir inventário: Rota ( de “XYZ” para “ABC”
+Implantar OT
+
+Resultado Final (se a OT A for cancelada)
+Lance de Cabo Óptico id 10
+Lote de Fabricação = 123
+Rota = ABC
+
+Histórico:
+Modificar atributos: Lote de Fabricação ( de “123” para “456”
+Corrigir inventário: Rota ( de “XYZ” para “ABC”
+Cancelar OT
+
+
+
+
+
+
+6.2.2 - Alteração no mesmo atributo
+
+Tomando como exemplo:
+
+Lance de Cabo Óptico id 10
+
+Usuário a efetua a operação “Modificar atributos” com a OT A
+Atributo atualizado: Comprimento Real Total (m)  ( de “10,00” para “15,00”
+
+Usuário a implanta a OT A
+
+Usuário b efetua a operação “Corrigir inventário” sem OT (objeto está Existente)
+Atributo atualizado: Comprimento Real Total (m)  ( de “15,00” para “20,00”
+
+Resultado Final 
+Lance de Cabo Óptico id 10
+Comprimento Real Total (m) = 20,00
+
+Histórico:
+Modificar atributos: Comprimento Real Total (m)  ( de “10,00” para “15,00”
+Implantar OT
+Corrigir inventário: Comprimento Real Total (m)  ( de “15,00” para “20,00”
+
+
+Lance de Cabo Óptico id 10
+
+Usuário b efetua a operação “Corrigir inventário” sem OT (objeto está Existente)
+Atributo atualizado: Comprimento Real Total (m)  ( de “10,00” para “20,00”
+
+Usuário a efetua a operação “Modificar atributos” com a OT A
+Atributo atualizado: Comprimento Real Total (m)  ( de “20,00” para “15,00”
+
+Usuário a implanta a OT A
+
+
+Resultado Final 
+Lance de Cabo Óptico id 10
+Comprimento Real Total (m) = 15,00
+
+Histórico:
+Corrigir inventário: Comprimento Real Total (m)  ( de “10,00” para “20,00”
+Modificar atributos: Comprimento Real Total (m)  ( de “20,00” para “15,00”
+Implantar OT
+
+Lance de Cabo Óptico id 10
+
+Usuário a efetua a operação “Modificar atributos” com a OT A
+Atributo atualizado: Comprimento Real Total (m)  ( de “10,00” para “15,00”
+
+Usuário b efetua a operação “Corrigir inventário” sem OT (objeto está Projetado/Modificação)
+Atributo atualizado: Comprimento Real Total (m)  ( de “15,00” para “20,00”
+(Sobrepõe o valor atualizado com a OT A)
+
+Usuário a implanta a OT A (vai implantar com Comprimento Real Total (m) = 20,00)
+
+
+Como as operações atualizam o mesmo atributo, a ordem de execução das operações e da implantação da OT A afetam o resultado final.
+Cancelar ou desfazer a OT A só afeta a atualização da operação 1.
+
+Resultado Final 
+Lance de Cabo Óptico id 10
+Comprimento Real Total (m) = 20,00 (perde a alteração feita com a OT A)
+
+Histórico:
+Modificar Atributos: Comprimento Real Total (m)  ( de “10,00” para “15,00”
+Corrigir Inventário: Comprimento Real Total (m)  ( de “15,00” para “20,00”
+Implantar OT
+
+Lance de Cabo Óptico id 10
+
+Usuário a efetua a operação “Modificar atributos” com a OT A
+Atributo atualizado: Comprimento Real Total (m)  ( de “10,00” para “15,00”
+
+Usuário b efetua a operação “Corrigir inventário” sem OT (objeto está Projetado/Modificação)
+Atributo atualizado: Comprimento Real Total (m)  ( de “15,00” para “20,00”
+
+Usuário cancela/desfaz a OT A
+
+
+
+Resultado Final (se a OT A for cancelada)
+Lance de Cabo Óptico id 10
+Comprimento Real Total (m) = 20,00
+
+
+Histórico:
+Modificar Atributos: Comprimento Real Total (m)  ( de “10,00” para “15,00”
+Corrigir inventário: Comprimento Real Total (m)  ( de “15,00” para “20,00”  (No histórico, vai apresentar o valor 15,00 pois no momento em que a operação “Corrigir Inventário” foi executada era esse valor. No Cancelar OT, o histórico do Corrigir inventário não é alterado)
+Cancelar OT
+
+
+
+
+
+
+6.2.3 - Alteração no Tipo de Lance de Cabo Óptico conectado
+A alteração no Tipo de Lance de Cabo Óptico conectado não é permitida atualmente no sistema. A nova operação “Corrigir inventário” permitirá que esta alteração seja feita, desde que o novo tipo tenha a quantidade de fibras maior ou igual à quantidade do tipo atual.
+Se a quantidade de fibras do tipo novo for menor do que a quantidade de fibras do tipo atual
+O sistema retornará uma mensagem de erro e impedirá a alteração.
+Se a quantidade de fibras do tipo novo for igual à quantidade de fibras do tipo atual
+O sistema alterará o tipo do lance/coto e manterá as fibras, contagens e conexões como estão.
+Se a quantidade de fibras do tipo novo for maior do que a quantidade de fibras do tipo atual:
+O sistema alterará o tipo do lance/coto e deve criar automaticamente as fibras faltantes, mantendo as fibras que já existem como estão.
+
+
+Exemplo: Troca de tipo de 12 para 24 fibras
+
+
+
+O sistema criará as fibras de 13 até 24.
+O sistema deve manter as fibras de 1 até 12, com as contagens e conexões que possuem.
+Usuário deverá criar manualmente a contagem para as fibras de 13 até 24 e conectará manualmente essas fibras.
+
+Reposicionamento de objetos no mapa
+Ao desenhar um novo projeto, muitas vezes é preciso mover cabos já existentes ou que pertencem a outros projetos, para garantir que os objetos não fiquem sobrepostos no mapa. Atualmente o sistema exige que uma OT esteja definida como corrente para reposicionar objetos. Isso pode gerar dependência com outros projetos.
+Para tratar este cenário, serão flexibilizadas regras no sistema para permitir a edição gráfica do Lance de Cabo Óptico e Terminal de Fibra Óptica (TFO) sem necessidade de OT. No momento da edição, se não tiver nenhuma OT definida como corrente ou se a OT corrente for diferente da OT do objeto reposicionado, será solicitada confirmação para o usuário.
+Será necessário registrar histórico de quem fez a edição.
+6.3.1 - Reposicionar objeto com OT
+Tomando como exemplo:
+TFO  id 10
+
+OT-A está definida como corrente e é a mesma associada ao objeto OU objeto não está associado a nenhuma OT
+
+Usuário seleciona o TFO e a operação “Mover” ou “Ctrl + M”.
+Usuário indica uma nova posição no mapa e confirma.
+Operação é executada com sucesso. Sistema registra a mudança de posição no histórico associada a OT-A.
+
+Se a OT-A for implantada, o objeto ficará posicionado na nova coordenada.
+Se a OT-A for cancelada ou desfeita, o objeto retornará para a sua posição original
+
+
+Histórico:
+Registro da mudança da posição original para a nova posição com a OT-A
+Registro da implantação ou cancelamento da OT-A
+
+
+
+
+
+
+
+6.3.2 - Reposicionar objeto sem OT
+Tomando como exemplo:
+TFO  id 10
+
+Nenhuma OT está definida como corrente OU a OT-A definida como corrente é diferente da OT-B associada ao objeto
+
+Usuário seleciona o TFO e a operação “Mover” ou “Ctrl + M”.
+Sistema avisa ao usuário de que não há OT definida como corrente ou de que a OT definida como corrente é diferente da OT associada ao objeto e pede confirmação para prosseguir com a operação.
+Usuário confirma.
+Usuário indica a nova posição no mapa e confirma.
+Operação é executada com sucesso. Sistema registra a mudança de posição no histórico sem associar com nenhuma OT.
+
+No passo 3, se o usuário cancelar, a operação é interrompida e não registra histórico.
+No cenário em que o objeto está associado a uma OT-B, se esta for cancelada ou desfeita, o objeto continuará posicionado na nova coordenada.
+
+Histórico:
+Registro da mudança da posição original para a nova posição sem OT
+
+
+
+
+
+
+
+
+6.3.3 - Reposicionar objeto com OT e sem OT
+Tomando como exemplo:
+TFO  id 10
+
+OT-A está definida como corrente e é a mesma associada ao objeto OU objeto não está associado a nenhuma OT
+
+Usuário a seleciona o TFO e a operação “Mover” ou “Ctrl + M”.
+Usuário a indica a nova posição no mapa e confirma.
+Operação é executada com sucesso. Sistema registra a mudança de posição no histórico associada a OT-A.
+
+       Nenhuma OT está definida como corrente
+Usuário b seleciona o TFO e a operação “Mover” ou “Ctrl + M”.
+Sistema avisa ao usuário de que não há OT definida como corrente ou de que a OT definida como corrente é diferente da OT associada ao objeto e pede confirmação para prosseguir com a operação.
+Usuário confirma.
+Usuário b indica a nova posição no mapa e confirma.
+Operação é executada com sucesso. Sistema registra a mudança de posição no histórico sem associar com nenhuma OT.
+
+OT-A está definida como corrente e é a mesma associada ao objeto OU objeto não está associado a nenhuma OT
+
+Usuário a implanta a OT-A
+
+Resultado Final 
+TFO id 10 ficará na posição definida sem OT
+
+Histórico:
+Registro da mudança da posição original para a nova posição com a OT-A
+Registro da mudança da posição alterada pela OT-A para a nova posição sem OT
+Registro da implantação da OT
+
+
+Requisitos Funcionais 
+
+7.1 - Flexibilização de operações em fibras
+Flexibilização das funcionalidades de divisão, reassociação de pontos de acesso, conexão e desconexão de fibras de redes Existentes e Projetadas para reduzir o nível de dependência dos objetos afetados com a OT.
+
+
+Rede Existente
+
+Conexão/Desconexão de Fibras
+O sistema será alterado para que a associação com a OT ocorra no nível da fibra, permitindo que a OT´s diferentes derivem redes a partir de diferentes fibras do mesmo lance de cabo.
+A propagação da contagem ocorrerá no sentido da fibra existente. Não ocorrerá propagação em rede Projetada/Instalação que já tenha alguma contagem associada à fibra.
+
+
+Divisão de Cabo
+O sistema permitirá que seja feita divisão do cabo Existente em qualquer ponto da rede enquanto são feitas conexões/desconexões de fibras do cabo.
+
+Reassociação de Pontos de Acesso de Cabo
+O sistema permitirá que seja feita reassociação de pontos de acesso do cabo Existente em qualquer ponto da rede enquanto são feitas conexões/desconexões de fibras do cabo.
+
+Instalação de Splitter
+O sistema permitirá a instalação de splitter em uma fibra de uma rede Existente em um projeto enquanto outro projeto faz a derivação da rede a partir de outra fibra
+
+
+Rede Projetada
+
+Conexão/Desconexão de Fibras
+Será permitido derivar novas redes a partir de cabos projetados em outra OT. Como trata-se de rede projetada, a operação Reabertura/Fechamento deverá ser utilizada para indicar que haverá uma intervenção naquele ponto.
+Se a operação Cancelar Reabertura/Fechamento do TFO for executada, as conexões originais da OT original do lance de cabo deverão ser refeitas.
+A contagem só será propagada entre cabos de OTs diferentes se não houver outra contagem definida previamente, a fim de evitar a redefinição de contagem de outros projetos de forma indevida.
+
+
+Divisão de Cabo
+Não será possível dividir um cabo projetado com uma OT diferente da sua.
+
+Reassociação de Pontos de Acesso de Cabo
+Não será possível reassociar os pontos de acesso de um cabo projetado com uma OT diferente da sua.
+
+Instalação de Splitter
+O sistema permitirá a instalação de splitter em uma caixa de emenda e conexão com fibra projetada em outra OT.
+
+
+7.2 - Alteração de atributos para correção do inventário
+Para minimizar a concorrência entre os projetos, deverá ser criada uma nova operação de atualização do inventário, permitindo a alteração controlada de atributos de objetos Existentes ou Projetados/Modificação, sem a necessidade de uma Ordem de Trabalho (OT).
+Esta operação deverá ser chamada “Corrigir inventário”, será disponibilizada para os objetos Lance de Cabo Óptico, Terminal de Fibra Óptica (TFO) e Sobra de Cabo Óptico e permitirá a edição dos atributos não bloqueados dos objetos de um determinado conjunto de atributos.
+Para Lance de Cabo Óptico, os seguintes atributos poderão ser editados sem OT:
+Rota
+Comprimento Real Total (m)
+Propriedade
+Proprietário
+Tipo de Rede
+Observações
+Configuração de Cor
+Tipo
+No caso de alteração do Tipo do Lance de Cabo Óptico somente será permitido aumentar a capacidade do cabo.
+
+Para Terminal Óptico, os seguintes atributos poderão ser editados sem OT:
+Código
+Rota
+Tipo
+Propriedade
+Proprietário
+Observações
+Esta operação não mudará a Situação do objeto. Se houver uma OT definida como corrente quando a operação for executada, ela não será considerada.
+As regras atuais de consistência para alteração dos campos devem ser mantidas.
+No caso da alteração do Tipo do Lance de Cabo:
+Se a quantidade de fibras do tipo novo for menor do que a quantidade de fibras do tipo atual
+O sistema retornará uma mensagem de erro e impedirá a alteração.
+Se a quantidade de fibras do tipo novo for igual à quantidade de fibras do tipo atual
+O sistema alterará o tipo do lance/coto e manterá as fibras, contagens e conexões como estão.
+Se a quantidade de fibras do tipo novo for maior do que a quantidade de fibras do tipo atual:
+O sistema alterará o tipo do lance/coto e deve criar automaticamente as fibras faltantes, mantendo as fibras que já existem como estão.
+
+Para garantir a rastreabilidade das alterações, será necessário registrar automaticamente o histórico das operações de alteração dos objetos Lance de Cabo Óptico, Terminal de Fibra Óptica e Sobra de Cabo Óptico, incluindo usuário responsável e data/hora da modificação.
+Além disso, para a rastreabilidade completa, será necessário registrar automaticamente o histórico das operações “Cancelar OT”, “Desfazer alterações de OT” e “Implantar OT”, incluindo usuário responsável e data/hora da modificação.
+A operação deverá estar disponível somente para usuários associados a um perfil específico, que será informado pela Claro.
+
+7.3 - Reposicionamento de objetos no mapa
+Ao desenhar um novo projeto, muitas vezes é preciso mover cabos já existentes ou que pertencem a outros projetos, para garantir que os objetos não fiquem sobrepostos no mapa. Quando isto ocorre, é importante ter um histórico de quem fez a edição.
+Serão flexibilizadas regras no sistema para permitir a edição gráfica do Lance de Cabo Óptico, Terminal de Fibra Óptica (TFO) e Sobra de Cabo Óptico sem necessidade de OT. No momento da edição, se não tiver nenhuma OT definida como corrente ou se a OT corrente for diferente da OT do objeto reposicionado, será solicitada confirmação para o usuário.
+Se o usuário não confirmar, a edição será desfeita.
+Se o usuário confirmar, a edição será efetivada e será armazenado o histórico de quem fez a modificação e a data. Esta informação poderá ser consultada no relacionado Histórico dos objetos Lance de Cabo Óptico, TFO e Sobra de Cabo Óptico.
+Esta solução irá contemplar as edições gráficas realizadas diretamente a partir do mapa: mover, editar vértices, rotacionar.
+A edição gráfica não será desfeita, ou seja, o objeto não retornará para a sua posição original, caso a OT que motivou a alteração seja cancelada ou desfeita.
+
+Se o objeto estiver associado a uma OT e for reposicionado com esta OT, o sistema mantém o comportamento atual, ou seja, move o objeto vinculado à OT. Se a OT for cancelada, o reposicionamento também será cancelado. Porém, para manter a rastreabilidade de todas as operações gráficas que foram efetuadas no lance, deve registrar em histórico a operação associada a OT. 
+
+
+
+
+Requisitos Não-Funcionais
+Não se aplica.
+
+Suposições e Dependências
+Não se aplica.
+
+
+Referências
+RN-22831-2025-Flexibilização Projetos-VB  https://docs.google.com/presentation/d/1y8HyPctkJNltd1_67ZaLcPU3jkGUqzKNO02Pp__ZHj8/edit?slide=id.g3863087c636_0_13#slide=id.g3863087c636_0_13
+
+
+Histórico de alterações deste documento
+Data de elaboração | Versão | Autor | Descrições das alterações realizadas |  | 10/06/2026 | 01.00 | Fabiana Bellette | HYPERLINK "https://jira.cpqd.com.br/browse/ETICS-250547"[ETICS-250547] DEMANDA (Epico) - CLARO - Flexibilização Projetos
+Versão inicial do documento. |  | 03/07/2026 | 01.01 | Fabiana Bellette | Ajustes após a revisão do cliente.
+Será desenvolvida uma fase 3 que irá:
+Permitir corrigir e reposicionar o objeto Sobra sem OT
+Permitir alterar todos os atributos não bloqueados na operação Corrigir inventário
+Disponibilizar a operação Corrigir inventário somente para usuários de um perfil específico  |  | 
+
+
+
+
+
+
+
+
+
+ | Flexibilização de Projeto | Versão: 01.01 |  PAGE \*ARABIC 9 /  NUMPAGES \*ARABIC 9 |  | 
+
+A versão válida deste documento é a disponível no repositório do projeto.
+
+
+
+
+

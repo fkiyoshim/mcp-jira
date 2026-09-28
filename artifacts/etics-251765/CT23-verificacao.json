@@ -1,0 +1,74 @@
+{
+  "id": "CT23",
+  "key": "ETICS-T8216",
+  "before": {
+    "keyNumber": 8216,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:00:20.986Z",
+    "objective": "Validar preservar última correção no mesmo atributo ao desfazer alterações de ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92614,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then o Comprimento Real Total (m) permanece 20,00",
+          "index": 0,
+          "description": "When executar Corrigir inventário sem OT e alterar o comprimento de 15,00 para 20,00",
+          "id": 210993
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT23 | Preservar última correção no mesmo atributo ao desfazer alterações de ot",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8216",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8216,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T19:00:24.855Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:00:20.986Z",
+    "objective": "Validar preservar última correção no mesmo atributo ao desfazer alterações de ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um lance com Comprimento Real Total (m) igual a 10,00\nAnd Modificar atributos com a OT A alterou o comprimento para 15,00\nWhen executar Corrigir inventário sem OT e alterar o comprimento de 15,00 para 20,00\nAnd executar Desfazer alterações de OT para a OT A\nThen o Comprimento Real Total (m) permanece 20,00\nAnd o histórico de Corrigir inventário mantém a alteração de 15,00 para 20,00 sem reescrever o valor anterior\nAnd o histórico registra Desfazer alterações de OT com usuário responsável e data/hora",
+      "id": 17564,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT23 | Preservar última correção no mesmo atributo ao desfazer alterações de ot",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8216",
+    "status": "Draft"
+  }
+}

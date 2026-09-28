@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cenários Gherkin no Zephyr"
+  short_description: "Crie e converta cenários BDD no Zephyr com vínculos"
+  default_prompt: "Use $zephyr-cenarios-gherkin para criar ou converter os cenários solicitados em BDD no Zephyr, preservando vínculos e conferindo a publicação."

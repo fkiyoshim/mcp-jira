@@ -1,0 +1,51 @@
+COMPARAÇÃO DOS CENÁRIOS BMad COM JIRA / ZEPHYR SCALE — RECON CLARO
+Data da conferência: 24/09/2026
+
+FONTES E MÉTODO
+- Visão 01.01: GP-Visao-Recon-Claro_0101 (1).docx.
+- Cenários BMad locais: C:\bitbucket_Automacao\cenarios_reconciliacao_claro.txt (RC-001 a RC-049).
+- Épico Jira ETICS-245531: nove histórias H01–H09 consultadas ao vivo pelo MCP local cpqd_jira.
+- Zephyr Scale ETICS: 8.037 casos percorridos com paginação completa; 121 casos anteriores vinculados às H01–H08 foram relidos. H09 não tinha caso vinculado nem nome RECON-H09.
+- Projetos técnicos 06–09 consultados na branch feature/claro-recon do Bitbucket. O projeto 09 define seis critérios de aceite; os projetos 06–08 ainda descrevem o escopo anterior ou contratos provisórios.
+- O link do quadro Jira não foi acessível pelo navegador da sessão. O escopo de nove histórias foi obtido via consulta ao épico ETICS-245531; a associação exata com o quick filter 17398 não foi comprovada.
+
+RESULTADO POR HISTÓRIA
+H01 — ETICS-252410: 14 casos anteriores. RC-005/006 e RC-040/043 dão contexto geral; o Zephyr já detalha os modos 0/1/2, a sincronização silenciosa, a árvore e a atualização. Não foram criadas duplicatas.
+H02 — ETICS-252562: 10 casos anteriores. O Zephyr já cobre lista de opções, persistência 0/1/2, legado e metadados. Não foram criadas duplicatas.
+H03 — ETICS-252569: 38 casos anteriores. A história técnica de upsert JSON é mais específica que a visão e os cenários BMad; os casos existentes cobrem contrato, lote e validações. Não foram criadas duplicatas.
+H04 — ETICS-252611: 20 casos anteriores. O Zephyr cobre transporte CLOB, merge, atomicidade e atualização única. RC-040/043 são contexto geral. Não foram criadas duplicatas.
+H05 — ETICS-252614: 14 casos anteriores. Os casos cobrem Zona, conversão e exclusão da árvore de divergências. A matriz genérica RC-033 não substitui esses critérios. Não foram criadas duplicatas.
+H06 — ETICS-252615: a descrição atual trata OSPF no objeto JSON Device; os 14 casos anteriores tratavam HA. Foram descontinuados com texto preservado e criado ETICS-T8221 para o fluxo OSPF, ainda dependente de contrato homologado.
+H07 — ETICS-252629: a descrição atual especifica Roteamento Estático FN; os cinco casos anteriores assumiam rota genérica, chave da visão ou contrato route-static em draft. Foram descontinuados com texto preservado e criado ETICS-T8222 para FN, ainda dependente de contrato homologado.
+H08 — ETICS-252632: a descrição atual trata BGP e relacionados. O caso BGP ETICS-T8081 permanece. Três casos de OSPF/RIP foram descontinuados. ETICS-T8085 foi ajustado para preservar objetos não recebidos ao atualizar BGP; ETICS-T8156 agora protege apenas BGP enquanto o contrato final estiver pendente.
+H09 — ETICS-253096: não havia casos. Foram criados seis casos, ETICS-T8223 a ETICS-T8228, para os critérios 1–6 do projeto técnico 09 e RC-044 a RC-049.
+
+ALTERAÇÕES NO ZEPHYR
+Estado Deprecated, com roteiro e vínculos anteriores preservados (22):
+H06/HA: ETICS-T8072, ETICS-T8073, ETICS-T8074, ETICS-T8075, ETICS-T8076, ETICS-T8146, ETICS-T8147, ETICS-T8148, ETICS-T8149, ETICS-T8150, ETICS-T8151, ETICS-T8152, ETICS-T8153, ETICS-T8154.
+H07/rota anterior: ETICS-T8077, ETICS-T8078, ETICS-T8079, ETICS-T8080, ETICS-T8155.
+H08/OSPF-RIP: ETICS-T8082, ETICS-T8083, ETICS-T8084.
+
+Roteiro BDD refinado, mantendo vínculo e demais metadados (2): ETICS-T8085, ETICS-T8156.
+
+Novos casos BDD em Draft, sem pasta e sem ciclo específico (8):
+ETICS-T8221 → H06/OSPF → ETICS-252615.
+ETICS-T8222 → H07/Roteamento Estático FN → ETICS-252629.
+ETICS-T8223 → H09/versões iguais → ETICS-253096.
+ETICS-T8224 → H09/divergência e valores ISP/IM → ETICS-253096.
+ETICS-T8225 → H09/configuração 0 → ETICS-253096.
+ETICS-T8226 → H09/Atualizar inventário → ETICS-253096.
+ETICS-T8227 → H09/patch e valor inicial 0 → ETICS-253096.
+ETICS-T8228 → H09/softwareVersion ausente no IM → ETICS-253096.
+
+CONFERÊNCIA APÓS ALTERAÇÃO
+- Releitura dos 32 casos alterados ou criados: 22 Deprecated, dois refinados, oito novos. Todos permaneceram com roteiro BDD; nos descontinuados, o texto original e os vínculos foram preservados.
+- Foram consultados 575 ciclos do projeto. O ciclo histórico ETICS-C646 continua incluindo casos antigos; nenhum dos oito casos novos entrou em ciclo. Nenhum estado de execução foi alterado por esta revisão.
+- Backups, plano, progresso e verificação estão em bmad-change-backup.json, bmad-change-plan.json, bmad-change-state.json e bmad-change-verification.json nesta pasta.
+
+PENDÊNCIAS
+1. O Jira atual mudou H06 para OSPF, mas o projeto técnico 06 ainda documenta HA. Aprovar o de/para OSPF antes de detalhar ou executar ETICS-T8221.
+2. O Jira atual mudou H07 para Roteamento Estático FN, mas o projeto técnico 07 ainda está em draft para rota genérica. Definir identidade, cardinalidade e destino FN antes de detalhar ou executar ETICS-T8222. Não assumir destination-address-mask + priority como chave do JSON.
+3. H08 agora cobre BGP; o projeto técnico 08 ainda documenta BGP/OSPF/RIP com contratos provisórios. Homologar de/para BGP, subgrupos e tratamento de credenciais antes de executar os casos BGP.
+4. A comparação real da H09 depende da publicação de softwareVersion pelo IM. O caso de ausência do campo pode ser executado com fixture controlada.
+5. Os casos Deprecated podem continuar visíveis no ciclo histórico ETICS-C646; filtrá-los por estado ao preparar execução futura. Nenhuma execução foi iniciada.

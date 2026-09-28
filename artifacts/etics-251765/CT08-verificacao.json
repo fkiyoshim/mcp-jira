@@ -1,0 +1,74 @@
+{
+  "id": "CT08",
+  "key": "ETICS-T8201",
+  "before": {
+    "keyNumber": 8201,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:56:50.424Z",
+    "objective": "Validar preservar edição de tipo de rede. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92599,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then Tipo de Rede apresenta o novo valor ao consultar novamente o lance",
+          "index": 0,
+          "description": "When alterar Tipo de Rede por Corrigir inventário para o novo valor válido e salvar",
+          "id": 210978
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT08 | Preservar edição de Tipo de Rede",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8201",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8201,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T18:56:53.000Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:56:50.424Z",
+    "objective": "Validar preservar edição de tipo de rede. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Tipo de Rede diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Tipo de Rede por Corrigir inventário para o novo valor válido e salvar\nThen Tipo de Rede apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "id": 17549,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT08 | Preservar edição de Tipo de Rede",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8201",
+    "status": "Draft"
+  }
+}

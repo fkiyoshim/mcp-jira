@@ -1,0 +1,74 @@
+{
+  "id": "CT27",
+  "key": "ETICS-T8220",
+  "before": {
+    "keyNumber": 8220,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar usuário sem permissões administrativas que concedam o perfil implicitamente.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:01:06.242Z",
+    "objective": "Validar impedir operação para usuário sem perfil autorizado. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional) e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92618,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then Corrigir inventário não está disponível para execução",
+          "index": 0,
+          "description": "When acessar as operações do lance com esse usuário",
+          "id": 210997
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT27 | Impedir operação para usuário sem perfil autorizado",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8220",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8220,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar usuário sem permissões administrativas que concedam o perfil implicitamente.",
+    "updatedOn": "2026-09-23T19:01:09.785Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:01:06.242Z",
+    "objective": "Validar impedir operação para usuário sem perfil autorizado. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional) e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um usuário que pode consultar o lance mas não pertence ao perfil autorizado para Corrigir inventário\nAnd os valores atuais do lance foram registrados\nWhen acessar as operações do lance com esse usuário\nThen Corrigir inventário não está disponível para execução\nAnd o usuário não consegue gravar uma correção por essa operação\nAnd os valores persistidos do lance permanecem inalterados",
+      "id": 17568,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT27 | Impedir operação para usuário sem perfil autorizado",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8220",
+    "status": "Draft"
+  }
+}

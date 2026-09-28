@@ -1,0 +1,37 @@
+{
+  "verifiedAt": "2026-09-10T11:40:18.119Z",
+  "source": "GP-Visao-Recon-Claro_0101, seções 3 e 9; H01/H02",
+  "test": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8039,
+    "updatedOn": "2026-09-10T11:40:17.906Z",
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:52.938Z",
+    "objective": "Aplicar os três modos no mesmo equipamento\nHistória: ETICS-252410\nBase: H01/H02",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd B é um atributo cuja atualização pelo fluxo existente é permitida; os valores recebidos são válidos e nenhuma regra de negócio impede a atualização do roteador.\nAnd os dados de teste: A=0, B=1, C=2; GP: A=valor_GP_A, B=valor_GP_B, C=valor_GP_C; IM: A=valor_IM_A, B=valor_IM_B, C=valor_IM_C; valores GP e IM diferentes para cada atributo.\nWhen executar a reconciliação e abrir o detalhamento do roteador.\nThen Somente B apresenta divergência na comparação IM x GP, com valor_GP_B e valor_IM_B; A e C não geram divergência e C não aparece na árvore.\nWhen consultar o inventário antes de acionar Atualizar inventário.\nThen A=valor_GP_A, B=valor_GP_B e C=valor_GP_C; a comparação e a consulta não alteram os valores no GP.\nWhen selecionar a divergência de B para resolução com o dado do IM pelo fluxo existente, acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A permanece com valor_GP_A; B passa a valor_IM_B pela atualização da divergência selecionada; C passa a valor_IM_C silenciosamente, sem exigir seleção de C na árvore.",
+      "id": 17279,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-04 — Aplicar os três modos no mesmo equipamento",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8039",
+    "status": "Draft"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "CT01",
+  "key": "ETICS-T8194",
+  "data": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8194,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Preparar matriz completa: atributo, bloqueio esperado independente da tela sob teste, valor anterior, valor válido e resultado. A documentação não enumera a lista completa ampliada; a matriz é obrigatória para declarar cobertura de todos os campos.",
+    "updatedOn": "2026-09-23T18:55:09.320Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:54:50.311Z",
+    "objective": "Validar editar todos os atributos não bloqueados em lance existente. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional), §7.2 e histórico da versão 01.01; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um Lance de Cabo Óptico na situação Existente e nenhuma OT corrente\nAnd a matriz de atributos do lance foi conferida contra o modelo e a configuração da versão, identificando todos os atributos não bloqueados e seus valores válidos\nWhen abrir Corrigir inventário\nThen todos os atributos classificados como não bloqueados na matriz permitem edição, inclusive os adicionais à lista original da seção 7.2\nWhen alterar cada atributo não bloqueado com um valor válido, salvar e consultar novamente o lance após cada alteração\nThen cada valor informado permanece gravado no respectivo atributo\nAnd os atributos não alterados preservam seus valores e a situação permanece Existente\nAnd a correção não cria vínculo do lance com uma OT",
+      "id": 17542,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT01 | Editar todos os atributos não bloqueados em lance Existente",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8194",
+    "status": "Draft"
+  }
+}

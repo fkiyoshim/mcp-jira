@@ -1,0 +1,243 @@
+{
+  "verifiedAt": "2026-09-10T16:45:14.833Z",
+  "tests": [
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8036,
+      "updatedOn": "2026-09-10T16:44:40.557Z",
+      "precondition": "Teste sistêmico. Equipamento e atributo A existentes e suportados; valores GP e IM distintos; configuração A=0; mesma massa em versão de referência anterior à H01 e versão alvo. Registrar o resultado do Atualizar inventário na referência. Preparação IM e referência podem exigir apoio técnico.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T19:35:16.086Z",
+      "objective": "Verificar que 0 não participa do match, aparece como informativo e mantém o comportamento legado de atualização observado na mesma massa.\nHistória: ETICS-252410\nEquipe: testes sistêmicos.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\nRelato de Francisco fornecido pelo usuário em 10/09/2026: o valor 0 não compara, mas pode ser atualizado pelo fluxo existente. ETICS-175367 exige apresentação informativa e não especifica atualização. A correção da H01 verifica preservação do comportamento de referência; definir se a atualização de 0 é regra desejada ou defeito legado continua pendente de requisito. Não concluir que 0 nunca atualiza nem aprovar uma regra geral de atualização somente com base no relato.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um atributo existente A configurado como 0 com valores distintos no GP e no IM\nAnd o resultado de Atualizar inventário para a mesma massa na versão de referência está registrado como valor_referencia_A\nWhen executar a reconciliação na versão alvo e abrir o detalhamento\nThen a diferença de A não gera divergência de match\nAnd A consta na apresentação de resultados como informativo\nWhen consultar o GP antes de Atualizar inventário\nThen A mantém o valor anterior à coleta\nWhen acionar Atualizar inventário pelo mesmo fluxo usado na referência e consultar A no GP\nThen o valor final de A é igual a valor_referencia_A, preservando o comportamento legado para essa massa",
+        "id": 17276,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-01 — Excluir atributo 0 do match e preservar comportamento informativo",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8036",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8039,
+      "updatedOn": "2026-09-10T16:44:56.174Z",
+      "precondition": "Teste sistêmico. Equipamento pareado; atributos existentes A=0, B=1 e C=2 com valores GP/IM distintos e válidos. B permite resolução com dado IM. Resultado de atualização de A registrado na versão de referência com a mesma massa; não assumir que modo 0 bloqueia atualização.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T23:52:52.938Z",
+      "objective": "Verificar os modos 0, 1 e 2 no mesmo equipamento: informativo sem match para A, divergência para B e sincronização sem exibição para C.\nHistória: ETICS-252410\nEquipe: testes sistêmicos.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\nRelato de Francisco fornecido pelo usuário em 10/09/2026: o valor 0 não compara, mas pode ser atualizado pelo fluxo existente. ETICS-175367 exige apresentação informativa e não especifica atualização. A correção da H01 verifica preservação do comportamento de referência; definir se a atualização de 0 é regra desejada ou defeito legado continua pendente de requisito. Não concluir que 0 nunca atualiza nem aprovar uma regra geral de atualização somente com base no relato.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um equipamento pareado com atributos existentes A=0, B=1 e C=2 e valores GP_A, GP_B e GP_C diferentes de IM_A, IM_B e IM_C\nAnd B admite atualização pelo fluxo existente e o resultado de atualizar A na versão de referência está registrado como valor_referencia_A\nWhen executar a reconciliação e abrir o detalhamento\nThen somente B apresenta divergência de match com GP_B e IM_B\nAnd A é apresentado como informativo sem divergência de match\nAnd C não gera divergência nem aparece na árvore\nWhen consultar o inventário antes de Atualizar inventário\nThen A=GP_A, B=GP_B e C=GP_C\nWhen selecionar a divergência de B para resolução com o dado IM e acionar Atualizar inventário\nThen B passa a IM_B e C passa a IM_C sem seleção individual de C\nAnd A apresenta valor_referencia_A, mantendo o comportamento legado da mesma massa",
+        "id": 17279,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-04 — Aplicar os três modos no mesmo equipamento",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8039",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8088,
+      "updatedOn": "2026-09-10T16:45:00.376Z",
+      "precondition": "NÃO EXECUTAR para a H01: pressuposto de criação de colunas não corresponde à entrega, conforme esclarecimento do desenvolvedor. Reavaliação somente se outra história aprovar uma mudança de esquema.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:55:46.603Z",
+      "objective": "NÃO APLICÁVEL À H01. Descontinuado nesta revisão: o desenvolvedor confirmou que a H01 não criou colunas nem patch de criação dessas colunas. O roteiro histórico foi preservado para rastreabilidade, mas não constitui critério de aceite ou execução da H01.\nHistória: ETICS-252410\nEquipe: desenvolvimento.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma base vazia destinada à instalação da versão alvo\nWhen criar o esquema pelo instalador oficial\nThen cada nova coluna implementada em RECON_ATRIB_CFG possui DEFAULT 0 e NOT NULL\nWhen criar uma configuração válida omitindo essas novas colunas\nThen cada nova coluna assume o valor 0\nWhen persistir o valor 2 em cada nova coluna por operações válidas\nThen o valor 2 é aceito e recuperado como 2",
+        "id": 17328,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-01 — [NÃO APLICÁVEL À H01] Criar esquema com padrão seguro para novas colunas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8088",
+      "status": "Deprecated"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8089,
+      "updatedOn": "2026-09-10T16:45:03.554Z",
+      "precondition": "NÃO EXECUTAR para a H01: pressuposto de criação de colunas não corresponde à entrega, conforme esclarecimento do desenvolvedor. Reavaliação somente se outra história aprovar uma mudança de esquema.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:55:52.829Z",
+      "objective": "NÃO APLICÁVEL À H01. Descontinuado nesta revisão: o desenvolvedor confirmou que a H01 não criou colunas nem patch de criação dessas colunas. O roteiro histórico foi preservado para rastreabilidade, mas não constitui critério de aceite ou execução da H01.\nHistória: ETICS-252410\nEquipe: desenvolvimento.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma base da versão anterior com configurações existentes em 0 e 1\nWhen aplicar o patch oficial para as novas colunas de RECON_ATRIB_CFG\nThen os valores preexistentes permanecem iguais ao snapshot\nAnd as novas colunas possuem DEFAULT 0 e NOT NULL e os registros anteriores recebem 0\nWhen salvar 2 nas novas colunas de uma configuração editável\nThen o valor 2 é persistido e recuperado corretamente",
+        "id": 17329,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-02 — [NÃO APLICÁVEL À H01] Aplicar patch preservando configurações legadas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8089",
+      "status": "Deprecated"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8090,
+      "updatedOn": "2026-09-10T16:45:07.480Z",
+      "precondition": "EXCLUSIVO DE DESENVOLVIMENTO. Requer harness, acesso técnico ao banco e matriz real de atributos existentes suportados. Não é executável integralmente pela interface. Não pressupõe novas colunas nem novos atributos.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:56:08.385Z",
+      "objective": "Verificar o transporte e recuperação dos valores IM de atributos já existentes usados no modo 2. Retirado o pressuposto de novos atributos ou novas colunas.\nHistória: ETICS-252410\nEquipe: desenvolvimento; não usar como roteiro de homologação apenas pela aplicação.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given a matriz confirmada de atributos existentes suportados e seus mapeamentos já implementados entre IM, POJO, persistência da reconciliação e GP\nAnd esses atributos estão configurados como 2 e a resposta IM possui valores distintos identificáveis\nWhen executar pelo harness a recuperação e persistência da reconciliação\nThen cada valor IM é associado ao atributo e objeto corretos usando a estrutura de persistência existente\nWhen recuperar o resultado em um novo contexto de persistência\nThen os valores IM são recuperados integralmente para montar a atualização\nAnd a verificação não exige criação de coluna, novo atributo ou patch de esquema",
+        "id": 17330,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-03 — Verificar transporte dos atributos existentes em modo 2",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8090",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8091,
+      "updatedOn": "2026-09-10T16:45:10.956Z",
+      "precondition": "EXCLUSIVO DE DESENVOLVIMENTO. Requer harness/spy do fluxo real de atualização e acesso ao resultado persistido. Atributo existente A=2 com valor IM válido; sem seleção manual de A. Não executável integralmente pela interface; não pressupõe novas colunas.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:56:14.256Z",
+      "objective": "Verificar que os dados do atributo existente em modo 2 alcançam o mecanismo padrão de atualização. Retirada a premissa de que a ausência de atualização silenciosa para modo 0 impediria sua atualização por todo o fluxo.\nHistória: ETICS-252410\nEquipe: desenvolvimento.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\nRelato de Francisco fornecido pelo usuário em 10/09/2026: o valor 0 não compara, mas pode ser atualizado pelo fluxo existente. ETICS-175367 exige apresentação informativa e não especifica atualização. A correção da H01 verifica preservação do comportamento de referência; definir se a atualização de 0 é regra desejada ou defeito legado continua pendente de requisito. Não concluir que 0 nunca atualiza nem aprovar uma regra geral de atualização somente com base no relato.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um resultado de reconciliação persistido para atributo existente A configurado como 2 e valor IM_A válido\nWhen montar Atualizar inventário sem seleção manual de A e inspecionar o fluxo pelo harness\nThen o campo de A e seu valor IM_A são incluídos nos dados enviados ao mecanismo padrão de atualização\nWhen executar a atualização com sucesso\nThen o campo correto do GP recebe IM_A\nAnd a inspeção usa o fluxo real implementado e não exige criação de colunas\nAnd nenhuma conclusão sobre bloqueio de atualização de atributos 0 é derivada deste teste",
+        "id": 17331,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-04 — Enviar atributos silenciosos pelo mecanismo padrão de update",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8091",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8092,
+      "updatedOn": "2026-09-10T16:45:14.665Z",
+      "precondition": "EXCLUSIVO DE DESENVOLVIMENTO. Requer harness do mapeamento e do update, com atributos existentes cujo mapeamento real esteja confirmado; ao menos um caso de conversão de chave e um de nome meta já coincidente, se ambos existirem na entrega. Se não houver essas duas situações implementadas, registrar a variante não aplicável. Não é teste integral pela interface.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:56:22.759Z",
+      "objective": "Conferir associação entre chaves existentes e campos meta no fluxo do modo 2, sem pressupor novos campos ou novas colunas.\nHistória: ETICS-252410\nEquipe: desenvolvimento; inspeção técnica com harness, não homologação somente pela aplicação.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given dois atributos silenciosos suportados A e B com valores IM_A e IM_B\nAnd a chave de A exige conversão para seu nome meta e a chave de B já corresponde ao seu nome meta\nWhen montar e converter os atributos para atualização do GP\nThen A usa o nome meta definido no mapeamento e B mantém o nome meta original\nAnd os valores IM_A e IM_B permanecem associados aos respectivos campos\nWhen executar a atualização pelo mecanismo padrão\nThen os dois campos corretos no GP recebem seus valores IM sem criação de campos com nomes de descrição",
+        "id": 17332,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-05 — Converter chaves silenciosas para nomes meta do GP",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8092",
+      "status": "Draft"
+    }
+  ]
+}

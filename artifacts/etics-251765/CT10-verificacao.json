@@ -1,0 +1,74 @@
+{
+  "id": "CT10",
+  "key": "ETICS-T8203",
+  "before": {
+    "keyNumber": 8203,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:57:29.179Z",
+    "objective": "Validar preservar edição de configuração de cor. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92601,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then Configuração de Cor apresenta o novo valor ao consultar novamente o lance",
+          "index": 0,
+          "description": "When alterar Configuração de Cor por Corrigir inventário para o novo valor válido e salvar",
+          "id": 210980
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT10 | Preservar edição de Configuração de Cor",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8203",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8203,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T18:57:31.901Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:57:29.179Z",
+    "objective": "Validar preservar edição de configuração de cor. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Configuração de Cor diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Configuração de Cor por Corrigir inventário para o novo valor válido e salvar\nThen Configuração de Cor apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "id": 17551,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT10 | Preservar edição de Configuração de Cor",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8203",
+    "status": "Draft"
+  }
+}

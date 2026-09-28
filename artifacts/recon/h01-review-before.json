@@ -1,0 +1,200 @@
+[
+  {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8036,
+    "updatedOn": "2026-09-10T00:44:14.989Z",
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T19:35:16.086Z",
+    "objective": "Ignorar atributo configurado com 0\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo reconciliável A: GP=valor_GP, IM=valor_IM; configuração A=0.\nWhen executar a reconciliação e abrir o detalhamento.\nThen A diferença em A não gera divergência.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A permanece com valor_GP; o atributo ignorado não é sincronizado.",
+      "id": 17276,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-01 — Ignorar atributo configurado com 0",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8036",
+    "status": "Draft"
+  },
+  {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8037,
+    "updatedOn": "2026-09-10T00:44:27.559Z",
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:44.548Z",
+    "objective": "Comparar atributo configurado com 1\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo A: GP=valor_GP, IM=valor_IM; A=1.\nWhen executar a reconciliação e detalhar o equipamento.\nThen A diferença aparece na comparação IM x GP.\nWhen consultar o inventário sem acionar atualização.\nThen O GP mantém valor_GP; a comparação não efetiva atualização.",
+      "id": 17277,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-02 — Comparar atributo configurado com 1",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8037",
+    "status": "Draft"
+  },
+  {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8038,
+    "updatedOn": "2026-09-10T00:44:28.266Z",
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:48.247Z",
+    "objective": "Sincronizar atributo 2 sem divergência nem exibição\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo A: GP=valor_GP, IM=valor_IM; A=2.\nWhen executar a reconciliação e abrir a árvore.\nThen A não gera divergência nem aparece na árvore.\nWhen consultar o GP antes de atualizar.\nThen A permanece com valor_GP.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A passa a valor_IM.",
+      "id": 17278,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-03 — Sincronizar atributo 2 sem divergência nem exibição",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8038",
+    "status": "Draft"
+  },
+  {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8039,
+    "updatedOn": "2026-09-10T11:40:17.906Z",
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:52.938Z",
+    "objective": "Aplicar os três modos no mesmo equipamento\nHistória: ETICS-252410\nBase: H01/H02",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd B é um atributo cuja atualização pelo fluxo existente é permitida; os valores recebidos são válidos e nenhuma regra de negócio impede a atualização do roteador.\nAnd os dados de teste: A=0, B=1, C=2; GP: A=valor_GP_A, B=valor_GP_B, C=valor_GP_C; IM: A=valor_IM_A, B=valor_IM_B, C=valor_IM_C; valores GP e IM diferentes para cada atributo.\nWhen executar a reconciliação e abrir o detalhamento do roteador.\nThen Somente B apresenta divergência na comparação IM x GP, com valor_GP_B e valor_IM_B; A e C não geram divergência e C não aparece na árvore.\nWhen consultar o inventário antes de acionar Atualizar inventário.\nThen A=valor_GP_A, B=valor_GP_B e C=valor_GP_C; a comparação e a consulta não alteram os valores no GP.\nWhen selecionar a divergência de B para resolução com o dado do IM pelo fluxo existente, acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A permanece com valor_GP_A; B passa a valor_IM_B pela atualização da divergência selecionada; C passa a valor_IM_C silenciosamente, sem exigir seleção de C na árvore.",
+      "id": 17279,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-04 — Aplicar os três modos no mesmo equipamento",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8039",
+    "status": "Draft"
+  },
+  {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8040,
+    "updatedOn": "2026-09-10T00:44:29.680Z",
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:55.949Z",
+    "objective": "Manter atributos silenciosos inalterados durante consultas\nHistória: ETICS-252410\nBase: H01; visão §§3 e 8",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: A=2 e valores diferentes no GP e IM.\nWhen executar reconciliação e abrir/fechar o detalhamento duas vezes.\nThen A não aparece nem gera divergência.\nWhen executar Consultar inventário e conferir A.\nThen Valor GP original preservado até Atualizar inventário.",
+      "id": 17280,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-05 — Manter atributos silenciosos inalterados durante consultas",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8040",
+    "status": "Draft"
+  },
+  {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8041,
+    "updatedOn": "2026-09-10T00:44:30.323Z",
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:58.829Z",
+    "objective": "Reexecutar sincronização com o mesmo valor\nHistória: ETICS-252410\nBase: H01\nObservação/pendência: Teste de regressão derivado da semântica de atualização.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: A=2; valor IM já aplicado no GP.\nWhen executar novamente a reconciliação com a mesma resposta.\nThen Não há divergência de A nem exibição de A.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A mantém o valor IM, sem duplicação do objeto atualizado.",
+      "id": 17281,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-06 — Reexecutar sincronização com o mesmo valor",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8041",
+    "status": "Draft"
+  }
+]

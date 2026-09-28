@@ -1,0 +1,748 @@
+﻿ / DOCUMENTO DE VISÃO / Reconciliação de Recursos Físicos e Lógicos / GPL /  /  / Versão deste documento: 01.01
+ /  /  /  /  /  /  /  /  /  /  /  /  / 
+        | RESERVADO
+© Fundação CPqD
+Reservados todos os direitos
+Este documento não deve ser reproduzido sem a expressa autorização da Fundação CpqD.
+Qualquer reprodução, sem prévia autorização, infringe os direitos de copyright
+Sumário
+1. Objetivo5
+2. Escopo5
+2.1 Pressupostos e Dependências5
+2.2 Conceitos usados neste documento5
+NOTA: os comentários do documento original [ref1]  foram mantidos para serem resolvidos depois que a Claro fizer a revisão final do documento de integração6
+3. Processo de Reconciliação6
+4. Configuração da Reconciliação7
+5. Cadastro da Reconciliação10
+6. Resultado da Reconciliação13
+6.1  Equipamento Roteador17
+6.2 Equipamento Roteador - Conf17
+6.3 Banda (relacionado de porta física)18
+6.4 Configurações Porta LAN (Relacionado de Equipamento)19
+6.5 Endereço IP (relacionado de Porta física)20
+6.6 Link (relacionado de Endereço IP em porta)21
+6.7 Endereço IP Conf (informações adicionais de Endereço IP em porta física)22
+6.8  VRRP (relacionado de endereço IP em porta Física)22
+6.9 TrackRoute (relacionado de VRRP)23
+6.10 BFDSession (relacionado de VRRP)24
+6.11 Pppoe (relacionado de porta física)25
+6.12 Interface Lógica (Relacionado de equipamento)25
+6.13 Interface Lógica Conf26
+6.14 Porta Lógica (relacionado de equipamento)27
+6.15 Porta Lógica Conf (relacionado de Porta Lógica)27
+6.16 DHCP Pool (relacionado de interface lógica)29
+6.17 Server Option (relacionado de DHCPPool)29
+6.18 Server Ips Fixos (Relacionado de DHCP Pool)30
+6.19 Server Lease Time (Relacionado de DHCP Pool)31
+6.20 ServerVoiceOption (relacionado de DHCPPool)31
+6.21 IPsReservados (relacionado de DHCPPool)32
+6.22 Relay (relacionado de DHCPPool)32
+6.23 Endereço IP (relacionado do objeto Relay)33
+6.24 Option82 (relacionado do objeto Relay)33
+6.25 Suboption (relacionado de Option82)34
+6.26 VPN (relacionado de Porta Física)34
+6.27 Interlink (relacionado de Roteador)35
+6.28  Roteamento Dinâmico (relacionado de Equipamento)35
+6.29 Roteamento Dinâmico - Conf OSPF36
+6.30 Roteamento Estático (Relacionado de Equipamento)37
+Chave: destination-address-mask +  priority37
+6.31 Roteamento Estático Conf (Atributos adicionais de Roteamento Estático)37
+6.32 Security (relacionado do equipamento Roteador)38
+6.33 NAT Dinâmico (HW) (relacionado de equipamento)39
+6.34 Regra (HW) (relacionado de NAT dinâmico)39
+6.35 NAT Estático (HW)40
+6.36 Regra (HW) (relacionado de NAT Estático)41
+6.37 NAT Origem (HW)42
+6.38 Interface Egressos (HW) (relacionado de NAT Origem)43
+6.39 Grupos de Endereços (HW) (relacionado de NAT Origem)43
+6.40 IPs Origem (HW) (relacionado de NAT Origem)43
+6.41 IPs Destino (HW) (relacionado de NAT Origem)44
+6.42 Serviços (HW) (relacionado de NAT Origem)44
+6.43 NAT Destino (HW)45
+6.44 Software Opcional47
+7. Objetos cadastrados diretamente via processo de descoberta47
+8. Consultar inventário47
+9. Atualizar inventário48
+10.  [GP🡪IM] Consultar equipamentos descobertos49
+11. Referências49
+11. Histórico de alterações deste documento49
+1. Objetivo
+Apresentar funcionalidades disponíveis no módulo Recon do GPL bem como evoluções previstas para a reconciliação de recursos lógicos.
+2. Escopo
+Esta seção visa alinhar expectativas sobre as necessidades que serão atendidas através do Recon.
+2.1 Pressupostos e Dependências
+O sucesso do processo de reconciliação depende das APIs disponibilizadas pelos fabricantes. Durante o desenvolvimento podem ocorrer pequenas alterações devido a restrições encontradas nas APIs
+Há um requisito da Claro para que a atualização do inventário para alguns dados recuperados na reconciliação seja feita de forma automática. Durante o processo de desenvolvimento serão feitas novas interações para que sejam identificados com as áreas de negócio quais dados podem ser feitos sem validação de usuário.
+Outro requisito é que as atualizações sejam feitas de forma massiva. Durante o processo de desenvolvimento este item também será detalhado porque é necessário entender a volumetria dos dados recuperados para análise da viabilidade técnica.
+2.2 Conceitos usados neste documento
+Por uma questão de rastreabilidade (identificar a origem que serão armazenados no GPL), as tabelas deste documento exibem o mapeamento das entidades do Datamodel para o CFS + modelo  YANG  para os objetos do GPL.
+Datamodel | CFS | YANG Model
+O Datamodel é o documento da Claro que originou os dados que serão tratados no cenário de uma rede SD-WAN.  / A partir desse documento foram mapeadas as entidades que serão cadastradas no GPL. /  | No contexto de uma integração baseada em TM Forum, CFS significa Customer Facing Service (Serviço Voltado ao Cliente).  / Representa o serviço que faz sentido para o cliente e para o negócio, independentemente de como ele é implementado na rede. /  | Um modelo YANG é uma especificação de dados usada para descrever, de forma padronizada, como os dispositivos de rede organizam suas configurações, estados operacionais, notificações e operações. Ele não é um protocolo, mas sim uma linguagem de modelagem de dados.
+Outra fonte de dados que devem ser armazenados no GPL foi o SOM (Service Order Management)
+Quando um dado é proveniente do SOM/COM, ele fica marcado na coluna “Descrição” das tabelas com a notação [OM].
+O SOM  é responsável por gerenciar o ciclo de vida dos serviços.Ele recebe um pedido comercial (por exemplo, de um CRM ou Order Management) e coordena a ativação, alteração ou cancelamento do serviço.
+Para facilitar a compreensão do documento, algumas células foram pintadas com diferentes cores para identificar algum comportamento diferenciado.
+ | Indica que na mesma tabela existem dados provenientes de diferentes entidades no modelo YANG e que foram mapeadas para o mesmo objeto no GPL
+ | 
+ | dados que não foram localizados ou que possuem alguma dúvida associada
+NOTA: os comentários do documento original [ref1]  foram mantidos para serem resolvidos depois que a Claro fizer a revisão final do documento de integração
+Os objetos e atributos que devem ser considerados no processo de reconciliação estão identificados na coluna “Discovery” com o valor = “SIM”
+3. Processo de Reconciliação
+Para contextualização, o processo de reconciliação está ilustrado a seguir.
+Figura 1 - Processo execução Recon
+No Intelligent Management (IM):
+Usuário deve agendar uma descoberta de rede
+Sistema dispara a descoberta conforme agendamento
+No GPL:
+Usuário pode fazer ajustes na configuração da reconciliação
+Configurar Modelos “Reconciliáveis” 
+Configurar atributos que deverão ser observados para “match” (comparação)
+Usuário deve cadastrar/agendar a reconciliação
+Sistema dispara a reconciliação conforme agendamento:
+Recupera equipamentos do inventário
+Consulta equipamentos e recursos lógicos descobertos
+Executa o pareamento dos equipamentos e/ou placas e/ou subplacas e/ou portas e recursos lógicos
+Nota: para isso, o sistema considera atributo(s) que identifica(m) unicamente cada elemento
+Compara atributos de cada elemento pareado (match de atributos)
+Armazena o resultado da reconciliação para que o usuário possa consultá-lo a posteriori 
+Usuário pode consultar resultado da reconciliação
+Usuário deve avaliar o resultado da reconciliação de forma criteriosa a fim de identificar a causa raiz da discrepância para tomada de decisão sobre atualizar o inventário ou fazer o ajuste na rede.
+Durante a avaliação do resultado, o usuário pode opcionalmente:
+Consultar inventário: visualizar a situação atual do equipamento no inventário visto que alguma mudança pode ter ocorrido desde a data da reconciliação e o momento da análise do resultado.
+Atualizar inventário: atualizar inventário com informações de gerência quando se entender que a divergência deve ser resolvida com o dado descoberto. 
+Importante: O principal objetivo do Recon é apoiar o usuário a minimizar as discrepâncias entre rede “viva” e inventário. A reconciliação dá insumos para que se ajuste o processo de atualização de inventário versus demais processos da operadora. Por isso, identificar a causa raiz de uma discrepância é de suma importância tanto para o ajuste pontual quanto para direcionar ações corretivas que possam evitar a recorrência do mesmo tipo de discrepância.
+4. Configuração da Reconciliação
+Para disparar o processo de reconciliação é preciso indicar ao sistema quais os modelos de equipamento devem ser considerados. Vale ressaltar que temos três “universos” de modelos de equipamento no GPL:
+Figura 2 – “Universos” dos modelos de equipamento
+Temos os modelos cadastrados no Inside Plant Design, mas nem todos são modelos gerenciáveis. Normalmente, os modelos gerenciáveis são aqueles que o Intelligent Management pode ser capaz de “descobrir” na rede “viva” (salvo restrições de MIB, acesso a rede, impossibilidade de uso de certos protocolos, etc). 
+Ao cadastrar um novo modelo de equipamento no Inside Plant Design, o usuário informa se é um equipamento gerenciável, ou não, conforme ilustrado na Figura 3
+Figura 3 – Configuração Modelos Gerenciáveis
+Todos os modelos de equipamento cadastrados como gerenciáveis podem ser consultados no Recon através da tela disponível Menu Configuração/Modelos Reconciliáveis:
+Figura 4 – Configuração Modelos Reconciliáveis
+Nesta tela, o usuário poderá configurar o “universo” dos modelos reconciliáveis indicando se:
+Não apresenta restrições para reconciliação (valor default)
+Deve ser reconciliado apenas no nível de equipamento. 
+Nota: Neste caso, o sistema não compara estruturas do equipamento como placas/subplacas e portas, é uma reconciliação na granularidade de um “ping”: equipamento está na rede “viva” e está no inventário? Então, reconciliação executada com sucesso.
+Não deve ser reconciliado por alguma restrição técnica como, por exemplo, a gerência deste modelo de equipamento não reporta informações suficientes para reconciliação.
+Para recuperar equipamentos/portas que devem ser consideradas para reconciliação, o Recon observa este “universo” de modelos reconciliáveis.
+Para match dos atributos, o Recon observa configuração realizada no Menu Configuração/Atributos reconciliáveis conforme tela abaixo:
+Figura 5 – Configuração Atributos Reconciliáveis
+No atributo Tipo de Reconciliação deve ser informado um código que permita ao usuário definir diferentes configurações de atributos reconciliáveis para que seja possível referenciar qual configuração de atributos deseja usar ao cadastrar uma reconciliação. Por default, o Recon tem pré-cadastradas duas configurações onde o Tipo de Reconciliação assume valor “Recursos Físicos” ou “Recursos Físicos e Lógicos”.
+As informações que podem ser reconciliadas são apresentadas na seção 6 (Resultado da Reconciliação).
+5. Cadastro da Reconciliação
+O cadastro da reconciliação deve ser feito no próprio módulo de Reconciliação, através de tela disponível no Menu Cadastro / Reconciliação.
+Ao cadastrar uma reconciliação (operação INSERIR), o usuário pode definir código único e sugestivo que, além de organizar o cadastro, facilita a consulta dos resultados. 
+Figura 6 – Cadastro da Reconciliação
+Para viabilizar o processo de reconciliação, o usuário deve informar os parâmetros que o Recon irá considerar para buscar os equipamentos que serão reconciliados. 
+Os parâmetros devem ser informados por meio de uma das seguintes opções de filtro:
+Tabela 1 Parâmetro para determinar filtro de busca de equipamentos
+Filtro | Descrição | Valores
+filterby | Indica se os equipamentos que serão reconciliados serão selecionados por modelo  | model /  / Apenas um tipo de filtro por reconciliação / Este parâmetro é obrigatório. Caso não seja informado, deverá ser gerada mensagem explicativa para o usuário.
+Os parâmetros que podem ser indicados para cada filtro estão listados a seguir:
+Tabela 2 Parâmetros da Reconciliação
+Parâmetro | Descrição | Valores
+technology | Parâmetro que pode ser usado quando filterby=model | Valores cadastrados para atributo Nome do menu Configurações/Tecnologia no módulo Services Management
+manufacturer | Parâmetro que pode ser usado quando filterby=model | Valores cadastrados para atributo Código do menu Geral/Empresa no módulo Inside Plant Design 
+model | Parâmetro que pode ser usado quando filterby=model | Valores cadastrados para atributo Código do menu Configuração/Modelagem/Modelo de Equipamento no módulo Inside Plant Design 
+Alguns exemplos para preenchimento do atributo Parâmetros na tela de cadastro:
+Reconciliar os equipamentos tecnologia IP e DWDM
+filterby=model; technology=IP, DWDM
+Reconciliar os equipamentos fabricante Cisco e tecnologia IP
+filterby= model; technology=IP; manufacturer=CISCO
+Observe que, para mais de um valor em um mesmo parâmetro, basta separá-los por vírgulas. Importante frisar também que a busca será feita considerando todos os parâmetros indicados (operador AND). 
+No momento do cadastro da reconciliação, o usuário pode optar por configurar o agendamento da execução (atributo agendamento igual a SIM). 
+Após o cadastro da reconciliação, o usuário poderá agendar ou reprogramar agendamento existente através da operação AGENDAR/REAGENDAR.
+Figura 7 – Agendamento da Reconciliação
+Ao agendar, o usuário pode determinar uma periodicidade (diária, semanal, mensal, anual) ou determinar uma data específica para execução.
+Figura 8 – Agendamento da Reconciliação - Calendário
+Uma reconciliação previamente cadastrada poderá ser disparada a qualquer momento através da operação EXECUTAR IMEDIATAMENTE, mesmo que esta já possua execução programada conforme agendamento.
+Por questões não funcionais, considera-se que o resultado de uma reconciliação ficará armazenado por um período de 30 dias, mas o usuário tem a possibilidade de ajustar este período de armazenamento para menos ou para mais conforme sua necessidade. (atributo Disponibilidade do Resultado)
+6. Resultado da Reconciliação
+O resultado de uma reconciliação deve ser analisado através da tela disponível no Menu Consulta / Resultados. 
+Importante conhecer o código da reconciliação que se deseja consultar e estar atento que pode haver mais de um resultado para o mesmo código visto que uma reconciliação pode ser executada periodicamente.
+Figura 9 – Resultados da Reconciliação
+Para cada resultado de reconciliação, o usuário pode verificar os equipamentos reconciliados em uma tela relacionada. A seguir tela considerando evolução prevista:
+Figura 10 – Resultados da Reconciliação – Equipamentos Reconciliados
+E para cada equipamento, é possível visualizar o detalhamento da reconciliação:
+Figura 11 – Resultados da Reconciliação – Detalhamento
+Observe que neste detalhamento os equipamentos/placas/portas são sinalizados com ícones (Figura 12) que sugerem se houve sucesso na reconciliação, divergência ou se nem foi possível parear o que existe no inventário com o que foi descoberto pela gerência.
+Figura 12 – Ícones que auxiliam a análise do resultado
+Esta treeview também pode ser acionada para visualizar simultaneamente o resultado da reconciliação para mais de um equipamento quando o usuário assim desejar. Basta selecionar os equipamentos sobre os quais se deseja analisar o resultado e acionar a operação Detalhar:
+Figura 13 – Selecionado mais de um equipamento para detalhes de reconciliação
+Figura 14 – Apresentação de  mais de um equipamento na treeview de resultados
+Há opção de Detalhar o resultado por equipamento. Ao executar a operação Detalhar por equipamento, o foco na treeview será apresentar todas as informações reconciliadas para o equipamento.
+Será feita uma evolução onde o usuário poderá abrir a treeview através da operação “Detalhar” e visualizar os recursos lógicos associados a um equipamento. 
+As informações lógicas a serem comparadas são as informações definidas no datamodel agnóstico. A figura 15 mostra o relacionamento entre os elementos lógicos no GPL. Essa estrutura de objetos será usada para criar a treeview para comparação dos recursos.
+Os elementos destacados em amarelo serão cadastrados pelo processo de descoberta/reconciliação. Esses elementos não serão cadastrados via SOM.
+Além desses elementos associados aos equipamentos, o Recon também realizará a descoberta de Rotas Lógicas que vão representar a topologia lógica da rede SD-WAN.
+Figura 15 – Elementos do GPL que serão tratados no processo de Reconciliação
+As tabelas abaixo mostram os dados de cada elemento lógico associado ao equipamento. Na coluna “Atributos” foi mantido o nome do atributo que constava na tabela do datamodel só para garantir rastreabilidade.
+6.1  Equipamento Roteador
+Mapeamento entidades DM x YANG X GPL
+Nome da entidade no DM | Nome do objeto no YANG | YANG PATH | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+device | device | site/device | Lista de dispositivos CPE do site | siteholder/site/EquipamentoRoteador | EquipamentoRoteador / 
+Mapeamento atributos YANG X GPL
+Tipo de dado /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+GPL /  | device-software-version | string / 1..1 /  /  | SIM | softwareVersion | OM] Versão de software do equipamento. Deve ser como o exemplo a seguir: 7.4 (Dois numeros inteiros separados por ponto.) | SIM
+site/device / Específico /  | role | enumeration1..1 / possible values: / •AP: AP. / •WAC: WAC. / •Gateway: Gateway. / •Gateway_CORE: Gateway, CORE. / •Gateway_vRR: Gateway, vRR. / •AGG: AGG. / •Region Aggregation: Region Aggregation. / •ACC: ACC. / •CORE: CORE. / •TG: TG. / •Firewall: Firewall. /  | SIM | function | Função(ões) do dispositivo. | SIM
+site/device / Específico /  | device-ha-group | uint16 / 0..1 / range: 1..1024 | NÃO | ha-group | Identificador do grupo HA. | SIM
+site/device / Específico /  | device-pre-shared-key | string0..1 / length: 1..64 | NÃO | device-pre-shared-key | [OM] Chave pré-compartilhada usada para ativação do dispositivo. /  | SIM
+site/device / Específico /  | device-ha-role | enumeration1..1 / possible values: / •Active / •Standby | SIM | device-ha-role | [OM] Papel do dispositivo no cluster HA. /  | SIM
+6.2 Equipamento Roteador - Conf
+Mapeamento Entidades DM x YANG x GPL
+Nome do objeto no DM | Nome do objeto no YANG | Path GPL | Nome do objeto no GPL
+device | device | Equipamento Roteador/Equipamento Roteador Conf | Equipamento Roteador Conf
+Mapeamento atributos YANG x GPL
+YANG PAth | Atributo YANG  | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+Específico | device-group | string0..1 | NÃO | device-group | ID do grupo de dispositivos Fortinet ao qual este dispositivo pertence. Lista de opções disponíveis obtidas da Controller. | SIM
+Específico | device-ha-role | enumeration1..1 / possible values: / •Active / •Standby | SIM | device-ha-role | [OM] Papel do dispositivo no cluster HA. | SIM
+Específico | policy-package | string0..1 | NÃO | policy-package | ID do pacote de políticas Fortinet aplicado a este dispositivo. Lista de opções disponíveis obtidas da Controller. | SIM
+Específico | ha-group | uint16 / 0..1 / range: 1..1024 | NÃO | ha-group | Identificador do grupo HA. | SIM
+Específico | ha-port-1 | string / 0..1 | NÃO | ha-port-1 | Interface de heartbeat #1. | NÃO
+Específico | ha-port-2 | string / 0..1 | NÃO | ha-port-2 | Interface de heartbeat #2. | NÃO
+Específico | ha-monitor-port-range | string / 0..1 /  | NÃO | ha-monitor-port-range | Interfaces monitoradas no cluster HA. | NÃO
+6.3 Banda (relacionado de porta física) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | YANGPath | Descrição do objeto no YANG | Path do objeto no GPL
+interfaceBandwidthConfig | wan-access | site/device/wan-access | Lista lógica de acessos WAN do site. Representa links WAN lógicos (Wan1, Wan2, etc.), não interfaces físicas. | Porta (Física)/Banda / 
+Mapeamento atributos YANG x GPL
+Atributo YANG | Nome do Objeto GPL | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+wan-access | in-bandwidth | uint32 / units kbps / 0..1 /  | SIM | in-bandwidth | [OM] Banda de download da WAN. | SIM
+wan-access | out-bandwidth | uint32 / units kbps / 0..1 /  | SIM | out-bandwidth | [OM] Banda de upload da WAN. | SIM
+wan-access | mtu | uint32 / 0..1 / range: 46..9600 | SIM | mtu | Unidade Máxima de Transmissão (MTU). | SIM
+wan-access | tcpmss | uint32 / 0..1range: 230..2048 /  | SIM | tcpmss | Tamanho Máximo de Segmento (MSS). /  | SIM
+6.4 Configurações Porta LAN (Relacionado de Equipamento) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto GPL
+interfaceLanConfig-hw | interface-lan-ipconfig | Configuração IP LAN da interface. | EquipamentoRoteador/Configurações Porta LAN /  | Configurações Porta LAN
+Mapeamento atributos YANG x GPL
+YANGPath | Atributo YANG | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig | dhcp | boolean / 0..1 / possible values: / •true / •false /  | NÃO | dhcp | Indica se o DHCP está habilitado. | SIM
+site/device/lan-access/interface-lan-ipconfig | unr-routes-limit | uint32 / 0..1 / range: 1..4096 /  | NÃO | unr-routes-limit | Número máximo de rotas UNR na interface. | SIM
+site/device/lan-access/interface-lan-ipconfig | unr-routes-limit-enable | boolean / 0..1 / possible values: / •true / •false. | NÃO | unr-routes-limit-enable | Habilita o limite de rotas UNR na interface | SIM
+site/device/lan-access/interface-lan-ipconfig | mtu | uint32 / 0..1 / range: 46..9600 | NÃO | mtu | MTU. | SIM
+site/device/lan-access/interface-lan-ipconfig | security-zone /  | string / 0..1 / length: 1..32 | NÃO | security-zone /  | Zona de segurança. | SIM
+site/device/lan-access/interface-lan-ipconfig | tcpmss | uint320..1 / range: 128..9500 | NÃO | tcpmss | MSS. /  | SIM
+site/device/lan-access/interface-lan-ipconfig | trust-enable | boolean1..1possible values: / •true / •false | SIM | trust-enable | Ativar função de confiança. | SIM
+site/device/lan-access/interface-lan-ipconfig | description | string0..1 / length: 1..242. /  | NÃO | description | Descrição da sub-rede IP | SIM
+site/device/lan-access/interface-lan-ipconfig | ntp-disable | boolean0..1 / possible values: / •true / •false /  | NÃO | ntp-disable | Desabilita o recebimento de pacotes NTP. | SIM
+site/device/lan-access/interface-lan-ipconfig | unr-host-route-advertise-enabled | boolean0..1 / possible values: / •true / •false /  | NÃO | unr-host-route-advertise-enabled | Habilita a divulgação de rotas ARP de host. | SIM
+site/device/lan-access/interface-lan-ipconfig | dhcp-trigger-enabled | boolean0..1 / possible values: / •true / •false /  | NÃO | dhcp-trigger-enabled | Habilita a divulgação de rotas ARP baseada em DHCP. | SIM
+site/device/lan-access/interface-lan-ipconfig | proxy-arp-enabled | boolean / 0..1 / possible values: / •true / •false. /  | NÃO | proxy-arp-enabled | Habilita proxy ARP | SIM
+site/device/lan-access/interface-lan-ipconfig | inner-proxy-arp | boolean0..1 / possible values: / •true / •false /  | NÃO | inner-proxy-arp | Whether to enable intra-VLAN proxy ARP. | SIM
+site/device/lan-access/interface-lan-ipconfig | link-selection-enable | boolean0..1 / possible values: / •true / •false /  | NÃO | link-selection-enable | Habilita a opção de seleção de link. | SIM
+site.device.lan-access.interface-lan-ipconfig | interface-type /  | enumeration / 0..1 | NÃO | interface-type /  | Tipo de interface /  | NÃO
+6.5 Endereço IP (relacionado de Porta física) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | YANGPath | Descrição do objeto no YANG | Path do objeto no GPL
+interfaceLANIpConfig | interface-lan-ipconfig | site/device/lan-access/interface-lan-ipconfig | Configuração IP LAN da interface. | Porta Física - Endereço IP / 
+interfaceWANIpConfig | interfaceWANIpConfig | site/device/wan-access/interface-wan-ipconfig | Configuração IP lógica do acesso WAN. | Porta Física - Endereço IP / 
+Mapeamento atributos YANG x GPL
+YANG PAth | Atributo YANG | Tipo | Obrig | Atributo GPL | Descrição | Discovery
+NA |  | Valores válidos: / LAN / WAN |  | Tipo de Interface |  | 
+site/device/lan-access/interface-lan-ipconfig | secondary-ip-address | string / 0..1 | NÃO | secondary-ip-address | Endereço IPv4 secundário. | SIM
+site/device/lan-access/interface-lan-ipconfig | ipAddress | string / 0..1 | NÃO | ipAddress | Endereço IPv4 principal da interface. /  | SIM
+site/device/wan-access/interface-wan-ipconfig | ipAddress |  |  |  |  | 
+site/device/lan-access/interface-lan-ipconfig | dhcp | Boolean (Sim/Não) | SIM | dhcp | Indica se o DHCP está habilitado. | SIM
+site/device/lan-access/interface-lan-ipconfig | ip-gateway | string / 0..1 | NÃO | ip-gateway | Gateway IPv4 | SIM
+site/device/wan-access/interface-wan-ipconfig | wan-ip-mask | ipv4-address (string) / 0..1 | NÃO | ipmask | Máscara IPv4. | SIM
+site/device/lan-access/interface-lan-ipconfig | ipmask |  |  |  |  | 
+site/device/lan-access/interface-lan-ipconfig | secondary-ip-mask | string / 0..1 | NÃO | secondary-ip-mask | Máscara IPv4 secundária. | SIM
+site/device/lan-access/interface-lan-ipconfig | secondary-gateway-ip | string / 0..1 | NÃO | secondary-gateway-ip | Gateway IPv4 secundário. | SIM
+site/device/wan-access/interface-wan-ipconfig | public-ip-address | ipv4-address (string) / 1..1 | SIM | public-ip-address | Endereço IP público. Deve permanecer vazio para dispositivos que não são RR. | SIM
+6.6 Link (relacionado de Endereço IP em porta) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Objeto no GPL
+interfaceSdwanTNP-hw | wan-access | EquipamentoRoteador/Porta Física/Endereço IP/Link | Link / 
+Mapeamento Atributos YANG x GPL
+YANG Path | Atributo YANG | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+site/device/wan-access | interfaceWANIpConfig /  |  |  |  |  | 
+site/device/wan-access | link-information | string / 0..1 / length: 1..128 | SIM | link-information | ID ou nome do link. /  /  /  | SIM
+site/device/wan-access | access-preference | enumeration / 0..1 | SIM | access-preference | Prioridade de acesso IPv4 (southbound). | NÃO
+site/device/wan-access | multiple-sub-interface-enabled | boolean / 0..1 / possible values: / •true / •false /  | SIM | multiple-sub-interface-enabled | Permite múltiplas subinterfaces (configurado apenas na criação). | SIM
+interfaceSdwanTNP_TNInfo.workMode | work-mode | enum{Active,Standby] | NÃO | work-mode | função operacional do transporte dentro da política SD-WAN.  | 
+6.7 Endereço IP Conf (informações adicionais de Endereço IP em porta física)
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL
+interfaceWANIpConfig | interfaceWANIpConfig | Configuração IP lógica do acesso WAN. | Porta Física/Endereço IP Conf / 
+interfaceSwitchportConfig | switchport-config-fn | Parâmetros de switchport. | Porta Física/Endereço IP Conf / 
+Mapeamento Atributos YANG x GPL
+YANGPath | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição
+site/device/wan-access/interface-wan-ipconfig /  | address-assignment-mode | enumeration / 0..1possible values: / •Fixed IP / •DHCP / •PPPoE /  | NÃO | address-assignment-mode | Modo de Obtenção de IP
+site/device/wan-access/interface-wan-ipconfig | peer-ip | VARCHAR | NÃO |  | Peer IP address.
+site/device/interface-port/switchport-config-fn /  | switchport-mode | enumeration / 0..1 / possible values: / •Access / •Trunk / •Default | NÃO | switchport-mode /  /  | Define o modo de operação do switchport.
+site/device/interface-port/switchport-config-fn /  | native-vlan-id | range: 1..4094 / uint16 / 0..1 | NÃO | native-vlan-id | ID da VLAN nativa.
+6.8  VRRP (relacionado de endereço IP em porta Física) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | objeto no GPL
+interfaceVrrpConfig-hw | vrrp-list |  | Porta Física/Endereço IP/ VRRP | VRRP
+Mapeamento Atributos YANG x GPL
+Path YANG /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list /  | preempt-delay | uint32 / 1..1 / range: 0..3600. | SIM | preempt-delay | Atraso de preempção, em segundos | SIM
+interfaceVrrpConfig.type | type | VARCHAR | NÃO |  | Protocol type. This parameter is optional, can be configured in VRRP6 scenarios, and is valid only for V600 devices. The options are ipv4 and ipv6. | 
+interfaceVrrpConfig.InterfaceName | InterfaceName | VARCHAR |  |  |  | 
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list | virtual-ip | string / 1..1 / length: 1..64 | SIM | virtual-ip | Ip Virtual | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list | authKey | string1..11..8 | SIM | authKey | Chave de autenticação do VRRP. | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list | authMode | enumeration / 0..1 / possible values: / •0: Sem autenticação. / •1: Autenticação MD5. / •2: Autenticação simples. /  /  | NÃO | authMode | Modo de autenticação do VRRP / possible values: / 0: Sem autenticação. / 1: Autenticação MD5. / 2: Autenticação simples.. |  / SIM /  /  /  /  /  / 
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list | vrrp-id | uint32 / 1..1 / range: 1..255 | SIM | vrrp-id | ID do grupo VRRP. | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list | priority | uint32 / 1..1 / range: 1..255 | SIM | priority | Prioridade do VRRP. | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list | Enable | boolean / 0..1 / possible values: / •true / •false | NÃO | Enable | Habilita ou desabilita o VRRP. | SIM
+6.9 TrackRoute (relacionado de VRRP) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | objeto no GPL
+interfaceVrrpConfigTrackRoute-hw | track-route |  | Porta Física/Endereço IP/ VRRP/TrackRoute | TrackRoute
+Mapeamento Atributos YANG x GPL
+Path YANG  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track-route /  | ip-prefix | (string) / 0..1 | NÃO | ip-prefix | Prefixo de rota IPv4 ou IPv6 | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track-route /  | add-or-reduce | enumeration / 0..1possible values: / •increase / •reduce /  | NÃO | add-or-reduce | Alterar modo | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track-route /  | value | uint32 / 0..1range: 1..255 | NÃO | value | Alterar valor | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track-route /  | add-or-reduce | enumeration / 0..1possible values: / •increase / •reduce /  | NÃO | add-or-reduce | Change mode. This parameter is optional. The options are increase and reduce. This parameter must be set together with the parameter value. | 
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track-route /  | value | uint32 / 0..1range: 1..255 | NÃO | value | Change value. This parameter is optional and must be used together with addOrReduce. | 
+Chave: ip-prefix 
+6.10 BFDSession (relacionado de VRRP) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+interfaceVrrpConfigBfdSession-hw | bfd-session |  | VRRP/BFDSession  | BFDSession
+Mapeamento Atributos YANG x GPL
+Path YANG  | AtributoYANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track/bfd-session | local-discriminator | uint32 / 0..1 / range: 1..8191 | NÃO | local-discriminator | Discriminador local da sessão BFD. | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track/bfd-session | source-ip /  | string / 0..1 / Endereço IPV4 ou IPV6 | NÃO | source-ip /  | Endereço IP local. | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track/bfd-session | peer-ip /  | string / 0..1 / Endereço IPV4 ou IPV6 | NÃO | peer-ip /  | Endereço IP do par. | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track/bfd-session | remote-discriminator /  | uint32 / 0..1 / range: 1..8191 | NÃO | remote-discriminator /  | Discriminador remoto da sessão BFD. | SIM
+site/device/lan-access/interface-lan-ipconfig/interface-vrrp-config-hw/vrrp-list/track/bfd-session | interval | uint32 / 0..1 / range: 10..2000 | NÃO | interval | Período de detecção. | SIM
+6.11 Pppoe (relacionado de porta física) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto GPL
+interfacePppoeConfig | interface-wan-ipconfig |  | EquipamentoRoteador/PortaFísica/Pppoe | Pppoe
+Mapeamento Atributos YANG x GPL
+YANGPath | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição
+site/device/wan-access/interface-wan-ipconfig | pppoe-username | VARCHAR | NÃO | pppoe-username | Usuário PPPoE
+site/device/wan-access/interface-wan-ipconfig | pppoe-password | VARCHAR | NÃO | pppoe-password | Senha PPPoE
+site/device/wan-access/interface-wan-ipconfig | auth-type | enumeration0..1 / possible values: / •CHAP / •PAP / •PAP-CHAP /  | SIM | auth-type | [OM] Tipo de autenticação PPPoE: CHAP, PAP ou PAP+CHAP.
+6.12 Interface Lógica (Relacionado de equipamento) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | YANGPath | Path GPL | Path do objeto no GPL
+interfaceVlan | interface-vlan | site/device/interface-vlan | EquipamentoRoteador//InterfaceLógica | InterfaceLógica
+interfaceSubConfig  | interface-lan-ipconfig | site/device/lan-access/interface-lan-ipconfig |  | 
+loopback | loopback | site/device/loopback |  | 
+Mapeamento Atributos YANG x GPL
+YANGPath | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+NA | NA | Valores válidos: / Loopback / Interface VLAN / Subinterface | SIM | Interface Lógica |  /  | 
+site/device/interface-vlan | interface-vlan-name | string / 1..1 | SIM | port.name /  /  | Nome da VLAN /  /  /  | SIM
+site/device/interface-vlan | interface-vlan-physical-interface | 0..1 | NÃO | interface-vlan-physical-interface | Interface física /  | 
+site/device/interface-vlan | interface-vlan-role /  /  | enumeration0..1 / possible values: / •WAN / •LAN / •DMZ | NÃO | interface-vlan-role /  /  | Papel da Interface | SIM
+site/device/interface-vlan | interface-vlan-ip-address /  | ipv4-address (string)0..1 /  |  | ip-address /  | Endereço IP associado com a interface, por exemplo, 192.168.56.1. | SIM
+site/device/loopback | loopback-ip-address |  |  |  | Endereço IPv4 associado à loopback, por exemplo 192.168.56.1. | 
+site/device/interface-vlan | ip-address.Mask | ipv4-address (string)0..1 /  | NÃO | ip-address.Mask | Máscara /  | SIM
+site/device/loopback | loopback-ip-mask /  |  |  |  | Máscara de rede associada à loopback, por exemplo, 255.255.255.255 | 
+site/device/interface-vlan | interface-vlan-ip-gateway | ipv4-address (string)0..1 /  | NÃO | interface-vlan-ip-gateway | Gateway Endereço IP | SIM
+site/device/interface-vlan | interface-vlan-vlan-id | uint160..1range: 1..4094 | NÃO | vlan-id | ID da VLAN | SIM
+site/device/wan-access | vlan-id |  |  |  |  | 
+site/device/wan-access | sub-interface-number | uint32 / 1..1 / range: 1..4094 /  |  |  | Número da subinterface  | 
+site/device/lan-access/interface-lan-ipconfig | description /  | string / 0..1 / length: 1..242 /  | SIM | Interface Lógica | Descrição da sub-rede IP. | 
+site/device/loopback | loopback-description | string / 0..1 /  |  | description | Descrição da Loopback | 
+site/device/loopback | loopback-name | string / 1..1 |  |  | Nome da interface loopback | 
+6.13 Interface Lógica Conf
+Mapeamento Atributos YANG x GPL
+YANG Path | Atributo YANG | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+interfaceVlanConfig.dhcp | dhcp | boolean1..1 / possible values: / •true / •false /  | SIM | dhcp | DHCP information. Set this parameter when IPv4 is enabled. / Só deve ser habilitado se Tipo de Interface = VLAN /  | 
+site/device/interface-vlan | tagMode | String / Valores válidos: / Tag / Untag | SIM | tagMode |  | 
+site/device/interface-vlan | portLagFlag | Boolean / Valores Válidos / Sim / Não | NÃO | portLagFlag | LAG flag. When LAG is enabled, the ID is the LAG ID. When LAG is disabled, the ID is the port ID. / Só deve ser habilitado se Tipo de Interface = VLAN | 
+interfaceVlan.isAutoNegotiation | isAutoNegotiation | Boolean / Valores Válidos / Sim / Não | NÃO | Interface Lógica Conf |  | 
+interfaceVlan.fullReplace | fullReplace | string | NÃO | Interface Lógica Conf |  | 
+site/device/wan-access | enable-sub-interface | boolean / 1..1 / possible values: / •true / •false | SIM | Interface Lógica Conf | Habilita a subinterface (imutável após criação). /  | 
+6.14 Porta Lógica (relacionado de equipamento) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | entidade YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto GPL
+interfaceLAG | interface-lag |  | EquipamentoRoteador/POrtaLógica | Porta Lógica
+Mapeamento Atributos YANG x GPL
+YANGPath | Atributo YANGs | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/interface-lag | interfaceLAG.LAG-name | union: / •string / •uint8 / 1..1 / Para Huawei, o nome do atraso deve ser um número. / uint8: / •range: 0..63 /  | NÃO | description | Identificador daLAG: nome no Fortinet e ID numérico no Huawei. | SIM
+site/device/interface-lag | LAG-id |  | SIM | number | LAG ID | 
+Chave: lag-name
+6.15 Porta Lógica Conf (relacionado de Porta Lógica) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | entidade YANG | YANGPath | Descrição do objeto no YANG | Path do objeto no GPL
+interfaceLAG | interface-lag | site/device/interface-lag |  | Porta Lógica Conf
+Mapeamento Atributos YANG x GPL
+YANG Path | Nome do Atributo | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+site/device/interface-lag /  | is-member-wan-link | boolean / 1..1 / possible values: / •true / •false /  | SIM | is-member-wan-link /  | Se o Eth-Trunk está em um link WAN | SIM /  / 
+site/device/interface-lag /  | port-switch | enumeration1..1possible values: / •layer2-port: L2 Port. / •layer3-port: L3 Port. | SIM | port-switch /  | Comutador de portas | SIM
+site/device/interface-lag /  | lacp-mode | enumeration0..1' / possible values: / •static / •active / •passive | NÃO | lacp-mode /  | Modo do LACP | SIM
+site/device/interface-lag /  | trust-enable | boolean1..1possible values: / •true / •false | SIM | trust-enable | Ativar função de confiança. | SIM
+site/device/interface-lag /  | trust | string / 0..1 | NÃO | trust | Opção de confiança /  | SIM
+site/device/interface-lag /  | preempt-enable | boolean / 0..1 / possible values: / •true / •false /  /  | NÃO | preempt-enable | Habilitar preempção de prioridade LACP | SIM
+site/device/interface-lag /  | timeout-type | enumeration1..1 / possible values: / •fast / •slowTipo de tempo limite | SIM | timeout-type | Tipo de tempo limite | SIM
+site/device/interface-lag /  | fast-timeout | uint81..1range: 0..63 | SIM | fast-timeout | Tempo limite rápido | SIM
+site/device/interface-lag /  | role-interface | enumeration0..1 / possible values: / •WAN / •LAN / •DMZ | NÃO | role-interface | Papel da Interface | SIM
+site/device/interface-lag /  | dhcp | boolean / 0..1possible values: / •true / •false. /  | NÃO | Porta Lógica Conf | Informações do DHCP. Defina este parâmetro quando o IPv4 estiver ativado | SIM
+site/device/interface-lag /  | ip-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string)0..1 /  | NÃO | ip-address | Endereço IP | SIM
+site/device/interface-lag /  | mask | ipv4-address (string)0..1 /  | NÃO | mask | Máscara | SIM
+site/device/interface-lag /  | ip-gateway | ip-address (union): / •ipv4-address (string) / •ipv6-address (string)0..1 /  | NÃO | ip-gateway | Gateway Endereço IP | SIM
+site/device/interface-lag /  | secondary-ip-mask | ipv4-address (string)0..1 /  | NÃO | secondary-ip-mask | Máscara Secundário | SIM
+site/device/interface-lag /  | secondary-gateway-ip | ip-address (union): / •ipv4-address (string) / •ipv6-address (string)0..1 /  | NÃO | secondary-gateway-ip | Gateway Secundário | SIM
+site.device.interface-lag /  | work-mode | enumeration / 0..1 / possible values: / •lacp-static / •load-balance | NÃO | work-mode /  /  | Modo de funcionamento | 
+6.16 DHCP Pool (relacionado de interface lógica)
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCP | dhcp-fn | Configuração de DHCP nas interfaces. | InterfaceLógica/DHCP Pool /  | DHCP Pool / 
+intDHCPServer | dhcp-server | Configurações do DHCP Server. | InterfaceLógica/DHCP Pool /  | DHCP Pool / 
+intDHCPServer | dhcp-server | Parâmetros de DHCP. | InterfaceLógica/DHCP Pool | DHCP Pool / 
+Mapeamento Atributos YANG x GPL
+Path YANG | Nome do atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn /  | dhcp-service-type | enumeration / 0..1 / possible values: / •SERVER / •RELAY /  /  | NÃO | dhcp-service-type /  /  /  | Tipo de serviço DHCP. | SIM /  / 
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server /  | dhcp-ip-range-start /  | ipv4-address / (string) / 0..1 | NÃO | dhcp-ip-range-start | Endereço IP inicial da pool DHCP. /  | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server /  | dhcp-ip-range-end /  | ipv4-address / (string) / 0..1 /  | NÃO | dhcp-ip-range-end | Endereço IP final da pool DHCP. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server | use-secondary-ip /  /  /  | boolean / 0..1 / possible values: / •true / •false /  | NÃO | use-secondary-ip | Define se o IP secundário será utilizado. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server /  | domain-name | string / 0..1 / length: 1..63 | NÃO | domain-name /  | Nome de domínio. | SIM
+6.17 Server Option (relacionado de DHCPPool) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPServerOption | dhcp-option | Configuração de DHCP nas interfaces. | InterfaceLógica/DHCP Pool/ServerOption /  | Server Option / 
+Mapeamento Atributos YANG x GPL
+YANGPath | Nome do Atributo | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-option /  | dhcp-option-code /  | string / 0..1 | NÃO | dhcp-option-code | Código DHCP Option. | SIM / 
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-option /  | dhcp-option-type /  | enumeration1..1 / possible values: / •hex / •string / •ip / •fqdn /  | NÃO | dhcp-option-type /  | Tipo do DHCP Option. /  | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-option /  | dhcp-option-value /  | string / 1..1 | NÃO | dhcp-option-value /  /  /  | Valor do DHCP Option. /  | SIM
+6.18 Server Ips Fixos (Relacionado de DHCP Pool) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPServerIpsFixos | dhcp-ips-fixed | Lista de elementos fixos do DHCP. | InterfaceLógica/DHCP Pool/Server Ips Fixos | Server Ips Fixos
+Mapeamento Atributos YANG x GPL
+YANGPath | Nome do Atributo | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-ips-fixed | fixed-lan-ip /  /  | ipv4-address (string) / 1..1 | SIM | fixed-lan-ip | Endereço IP LAN fixo. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-ips-fixed | fixed-device-comment /  | string / 0..1 | NÃO | fixed-device-comment | Comentário do endereço IP LAN fixo. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-ips-fixed | fixed-mac-address | string / 0..1 / length: 17..17 | NÃO | fixed-mac-address /  | MAC Address. | SIM
+6.19 Server Lease Time (Relacionado de DHCP Pool) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPServerLeaseTime-hw | lease-time | Parâmetros de tempo de lease. | InterfaceLógica/DHCP Pool/Server Lease Time | Server Lease Time
+Mapeamento Atributos YANG x GPL
+YANGPath | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/lease-time | day /  | uint32 / 0..1 / range: 0..999 | NÃO /  | day /  | Dias do lease. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/lease-time | hour /  /  | uint32 / 0..1 / range: 0..23 | NÃO /  | hour /  | Horas do lease. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/lease-time | minute | uint32 / 0..1range: 0..59 | NÃO /  | minute | Minutos do lease. | SIM
+6.20 ServerVoiceOption (relacionado de DHCPPool) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPServerVoiceOption-hw | voice-option | Lista de elementos fixos do DHCP. | InterfaceLógica/DHCP Pool/ServerVoiceOption | ServerVoiceOption
+Mapeamento Atributos YANG x GPL
+YANGPath | Atributo YANG | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/voice-option | as-ip /  /  | ipv4-address (string) / 0..1 | NÃO | as-ip /  /  | Endereço IP AS. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/voice-option | ncp-ip /  | ipv4-address (string) / 0..1 | NÃO | ncp-ip /  | Endereço IP do NCP /  | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/voice-option | voice-vlan /  /  | uint32 / 0..1 / range: 1..4094 | NÃO | voice-vlan /  /  | Identificação de uma VLAN de voz | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/voice-option | fail-over-ip-address /  /  | ipv4-address (string) / 0..1 /  | NÃO | fail-over-ip-address /  /  | Endereço IP de failover. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/voice-option | fail-over-dialer-string /  | string / 0..1 / length: 1..64 | NÃO | fail-over-dialer-string /  | Sequência de discagem. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-server/voice-option | description | string / 0..1 / length: 0..64 | NÃO | description | Descrição do VoiceOption. /  | SIM
+6.21 IPsReservados (relacionado de DHCPPool)
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPServerIpsReservados | dhcp-ips-reserved | Lista de intervalos reservados do DHCP. | InterfaceLógica/DHCP Pool/IPsReservados | IPsReservados
+intDHCPServerDNS-hw | dhcp-server |  | InterfaceLógica/DHCP Pool/IPsReservados | IPsReservados
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-ips-reserved | ip-reserved-range-start /  /  /  | ipv4-address (string) / 0..1 | NÃO | ip-reserved-range-start /  /  /  | Endereço IP inicial do intervalo reservado. | SIM / 
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-ips-reserved | ip-reserved-range-end | ipv4-address (string) / 0..1 | NÃO | ip-reserved-range-end | Endereço IP final do intervalo reservado. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server/dhcp-ips-reserved | ip-reserved-range-comment | string / 0..1 | NÃO | ip-reserved-range-comment | Comentário do intervalo reservado. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-fn/dhcp-server | dhcp-dns-nameserver /  | string / 0..1 | NÃO | dhcp-dns-nameserver /  | Servidor DNS do DHCP. | SIM
+6.22 Relay (relacionado de DHCPPool) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPRelay-hw | dhcp-relay | Parâmetros de DHCP Relay. | InterfaceLógica/DHCP Pool/Relay | Relay
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay | source-address | ipv4-address (string) / 0..1 | NÃO | source-address | Endereço de origem. | SIM / 
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay | gateway-address | ipv4-address (string) / 0..1 | NÃO | gateway-address | Endereço de gateway. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay | link-selection-enable | ipv4-address (string) / 0..1 | NÃO | link-selection-enable | Habilita a opção de seleção de link. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay | link-selection-address | boolean / 0..1 / possible values: / •true / •false /  | NÃO | link-selection-address | Endereço de seleção de link. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay /  | server-ips | array of ipv4-address (string) / 1..n | NÃO | server-ips | Endereços IP dos servidores DHCP. | SIM
+6.23 Endereço IP (relacionado do objeto Relay) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPRelayServerIP-hw | dhcp-relay | Parâmetros de DHCP Relay. | InterfaceLógica/DHCP Pool/Relay/EndereçoIP | EndereçoIP
+Mapeamento Atributos YANG x GPL
+Yang Path | Atributo YANG | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay | serverip | array of ipv4-address (string) / 1..n | SIM | EndereçoIP | Endereços IP dos servidores DHCP. | SIM
+6.24 Option82 (relacionado do objeto Relay) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPRelayOption82-hw | dhcp-relay-option82 | Parâmetros da opção 82 do DHCP Relay. | InterfaceLógica/DHCP Pool/Relay/Option82 | Option82
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay/dhcp-relay-option82 | function | uint32 / 0..1 / range: 0..2 | NÃO | function |  / Função: 0 (inserir), 1 (recriar), 2 (desativar). /  | SIM
+intDHCPRelayOption82.vlanid | vlanid |  | NÃO | DHCP Pool - Relay - Option82 | Code / Define o VLAN ID associado às informações da Option 82. /  / Esse valor pode ser usado para: /  / Identificar a VLAN de origem do cliente. / Compor o Circuit-ID enviado ao servidor DHCP. / Permitir que o servidor DHCP escolha o escopo correto baseado na VLAN. | 
+6.25 Suboption (relacionado de Option82) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+intDHCPRelayOption82Suboption-hw | sub-option | Lista de subopções da opção 82. | InterfaceLógica/DHCP Pool/Relay/Option82/Suboption | Suboption
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo  GPL | Descrição | Discovery
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay/dhcp-relay-option82/sub-option | sub-option-code /  | uint32 / 0..1 / range: 0..254 | NÃO | sub-option-code /  | Tipo de subopção: 0 (circuit-id) ou 1 (remote-id). | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay/dhcp-relay-option82/sub-option | is-user-defined | boolean0..1possible values: / •true / •false /  | NÃO | is-user-defined | Indica se o valor da subopção foi definido manualmente pelo administrador. | SIM
+site/device/lan-access/interface-lan-ipconfig/dhcp-hw/dhcp-relay/dhcp-relay-option82/sub-option | value | string / 0..1when: / •../is-user-defined = 'true' / length: 1..255 /  | NÃO | value | Valor da subopção (quando definido pelo usuário).) | SIM
+6.26 VPN (relacionado de Porta Física) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+interfaceRoutingContext | interface-wan-ipconfig |  | EquipamentoRoteador/PortaFísica/VPN | VPN
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo  GPL | Descrição | Discovery
+site/device/wan-access/interface-wan-ipconfig | vrf-name /  | string / 0..1 / length: 1..31 | NÃO | code /  | [Auto] instância VPN (VRF). /  | SIM
+6.27 Interlink (relacionado de Roteador) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+underlayInterLink-hw | interlink-hw | Parâmetros de conectividade entre CPEs em um cenário de site com dois gateways. | Equipamento Roteador/ Interlink /  /  | Equipamento Roteador - Interlink /  / 
+underlayInterLinkportPairs-hw | iinterlink-port-pairs | Pares de portas de interligação. | Equipamento Roteador/ Interlink /  /  | Equipamento Roteador - Interlink /  / 
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/interlink-hw | type /  /  /  | enumeration / 0..1 / possible values: / •l3-interface: Interface L3. / •l2-interface: Interface L2. | SIM | type /  /  /  | Tipo de interface: 'l3-interface' ou 'l2-interface'. | NÃO / 
+site/interlink-hw | extend-vlans | array of string / 1..16 /  | SIM | extend-vlans | Intervalos de VLAN estendidos, como '1:9'. Total de VLANs 9..301; início < fim. | NÃO
+site/interlink-hw | mtu | uint32 / 0..1 / default value: 1500 / range: 1500..9000 /  | SIM | mtu | MTU (subinterface L3/Eth-Trunk ≤8996; VLANIF ≤1600). Valor padrão: 1500. | NÃO
+site/interlink-hw | mss | uint32 / 0..1 / default value: 1200 / range: 128..2048 | SIM | mss | MSS TCP. Valor padrão: 1200. | NÃO
+site/interlink-hw/interlink-port-pairs | device1PortType | string | SIM | Equipamento Roteador - Interlink | Nome da porta do dispositivo 1 (ex.: GE0/0/1). | 
+site/interlink-hw/interlink-port-pairs /  | device1PortNum | string | SIM | device1PortNum /  | Nome da porta do dispositivo 2 (ex.: GE0/0/1). | SIM
+site/interlink-hw/interlink-port-pairs /  | device2PortType | string | SIM | Equipamento Roteador - Interlink |  | 
+site/interlink-hw/interlink-port-pairs /  | device2PortNum | string | SIM | device2PortNum /  | Nome da porta do dispositivo 2 (ex.: GE0/0/1). /  | SIM
+6.28  Roteamento Dinâmico (relacionado de Equipamento) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+bgp-fn | bgp-route | site/device/routing-protocol/bgp-fn/bgp-route /  /  | Site/EquipamentoRoteador/RoteamentoDinâmico | Roteamento Dinâmico
+ospf-fn | ospf-fn | site/device/routing-protocol/ospf-fn /  /  | Site/EquipamentoRoteador/RoteamentoDinâmico | Roteamento Dinâmico
+routingBGPPeers-hw | bgp-hw | site/device/routing-protocol/bgp-hw | Site/EquipamentoRoteador/RoteamentoDinâmico | Roteamento Dinâmico
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+routing.protocol-type | protocol-type | VARCHAR | NÃO | Roteamento Dinâmico | Tipo de Protocolo | NÃO / 
+site/device/routing-protocol/bgp-fn/bgp-route | asn-local | array of uint32 / 0..2 / range: 1..max /  | NÃO | asn-local | ASN local | NÃO
+site/device/routing-protocol/bgp-hw | asn-local | uint64 / 1..1range: 1..4294967295 |  |  |  | 
+site/device/routing-protocol/bgp-fn/bgp-route | neighbor-ip | array of ipv4-address (string) / 0..2 | NÃO | neighbor-ip | Endereços IP dos Neighbors | NÃO
+site/device/routing-protocol/bgp-hw | peer-ip | ipv4-address (string)1..1 |  |  |  | 
+site/device/routing-protocol/bgp-fn/bgp-route | remote-as | array of uint32 / 0..4 / range: 1..max /  | NÃO | remote-as | ASN dos Neighbors | NÃO
+site/device/routing-protocol/bgp-hw | peer-as | uint64 / 1..1range: 1..4294967295 |  |  |  | 
+site/device/routing-protocol/ospf-fn | area-id | uint320..1 | NÃO | area-id /  | ID da Área | NÃO
+site/device/routing-protocol/ospf-fn | router-id | ipv4-address (string)0..1 | NÃO | router-id | endereço IPv4 | NÃO
+6.29 Roteamento Dinâmico - Conf OSPF
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+routingOSPF-hw | ospf-hw |  | Roteamento Dinâmico/ Conf OSPF | Roteamento Dinâmico/ Conf OSPF
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/routing-protocol/ospf-hw | vn-name | leafref / 1..1 | SIM | vn-name | Nome da rede virtual. | 
+site/device/routing-protocol/ospf-hw | router-id | string / 0..1 | NÃO | router-id | ID do roteador personalizado. Opcional na criação; não pode ser alterado posteriormente. Não pode começar com 127.0. | 
+site/device/routing-protocol/ospf-hw | process-id | uint32 / 1..1range: 1..65535 | SIM | process-id | ID do processo. No modo de túnel EVPN: 20001–30000 (underlay), 1–20000 (overlay). | 
+Chave: process-id
+6.30 Roteamento Estático (Relacionado de Equipamento)
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+routingStatic-hw | static-hw |  | Site/EquipamentoRoteador/RoteamentoEstático | RoteamentoEstático
+Mapeamento Atributos YANG x GPL
+YANG Path | Nome do objeto no YANG | Atributo YANG | Tipo | Obrig | Atributo GPL | Descrição
+site/device/routing-protocol/static-hw | static-hw /  | priority | uint32 / 1..1range: 1..255 | SIM | priority | Prioridade da rota estática.
+site/device/routing-protocol/static-hw | static-hw /  | destination-address-mask | ipv4-prefix (string) / 1..1 | SIM | destination-address-mask | Endereço de destino/máscara.
+site/device/routing-protocol/static-hw | static-hw /  | ip-address | ipv4-address (string)1..1 /  /  | SIM | ip-address | Endereço IP do próximo salto.
+Chave: destination-address-mask +  priority
+6.31 Roteamento Estático Conf (Atributos adicionais de Roteamento Estático) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+routingStatic-hw | static-hw |  | Site/EquipamentoRoteador/RoteamentoEstático | RoteamentoEstáticoConf
+Mapeamento Atributos YANG x GPL
+YANG Path | Nome do objeto no YANG | Atributo YANG | Tipo | Obrig | Atributo GPL | Descrição
+site/device/routing-protocol/static-hw | static-hw | next-hop-type | enumeration / 1..1possible values: / •ip-address: Endereço IP. / •outbound-interface: Interface de saída. / •black-hole: Blackhole.. /  | SIM | next-hop-type | Tipo de próximo salto
+site/device/routing-protocol/static-hw |  |  | boolean | SIM | routingStatic.track | Whether to enable the NQA probe test. The default value is false.
+site/device/routing-protocol/static-hw |  | configSource |  |  |  | Configuration source, which is used to distinguish the WAN service from the LAN-WAN interconnection service. This parameter is used only in query APIs and its value cannot be modified. The options include Wan and LanWan. / 
+site/device/routing-protocol/static-hw |  | isDefaultVpn |  |  |  | Whether the route belongs to the public VPN. If the value is true, VPNID and TNPID must be empty. / 
+site/device/routing-protocol/static-hw | static-hw | out-bound-interface | string / 1..1 /  | SIM | out-bound-interface | Interface de saída.
+site/device/routing-protocol/static-hw | static-hw | out-bound-interface-display-name | string / 1..1 /  | SIM | out-bound-interface-display-name | Nome de exibição da interface de saída.
+site/device/routing-protocol/static-hw | static-hw | out-bound-interface-type | string / 1..1 /  | SIM | out-bound-interface-type | Tipo da interface de saída.
+6.32 Security (relacionado do equipamento Roteador) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+security-hw | attack-defense-hw | Configuração de proteção contra ataques. /  | Equipamento Roteador - Security (HW) | Security (HW)
+Mapeamento Atributos YANG x GPL
+YANG Path | Nome do Atributo | Tipo | Obrig | Objeto GPL | Descrição | Discovery
+site/attack-defense-hw | enable | boolean1..1possible values: / •true / •false | SIM | enable /  | Habilita ou desabilita a política de proteção contra ataques. | SIM
+site/attack-defense-hw | attack-types | array of enumeration / 1..n / possible values: / •fraggle / •icmp-flood / •icmp-redirect / •icmp-unreachable / •ip-fragment / •ip-sweep / •land / •large-icmp / •ping-of-death / •port-scan / •smurf / •syn-flood / •tcp-flag / •teardrop / •tracert / •udp-flood / •winnuke | SIM | attack-types | Lista de tipos de ataques contra os quais será aplicada proteção. | SIM
+6.33 NAT Dinâmico (HW) (relacionado de equipamento) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATDynamic-hw | dynamic-nat | Política de NAT dinâmico. | EquipamentoRoteador/NAT Dinâmico (HW) | NAT Dinâmico (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/nat-policy-hw/dynamic-nat | is-overlay /  /  | boolean / 0..1 / possible values: / •true / •false | SIM | is-overlay | Define se é NAT de overlay (true) ou underlay (false). | SIM / 
+site/device/nat-policy-hw/dynamic-nat | policy-name /  | string1..1 | SIM | policy-name /  | Nome da política. | SIM
+site/device/nat-policy-hw/dynamic-nat | nat-mode | enumeration / 1..1 / possible values: / •EASY_IP / •PAT / •NO_PAT /  | SIM | nat-mode | Modo NAT: EASY_IP - usar o IP da interface; PAT - muitos-para-um com tradução de portas; NO_PAT - um-para-um, sem tradução de portas. | SIM
+site/device/nat-policy-hw/dynamic-nat | start-address /  | ipv4-address (string) / 1..1 | SIM | start-address /  | IP inicial para o pool pós-NAT. endAddress >= startAddress; até 255 endereços; pools na mesma interface não devem se sobrepor. | SIM
+site/device/nat-policy-hw/dynamic-nat | end-address /  | ipv4-address (string) / 1..1 | SIM | end-address /  | IP final para o pool pós-NAT. | SIM
+6.34 Regra (HW) (relacionado de NAT dinâmico) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATDynamicRule-hw | nat-rule | Informações da regra. | EquipamentoRoteador/NAT Dinâmico (HW)/Regra (HW) /  | Regra (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/nat-rule-parameters-hw/nat-rule | priority /  /  | uint16 / 1..1 / range: 1..100 | SIM | priority /  /  | Priority. The value ranges from 1 (high) to 100 (low). | SIM
+site/nat-rule-parameters-hw/nat-rule /  | action | enumeration1..1 / possible values: / •permit / •deny | SIM | action | Ação ao corresponder. | SIM
+site/nat-rule-parameters-hw/nat-rule /  | protocol | uint32 / 1..1 / range: 0..255 | SIM | protocol | Número do protocolo IP: 0(IP),1(ICMP),2(IGMP),4(IP-in-IP),6(TCP),17(UDP),47(GRE),89(OSPF), etc. | SIM
+site/nat-rule-parameters-hw/nat-rule /  | source-ip | ipv4-prefix (string)1..1 | SIM | source-ip | Segmento de rede IP de origem (ex.: 10.1.0.0/16). | SIM
+site/nat-rule-parameters-hw/nat-rule /  | destination-ip | ipv4-prefix (string)1..1 | SIM | destination-ip | Segmento de rede IP de destino (ex.: 10.2.0.0/16). | SIM
+site/nat-rule-parameters-hw/nat-rule /  | source-port | uint32 / 1..1 / range: 0..65535 /  | SIM | source-port | Porta de origem (somente TCP/UDP). | SIM
+site/nat-rule-parameters-hw/nat-rule /  | destination-port | uint32 / 1..1 / range: 0..65535 | SIM | destination-port | Porta de destino (somente TCP/UDP). | SIM
+Chave: priority
+6.35 NAT Estático (HW) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATStatic-hw | static-nat | Política de NAT estático. | EquipamentoRoteador/NAT Estático (HW) /  | NAT Estático (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/nat-policy-hw/static-nat | is-overlay | boolean / 0..1 / possible values: / •true / •false | NÃO | is-overlay | Define se é NAT de overlay (true) ou underlay (false). | SIM
+site/device/nat-policy-hw/static-nat | policy-name | string / 1..1 | SIM | policy-name | Nome da política. / . /  | SIM
+site/device/nat-policy-hw/static-nat | is-user-defined | boolean / 1..1 / possible values: / •true / •false /  | SIM | is-user-defined | Endereço IP pré-NAT (normalmente privado). | SIM
+site/device/nat-policy-hw/static-nat | external-ip | ipv4-address (string) / 1..1 | SIM | external-ip | Define se o IP pós-NAT é definido pelo usuário (true) ou usa o IP da interface (false). /  | SIM
+site/device/nat-policy-hw/static-nat | internal-ip | string | SIM | internal-ip | Endereço IP pré-NAT (normalmente privado). | SIM
+site/device/nat-policy-hw/static-nat | translation-type | enumeration / 1..1 / possible values: / •0: Tradução de endereço. / •1: Tradução de protocolo. /  | SIM | translation-type | Tipo de tradução: 0=tradução de endereço, 1=tradução de protocolo. Se is-user-defined=false, apenas 1 é permitido | SIM
+site/device/nat-policy-hw/static-nat | protocol | enumeration / 1..1 / possible values: / •0: TCP. / •1: UDP. / •2: ICMP. /  | SIM | protocol | Protocolo (quando utilizado). | SIM
+site/device/nat-policy-hw/static-nat | external-port | uint32 / 1..1 / range: 0..65535 | SIM | external-port | Porta externa (pós-NAT). | SIM
+site/device/nat-policy-hw/static-nat | internal-port | uint32 / 1..1 / range: 0..65535 | SIM | internal-port | Porta interna (pré-NAT). | SIM
+site/device/nat-policy-hw/static-nat | address-mask | uint32 / 0..1 / range: 24..32 /  | NÃO | address-mask | Comprimento da máscara para endereço definido pelo usuário. | SIM
+site/device/nat-policy-hw/static-nat | advance-set-enable | boolean / 1..1 / possible values: / •true / •false /  | SIM | advance-set-enable | Indica se as configurações avançadas estão habilitadas. | SIM
+site/device/nat-policy-hw/static-nat | direction | enumeration / 1..1 / possible values: / •0: Bidirecional. / •1: acesso de redes externas para redes internas. / •2: acesso de redes internas para redes externas. | SIM | direction | 0=bidirecional, 1=externo->interno, 2=interno->externo. | SIM
+Chave: policy-name
+6.36 Regra (HW) (relacionado de NAT Estático) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATStaticRule-hw | nat-rule | Informações da regra. | EquipamentoRoteador/NAT Estático (HW)/Regra (HW) /  | Regra (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+NATStaticRule.priority | priority | uint16 / 1..1 / range: 1..100 | SIM | priority | Prioridade. 1 (alta) .. 100 (baixa). | SIM
+NATStaticRule.action | action | enumeration / 1..1possible values: / •permit / •deny /  | SIM | action | Ação ao corresponder. | SIM
+NATStaticRule.protocol | protocol | uint32 / 1..1 / range: 0..255 | SIM | protocol | Número do protocolo IP: 0(IP),1(ICMP),2(IGMP),4(IP-in-IP),6(TCP),17(UDP),47(GRE),89(OSPF), etc. | SIM
+NATStaticRule.sourceIp | source-ip | ipv4-prefix (string) / 1..1 | SIM | source-ip | Segmento de rede IP de origem (ex.: 10.1.0.0/16). | SIM
+NATStaticRule.destiNATionIp | destination-ip | ipv4-prefix (string) / 1..1 | SIM | destination-ip | Segmento de rede IP de destino (ex.: 10.2.0.0/16). | SIM
+NATStaticRule.sourcePort | source-port | uint32 / 1..1 / range: 0..65535 /  | SIM | source-port | Porta de origem (somente TCP/UDP). | SIM
+NATStaticRule.destiNATionPort | destination-port | uint32 / 1..1 / range: 0..65535 /  | SIM | destination-port | Porta de destino (somente TCP/UDP). | SIM
+6.37 NAT Origem (HW) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATSource-hw | source-nat | Política de Source NAT. | EquipamentoRoteador/NATSource-hw | NATSource-hw
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+NATSource.policyId | policyId | string | SIM | policyId | Policy ID. This parameter must be specified during modification and deletion. | 
+NATSource.policyName | policy-name | string1..1 | SIM | policy-name | Configuração específica da Huawei. Nome da política. | SIM
+NATSource.vpnId | vn-name | string1..1 /  | SIM | vn-name | Nome da rede virtual. | SIM
+NATSource.siteId | siteId | string | SIM | siteId | Site ID. This parameter must be specified during creation and modification. | 
+NATSource.deviceId | deviceId | string | SIM | deviceId | Device ID. This parameter must be specified during creation and modification. | 
+NATSource.NATMode | nat-mode | enumeration1..1possible values: / •EASY_IP / •PAT / •NO_PAT /  | SIM | nat-mode | Modo NAT: EASY_IP - usar o IP da interface; PAT - muitos-para-um com tradução de portas; NO_PAT - um-para-um, sem tradução de portas. | 
+Chave: policy-name
+6.38 Interface Egressos (HW) (relacionado de NAT Origem)
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATSourceEgresses-hw | egresses | Interface de saída. | EquipamentoRoteador/NATSource-hw/Interface Egressos (HW) | Interface Egressos (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/nat-policy-hw/source-nat/egresses | interface-name | 1..1 / enumeration: /  /  | SIM | interface-name /  | Nome da interface onde a política NAT será aplicada. | SIM
+Chave: interface-name
+6.39 Grupos de Endereços (HW) (relacionado de NAT Origem) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATSourceAddressGroups-hw | address-groups | Pool de endereços. | EquipamentoRoteador/NATSource-hw/Grupos de Endereços (HW) | Grupos de Endereços (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/source-nat-policy-parameters-hw/address-groups | start-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string)1..1 | SIM | start-address | Endereço inicial. | SIM
+site/source-nat-policy-parameters-hw/address-groups | end-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string)1..1 | SIM | end-address | Endereço final. | SIM
+Chave : start-address, end-address
+6.40 IPs Origem (HW) (relacionado de NAT Origem) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATSourceSrcIps-hw | src-ips | Endereço de origem. | EquipamentoRoteador/NATSource-hw/IPs Origem (HW) | IPs Origem (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Objeto GPL | Descrição | Discovery
+NATSourceSrcIps.ipaddress | ip-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string) | SIM | ip-address | Configuração específica da Huawei. Endereço IP. | SIM
+NATSourceSrcIps.mask | mask | uint32 / 1..1 / range: 0..32 | SIM | mask | Mask. | SIM
+NATSourceSrcIps.action | action | enumeration / 1..1possible values: / •permit: / •deny:  | SIM | action | a. permit: indica que o NAT é aplicado ao segmento de endereço IP. b. deny: indica que o NAT não é aplicado ao segmento de endereço IP. c. O valor padrão é permit quando nenhum valor é fornecido. As ações não podem ser especificadas para gateways de firewall. | SIM
+Chave: ip-address
+6.41 IPs Destino (HW) (relacionado de NAT Origem) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATSourceDestIps-hw | dest-ips | Endereço de destino. | EquipamentoRoteador/NATSource-hw/IPs Destino (HW) | IPs Destino (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/source-nat-policy-parameters-hw/dest-ips.ipaddress | ip-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string) | SIM | ip-address | Configuração específica da Huawei. Endereço IP. | SIM
+site/source-nat-policy-parameters-hw/dest-ips.ipaddress | mask | uint32 / 1..1 / range: 0..32 | SIM | mask | Mask. | SIM
+site/source-nat-policy-parameters-hw/dest-ips.ipaddress | action | enumeration / 1..1possible values: / •permit: / •deny:  | SIM | action | a. permit: indica que o NAT é aplicado ao segmento de endereço IP. b. deny: indica que o NAT não é aplicado ao segmento de endereço IP. c. O valor padrão é permit quando nenhum valor é fornecido. As ações não podem ser especificadas para gateways de firewall. | SIM
+Chave: ip-address
+6.42 Serviços (HW) (relacionado de NAT Origem) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATSourceServices-hw | services | Serviço. | EquipamentoRoteador/NATSource-hw/Serviços (HW) | Serviços (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/source-nat-policy-parameters-hw/services | protocol | enumeration / 1..1 / possible values: / •0: 0: IPv4 / •1: 1: ICMP / •2: 2: IGMP / •4: 4: IP-in-IP / •6: 6: TCP / •17: 17: UDP / •47: 47: GRE / •89: 89: OSPF /  | SIM | protocol | Protocol number.  / Common protocol numbers are as follows: 0 (IPv4), 1 (ICMP), 2 (IGMP), 4 (IP-in-IP), 6 (TCP), 17 (UDP), 47 (GRE), 89 (OSPF). | SIM
+site/source-nat-policy-parameters-hw/services | source-port | uint32 / 1..1 / range: 0..65535 | SIM | source-port | Porta de origem. /  | SIM
+site/source-nat-policy-parameters-hw/services | dest-port | uint32 / 1..1 / range: 0..65535 /  | SIM | dest-port | Porta de destino. | SIM
+Chave: protocol, source-port, dest-port
+6.43 NAT Destino (HW) 
+Mapeamento Entidades DM x YANG x GPL
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NATDestServer-hw | nat-server | Política de NAT Server (underlay).. | EquipamentoRoteador/NAT Destino (HW) | NAT Destino (HW)
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição | Discovery
+site/device/nat-policy-hw/nat-server | policy-name | string / 1..1 | SIM | policy-name | Nome da política. | SIM /  / 
+site/device/nat-policy-hw/nat-server | global-start-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string) / 1..1 /  | SIM | global-start-address | Endereço IP público inicial após o mapeamento do NAT Server. | SIM
+site/device/nat-policy-hw/nat-server | global-end-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string) / 1..1 | SIM | global-end-address | Endereço IP público final após o mapeamento do NAT Server. | SIM
+site/device/nat-policy-hw/nat-server | inside-start-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string) / 1..1 | SIM | inside-start-address | Endereço IP privado inicial após o mapeamento do NAT Server. | SIM
+site/device/nat-policy-hw/nat-server | inside-end-address | ip-address (union): / •ipv4-address (string) / •ipv6-address (string) / 1..1 | SIM | inside-end-address | Endereço IP privado final após o mapeamento do NAT Server. | SIM
+site/device/nat-policy-hw/nat-server | global-source-port | uint32 / 1..1range: 0..65535 | SIM | global-source-port | Número da porta pública inicial. | SIM
+site/device/nat-policy-hw/nat-server | global-end-port | uint32 / 1..1range: 0..65535 | SIM | global-end-port | Número da porta pública final. | SIM
+site/device/nat-policy-hw/nat-server | inside-source-port | uint32 / 1..1range: 0..65535 | SIM | inside-source-port | Número da porta privada inicial. | SIM
+site/device/nat-policy-hw/nat-server | inside-end-port | uint32 / 1..1range: 0..65535 | SIM | inside-end-port | Número da porta privada final. | SIM
+site/device/nat-policy-hw/nat-server | protocol | enumeration / 1..1 /  | SIM | protocol | As opções são: 1 (ICMP), 6 (TCP), 17 (UDP), 41 (IPv6), 47 (GRE), 50 (ESP), 51 (AH), 132 (SCTP). | SIM
+site/device/nat-policy-hw/nat-server | reverse | boolean / 1..1possible values: / •true / •false /  | SIM | reverse | Define se entradas reversas de mapeamento do servidor devem ser criadas. O valor padrão é true. | SIM
+site/device/nat-policy-hw/nat-server | interfaceId | string | SIM | interfaceId | ID of the interface on which the NAT policy is to be deployed.For the overlay configuration, set this parameter to the LAN-side interface ID or Overlay Tunnel (indicating the EVPN tunnel in the current VPN). For the underlay configuration, set this parameter to the WAN link ID of the device.This parameter is not configurable for firewall gateways. | 
+site/device/nat-policy-hw/nat-server /  | interfaceName | union: / •leafref / •leafref / •enumeration / 1..1 /  | SIM | interfaceName | Nome da interface onde a política NAT será aplicada. | SIM
+Chave: policy-name
+6.44 Software Opcional 
+Mapeamento Entidades DM x YANG x GPL 
+Nome da entidade no DM | Nome do objeto no YANG | Descrição do objeto no YANG | Path do objeto no GPL | Objeto no GPL
+NA | NA |  | Site/SoftwareOpcional | SoftwareOpcional
+Mapeamento Atributos YANG x GPL
+YANGPath /  | Atributo YANG | Tipo | Obrigatório | Atributo GPL | Descrição
+NA | NA |  | NÃO | Tipo de Software | [OM] valores válidos / Software Opcional Token / Software Opcional Portal / Software Opcional Analyser
+7. Objetos cadastrados diretamente via processo de descoberta 
+Os objetos abaixo serão populados no ISP somente pelo processo de descoberta, eles não serão populados pela integração com o SOM
+Ainda será necessário avaliar as APIS desses elementos nos fornecedores Huawei e Fortinet para definir como eles serão cadastrados no GPL
+Roteamento dinâmico
+Roteamento estático
+Zona
+8. Consultar inventário 
+Para apoiar na tomada de decisão sobre atualizar inventário ou não, o usuário Recon conta com consultas ao inventário que permitem:
+visualizar a situação atual do equipamento no inventário visto que alguma mudança pode ter ocorrido desde a data da reconciliação e o momento da análise do resultado.
+identificar impacto devido divergência dos recursos lógicos como IP, VRF, VLAN
+Opções disponíveis:
+Consulta Inventário: recupera os dados de equipamento disponíveis no inventário no momento da execução da consulta. Esta consulta já se encontra disponível na versão atual.
+Figura 18 – Consulta Inventário
+9. Atualizar inventário
+Ao analisar um resultado de reconciliação, o usuário pode solicitar a atualização do inventário a partir da própria treeview que apresenta o resultado, conforme ilustrado a seguir.
+Importante ressaltar que a atualização do inventário é apenas um atalho para funcionalidades disponíveis no Inside Plant Design, sendo assim, a atualização só será bem sucedida se não violar nenhuma regra de negócio.
+Será possível atualizar recursos lógicos, mas através de uma operação específica que só estará disponível para equipamento e/ou porta que não se encontrem divergentes (inventário x gerência) do ponto de vista de recursos físicos. 
+10.  [GP🡪IM] Consultar equipamentos descobertos
+A comunicação Recon e IM sempre ocorre na granularidade de equipamento. Os parâmetros disponíveis para a consulta aos equipamentos descobertos são:
+Por modelo de equipamento:
+Tecnologia
+Fabricante
+Modelo
+É possível informar uma lista de cada parâmetro e, se informado mais de um tipo de parâmetro, todas as combinações entre eles serão consideradas para busca dos equipamentos descobertos.
+Vale ressaltar a chave lógica considerada para fins de pareamento de equipamentos, placas/subplacas e portas:
+equipamento: nome na gerência, caso não esteja preenchido, nome do equipamento
+placa: equipamento/slot
+subplaca: equipamento/placa/subslot
+porta: 
+equipamento
+equipamento/placa OU
+equipamento/placa/subplaca OU
++ Identificação da porta na gerência, caso não esteja preenchido, usa o ALIAS.
+As informações de modelo, fabricante, tecnologia não são consideradas para fins de pareamento, mas se fazem necessárias em caso de necessidade de atualização do inventário.
+11. Referências
+[REF 1] GP-Visao-Integração_SOM_GPL_Claro_0106
+[REF 2] PlanilhaYANG_GPL_CPQD
+[REF 3] CLBR1b-DI-SLM-ServiceCatalog CFS
+11. Histórico de alterações deste documento
+Data de elaboração | Versão | Autor | Descrições das alterações realizadas
+03/06/2026 | 01.00 | Maria Fernanda | Versão inicial do documento / 
+08/07/2026 | 01.00 | Maria Fernanda | Lista de objetos/atributos a serem descobertos atualizada de acordo com o mapeamento Datamodel x CFS x GPL

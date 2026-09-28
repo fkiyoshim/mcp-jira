@@ -1,0 +1,33 @@
+{
+  "updatedBy": "JIRAUSER30629",
+  "keyNumber": 8039,
+  "updatedOn": "2026-09-10T00:44:28.921Z",
+  "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+  "priority": "Normal",
+  "majorVersion": 1,
+  "createdOn": "2026-09-09T23:52:52.938Z",
+  "objective": "Aplicar os três modos no mesmo equipamento\nHistória: ETICS-252410\nBase: H01/H02",
+  "labels": [
+    "CLARO_RECON",
+    "RECON_H01_H08"
+  ],
+  "projectKey": "ETICS",
+  "latestVersion": true,
+  "createdBy": "JIRAUSER30629",
+  "testScript": {
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: A=0, B=1, C=2; cada atributo possui valores diferentes entre GP e IM.\nWhen executar a reconciliação e detalhar.\nThen Somente B participa da comparação; C não aparece na árvore.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen C recebe o valor IM; A permanece inalterado; B segue a regra existente de atualização de atributos comparados.",
+    "id": 17279,
+    "type": "BDD"
+  },
+  "issueLinks": [
+    "ETICS-252410"
+  ],
+  "lastTestResultStatus": "Not Executed",
+  "name": "RECON-H01-04 — Aplicar os três modos no mesmo equipamento",
+  "parameters": {
+    "variables": [],
+    "entries": []
+  },
+  "key": "ETICS-T8039",
+  "status": "Draft"
+}

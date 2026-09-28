@@ -1,0 +1,74 @@
+{
+  "id": "CT02",
+  "key": "ETICS-T8195",
+  "before": {
+    "keyNumber": 8195,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Identificar os campos adicionais pela matriz validada, sem assumir que a lista original de oito campos limita a HU-38.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:55:42.207Z",
+    "objective": "Validar editar atributos adicionais em lance projetado/modificação. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4, §6.2 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92593,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then cada alteração persiste ao consultar novamente o lance",
+          "index": 0,
+          "description": "When alterar cada campo adicional por Corrigir inventário com um valor válido e salvar",
+          "id": 210972
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT02 | Editar atributos adicionais em lance Projetado/Modificação",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8195",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8195,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Identificar os campos adicionais pela matriz validada, sem assumir que a lista original de oito campos limita a HU-38.",
+    "updatedOn": "2026-09-23T18:55:45.090Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:55:42.207Z",
+    "objective": "Validar editar atributos adicionais em lance projetado/modificação. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4, §6.2 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um Lance de Cabo Óptico na situação Projetado/Modificação vinculado à OT A\nAnd não há OT definida como corrente\nAnd a matriz de atributos identifica os campos não bloqueados adicionais à lista original da seção 7.2\nWhen alterar cada campo adicional por Corrigir inventário com um valor válido e salvar\nThen cada alteração persiste ao consultar novamente o lance\nAnd a situação continua Projetado/Modificação e o vínculo original com a OT A é preservado\nAnd a correção é registrada sem associação a uma OT",
+      "id": 17543,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT02 | Editar atributos adicionais em lance Projetado/Modificação",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8195",
+    "status": "Draft"
+  }
+}

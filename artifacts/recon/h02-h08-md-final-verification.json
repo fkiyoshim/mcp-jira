@@ -1,0 +1,3502 @@
+{
+  "verifiedAt": "2026-09-10T17:01:27.685Z",
+  "ok": true,
+  "newChecks": [
+    {
+      "id": "RECON-H02-MD-01",
+      "key": "ETICS-T8094",
+      "story": "ETICS-252562",
+      "h": "H02",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H02-MD-02",
+      "key": "ETICS-T8095",
+      "story": "ETICS-252562",
+      "h": "H02",
+      "team": "Sistêmico",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H02-MD-03",
+      "key": "ETICS-T8096",
+      "story": "ETICS-252562",
+      "h": "H02",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H02-MD-04",
+      "key": "ETICS-T8097",
+      "story": "ETICS-252562",
+      "h": "H02",
+      "team": "Sistêmico",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H02-MD-05",
+      "key": "ETICS-T8098",
+      "story": "ETICS-252562",
+      "h": "H02",
+      "team": "Sistêmico",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-01",
+      "key": "ETICS-T8099",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-02",
+      "key": "ETICS-T8100",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-03",
+      "key": "ETICS-T8101",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-04",
+      "key": "ETICS-T8102",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-05",
+      "key": "ETICS-T8103",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-06",
+      "key": "ETICS-T8104",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-07",
+      "key": "ETICS-T8105",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-08",
+      "key": "ETICS-T8106",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-09",
+      "key": "ETICS-T8107",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-10",
+      "key": "ETICS-T8108",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-11",
+      "key": "ETICS-T8109",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-12",
+      "key": "ETICS-T8110",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-13",
+      "key": "ETICS-T8111",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-14",
+      "key": "ETICS-T8112",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-15",
+      "key": "ETICS-T8113",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-16",
+      "key": "ETICS-T8114",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-17",
+      "key": "ETICS-T8115",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-18",
+      "key": "ETICS-T8116",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-19",
+      "key": "ETICS-T8117",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-20",
+      "key": "ETICS-T8118",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-21",
+      "key": "ETICS-T8119",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-22",
+      "key": "ETICS-T8120",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-23",
+      "key": "ETICS-T8121",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-24",
+      "key": "ETICS-T8122",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-25",
+      "key": "ETICS-T8123",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-26",
+      "key": "ETICS-T8124",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-27",
+      "key": "ETICS-T8125",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H03-MD-28",
+      "key": "ETICS-T8126",
+      "story": "ETICS-252569",
+      "h": "H03",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-01",
+      "key": "ETICS-T8127",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-02",
+      "key": "ETICS-T8128",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-03",
+      "key": "ETICS-T8129",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-04",
+      "key": "ETICS-T8130",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-05",
+      "key": "ETICS-T8131",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-06",
+      "key": "ETICS-T8132",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-07",
+      "key": "ETICS-T8133",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-08",
+      "key": "ETICS-T8134",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-09",
+      "key": "ETICS-T8135",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H04-MD-10",
+      "key": "ETICS-T8136",
+      "story": "ETICS-252611",
+      "h": "H04",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-01",
+      "key": "ETICS-T8137",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-02",
+      "key": "ETICS-T8138",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-03",
+      "key": "ETICS-T8139",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-04",
+      "key": "ETICS-T8140",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-05",
+      "key": "ETICS-T8141",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-06",
+      "key": "ETICS-T8142",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-07",
+      "key": "ETICS-T8143",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-08",
+      "key": "ETICS-T8144",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H05-MD-09",
+      "key": "ETICS-T8145",
+      "story": "ETICS-252614",
+      "h": "H05",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-01",
+      "key": "ETICS-T8146",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-02",
+      "key": "ETICS-T8147",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-03",
+      "key": "ETICS-T8148",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-04",
+      "key": "ETICS-T8149",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-05",
+      "key": "ETICS-T8150",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-06",
+      "key": "ETICS-T8151",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-07",
+      "key": "ETICS-T8152",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-08",
+      "key": "ETICS-T8153",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H06-MD-09",
+      "key": "ETICS-T8154",
+      "story": "ETICS-252615",
+      "h": "H06",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H07-MD-01",
+      "key": "ETICS-T8155",
+      "story": "ETICS-252629",
+      "h": "H07",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    },
+    {
+      "id": "RECON-H08-MD-01",
+      "key": "ETICS-T8156",
+      "story": "ETICS-252632",
+      "h": "H08",
+      "team": "Desenvolvimento",
+      "bdd": true,
+      "linked": true,
+      "content": true,
+      "labels": true,
+      "status": "Draft",
+      "folder": null
+    }
+  ],
+  "h01Checks": [
+    {
+      "key": "ETICS-T8036",
+      "changed": true,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8037",
+      "changed": false,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8038",
+      "changed": false,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8039",
+      "changed": true,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8040",
+      "changed": false,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8041",
+      "changed": false,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8086",
+      "changed": false,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8087",
+      "changed": false,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8088",
+      "changed": true,
+      "status": "Deprecated",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8089",
+      "changed": true,
+      "status": "Deprecated",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8090",
+      "changed": true,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8091",
+      "changed": true,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8092",
+      "changed": true,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    },
+    {
+      "key": "ETICS-T8093",
+      "changed": false,
+      "status": "Draft",
+      "bdd": true,
+      "fields": true
+    }
+  ],
+  "cycleChecks": [
+    {
+      "key": "ETICS-C648",
+      "name": "CLARO | RECON H01 | Desenvolvimento | Revisão MD",
+      "members": 6,
+      "preserved": true
+    },
+    {
+      "key": "ETICS-C647",
+      "name": "CLARO | RECON H01 | Testes sistêmicos | Revisão MD",
+      "members": 8,
+      "preserved": true
+    },
+    {
+      "key": "ETICS-C646",
+      "name": "CLARO | RECON lógico | H01–H08 | Visão 01.01",
+      "members": 50,
+      "preserved": true
+    }
+  ],
+  "tests": [
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8094,
+      "updatedOn": "2026-09-10T16:46:22.586Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Metamodelo anterior e entregue disponíveis para comparação técnica.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:46:08.911Z",
+      "objective": "Conferir metadados dos 23 atributos e preservar o layout\nHistória: ETICS-252562\nFonte: h02-md.txt — AC1–3; Campos impactados; Tasks metamodelo\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o objeto ReconConfiguration 194004734 e os 23 campos PACK_MANUFACTURER, PACK_MODEL, PACK_TECHNOLOGY, PACK_SERIAL_NUMBER, PACK_PART_NUMBER, PORT_IP_ADDRESS_IPV4, PORT_IP_ADDRESS_IPV6, PORT_TECHNOLOGY, MAC_ADDRESS, PORT_SERIAL_NUMBER, PORT_SFP, PSEUDOWIRE, VLAN, VRF, VLAN_EQPT, PORT_CIRCUIT, IP_ADDRESS_IPV4, IP_ADDRESS_IPV6, SERIAL_NUMBER, IP_MANUFACTURER, IP_MODEL, IP_TECHNOLOGY, IP_PART_NUMBER\nWhen comparar os metadados entregues com a versão anterior\nThen todos os 23 campos possuem representation_type=2 e apontam para as mesmas colunas de RECON_ATRIB_CFG\nAnd a nova opção possui sequence=2, lower_value=2 e upper_value vazio\nAnd painéis, linhas, colunas, layout e operações existentes permanecem preservados",
+        "id": 17334,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252562"
+      ],
+      "name": "RECON-H02-MD-01 — Conferir metadados dos 23 atributos e preservar o layout",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8094",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8095,
+      "updatedOn": "2026-09-10T16:47:23.018Z",
+      "precondition": "Build com catálogos pt_BR, en_US, es e es_PE; acesso à configuração.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:47:20.038Z",
+      "objective": "Validar labels das listas nos quatro idiomas\nHistória: ETICS-252562\nFonte: h02-md.txt — AC2; Tasks labels multi-idioma\nEquipe: Sistêmico.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.\nObservação/pendência: A redação traduzida final deve ser conferida no catálogo aprovado; o MD não especifica os textos traduzidos.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_SISTEMICO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given os catálogos pt_BR, en_US, es e es_PE do objeto ReconConfiguration\nWhen abrir a configuração em cada idioma e conferir os labels dos 23 atributos configuráveis\nThen cada lista apresenta três rótulos funcionais correspondentes a Ignorar, Comparar IM x GP e Sincronizar IM -> GP\nAnd os rótulos estão associados respectivamente aos valores numéricos 0, 1 e 2 sem chaves de tradução expostas\nAnd os rótulos não apresentam semântica de checkbox Não/Sim",
+        "id": 17335,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252562"
+      ],
+      "name": "RECON-H02-MD-02 — Validar labels das listas nos quatro idiomas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8095",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8096,
+      "updatedOn": "2026-09-10T16:47:29.643Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Cópia controlada de ambiente anterior, backup de metadados e valores 0/1.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:47:26.797Z",
+      "objective": "Atualizar metadados de ambiente existente sem conflito de IDs\nHistória: ETICS-252562\nFonte: h02-md.txt — AC7; Tasks carga em ambientes existentes\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um ambiente existente com metadados de checkbox e configurações numéricas 0 e 1\nWhen aplicar a entrega pelo mecanismo padrão de metamodelo ou pelo patch DBManager definido para o ambiente\nThen object_class, field, valid_value e labels necessários às listas ficam atualizados\nAnd os novos IDs de valid_value não colidem com os existentes\nAnd os valores funcionais 0 e 1 em RECON_ATRIB_CFG permanecem inalterados\nWhen abrir uma configuração e selecionar o valor 2 em um atributo liberado para edição\nThen a opção pode ser salva e reaberta como lista",
+        "id": 17336,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252562"
+      ],
+      "name": "RECON-H02-MD-03 — Atualizar metadados de ambiente existente sem conflito de IDs",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8096",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8097,
+      "updatedOn": "2026-09-10T16:47:35.968Z",
+      "precondition": "Configuração não nativa em uso por reconciliação, estado anterior registrado.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:47:32.888Z",
+      "objective": "Preservar bloqueio de alteração de configuração em uso\nHistória: ETICS-252562\nFonte: h02-md.txt — Tasks impacto runtime; VerifyMatchAttributesInUseRuleObject\nEquipe: Sistêmico.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_SISTEMICO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma configuração não nativa que está em uso\nWhen tentar alterar um atributo pela lista para outro valor dentre 0, 1 e 2 e salvar\nThen a regra de configuração em uso impede a alteração\nAnd o valor persistido anteriormente em RECON_ATRIB_CFG permanece inalterado",
+        "id": 17337,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252562"
+      ],
+      "name": "RECON-H02-MD-04 — Preservar bloqueio de alteração de configuração em uso",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8097",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8098,
+      "updatedOn": "2026-09-10T16:47:42.792Z",
+      "precondition": "Configuração nativa identificada e valores anteriores registrados.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:47:39.718Z",
+      "objective": "Preservar bloqueio de alteração de configuração nativa\nHistória: ETICS-252562\nFonte: h02-md.txt — Tasks impacto runtime; VerifyMatchAttributesNativeRuleObject\nEquipe: Sistêmico.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_SISTEMICO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma configuração nativa de atributos reconciliáveis\nWhen tentar alterar um atributo pela nova lista e salvar\nThen a regra de configuração nativa impede a alteração\nAnd os valores persistidos permanecem inalterados",
+        "id": 17338,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252562"
+      ],
+      "name": "RECON-H02-MD-05 — Preservar bloqueio de alteração de configuração nativa",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8098",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8099,
+      "updatedOn": "2026-09-10T16:47:50.503Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:47:46.368Z",
+      "objective": "Inicializar envelope de recurso a partir do schema\nHistória: ETICS-252569\nFonte: h03-md.txt — AC1; Contrato do documento atual\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um schema com name=routerConf, valueType=object e schemaVersion=1\nAnd em execuções independentes o documento atual é null, string vazia ou somente espaços\nWhen aplicar uma lista vazia de patches pela ResourceDocumentPatchService\nThen mergedJson contém o envelope name=routerConf e valueType=object\nAnd value contém schemaVersion=1, nextResourceId=1, attributes={} e resources={}",
+        "id": 17339,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-01 — Inicializar envelope de recurso a partir do schema",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8099",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8100,
+      "updatedOn": "2026-09-10T16:48:01.074Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:47:54.222Z",
+      "objective": "Aplicar patch global preservando atributos omitidos\nHistória: ETICS-252569\nFonte: h03-md.txt — AC2; Contrato de entrada\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o envelope válido do MD com device-group=A001, device-ha-role=Active e as zonas existentes\nWhen aplicar a entrada {\"attributes\":{\"device-group\":\"A002\"}}\nThen apenas value.attributes.device-group passa a A002\nAnd device-ha-role, os demais atributos globais, resources e nextResourceId permanecem iguais ao snapshot",
+        "id": 17340,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-02 — Aplicar patch global preservando atributos omitidos",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8100",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8101,
+      "updatedOn": "2026-09-10T16:48:22.277Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:48:19.128Z",
+      "objective": "Atualizar recurso por chave exata preservando ID e campos omitidos\nHistória: ETICS-252569\nFonte: h03-md.txt — AC3; Semântica de patch\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o documento do MD com zona underlay de id=1, type=tipo1 e zone-interface=[\"wan1\"]\nWhen aplicar {\"zona\":{\"zone-name\":\"underlay\",\"zone-interface\":[\"wan1\",\"lan2\"]}}\nThen a zona underlay mantém id=1 e type=tipo1 e passa a zone-interface=[\"wan1\",\"lan2\"]\nAnd a zona layzone e nextResourceId=3 permanecem inalterados\nAnd o resultado do item informa UPDATE para a identidade underlay",
+        "id": 17341,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-03 — Atualizar recurso por chave exata preservando ID e campos omitidos",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8101",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8102,
+      "updatedOn": "2026-09-10T16:48:29.213Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:48:25.659Z",
+      "objective": "Inserir recurso obrigatório com ID gerado pelo contador\nHistória: ETICS-252569\nFonte: h03-md.txt — AC4; Semântica de patch\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o documento do MD com nextResourceId=3 e sem zona dmz\nWhen aplicar {\"zona\":{\"zone-name\":\"dmz\",\"type\":\"tipo1\",\"zone-interface\":[\"dmz1\"]}}\nThen a zona dmz é inserida com id=3 e os campos recebidos\nAnd nextResourceId passa a 4 e os recursos anteriores permanecem\nAnd o resultado informa INSERT e o ID gerado 3",
+        "id": 17342,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-04 — Inserir recurso obrigatório com ID gerado pelo contador",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8102",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8103,
+      "updatedOn": "2026-09-10T16:48:36.091Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:48:32.866Z",
+      "objective": "Gerar IDs consecutivos e resultados na ordem do lote\nHistória: ETICS-252569\nFonte: h03-md.txt — AC5; API pública proposta\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o documento do MD com nextResourceId=3\nAnd o lote contém nesta ordem insert da zona dmz, update de underlay e insert da zona interna, com campos válidos\nWhen aplicar o lote pela ResourceDocumentPatchService\nThen dmz recebe id=3, underlay mantém id=1 e interna recebe id=4\nAnd nextResourceId final é 5\nAnd os resultados preservam os índices 0, 1 e 2, coleção zona, identidades dmz, underlay e interna e operações INSERT, UPDATE e INSERT\nAnd os resultados de insert incluem os IDs 3 e 4",
+        "id": 17343,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-05 — Gerar IDs consecutivos e resultados na ordem do lote",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8103",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8104,
+      "updatedOn": "2026-09-10T16:48:42.955Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:48:39.441Z",
+      "objective": "Compartilhar sequência de IDs entre coleções\nHistória: ETICS-252569\nFonte: h03-md.txt — AC6; IDs únicos em todo o documento\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um schema genérico válido com coleções colecaoA e colecaoB e identidades string nome\nAnd o documento possui id=1 em colecaoA e nextResourceId=2\nWhen inserir um recurso válido em colecaoB e depois outro em colecaoA no mesmo lote\nThen os novos recursos recebem respectivamente id=2 e id=3\nAnd nenhum ID se repete entre as coleções e nextResourceId final é 4",
+        "id": 17344,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-06 — Compartilhar sequência de IDs entre coleções",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8104",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8105,
+      "updatedOn": "2026-09-10T16:48:49.389Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:48:46.238Z",
+      "objective": "Substituir array inteiro no patch de recurso\nHistória: ETICS-252569\nFonte: h03-md.txt — AC8\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given a zona underlay com id=1, type=tipo1 e zone-interface=[\"wan1\",\"lan2\"]\nWhen aplicar {\"zona\":{\"zone-name\":\"underlay\",\"zone-interface\":[\"dmz1\"]}}\nThen zone-interface contém somente [\"dmz1\"]\nAnd wan1 e lan2 não são retidos por merge de listas\nAnd id=1 e type=tipo1 permanecem",
+        "id": 17345,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-07 — Substituir array inteiro no patch de recurso",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8105",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8106,
+      "updatedOn": "2026-09-10T16:48:55.832Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:48:52.689Z",
+      "objective": "Comparar identidade composta como tupla exata\nHistória: ETICS-252569\nFonte: h03-md.txt — AC13; identidade composta\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um schema com identity.attributes=[\"a\",\"b\"], ambos strings obrigatórias e sensíveis à caixa\nAnd a coleção possui recursos com tuplas (\"ab\",\"c\"), (\"a\",\"bc\") e (\"AB\",\"c\"), IDs distintos e atributo valor=\"antes\"\nWhen aplicar um patch para a tupla (\"ab\",\"c\") com valor=\"depois\"\nThen somente a ocorrência (\"ab\",\"c\") é atualizada e preserva seu ID\nAnd (\"a\",\"bc\") e (\"AB\",\"c\") permanecem integralmente inalteradas\nAnd não ocorre colisão por concatenação nem conversão de caixa",
+        "id": 17346,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-08 — Comparar identidade composta como tupla exata",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8106",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8107,
+      "updatedOn": "2026-09-10T16:49:33.628Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:49:30.403Z",
+      "objective": "Não inferir renomeação de identidade do recurso\nHistória: ETICS-252569\nFonte: h03-md.txt — Semântica de patch; identidade imutável\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o documento do MD com zona underlay de id=1 e nextResourceId=3\nWhen aplicar uma entrada completa válida para zone-name=Underlay\nThen é inserida uma nova zona Underlay com id=3\nAnd a zona underlay de id=1 permanece inalterada\nAnd o componente não infere renomeação e nextResourceId passa a 4",
+        "id": 17347,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-09 — Não inferir renomeação de identidade do recurso",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8107",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8108,
+      "updatedOn": "2026-09-10T16:49:39.782Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:49:36.789Z",
+      "objective": "Rejeitar schema ausente ou inconsistente\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd o schema é, em execuções independentes, ausente, JSON malformado ou contém uma identidade que referencia atributo não declarado\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_RESOURCE_DOCUMENT_SCHEMA\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17348,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-10 — Rejeitar schema ausente ou inconsistente",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8108",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8109,
+      "updatedOn": "2026-09-10T16:49:46.316Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:49:43.160Z",
+      "objective": "Rejeitar envelope incompatível com o schema\nHistória: ETICS-252569\nFonte: h03-md.txt — AC9; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd o documento atual é, em execuções independentes, JSON malformado ou um envelope com name, valueType ou schemaVersion diferente do schema\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_CURRENT_RESOURCE_DOCUMENT\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17349,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-11 — Rejeitar envelope incompatível com o schema",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8109",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8110,
+      "updatedOn": "2026-09-10T16:49:53.775Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:49:50.437Z",
+      "objective": "Rejeitar patch inválido ou com múltiplas chaves raiz\nHistória: ETICS-252569\nFonte: h03-md.txt — Contrato de entrada; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd a entrada é, em execuções independentes, JSON malformado, uma raiz escalar ou {\"attributes\":{\"device-group\":\"A002\"},\"zona\":{\"zone-name\":\"underlay\"}}\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_RESOURCE_PATCH\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17350,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-12 — Rejeitar patch inválido ou com múltiplas chaves raiz",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8110",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8111,
+      "updatedOn": "2026-09-10T16:50:00.746Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:49:57.280Z",
+      "objective": "Rejeitar coleção não cadastrada no schema\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd a entrada usa a coleção naoCadastrada ausente do schema\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código UNKNOWN_RESOURCE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17351,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-13 — Rejeitar coleção não cadastrada no schema",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8111",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8112,
+      "updatedOn": "2026-09-10T16:50:07.290Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:50:04.065Z",
+      "objective": "Rejeitar atributo global ou de recurso desconhecido\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes uma entrada attributes ou uma entrada da zona underlay contém o campo naoDeclarado ausente do schema\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código UNKNOWN_ATTRIBUTE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17352,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-14 — Rejeitar atributo global ou de recurso desconhecido",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8112",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8113,
+      "updatedOn": "2026-09-10T16:50:38.358Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:50:33.651Z",
+      "objective": "Rejeitar tipo de atributo incompatível com o schema\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes ha-group recebe a string \"1024\", zone-interface recebe uma string no lugar de array ou um array com item numérico\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_ATTRIBUTE_TYPE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17353,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-15 — Rejeitar tipo de atributo incompatível com o schema",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8113",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8114,
+      "updatedOn": "2026-09-10T16:50:45.062Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:50:41.778Z",
+      "objective": "Rejeitar identidade ausente ou inválida em recurso\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes a entrada zona possui zone-name ausente, null, string vazia ou valor numérico\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código MISSING_RESOURCE_IDENTITY\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17354,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-16 — Rejeitar identidade ausente ou inválida em recurso",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8114",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8115,
+      "updatedOn": "2026-09-10T16:50:52.992Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:50:48.424Z",
+      "objective": "Rejeitar identidade duplicada no documento ou lote\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes o documento contém duas zonas com zone-name=underlay e IDs distintos ou o lote contém duas entradas para zone-name=underlay\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código DUPLICATE_RESOURCE_IDENTITY\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17355,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-17 — Rejeitar identidade duplicada no documento ou lote",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8115",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8116,
+      "updatedOn": "2026-09-10T16:50:59.825Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:50:56.582Z",
+      "objective": "Rejeitar ID repetido entre recursos de qualquer coleção\nHistória: ETICS-252569\nFonte: h03-md.txt — AC6; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes dois recursos da mesma coleção ou de coleções distintas possuem id=1 no documento atual, com identidades distintas e contador válido\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código DUPLICATE_RESOURCE_ID\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17356,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-18 — Rejeitar ID repetido entre recursos de qualquer coleção",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8116",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8117,
+      "updatedOn": "2026-09-10T16:51:06.812Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:51:03.743Z",
+      "objective": "Rejeitar contador de recurso ausente ou inválido\nHistória: ETICS-252569\nFonte: h03-md.txt — AC6; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd com maior ID existente igual a 2, nextResourceId é, em execuções independentes, ausente, zero, negativo, fracionário, string, 1 ou 2\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_NEXT_RESOURCE_ID\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17357,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-19 — Rejeitar contador de recurso ausente ou inválido",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8117",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8118,
+      "updatedOn": "2026-09-10T16:51:13.592Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:51:10.409Z",
+      "objective": "Rejeitar insert sem atributo obrigatório\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes a entrada de uma nova zona dmz tem zone-name válido mas omite type ou zone-interface\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código MISSING_REQUIRED_ATTRIBUTE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17358,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-20 — Rejeitar insert sem atributo obrigatório",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8118",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8119,
+      "updatedOn": "2026-09-10T16:51:38.099Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:51:34.938Z",
+      "objective": "Rejeitar null em atributo global ou campo de recurso\nHistória: ETICS-252569\nFonte: h03-md.txt — AC8; Validações e erros\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes a entrada tenta atribuir null a device-group global, ao campo type de underlay ou ao array zone-interface de underlay\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código NULL_ATTRIBUTE_VALUE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+        "id": 17359,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-21 — Rejeitar null em atributo global ou campo de recurso",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8119",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8120,
+      "updatedOn": "2026-09-10T16:51:45.458Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:51:41.920Z",
+      "objective": "Rejeitar array abaixo da cardinalidade do schema\nHistória: ETICS-252569\nFonte: h03-md.txt — AC7–8; schema minItems\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.\nObservação/pendência: O MD não fixa qual código deve representar violação de minItems; verificar a falha sem inventar código.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o schema de zona com zone-interface de minItems=1 e um documento válido\nWhen aplicar um patch para underlay com zone-interface=[]\nThen a validação rejeita o array sem devolver resultado parcial\nAnd o documento e o contador originais permanecem inalterados",
+        "id": 17360,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-22 — Rejeitar array abaixo da cardinalidade do schema",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8120",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8121,
+      "updatedOn": "2026-09-10T16:51:52.342Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:51:48.930Z",
+      "objective": "Exigir todos os componentes da identidade em insert e update\nHistória: ETICS-252569\nFonte: h03-md.txt — AC13; Semântica de patch\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um schema com identity.attributes=[\"a\",\"b\"] e um recurso existente de tupla (\"x\",\"y\")\nWhen aplicar, em execuções independentes de insert e update, uma entrada que fornece a mas omite b\nThen a operação falha com MISSING_RESOURCE_IDENTITY\nAnd não localiza por chave parcial, não insere recurso e preserva o documento original",
+        "id": 17361,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-23 — Exigir todos os componentes da identidade em insert e update",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8121",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8122,
+      "updatedOn": "2026-09-10T16:51:59.097Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:51:55.804Z",
+      "objective": "Preservar contador e documento quando o último item falha\nHistória: ETICS-252569\nFonte: h03-md.txt — Semântica de patch; atomicidade\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o documento do MD com nextResourceId=3\nAnd o lote tem dois inserts válidos seguidos de um insert que omite type obrigatório\nWhen aplicar o lote completo\nThen a operação falha com MISSING_REQUIRED_ATTRIBUTE e não devolve documento parcial\nAnd o snapshot do documento mantém nextResourceId=3 e nenhum dos novos recursos\nWhen aplicar somente os dois inserts válidos sobre o documento original\nThen eles recebem id=3 e id=4 e nextResourceId final é 5",
+        "id": 17362,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-24 — Preservar contador e documento quando o último item falha",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8122",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8123,
+      "updatedOn": "2026-09-10T16:52:07.051Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:52:03.090Z",
+      "objective": "Ler schema em UTF-8 e fechar os recursos recebidos\nHistória: ETICS-252569\nFonte: h03-md.txt — API pública proposta; parser de schema\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um schema genérico válido com nomes de atributos acentuados e doubles de InputStream e Reader que registram fechamento\nWhen construir JsonResourceDocumentSchema em execuções independentes usando o InputStream UTF-8 e o Reader\nThen os nomes acentuados são lidos corretamente\nAnd o stream ou reader recebido é fechado em cada execução\nAnd o schema carregado valida e aplica um patch que usa esses nomes",
+        "id": 17363,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-25 — Ler schema em UTF-8 e fechar os recursos recebidos",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8123",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8124,
+      "updatedOn": "2026-09-10T16:52:14.048Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:52:10.591Z",
+      "objective": "Garantir resultados imutáveis e chamadas sem estado\nHistória: ETICS-252569\nFonte: h03-md.txt — API pública proposta\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma mesma instância de ResourceDocumentPatchService, um schema válido, documento inicial e lote com insert\nWhen executar duas chamadas com os mesmos argumentos originais\nThen os dois resultados possuem documentos, operações e IDs equivalentes\nAnd o documento, a lista de patches e o schema de entrada permanecem iguais aos snapshots\nWhen tentar modificar as estruturas expostas pelo resultado\nThen elas não permitem alteração de seu conteúdo",
+        "id": 17364,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-26 — Garantir resultados imutáveis e chamadas sem estado",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8124",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8125,
+      "updatedOn": "2026-09-10T16:52:54.213Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Consumidor já compilado contra JsonDocumentUpsertService anterior; suíte legada; Java 8 e Jackson gerenciado.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:52:50.711Z",
+      "objective": "Manter compatibilidade binária da API legada no Java 8\nHistória: ETICS-252569\nFonte: h03-md.txt — AC10–12; build e API pública\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um consumidor binário da API JsonDocumentUpsertService anterior e o novo artefato com ResourceDocumentPatchService\nWhen substituir somente o JAR pelo novo e executar a suíte legada de upsert\nThen não ocorre quebra de ligação binária e os resultados de INSERT, UPDATE e substituição integral permanecem compatíveis\nWhen executar o build isolado e no reator cpqd-utils-json com Java 8 e Jackson do ambiente legado\nThen os testes da API nova e da API legada passam\nAnd a assinatura pública da nova API não expõe tipos Jackson",
+        "id": 17365,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-27 — Manter compatibilidade binária da API legada no Java 8",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8125",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8126,
+      "updatedOn": "2026-09-10T16:53:02.702Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:52:59.233Z",
+      "objective": "Manter a API de patch genérica e sem payload nos logs\nHistória: ETICS-252569\nFonte: h03-md.txt — AC11; limites de domínio\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um schema de teste com nomes genéricos de domínio e um valor sentinela JSON_SINTETICO_SIGILOSO\nWhen executar insert e update válidos e uma falha de validação pela nova API sem GP, IM, CDK ou banco\nThen as operações válidas funcionam somente em memória\nAnd a falha não expõe JSON_SINTETICO_SIGILOSO nem o payload completo em mensagem ou logs\nWhen inspecionar código e dependências do artefato\nThen o domínio routerConf, zona e Huawei não está embutido na implementação genérica\nAnd não há dependência de banco, JPA, XML/JAXB ou geração UUID",
+        "id": 17366,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252569"
+      ],
+      "name": "RECON-H03-MD-28 — Manter a API de patch genérica e sem payload nos logs",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8126",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8127,
+      "updatedOn": "2026-09-10T16:53:13.817Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:53:06.237Z",
+      "objective": "Transportar CLOB extenso sem truncamento\nHistória: ETICS-252611\nFonte: h04-md.txt — AC1–2; transporte e persistência intermediária\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um array de fragmentos canônicos válidos cujo conteúdo UTF-8 excede o limite VARCHAR2 do ambiente, com pelo menos 40000 caracteres e sentinelas no início e no fim\nWhen transportar Equipment -> ReconEquipment -> ReconEqpt, gravar e reler HW_OBJECTS_JSON_EXT\nThen o conteúdo completo retorna com as sentinelas, acentos, quantidade de fragmentos e valores preservados\nAnd o mapeamento e o acesso usam CLOB sem conversão para VARCHAR2\nAnd a coleta não modifica o JSON do GP",
+        "id": 17367,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-01 — Transportar CLOB extenso sem truncamento",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8127",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8128,
+      "updatedOn": "2026-09-10T16:53:22.176Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:53:17.973Z",
+      "objective": "Ler CLOB nulo ou vazio como lista vazia\nHistória: ETICS-252611\nFonte: h04-md.txt — AC2; transporte\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given em execuções independentes HW_OBJECTS_JSON_EXT com NULL, conteúdo vazio e []\nWhen recuperar a coleção de fragmentos pelo fluxo ReconEqpt -> coordenador\nThen cada representação resulta em lista vazia sem erro de parsing\nAnd o documento existente no GP não recebe inserções artificiais nem exclusões por ausência de fragmentos",
+        "id": 17368,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-02 — Ler CLOB nulo ou vazio como lista vazia",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8128",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8129,
+      "updatedOn": "2026-09-10T16:53:30.268Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:53:26.010Z",
+      "objective": "Inicializar merge a partir de JSON GP nulo ou em branco\nHistória: ETICS-252611\nFonte: h04-md.txt — AC6; RN5\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um fragmento canônico válido e destino configurado\nAnd em execuções independentes o valor atual do campo GP é null, string vazia ou somente espaços\nWhen acionar Atualizar inventário\nThen upsertAll recebe [] como documento inicial em cada execução\nAnd o fragmento é inserido e o JSON final chega ao NestedRuleCaller uma vez por equipamento",
+        "id": 17369,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-03 — Inicializar merge a partir de JSON GP nulo ou em branco",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8129",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8130,
+      "updatedOn": "2026-09-10T16:53:37.717Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:53:34.392Z",
+      "objective": "Agrupar múltiplos campos JSON com atualização legada única\nHistória: ETICS-252611\nFonte: h04-md.txt — AC4 e AC7; RN4 e RN7\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given dois tipos de teste destinados ao campo JSON A e um terceiro tipo ao campo JSON B, ambos válidos no metamodelo\nAnd há uma atualização legada válida do mesmo equipamento\nWhen acionar Atualizar inventário\nThen upsertAll é chamado uma vez para A com os dois fragmentos e uma vez para B com seu fragmento\nAnd os JSONs finais de A e B e a atualização legada compõem o mesmo mapa\nAnd NestedRuleCaller é chamado exatamente uma vez para o equipamento",
+        "id": 17370,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-04 — Agrupar múltiplos campos JSON com atualização legada única",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8130",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8131,
+      "updatedOn": "2026-09-10T16:54:08.028Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:54:04.611Z",
+      "objective": "Rejeitar tipo sem destino na allowlist\nHistória: ETICS-252611\nFonte: h04-md.txt — AC5; RN3\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um lote com um tipo conhecido e outro objectType não cadastrado em recon-json-fields.json\nWhen acionar Atualizar inventário\nThen o tipo não cadastrado gera erro e não é descartado silenciosamente\nAnd nenhum campo GP é alterado e NestedRuleCaller recebe zero chamadas",
+        "id": 17371,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-05 — Rejeitar tipo sem destino na allowlist",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8131",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8132,
+      "updatedOn": "2026-09-10T16:54:15.572Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:54:11.775Z",
+      "objective": "Validar configuração de destinos antes da atualização\nHistória: ETICS-252611\nFonte: h04-md.txt — RN6; configuração e serviço de atualização\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given em execuções independentes recon-json-fields.json malformado, versão não suportada, mapa com tipo inválido ou nome de tipo ou destino vazio\nWhen carregar a configuração e tentar coordenar uma atualização JSON\nThen a configuração inválida é rejeitada\nAnd não há atualização parcial nem chamada ao NestedRuleCaller\nWhen carregar uma configuração válida em UTF-8 e processar dois equipamentos\nThen a estrutura carregada é reutilizada e imutável",
+        "id": 17372,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-06 — Validar configuração de destinos antes da atualização",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8132",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8133,
+      "updatedOn": "2026-09-10T16:54:22.766Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:54:19.231Z",
+      "objective": "Preservar JSON bruto com dois-pontos e fluxo legado\nHistória: ETICS-252611\nFonte: h04-md.txt — AC8; RN8–9\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um fragmento válido contendo uma string com \"texto: valor: final\", aspas escapadas, acentos e espaços nas extremidades\nAnd uma atualização legada válida no mesmo equipamento\nWhen acionar Atualizar inventário e inspecionar o mapa recebido pelo CDK\nThen o valor JSON recebido é igual ao JSON final do coordenador, sem split, trim ou alteração de conteúdo\nAnd o caminho JSON não utiliza ObjectUpdate.value nem conversão de descrição para nome de metamodelo\nAnd a atualização legada mantém os mesmos campo e valor do fluxo anterior",
+        "id": 17373,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-07 — Preservar JSON bruto com dois-pontos e fluxo legado",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8133",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8134,
+      "updatedOn": "2026-09-10T16:54:31.428Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:54:26.395Z",
+      "objective": "Abortar todos os destinos quando um campo falha\nHistória: ETICS-252611\nFonte: h04-md.txt — RN6–7; AC5\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given fragmentos válidos destinados a dois campos JSON do mesmo equipamento\nAnd o primeiro campo possui documento válido e o segundo possui JSON atual malformado\nWhen montar as atualizações pelo coordenador\nThen a falha do segundo campo impede aplicar o resultado do primeiro\nAnd ambos os campos preservam os snapshots e NestedRuleCaller recebe zero chamadas",
+        "id": 17374,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-08 — Abortar todos os destinos quando um campo falha",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8134",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8135,
+      "updatedOn": "2026-09-10T16:54:40.161Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambientes de instalação nova e de atualização; metamodelo/DDL e SQLs de RECON_EQPT disponíveis.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:54:36.128Z",
+      "objective": "Conferir metamodelo BLOB e instalação da coluna CLOB\nHistória: ETICS-252611\nFonte: h04-md.txt — AC3; alterações técnicas 1–2\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o pacote da infraestrutura H04 para instalação nova e atualização de ambiente existente\nWhen aplicar respectivamente create schema e patch DBManager e consultar os metadados\nThen RECON_EQPT possui HW_OBJECTS_JSON_EXT como CLOB e os SQLs de colunas explícitas incluem o campo\nAnd o Roteador 152000333 possui HW_OBJECTS_JSON string com persistência extensa/BLOB e labels exigidos pelo build\nWhen salvar um JSON extenso pelo campo e reler pelo CDK\nThen o conteúdo é preservado integralmente\nAnd o campo não aparece na árvore comum de divergências",
+        "id": 17375,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-09 — Conferir metamodelo BLOB e instalação da coluna CLOB",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8135",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8136,
+      "updatedOn": "2026-09-10T16:54:51.689Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:54:47.608Z",
+      "objective": "Evitar XML e JSON completos nos logs do fluxo\nHistória: ETICS-252611\nFonte: h04-md.txt — AC9\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given fragmentos com sentinela JSON_FLUXO_TESTE e uma resposta XML de teste identificável\nWhen executar coleta e atualização em um fluxo válido e em outro com falha de validação\nThen os logs não contêm o XML completo nem o JSON completo\nAnd o erro pode ser identificado sem despejar os documentos",
+        "id": 17376,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252611"
+      ],
+      "name": "RECON-H04-MD-10 — Evitar XML e JSON completos nos logs do fluxo",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8136",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8137,
+      "updatedOn": "2026-09-10T16:55:18.560Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:55:13.336Z",
+      "objective": "Preservar cardinalidade, ordem e duplicatas das interfaces de zona\nHistória: ETICS-252614\nFonte: h05-md.txt — AC2; RN4–5\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given execuções independentes com uma zona underlay contendo zone-interface=[\"wan1\"] e zone-interface=[\"wan1\",\"lan2\",\"wan1\"]\nWhen converter cada resposta XML e reler o CLOB intermediário\nThen cada registry produz exatamente um fragmento objectType=zona sem wrapper por tipo\nAnd zone-interface é array em ambos os casos e mantém respectivamente [\"wan1\"] e [\"wan1\",\"lan2\",\"wan1\"]\nAnd os valores não são deduplicados nem reordenados",
+        "id": 17377,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-01 — Preservar cardinalidade, ordem e duplicatas das interfaces de zona",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8137",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8138,
+      "updatedOn": "2026-09-10T16:55:26.556Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:55:23.040Z",
+      "objective": "Rejeitar cardinalidade inválida de zone-name antes da persistência\nHistória: ETICS-252614\nFonte: h05-md.txt — AC3; RN3\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma zona válida seguida de uma zona cujo zone-name é, em execuções independentes, ausente, null, vazio ou possui dois valores\nWhen converter o XML e processar o lote do equipamento\nThen o lote inválido é rejeitado antes de persistir fragmentos parciais em HW_OBJECTS_JSON_EXT\nAnd o GP mantém o snapshot e NestedRuleCaller recebe zero chamadas",
+        "id": 17378,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-02 — Rejeitar cardinalidade inválida de zone-name antes da persistência",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8138",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8139,
+      "updatedOn": "2026-09-10T16:55:33.842Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:55:30.291Z",
+      "objective": "Rejeitar interface ausente, vazia ou nula no lote de zonas\nHistória: ETICS-252614\nFonte: h05-md.txt — AC3; RN4\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma zona válida seguida de outra com zone-interface ausente, sem valores ou contendo item null ou string vazia em execuções independentes\nWhen processar o XML do equipamento\nThen o conjunto inválido não é persistido parcialmente no CLOB\nAnd nenhuma zona é aplicada ao GP e NestedRuleCaller recebe zero chamadas",
+        "id": 17379,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-03 — Rejeitar interface ausente, vazia ou nula no lote de zonas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8139",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8140,
+      "updatedOn": "2026-09-10T16:55:42.825Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:55:38.929Z",
+      "objective": "Rejeitar zone-name repetido com registryId diferente\nHistória: ETICS-252614\nFonte: h05-md.txt — AC3; RN6 e RN8\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given duas registry do grupo zona com zone-name=underlay, interfaces válidas e registryId diferentes\nWhen converter e processar a resposta do equipamento\nThen a duplicidade de zone-name causa falha atômica\nAnd registryId não torna as zonas distintas\nAnd não há persistência parcial no CLOB nem chamada ao NestedRuleCaller",
+        "id": 17380,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-04 — Rejeitar zone-name repetido com registryId diferente",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8140",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8141,
+      "updatedOn": "2026-09-10T16:55:51.516Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:55:46.960Z",
+      "objective": "Excluir labels e registryId do JSON e dos logs\nHistória: ETICS-252614\nFonte: h05-md.txt — AC5; RN6\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o XML representativo com labels sentinela LABEL_ZONA_TESTE e registryId REG_ZONA_TESTE\nWhen converter, gravar o CLOB e atualizar o inventário\nThen os fragmentos intermediários e o JSON final contêm apenas objectType=zona, zone-name e zone-interface previstos no contrato\nAnd LABEL_ZONA_TESTE e REG_ZONA_TESTE não aparecem no CLOB, JSON final nem logs\nAnd a chave de upsert é attributes.zone-name",
+        "id": 17381,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-05 — Excluir labels e registryId do JSON e dos logs",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8141",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8142,
+      "updatedOn": "2026-09-10T16:56:00.004Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:55:56.257Z",
+      "objective": "Processar XML legado e ausência do grupo zona\nHistória: ETICS-252614\nFonte: h05-md.txt — AC6; contrato EAI e JAXB\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given em execuções independentes um XML legado sem additionalInfo, um XML sem grupo zona e outro com grupo Zona em caixa diferente\nWhen processar as respostas pelo cliente JAXB e conversor H05\nThen não são gerados fragmentos de zona em nenhum dos três casos\nAnd equipamento, placas, portas, VLANs e pseudowires mantêm seu mapeamento legado\nAnd a ausência de zona não impede o processamento do equipamento",
+        "id": 17382,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-06 — Processar XML legado e ausência do grupo zona",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8142",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8143,
+      "updatedOn": "2026-09-10T16:56:25.582Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:56:21.114Z",
+      "objective": "Distinguir zone-name por caixa e espaços sem normalização\nHistória: ETICS-252614\nFonte: h05-md.txt — RN1 e RN3; AC4\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o GP com zona underlay e uma zona não recebida chamada preservada\nAnd o IM retorna zonas com nomes Underlay e \" underlay \" e interfaces válidas\nWhen acionar Atualizar inventário\nThen Underlay e \" underlay \" são inseridas como identidades distintas\nAnd underlay e preservada permanecem inalteradas\nAnd os nomes são mantidos exatamente como recebidos",
+        "id": 17383,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-07 — Distinguir zone-name por caixa e espaços sem normalização",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8143",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8144,
+      "updatedOn": "2026-09-10T16:56:33.913Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Pacote H05 e build de integração disponíveis para revisão técnica.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:56:30.033Z",
+      "objective": "Verificar entrega conjunta de contrato, chave e destino da zona\nHistória: ETICS-252614\nFonte: h05-md.txt — AC9; identidade e destino\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o pacote entregue de H05 e o XML representativo com underlay e overlay\nWhen validar o WSDL, gerar o cliente JAXB pelo build e processar a fixture\nThen group, registry, attribute e múltiplos value são aceitos pelo contrato\nAnd object-key-definitions.json contém zona -> attributes.zone-name preservando as entradas anteriores\nAnd recon-json-fields.json contém zona -> HW_OBJECTS_JSON\nAnd WSDL, cliente gerado, fixture e testes acompanham a mesma entrega",
+        "id": 17384,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-08 — Verificar entrega conjunta de contrato, chave e destino da zona",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8144",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8145,
+      "updatedOn": "2026-09-10T16:56:44.981Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:56:39.856Z",
+      "objective": "Inserir zonas com documento vazio e entregar JSON bruto uma vez\nHistória: ETICS-252614\nFonte: h05-md.txt — AC7–8\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given em execuções independentes o JSON GP é null, vazio ou branco\nAnd o XML representativo contém underlay/[\"wan1\"] e overlay/[\"hub_spk1.2.2\"]\nWhen coletar e acionar Atualizar inventário\nThen o documento inicial do merge é [] e o resultado contém exatamente as duas zonas do contrato\nAnd o valor é entregue como JSON bruto sem ObjectUpdate.value nem split baseado em \": \"\nAnd NestedRuleCaller é chamado uma vez por equipamento",
+        "id": 17385,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252614"
+      ],
+      "name": "RECON-H05-MD-09 — Inserir zonas com documento vazio e entregar JSON bruto uma vez",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8145",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8146,
+      "updatedOn": "2026-09-10T16:56:52.630Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:56:49.079Z",
+      "objective": "Conferir de/para HA exato e singleton sem chave artificial\nHistória: ETICS-252615\nFonte: h06-md.txt — AC1 e AC8; RN1 e RN6\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given atributos diretos group-name=SPO-HA-121, hbdev-1=port1, hbdev-2=port2 e monitor=[\"x3\",\"x4\"]\nWhen converter com o mapa equipment-ha\nThen o resultado é um único objectType=device com device-group=SPO-HA-121, ha-port-1=port1, ha-port-2=port2 e ha-monitor-port-range=[\"x3\",\"x4\"]\nAnd não são persistidos objectType=ha ou objectType=equipment-ha nem nomes de origem como campos de destino\nAnd device é aceito para HW_OBJECTS_JSON sem entrada em object-key-definitions.json",
+        "id": 17386,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-01 — Conferir de/para HA exato e singleton sem chave artificial",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8146",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8147,
+      "updatedOn": "2026-09-10T16:57:00.803Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:56:57.121Z",
+      "objective": "Preservar monitor como array sem normalizar seus valores\nHistória: ETICS-252615\nFonte: h06-md.txt — AC2; Contrato JSON\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given todos os atributos HA válidos e monitor=[\"x3\"] em uma execução e [\" x3 \",\"X4\",\" x3 \"] em outra\nWhen converter os atributos HA\nThen ha-monitor-port-range é array em ambas as execuções\nAnd seu conteúdo é respectivamente [\"x3\"] e [\" x3 \",\"X4\",\" x3 \"]\nAnd ordem, caixa, espaços e duplicatas permanecem sem concatenação",
+        "id": 17387,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-02 — Preservar monitor como array sem normalizar seus valores",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8147",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8148,
+      "updatedOn": "2026-09-10T16:57:09.713Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:57:06.048Z",
+      "objective": "Rejeitar HA parcial e campos single com cardinalidade inválida\nHistória: ETICS-252615\nFonte: h06-md.txt — AC3; RN2 e RN5\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma fixture HA válida\nAnd em cada execução é alterado um de group-name, hbdev-1 ou hbdev-2 para ausente, vazio ou dois valores, mantendo os demais campos válidos\nWhen converter e processar o equipamento\nThen o lote falha sem emitir device parcial\nAnd nenhum conjunto parcial é persistido no CLOB nem aplicado no GP\nAnd NestedRuleCaller recebe zero chamadas",
+        "id": 17388,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-03 — Rejeitar HA parcial e campos single com cardinalidade inválida",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8148",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8149,
+      "updatedOn": "2026-09-10T16:57:32.694Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:57:28.874Z",
+      "objective": "Rejeitar monitor ausente ou vazio sem aplicar zonas válidas\nHistória: ETICS-252615\nFonte: h06-md.txt — AC3; RN3 e RN5\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma zona válida e os três atributos HA single válidos\nAnd monitor está ausente, sem valores ou contém um valor vazio em execuções independentes\nWhen processar o lote do equipamento\nThen o lote é rejeitado sem emitir device parcial\nAnd a zona válida também não é persistida ou aplicada parcialmente\nAnd NestedRuleCaller recebe zero chamadas",
+        "id": 17389,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-04 — Rejeitar monitor ausente ou vazio sem aplicar zonas válidas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8149",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8150,
+      "updatedOn": "2026-09-10T16:57:41.394Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:57:36.895Z",
+      "objective": "Aceitar ausência completa de HA no XML legado\nHistória: ETICS-252615\nFonte: h06-md.txt — AC4; RN4\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um XML legado sem nenhum dos quatro atributos HA selecionados\nWhen processar a resposta pelo cliente JAXB e conversor H06\nThen nenhum fragmento device é produzido\nAnd o equipamento continua processável e seu mapeamento legado permanece\nAnd um device preexistente no GP não é removido pela ausência de HA",
+        "id": 17390,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-05 — Aceitar ausência completa de HA no XML legado",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8150",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8151,
+      "updatedOn": "2026-09-10T16:57:49.614Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:57:45.839Z",
+      "objective": "Falhar para mapeamento HA incompleto ou colisão de destinos\nHistória: ETICS-252615\nFonte: h06-md.txt — RN7; configuração de de/para\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given todos os quatro atributos HA válidos\nAnd em execuções independentes o mapa não define destino para um campo HA selecionado ou mapeia dois campos de origem para o mesmo atributo de destino\nWhen carregar o mapa e converter HA\nThen a inconsistência causa erro sem descarte silencioso nem sobrescrita por colisão\nAnd não há persistência parcial nem chamada ao NestedRuleCaller",
+        "id": 17391,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-06 — Falhar para mapeamento HA incompleto ou colisão de destinos",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8151",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8152,
+      "updatedOn": "2026-09-10T16:57:58.403Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:57:54.585Z",
+      "objective": "Excluir labels e dados HA dos logs em sucesso e falha\nHistória: ETICS-252615\nFonte: h06-md.txt — AC7; WSDL/JAXB e adaptador\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma resposta HA sintética com label=LABEL_HA_TESTE e valores sentinela identificáveis nos quatro atributos\nWhen coletar e atualizar uma resposta válida e depois processar outra com cardinalidade inválida\nThen label não é transportado para o CLOB nem para o JSON final\nAnd os logs não contêm os valores HA sentinela, o label, o XML completo ou o JSON completo\nAnd o diagnóstico da falha não revela esses conteúdos",
+        "id": 17392,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-07 — Excluir labels e dados HA dos logs em sucesso e falha",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8152",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8153,
+      "updatedOn": "2026-09-10T16:58:07.094Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:58:02.760Z",
+      "objective": "Inserir device em documento vazio e substituir singleton por inteiro\nHistória: ETICS-252615\nFonte: h06-md.txt — AC5; RN10\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given em execuções independentes documento GP null e vazio e HA completo válido\nWhen acionar Atualizar inventário\nThen o documento contém exatamente um device com os quatro atributos mapeados\nWhen repetir a atualização sobre um documento com device antigo contendo atributo adicional obsoleto e uma zona não recebida\nThen o device inteiro é substituído pelo novo fragmento e o atributo obsoleto não permanece\nAnd a zona não recebida permanece integralmente inalterada",
+        "id": 17393,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-08 — Inserir device em documento vazio e substituir singleton por inteiro",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8153",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8154,
+      "updatedOn": "2026-09-10T16:58:15.466Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. H04, H05 e H06 disponíveis; fixture com HA do MD e zonas underlay e overlay; spies e pacote de build.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:58:11.237Z",
+      "objective": "Validar entrega integrada HA e duas zonas por um único merge\nHistória: ETICS-252615\nFonte: h06-md.txt — AC6 e AC9; transporte e atualização\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o cliente JAXB gerado pelo build a partir do WSDL entregue, os mapas HA, allowlist e fixtures da mesma entrega\nWhen coletar a fixture completa e acionar Atualizar inventário\nThen CLOB e documento final usam o mesmo array canônico com um device e as duas zonas underlay e overlay\nAnd os três fragmentos são agrupados em HW_OBJECTS_JSON e upsertAll é chamado uma vez para esse campo\nAnd o JSON bruto é enviado em uma única chamada ao NestedRuleCaller\nAnd não há segundo documento, campo ou fluxo exclusivo para HA",
+        "id": 17394,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252615"
+      ],
+      "name": "RECON-H06-MD-09 — Validar entrega integrada HA e duas zonas por um único merge",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8154",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8038,
+      "updatedOn": "2026-09-10T11:54:29.466Z",
+      "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T23:52:48.247Z",
+      "objective": "Sincronizar atributo 2 sem divergência nem exibição\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026\nEquipe: testes sistêmicos. Complemento: documento H01, comportamento esperado, §§8–10 e critérios de aceite.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo A: GP=valor_GP, IM=valor_IM; A=2.\nAnd somente A difere entre IM e GP, sem outras divergências ou falhas\nWhen executar a reconciliação e abrir a árvore.\nThen A não gera divergência nem aparece na árvore\nAnd a diferença silenciosa não altera o status para erro nem gera ícone de divergência.\nWhen consultar o GP antes de atualizar.\nThen A permanece com valor_GP.\nWhen acionar Atualizar inventário sem selecionar qualquer nó de atributo e consultar novamente o roteador no ISP.\nThen A passa a valor_IM.",
+        "id": 17278,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-03 — Sincronizar atributo 2 sem divergência nem exibição",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8038",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8039,
+      "updatedOn": "2026-09-10T16:44:56.174Z",
+      "precondition": "Teste sistêmico. Equipamento pareado; atributos existentes A=0, B=1 e C=2 com valores GP/IM distintos e válidos. B permite resolução com dado IM. Resultado de atualização de A registrado na versão de referência com a mesma massa; não assumir que modo 0 bloqueia atualização.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T23:52:52.938Z",
+      "objective": "Verificar os modos 0, 1 e 2 no mesmo equipamento: informativo sem match para A, divergência para B e sincronização sem exibição para C.\nHistória: ETICS-252410\nEquipe: testes sistêmicos.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\nRelato de Francisco fornecido pelo usuário em 10/09/2026: o valor 0 não compara, mas pode ser atualizado pelo fluxo existente. ETICS-175367 exige apresentação informativa e não especifica atualização. A correção da H01 verifica preservação do comportamento de referência; definir se a atualização de 0 é regra desejada ou defeito legado continua pendente de requisito. Não concluir que 0 nunca atualiza nem aprovar uma regra geral de atualização somente com base no relato.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um equipamento pareado com atributos existentes A=0, B=1 e C=2 e valores GP_A, GP_B e GP_C diferentes de IM_A, IM_B e IM_C\nAnd B admite atualização pelo fluxo existente e o resultado de atualizar A na versão de referência está registrado como valor_referencia_A\nWhen executar a reconciliação e abrir o detalhamento\nThen somente B apresenta divergência de match com GP_B e IM_B\nAnd A é apresentado como informativo sem divergência de match\nAnd C não gera divergência nem aparece na árvore\nWhen consultar o inventário antes de Atualizar inventário\nThen A=GP_A, B=GP_B e C=GP_C\nWhen selecionar a divergência de B para resolução com o dado IM e acionar Atualizar inventário\nThen B passa a IM_B e C passa a IM_C sem seleção individual de C\nAnd A apresenta valor_referencia_A, mantendo o comportamento legado da mesma massa",
+        "id": 17279,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-04 — Aplicar os três modos no mesmo equipamento",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8039",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8041,
+      "updatedOn": "2026-09-10T11:56:48.359Z",
+      "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T23:52:58.829Z",
+      "objective": "Reexecutar sincronização com o mesmo valor\nHistória: ETICS-252410\nBase: H01\nObservação/pendência: Teste de regressão derivado da semântica de atualização.\nEquipe: testes sistêmicos.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: A=2; valor IM já aplicado no GP.\nWhen executar novamente a reconciliação com a mesma resposta.\nThen Não há divergência de A nem exibição de A.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A mantém o valor IM, sem duplicação do objeto atualizado.",
+        "id": 17281,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-06 — Reexecutar sincronização com o mesmo valor",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8041",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8088,
+      "updatedOn": "2026-09-10T16:45:00.376Z",
+      "precondition": "NÃO EXECUTAR para a H01: pressuposto de criação de colunas não corresponde à entrega, conforme esclarecimento do desenvolvedor. Reavaliação somente se outra história aprovar uma mudança de esquema.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:55:46.603Z",
+      "objective": "NÃO APLICÁVEL À H01. Descontinuado nesta revisão: o desenvolvedor confirmou que a H01 não criou colunas nem patch de criação dessas colunas. O roteiro histórico foi preservado para rastreabilidade, mas não constitui critério de aceite ou execução da H01.\nHistória: ETICS-252410\nEquipe: desenvolvimento.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma base vazia destinada à instalação da versão alvo\nWhen criar o esquema pelo instalador oficial\nThen cada nova coluna implementada em RECON_ATRIB_CFG possui DEFAULT 0 e NOT NULL\nWhen criar uma configuração válida omitindo essas novas colunas\nThen cada nova coluna assume o valor 0\nWhen persistir o valor 2 em cada nova coluna por operações válidas\nThen o valor 2 é aceito e recuperado como 2",
+        "id": 17328,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-01 — [NÃO APLICÁVEL À H01] Criar esquema com padrão seguro para novas colunas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8088",
+      "status": "Deprecated"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8090,
+      "updatedOn": "2026-09-10T16:45:07.480Z",
+      "precondition": "EXCLUSIVO DE DESENVOLVIMENTO. Requer harness, acesso técnico ao banco e matriz real de atributos existentes suportados. Não é executável integralmente pela interface. Não pressupõe novas colunas nem novos atributos.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:56:08.385Z",
+      "objective": "Verificar o transporte e recuperação dos valores IM de atributos já existentes usados no modo 2. Retirado o pressuposto de novos atributos ou novas colunas.\nHistória: ETICS-252410\nEquipe: desenvolvimento; não usar como roteiro de homologação apenas pela aplicação.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given a matriz confirmada de atributos existentes suportados e seus mapeamentos já implementados entre IM, POJO, persistência da reconciliação e GP\nAnd esses atributos estão configurados como 2 e a resposta IM possui valores distintos identificáveis\nWhen executar pelo harness a recuperação e persistência da reconciliação\nThen cada valor IM é associado ao atributo e objeto corretos usando a estrutura de persistência existente\nWhen recuperar o resultado em um novo contexto de persistência\nThen os valores IM são recuperados integralmente para montar a atualização\nAnd a verificação não exige criação de coluna, novo atributo ou patch de esquema",
+        "id": 17330,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-03 — Verificar transporte dos atributos existentes em modo 2",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8090",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8091,
+      "updatedOn": "2026-09-10T16:45:10.956Z",
+      "precondition": "EXCLUSIVO DE DESENVOLVIMENTO. Requer harness/spy do fluxo real de atualização e acesso ao resultado persistido. Atributo existente A=2 com valor IM válido; sem seleção manual de A. Não executável integralmente pela interface; não pressupõe novas colunas.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:56:14.256Z",
+      "objective": "Verificar que os dados do atributo existente em modo 2 alcançam o mecanismo padrão de atualização. Retirada a premissa de que a ausência de atualização silenciosa para modo 0 impediria sua atualização por todo o fluxo.\nHistória: ETICS-252410\nEquipe: desenvolvimento.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\nRelato de Francisco fornecido pelo usuário em 10/09/2026: o valor 0 não compara, mas pode ser atualizado pelo fluxo existente. ETICS-175367 exige apresentação informativa e não especifica atualização. A correção da H01 verifica preservação do comportamento de referência; definir se a atualização de 0 é regra desejada ou defeito legado continua pendente de requisito. Não concluir que 0 nunca atualiza nem aprovar uma regra geral de atualização somente com base no relato.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um resultado de reconciliação persistido para atributo existente A configurado como 2 e valor IM_A válido\nWhen montar Atualizar inventário sem seleção manual de A e inspecionar o fluxo pelo harness\nThen o campo de A e seu valor IM_A são incluídos nos dados enviados ao mecanismo padrão de atualização\nWhen executar a atualização com sucesso\nThen o campo correto do GP recebe IM_A\nAnd a inspeção usa o fluxo real implementado e não exige criação de colunas\nAnd nenhuma conclusão sobre bloqueio de atualização de atributos 0 é derivada deste teste",
+        "id": 17331,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-04 — Enviar atributos silenciosos pelo mecanismo padrão de update",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8091",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8093,
+      "updatedOn": "2026-09-10T11:56:32.710Z",
+      "precondition": "Harness do comparador com atributo suportado em modo 1; fixtures sintéticas independentes; null representa ausência Java e não a string null.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:56:29.789Z",
+      "objective": "Equipe: Desenvolvimento.\nHistória: ETICS-252410.\nFonte: 01-sync-silencioso-im-para-gp.md (Contexto atual e §8), cópia h01-md.txt fornecida pelo usuário.\nEvidências: fixture, versão, argumentos/consultas técnicas e resultados do harness ou banco.\nDependência: homologar nomes reais, tipos suportados e fixtures antes da execução.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um atributo configurado como 1 em execuções independentes do comparador\nWhen comparar IM=\"  ABC  \" com GP=\"abc\"\nThen o comparador considera os valores equivalentes\nWhen comparar IM=null com GP=\"\" e depois IM=\"\" com GP=null\nThen o comparador considera os valores equivalentes nas duas execuções\nWhen comparar IM=\"ABC\" com GP=\"ABD\"\nThen o comparador identifica diferença\nAnd nenhuma chamada de comparação persiste atualização no inventário",
+        "id": 17333,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-06 — Preservar normalização da comparação no modo 1",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8093",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8155,
+      "updatedOn": "2026-09-10T16:58:38.167Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. Versão da H07 em draft, sem aprovação de objectType, de/para, cardinalidade, identidade e destino; fixture route-static; spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:58:33.880Z",
+      "objective": "Impedir persistência de rota estática enquanto o contrato estiver pendente\nHistória: ETICS-252629\nFonte: h07-md.txt — Regras provisórias 4–5; decisões bloqueadoras\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.\nObservação/pendência: Caso de proteção do estado draft, não de sincronização definitiva. Insert/update/duplicidade continuam dependentes do de/para e da identidade aprovados.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given que as decisões bloqueadoras da H07 continuam pendentes\nAnd o XML contém o grupo route-static representativo do MD\nWhen processar a coleta e solicitar Atualizar inventário\nThen os dados provisórios da rota não são persistidos em HW_OBJECTS_JSON_EXT\nAnd nenhum fragmento de rota é aplicado por upsertAll ou enviado ao NestedRuleCaller\nAnd nenhum objectType final ou chave de negócio é inferido a partir de route-static ou registryId",
+        "id": 17395,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252629"
+      ],
+      "name": "RECON-H07-MD-01 — Impedir persistência de rota estática enquanto o contrato estiver pendente",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8155",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8156,
+      "updatedOn": "2026-09-10T16:58:47.722Z",
+      "precondition": "VALIDAÇÃO TÉCNICA / DESENVOLVIMENTO: não executável integralmente apenas pela interface. H08 em draft; ausência de aprovação de mapeamento, identidade, arrays, destinos e tratamento de credenciais; fixtures sintéticas BGP/OSPF/RIP; spies.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T16:58:43.044Z",
+      "objective": "Impedir persistência de protocolos enquanto os contratos estiverem pendentes\nHistória: ETICS-252632\nFonte: h08-md.txt — Regras provisórias 4; decisões bloqueadoras\nEquipe: Desenvolvimento.\nComplemento identificado na revisão dos MDs fornecidos em 10/09/2026.\nObservação/pendência: Caso de proteção do estado draft. Contratos finais, semântica dos arrays e tratamento de dados de autenticação continuam pendentes; não usar dados reais sensíveis na fixture.",
+      "labels": [
+        "CLARO_RECON",
+        "TESTE_DESENVOLVIMENTO",
+        "RECON_H02_H08_MD"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given que as decisões bloqueadoras da H08 continuam pendentes\nAnd o XML contém, em execuções independentes e em conjunto, os grupos bgp, ospf e rip representativos do MD\nWhen processar a coleta e solicitar Atualizar inventário\nThen nenhum fragmento provisório BGP, OSPF ou RIP é persistido em HW_OBJECTS_JSON_EXT\nAnd nenhum desses fragmentos é aplicado por upsertAll ou enviado ao NestedRuleCaller\nAnd não são inferidos objectTypes finais, chaves de upsert ou destinos para os protocolos",
+        "id": 17396,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252632"
+      ],
+      "name": "RECON-H08-MD-01 — Impedir persistência de protocolos enquanto os contratos estiverem pendentes",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8156",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8036,
+      "updatedOn": "2026-09-10T16:44:40.557Z",
+      "precondition": "Teste sistêmico. Equipamento e atributo A existentes e suportados; valores GP e IM distintos; configuração A=0; mesma massa em versão de referência anterior à H01 e versão alvo. Registrar o resultado do Atualizar inventário na referência. Preparação IM e referência podem exigir apoio técnico.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T19:35:16.086Z",
+      "objective": "Verificar que 0 não participa do match, aparece como informativo e mantém o comportamento legado de atualização observado na mesma massa.\nHistória: ETICS-252410\nEquipe: testes sistêmicos.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\nRelato de Francisco fornecido pelo usuário em 10/09/2026: o valor 0 não compara, mas pode ser atualizado pelo fluxo existente. ETICS-175367 exige apresentação informativa e não especifica atualização. A correção da H01 verifica preservação do comportamento de referência; definir se a atualização de 0 é regra desejada ou defeito legado continua pendente de requisito. Não concluir que 0 nunca atualiza nem aprovar uma regra geral de atualização somente com base no relato.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um atributo existente A configurado como 0 com valores distintos no GP e no IM\nAnd o resultado de Atualizar inventário para a mesma massa na versão de referência está registrado como valor_referencia_A\nWhen executar a reconciliação na versão alvo e abrir o detalhamento\nThen a diferença de A não gera divergência de match\nAnd A consta na apresentação de resultados como informativo\nWhen consultar o GP antes de Atualizar inventário\nThen A mantém o valor anterior à coleta\nWhen acionar Atualizar inventário pelo mesmo fluxo usado na referência e consultar A no GP\nThen o valor final de A é igual a valor_referencia_A, preservando o comportamento legado para essa massa",
+        "id": 17276,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-01 — Excluir atributo 0 do match e preservar comportamento informativo",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8036",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8037,
+      "updatedOn": "2026-09-10T11:56:39.027Z",
+      "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T23:52:44.548Z",
+      "objective": "Comparar atributo configurado com 1\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026\nEquipe: testes sistêmicos.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo A: GP=valor_GP, IM=valor_IM; A=1.\nWhen executar a reconciliação e detalhar o equipamento.\nThen A diferença aparece na comparação IM x GP.\nWhen consultar o inventário sem acionar atualização.\nThen O GP mantém valor_GP; a comparação não efetiva atualização.",
+        "id": 17277,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-02 — Comparar atributo configurado com 1",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8037",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8040,
+      "updatedOn": "2026-09-10T11:56:44.946Z",
+      "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-09T23:52:55.949Z",
+      "objective": "Manter atributos silenciosos inalterados durante consultas\nHistória: ETICS-252410\nBase: H01; visão §§3 e 8\nEquipe: testes sistêmicos.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: A=2 e valores diferentes no GP e IM.\nWhen executar reconciliação e abrir/fechar o detalhamento duas vezes.\nThen A não aparece nem gera divergência.\nWhen executar Consultar inventário e conferir A.\nThen Valor GP original preservado até Atualizar inventário.",
+        "id": 17280,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-05 — Manter atributos silenciosos inalterados durante consultas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8040",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8086,
+      "updatedOn": "2026-09-10T11:55:10.763Z",
+      "precondition": "Equipamento existe somente no IM; tipo suporta inserção pelo fluxo atual; atributos A e B suportados com modo 2; dados obrigatórios válidos; fixture homologada.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:55:07.583Z",
+      "objective": "Equipe: Sistêmico.\nHistória: ETICS-252410.\nFonte: 01-sync-silencioso-im-para-gp.md (§13 e critérios de aceite), cópia h01-md.txt fornecida pelo usuário.\nExecutar apenas com os tipos e atributos homologados para esta entrega.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um equipamento suportado existente somente no IM, com A e B configurados como 2 e valores IM_A e IM_B\nWhen executar a reconciliação e consultar o inventário GP\nThen o equipamento ainda não existe no GP\nWhen acionar a inserção pelo fluxo existente de Atualizar inventário\nThen o equipamento é criado no GP com A=IM_A e B=IM_B\nAnd os atributos silenciosos não exigem seleção individual em nós de divergência",
+        "id": 17326,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-SYS-07 — Inserir equipamento do IM com atributos silenciosos",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8086",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8087,
+      "updatedOn": "2026-09-10T11:55:42.867Z",
+      "precondition": "Equipamento pareado; A=2; GP=GP_A; resposta IM controlada com IM_A; resultado concluído e disponível para reabertura; nenhuma nova reconciliação.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:55:39.656Z",
+      "objective": "Equipe: Sistêmico.\nHistória: ETICS-252410.\nFonte: 01-sync-silencioso-im-para-gp.md (§§7 e 10; critérios de aceite), cópia h01-md.txt fornecida pelo usuário.\nEvidências: reconciliação, inventário antes/depois e telas do fluxo.\nDependência: homologar nomes reais, tipos suportados e fixtures antes da execução.",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_SISTEMICO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given um equipamento pareado com A configurado como 2 e valor GP_A no GP\nAnd a reconciliação coletou IM_A para A e foi concluída\nWhen fechar o resultado e encerrar a sessão sem acionar Atualizar inventário\nThen A permanece com GP_A no GP\nWhen iniciar outra sessão e reabrir o mesmo resultado sem executar nova reconciliação\nAnd acionar Atualizar inventário\nThen A passa a IM_A no GP sem seleção individual do atributo",
+        "id": 17327,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-SYS-08 — Atualizar a partir de resultado reaberto posteriormente",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8087",
+      "status": "Draft"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8089,
+      "updatedOn": "2026-09-10T16:45:03.554Z",
+      "precondition": "NÃO EXECUTAR para a H01: pressuposto de criação de colunas não corresponde à entrega, conforme esclarecimento do desenvolvedor. Reavaliação somente se outra história aprovar uma mudança de esquema.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:55:52.829Z",
+      "objective": "NÃO APLICÁVEL À H01. Descontinuado nesta revisão: o desenvolvedor confirmou que a H01 não criou colunas nem patch de criação dessas colunas. O roteiro histórico foi preservado para rastreabilidade, mas não constitui critério de aceite ou execução da H01.\nHistória: ETICS-252410\nEquipe: desenvolvimento.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given uma base da versão anterior com configurações existentes em 0 e 1\nWhen aplicar o patch oficial para as novas colunas de RECON_ATRIB_CFG\nThen os valores preexistentes permanecem iguais ao snapshot\nAnd as novas colunas possuem DEFAULT 0 e NOT NULL e os registros anteriores recebem 0\nWhen salvar 2 nas novas colunas de uma configuração editável\nThen o valor 2 é persistido e recuperado corretamente",
+        "id": 17329,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-02 — [NÃO APLICÁVEL À H01] Aplicar patch preservando configurações legadas",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8089",
+      "status": "Deprecated"
+    },
+    {
+      "updatedBy": "JIRAUSER30629",
+      "keyNumber": 8092,
+      "updatedOn": "2026-09-10T16:45:14.665Z",
+      "precondition": "EXCLUSIVO DE DESENVOLVIMENTO. Requer harness do mapeamento e do update, com atributos existentes cujo mapeamento real esteja confirmado; ao menos um caso de conversão de chave e um de nome meta já coincidente, se ambos existirem na entrega. Se não houver essas duas situações implementadas, registrar a variante não aplicável. Não é teste integral pela interface.",
+      "priority": "Normal",
+      "majorVersion": 1,
+      "createdOn": "2026-09-10T11:56:22.759Z",
+      "objective": "Conferir associação entre chaves existentes e campos meta no fluxo do modo 2, sem pressupor novos campos ou novas colunas.\nHistória: ETICS-252410\nEquipe: desenvolvimento; inspeção técnica com harness, não homologação somente pela aplicação.\nFonte: esclarecimentos do desenvolvedor fornecidos pelo usuário em 10/09/2026; ETICS-252410, comentário de 28/08/2026; ETICS-175367.\n",
+      "labels": [
+        "CLARO_RECON",
+        "RECON_H01_H08",
+        "TESTE_DESENVOLVIMENTO"
+      ],
+      "projectKey": "ETICS",
+      "latestVersion": true,
+      "createdBy": "JIRAUSER30629",
+      "testScript": {
+        "text": "Given dois atributos silenciosos suportados A e B com valores IM_A e IM_B\nAnd a chave de A exige conversão para seu nome meta e a chave de B já corresponde ao seu nome meta\nWhen montar e converter os atributos para atualização do GP\nThen A usa o nome meta definido no mapeamento e B mantém o nome meta original\nAnd os valores IM_A e IM_B permanecem associados aos respectivos campos\nWhen executar a atualização pelo mecanismo padrão\nThen os dois campos corretos no GP recebem seus valores IM sem criação de campos com nomes de descrição",
+        "id": 17332,
+        "type": "BDD"
+      },
+      "issueLinks": [
+        "ETICS-252410"
+      ],
+      "lastTestResultStatus": "Not Executed",
+      "name": "RECON-H01-DEV-05 — Converter chaves silenciosas para nomes meta do GP",
+      "parameters": {
+        "variables": [],
+        "entries": []
+      },
+      "key": "ETICS-T8092",
+      "status": "Draft"
+    }
+  ]
+}

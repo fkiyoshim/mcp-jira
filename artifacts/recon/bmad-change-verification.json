@@ -1,0 +1,117 @@
+{
+  "verifiedAt": "2026-09-24T16:27:13.656Z",
+  "deprecated": 22,
+  "refined": 2,
+  "created": [
+    {
+      "name": "RECON-H06-OSPF-01 — Sincronizar OSPF no Device do Roteador",
+      "key": "ETICS-T8221",
+      "story": "ETICS-252615",
+      "verified": true
+    },
+    {
+      "name": "RECON-H07-FN-01 — Sincronizar Roteamento Estático FN no JSON do Roteador",
+      "key": "ETICS-T8222",
+      "story": "ETICS-252629",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-01 — Não divergir para versões de software iguais",
+      "key": "ETICS-T8223",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-02 — Mostrar divergência e os dois valores da versão",
+      "key": "ETICS-T8224",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-03 — Ignorar diferença da versão configurada com 0",
+      "key": "ETICS-T8225",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-04 — Atualizar SOFTWARE_VERSION selecionado",
+      "key": "ETICS-T8226",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-05 — Inicializar configurações antigas com valor 0",
+      "key": "ETICS-T8227",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-06 — Aceitar ausência de softwareVersion no IM",
+      "key": "ETICS-T8228",
+      "story": "ETICS-253096",
+      "verified": true
+    }
+  ],
+  "allBdd": true,
+  "cycleSearchCount": 575,
+  "cycleMembership": [
+    {
+      "key": "ETICS-C646",
+      "name": "CLARO | RECON lógico | H01–H08 | Visão 01.01",
+      "members": [
+        {
+          "key": "ETICS-T8072",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8073",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8074",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8075",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8076",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8077",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8078",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8079",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8080",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8082",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8083",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8084",
+          "status": "Not Executed"
+        },
+        {
+          "key": "ETICS-T8085",
+          "status": "Not Executed"
+        }
+      ]
+    }
+  ]
+}

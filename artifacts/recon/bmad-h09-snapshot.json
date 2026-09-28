@@ -1,0 +1,183 @@
+{
+  "capturedAt": "2026-09-24T16:18:29.312Z",
+  "story": {
+    "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+    "id": "3109777",
+    "self": "https://jira.cpqd.com.br/rest/api/2/issue/3109777",
+    "key": "ETICS-253096",
+    "fields": {
+      "summary": "[CLARO-Recon] H09 -Reconciliar Versão de Software do Roteador",
+      "issuetype": {
+        "self": "https://jira.cpqd.com.br/rest/api/2/issuetype/33",
+        "id": "33",
+        "description": "História",
+        "iconUrl": "https://jira.cpqd.com.br/secure/viewavatar?size=xsmall&avatarId=16835&avatarType=issuetype",
+        "name": "História",
+        "subtask": false,
+        "avatarId": 16835
+      },
+      "description": "h2. História de usuário\r\n\r\nComo operador do Recon, quero configurar e reconciliar a *Versão de Software* dos Roteadores, para identificar diferenças entre o IM e o inventário GP e, quando solicitado, atualizar o GP com o valor do IM.",
+      "issuelinks": [
+        {
+          "id": "957310",
+          "self": "https://jira.cpqd.com.br/rest/api/2/issueLink/957310",
+          "outwardIssue": {
+            "id": "3104304",
+            "key": "ETICS-252629",
+            "self": "https://jira.cpqd.com.br/rest/api/2/issue/3104304",
+            "fields": {
+              "summary": "[CLARO-Recon] H07 - Sincronizar objeto de Roteamento Estático FN do IM no JSON do Roteador",
+              "status": {
+                "self": "https://jira.cpqd.com.br/rest/api/2/status/13062",
+                "description": "Este status é gerido internamente pelo Jira Software",
+                "iconUrl": "https://jira.cpqd.com.br/",
+                "name": "Iniciar",
+                "id": "13062",
+                "statusCategory": {
+                  "self": "https://jira.cpqd.com.br/rest/api/2/statuscategory/4",
+                  "id": 4,
+                  "key": "indeterminate",
+                  "colorName": "inprogress",
+                  "name": "Em andamento"
+                }
+              },
+              "priority": {
+                "self": "https://jira.cpqd.com.br/rest/api/2/priority/4",
+                "iconUrl": "https://jira.cpqd.com.br/images/icons/priorities/minor.svg",
+                "name": "Baixa",
+                "id": "4"
+              },
+              "issuetype": {
+                "self": "https://jira.cpqd.com.br/rest/api/2/issuetype/33",
+                "id": "33",
+                "description": "História",
+                "iconUrl": "https://jira.cpqd.com.br/secure/viewavatar?size=xsmall&avatarId=16835&avatarType=issuetype",
+                "name": "História",
+                "subtask": false,
+                "avatarId": 16835
+              }
+            }
+          },
+          "type": {
+            "id": "10010",
+            "name": "Cloners",
+            "inward": "é clonada por",
+            "outward": "é clone de",
+            "self": "https://jira.cpqd.com.br/rest/api/2/issueLinkType/10010"
+          }
+        },
+        {
+          "id": "957950",
+          "self": "https://jira.cpqd.com.br/rest/api/2/issueLink/957950",
+          "inwardIssue": {
+            "id": "3103948",
+            "key": "ETICS-252588",
+            "self": "https://jira.cpqd.com.br/rest/api/2/issue/3103948",
+            "fields": {
+              "summary": "H23 - Notificação do Roteador pelo processo do Recon",
+              "status": {
+                "self": "https://jira.cpqd.com.br/rest/api/2/status/15376",
+                "description": "Este status é gerenciado internamente pelo Jira Software",
+                "iconUrl": "https://jira.cpqd.com.br/",
+                "name": "Em Implementação",
+                "id": "15376",
+                "statusCategory": {
+                  "self": "https://jira.cpqd.com.br/rest/api/2/statuscategory/4",
+                  "id": 4,
+                  "key": "indeterminate",
+                  "colorName": "inprogress",
+                  "name": "Em andamento"
+                }
+              },
+              "priority": {
+                "self": "https://jira.cpqd.com.br/rest/api/2/priority/4",
+                "iconUrl": "https://jira.cpqd.com.br/images/icons/priorities/minor.svg",
+                "name": "Baixa",
+                "id": "4"
+              },
+              "issuetype": {
+                "self": "https://jira.cpqd.com.br/rest/api/2/issuetype/3",
+                "id": "3",
+                "description": "Tarefa",
+                "iconUrl": "https://jira.cpqd.com.br/secure/viewavatar?size=xsmall&avatarId=16838&avatarType=issuetype",
+                "name": "Tarefa",
+                "subtask": false,
+                "avatarId": 16838
+              }
+            }
+          },
+          "type": {
+            "id": "10011",
+            "name": "Dependência",
+            "inward": "é pré-requisito de",
+            "outward": "depende de",
+            "self": "https://jira.cpqd.com.br/rest/api/2/issueLinkType/10011"
+          }
+        }
+      ],
+      "updated": "2026-09-23T16:51:11.674-0300",
+      "labels": [],
+      "status": {
+        "self": "https://jira.cpqd.com.br/rest/api/2/status/15376",
+        "description": "Este status é gerenciado internamente pelo Jira Software",
+        "iconUrl": "https://jira.cpqd.com.br/",
+        "name": "Em Implementação",
+        "id": "15376",
+        "statusCategory": {
+          "self": "https://jira.cpqd.com.br/rest/api/2/statuscategory/4",
+          "id": 4,
+          "key": "indeterminate",
+          "colorName": "inprogress",
+          "name": "Em andamento"
+        }
+      }
+    },
+    "renderedFields": null
+  },
+  "comments": {
+    "startAt": 0,
+    "maxResults": 100,
+    "total": 1,
+    "comments": [
+      {
+        "self": "https://jira.cpqd.com.br/rest/api/2/issue/3109777/comment/5877418",
+        "id": "5877418",
+        "author": {
+          "self": "https://jira.cpqd.com.br/rest/api/2/user?username=fluis",
+          "name": "fluis",
+          "key": "fluis",
+          "emailAddress": "fluis@cpqd.com.br",
+          "avatarUrls": {
+            "48x48": "https://jira.cpqd.com.br/secure/useravatar?ownerId=fluis&avatarId=30324",
+            "24x24": "https://jira.cpqd.com.br/secure/useravatar?size=small&ownerId=fluis&avatarId=30324",
+            "16x16": "https://jira.cpqd.com.br/secure/useravatar?size=xsmall&ownerId=fluis&avatarId=30324",
+            "32x32": "https://jira.cpqd.com.br/secure/useravatar?size=medium&ownerId=fluis&avatarId=30324"
+          },
+          "displayName": "Fabio Luis Ferreira",
+          "active": true,
+          "timeZone": "America/Sao_Paulo"
+        },
+        "body": "Projeto em: docs/dev/13.3.200/recon/09-reconciliar-versao-software-roteador.md",
+        "updateAuthor": {
+          "self": "https://jira.cpqd.com.br/rest/api/2/user?username=fluis",
+          "name": "fluis",
+          "key": "fluis",
+          "emailAddress": "fluis@cpqd.com.br",
+          "avatarUrls": {
+            "48x48": "https://jira.cpqd.com.br/secure/useravatar?ownerId=fluis&avatarId=30324",
+            "24x24": "https://jira.cpqd.com.br/secure/useravatar?size=small&ownerId=fluis&avatarId=30324",
+            "16x16": "https://jira.cpqd.com.br/secure/useravatar?size=xsmall&ownerId=fluis&avatarId=30324",
+            "32x32": "https://jira.cpqd.com.br/secure/useravatar?size=medium&ownerId=fluis&avatarId=30324"
+          },
+          "displayName": "Fabio Luis Ferreira",
+          "active": true,
+          "timeZone": "America/Sao_Paulo"
+        },
+        "created": "2026-09-22T11:48:16.729-0300",
+        "updated": "2026-09-22T11:48:16.729-0300"
+      }
+    ]
+  },
+  "scanned": 8037,
+  "tests": []
+}

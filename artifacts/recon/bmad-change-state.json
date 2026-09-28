@@ -1,0 +1,83 @@
+{
+  "startedAt": "2026-09-24T16:23:46.850Z",
+  "deprecated": [
+    "ETICS-T8072",
+    "ETICS-T8073",
+    "ETICS-T8074",
+    "ETICS-T8075",
+    "ETICS-T8076",
+    "ETICS-T8146",
+    "ETICS-T8147",
+    "ETICS-T8148",
+    "ETICS-T8149",
+    "ETICS-T8150",
+    "ETICS-T8151",
+    "ETICS-T8152",
+    "ETICS-T8153",
+    "ETICS-T8154",
+    "ETICS-T8077",
+    "ETICS-T8078",
+    "ETICS-T8079",
+    "ETICS-T8080",
+    "ETICS-T8155",
+    "ETICS-T8082",
+    "ETICS-T8083",
+    "ETICS-T8084"
+  ],
+  "refined": [
+    "ETICS-T8085",
+    "ETICS-T8156"
+  ],
+  "created": [
+    {
+      "name": "RECON-H06-OSPF-01 — Sincronizar OSPF no Device do Roteador",
+      "key": "ETICS-T8221",
+      "story": "ETICS-252615",
+      "verified": true
+    },
+    {
+      "name": "RECON-H07-FN-01 — Sincronizar Roteamento Estático FN no JSON do Roteador",
+      "key": "ETICS-T8222",
+      "story": "ETICS-252629",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-01 — Não divergir para versões de software iguais",
+      "key": "ETICS-T8223",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-02 — Mostrar divergência e os dois valores da versão",
+      "key": "ETICS-T8224",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-03 — Ignorar diferença da versão configurada com 0",
+      "key": "ETICS-T8225",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-04 — Atualizar SOFTWARE_VERSION selecionado",
+      "key": "ETICS-T8226",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-05 — Inicializar configurações antigas com valor 0",
+      "key": "ETICS-T8227",
+      "story": "ETICS-253096",
+      "verified": true
+    },
+    {
+      "name": "RECON-H09-06 — Aceitar ausência de softwareVersion no IM",
+      "key": "ETICS-T8228",
+      "story": "ETICS-253096",
+      "verified": true
+    }
+  ],
+  "errors": [],
+  "completedAt": "2026-09-24T16:24:19.651Z"
+}

@@ -1,0 +1,429 @@
+{
+  "estimatedTime": 0,
+  "createdOn": "2026-09-09T23:58:22.815Z",
+  "issueCount": 0,
+  "plannedEndDate": "2026-09-09T23:58:22.815Z",
+  "executionTime": 0,
+  "projectKey": "ETICS",
+  "testCaseCount": 50,
+  "plannedStartDate": "2026-09-09T23:58:22.815Z",
+  "createdBy": "JIRAUSER30629",
+  "issueLinks": [
+    "ETICS-252569",
+    "ETICS-252611",
+    "ETICS-252410",
+    "ETICS-252562",
+    "ETICS-252614",
+    "ETICS-252615",
+    "ETICS-252629",
+    "ETICS-252632"
+  ],
+  "name": "CLARO | RECON lógico | H01–H08 | Visão 01.01",
+  "items": [
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8036",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74464,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8037",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74465,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8038",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74466,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8039",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74467,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8040",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74468,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8041",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74469,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8042",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74470,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8043",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74471,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8044",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74472,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8045",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74473,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8046",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74474,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8047",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74475,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8048",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74476,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8049",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74477,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8050",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74478,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8051",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74479,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8052",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74480,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8053",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74481,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8054",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74482,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8055",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74483,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8056",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74484,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8057",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74485,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8058",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74486,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8059",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74487,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8060",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74488,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8061",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74489,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8062",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74490,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8063",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74491,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8064",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74492,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8065",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74493,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8066",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74494,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8067",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74495,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8068",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74496,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8069",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74497,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8070",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74498,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8071",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74499,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8072",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74500,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8073",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74501,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8074",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74502,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8075",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74503,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8076",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74504,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8077",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74505,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8078",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74506,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8079",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74507,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8080",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74508,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8081",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74509,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8082",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74510,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8083",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74511,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8084",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74512,
+      "status": "Not Executed"
+    },
+    {
+      "actualEndDate": "2026-09-09T23:58:22.815Z",
+      "testCaseKey": "ETICS-T8085",
+      "executionDate": "2026-09-09T23:58:22.815Z",
+      "actualStartDate": "2026-09-09T23:58:22.815Z",
+      "id": 74513,
+      "status": "Not Executed"
+    }
+  ],
+  "key": "ETICS-C646",
+  "executionSummary": {
+    "Not Executed": 50
+  },
+  "status": "Not Executed"
+}

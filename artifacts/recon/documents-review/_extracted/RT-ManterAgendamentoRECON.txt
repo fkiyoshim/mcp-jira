@@ -1,0 +1,11 @@
+### Planilha: 'Histórico de alterações$'
+1: [1] Histórico de versões deste documento
+3: [1] Data | [2] Versão | [3] Autor | [4] Descrições das alterações realizadas
+4: [1] 28/07/2014 | [2] B | [3] Renata França | [4] Roteiro alterado para atender a feature "Recon" da versão 8.0 do eTICS.  Histórias:  [ETICS-88539] Agendar processo de reconciliação  Alterações: ETICS-90362 - UC-ManterAgendamento.doc  Especificação de Requisito: - http://svn.cpqd.com.br/DSSO/etics/branches/dev/ETICS-REQUISITOS/requisitos/especificacoes/adm/UC-ManterAgendamento.doc (versão: 03.10)  Roteiro de Teste: http://svn.cpqd.com.br/DSSO/etics/trunk/testes/especificacoes/etics-8.0-ARSAT/RECON/RT-ManterAgendamentoRECON.xls  Planilha de Caso de Teste: Agendamento
+5: [1] 10/07/2014 | [2] A | [3] Renata França | [4] Roteiro criado para atender a feature "Recon" da versão 8.0 do eTICS.  Histórias:  [ETICS-88539] Agendar processo de reconciliação [ETICS-88545] Consultar agendamento  Tarefa de Elaboração de Roteiro: ETICS-88543 e ETICS-88547  Especificação de Requisito: - http://svn.cpqd.com.br/DSSO/etics/branches/dev/ETICS-REQUISITOS/requisitos/especificacoes/adm/UC-ManterAgendamento.doc (versão: 03.09) - http://svn.cpqd.com.br/DSSO/etics/branches/dev/ETICS-REQUISITOS/requisitos/especificacoes/recon/UC-ExecutarReconciliacaoIinventarioPlantaInterna.doc (versão: 02.05)  Roteiro de Teste: http://svn.cpqd.com.br/DSSO/etics/trunk/testes/especificacoes/etics-8.0-ARSAT/RECON/RT-ManterAgendamentoRECON.xls  Planilha de Caso de Teste: Agendamento
+### Planilha: 'Resumo de Execução$'
+1: [1] Resumo de Execução
+4: [1] Casos de Teste
+5: [1] OK | [2] NOK | [3] PEN | [4] NR | [5] Total
+6: [1] 100,00% | [2] 0% | [3] 0% | [4] 0% | [5] 100,00%
+7: [1] 90 | [2] 0 | [3] 0 | [4] 0 | [5] 90

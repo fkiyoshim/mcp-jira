@@ -1,0 +1,10 @@
+import fs from 'node:fs';
+const s=JSON.parse(fs.readFileSync(new URL('./bmad-live-snapshot.json',import.meta.url),'utf8'));
+const epic=(s.epicSearch.issues||[]).map(x=>({key:x.key,title:x.fields.summary,status:x.fields.status?.name}));
+const stories=s.stories.map(x=>({key:x.key,title:x.fields.summary,status:x.fields.status?.name,updated:x.fields.updated,description:x.fields.description}));
+const counts=Object.fromEntries(s.storyKeys.map(k=>[k,s.tests.filter(t=>(t.issueLinks||[]).includes(k)).length]));
+const filter=process.argv[2];
+const selected=s.tests.filter(t=>!filter || t.key===filter || (t.issueLinks||[]).includes(filter));
+const tests=selected.map(t=>({key:t.key,name:t.name,links:t.issueLinks,status:t.status,type:t.testScript?.type,...(filter?{text:t.testScript?.text,precondition:t.precondition,objective:t.objective}:{})}));
+const comments=filter?s.comments[s.storyKeys.indexOf(filter)]?.comments?.map(c=>({body:c.body,updated:c.updated})):undefined;
+console.log(JSON.stringify({capturedAt:s.capturedAt,epic:filter?undefined:epic,stories:filter?stories.filter(x=>x.key===filter):stories.map(({description,...rest})=>rest),comments,counts:filter?undefined:counts,total:s.tests.length,tests},null,2));

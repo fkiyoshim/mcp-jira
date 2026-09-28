@@ -1,0 +1,2316 @@
+[
+  {
+    "keyNumber": 8036,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T19:35:16.086Z",
+    "objective": "Ignorar atributo configurado com 0\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91712,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Atributo reconciliável A: GP=valor_GP, IM=valor_IM; configuração A=0.",
+          "expectedResult": "A diferença em A não gera divergência.",
+          "index": 0,
+          "description": "Executar a reconciliação e abrir o detalhamento.",
+          "id": 209070
+        },
+        {
+          "testData": "Atributo reconciliável A: GP=valor_GP, IM=valor_IM; configuração A=0.",
+          "expectedResult": "A permanece com valor_GP; o atributo ignorado não é sincronizado.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209071
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-01 — Ignorar atributo configurado com 0",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8036",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8037,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:44.548Z",
+    "objective": "Comparar atributo configurado com 1\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91720,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Atributo A: GP=valor_GP, IM=valor_IM; A=1.",
+          "expectedResult": "A diferença aparece na comparação IM x GP.",
+          "index": 0,
+          "description": "Executar a reconciliação e detalhar o equipamento.",
+          "id": 209079
+        },
+        {
+          "testData": "Atributo A: GP=valor_GP, IM=valor_IM; A=1.",
+          "expectedResult": "O GP mantém valor_GP; a comparação não efetiva atualização.",
+          "index": 1,
+          "description": "Consultar o inventário sem acionar atualização.",
+          "id": 209080
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-02 — Comparar atributo configurado com 1",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8037",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8038,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:48.247Z",
+    "objective": "Sincronizar atributo 2 sem divergência nem exibição\nHistória: ETICS-252410\nBase: H01; comentário de 28/08/2026",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91721,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Atributo A: GP=valor_GP, IM=valor_IM; A=2.",
+          "expectedResult": "A não gera divergência nem aparece na árvore.",
+          "index": 0,
+          "description": "Executar a reconciliação e abrir a árvore.",
+          "id": 209081
+        },
+        {
+          "testData": "Atributo A: GP=valor_GP, IM=valor_IM; A=2.",
+          "expectedResult": "A permanece com valor_GP.",
+          "index": 1,
+          "description": "Consultar o GP antes de atualizar.",
+          "id": 209082
+        },
+        {
+          "testData": "Atributo A: GP=valor_GP, IM=valor_IM; A=2.",
+          "expectedResult": "A passa a valor_IM.",
+          "index": 2,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209083
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-03 — Sincronizar atributo 2 sem divergência nem exibição",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8038",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8039,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:52.938Z",
+    "objective": "Aplicar os três modos no mesmo equipamento\nHistória: ETICS-252410\nBase: H01/H02",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91722,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "A=0, B=1, C=2; cada atributo possui valores diferentes entre GP e IM.",
+          "expectedResult": "Somente B participa da comparação; C não aparece na árvore.",
+          "index": 0,
+          "description": "Executar a reconciliação e detalhar.",
+          "id": 209084
+        },
+        {
+          "testData": "A=0, B=1, C=2; cada atributo possui valores diferentes entre GP e IM.",
+          "expectedResult": "C recebe o valor IM; A permanece inalterado; B segue a regra existente de atualização de atributos comparados.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209085
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-04 — Aplicar os três modos no mesmo equipamento",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8039",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8040,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:55.949Z",
+    "objective": "Manter atributos silenciosos inalterados durante consultas\nHistória: ETICS-252410\nBase: H01; visão §§3 e 8",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91723,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "A=2 e valores diferentes no GP e IM.",
+          "expectedResult": "A não aparece nem gera divergência.",
+          "index": 0,
+          "description": "Executar reconciliação e abrir/fechar o detalhamento duas vezes.",
+          "id": 209086
+        },
+        {
+          "testData": "A=2 e valores diferentes no GP e IM.",
+          "expectedResult": "Valor GP original preservado até Atualizar inventário.",
+          "index": 1,
+          "description": "Executar Consultar inventário e conferir A.",
+          "id": 209087
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-05 — Manter atributos silenciosos inalterados durante consultas",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8040",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8041,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:52:58.829Z",
+    "objective": "Reexecutar sincronização com o mesmo valor\nHistória: ETICS-252410\nBase: H01\nObservação/pendência: Teste de regressão derivado da semântica de atualização.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91724,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "A=2; valor IM já aplicado no GP.",
+          "expectedResult": "A mantém o valor IM, sem duplicação do objeto atualizado.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209089
+        },
+        {
+          "testData": "A=2; valor IM já aplicado no GP.",
+          "expectedResult": "Não há divergência de A nem exibição de A.",
+          "index": 0,
+          "description": "Executar novamente a reconciliação com a mesma resposta.",
+          "id": 209088
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252410"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H01-06 — Reexecutar sincronização com o mesmo valor",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8041",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8042,
+    "precondition": "Usuário com acesso à configuração de atributos.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:53:03.229Z",
+    "objective": "Apresentar lista com as três opções por atributo\nHistória: ETICS-252562\nBase: H02 AC1–2",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91725,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Configuração de teste existente.",
+          "expectedResult": "Cada atributo configurável é apresentado como lista de seleção.",
+          "index": 0,
+          "description": "Abrir Configuração/Atributos reconciliáveis e editar.",
+          "id": 209090
+        },
+        {
+          "testData": "Configuração de teste existente.",
+          "expectedResult": "Opções exatamente 0=Ignorar, 1=Comparar IM x GP, 2=Sincronizar IM -> GP; seleção única.",
+          "index": 1,
+          "description": "Abrir a lista de cada categoria de atributo disponível.",
+          "id": 209091
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252562"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H02-01 — Apresentar lista com as três opções por atributo",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8042",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8043,
+    "precondition": "Usuário autorizado; consulta técnica de RECON_ATRIB_CFG disponível.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:53:07.775Z",
+    "objective": "Persistir os valores numéricos 0, 1 e 2\nHistória: ETICS-252562\nBase: H02 AC2–3",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91726,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Três atributos A, B e C.",
+          "expectedResult": "Seleções preservadas; valores numéricos 0, 1 e 2 em RECON_ATRIB_CFG.",
+          "index": 1,
+          "description": "Reabrir a configuração e consultar os valores persistidos.",
+          "id": 209093
+        },
+        {
+          "testData": "Três atributos A, B e C.",
+          "expectedResult": "Gravação concluída.",
+          "index": 0,
+          "description": "Selecionar A=0, B=1, C=2 e salvar.",
+          "id": 209092
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252562"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H02-02 — Persistir os valores numéricos 0, 1 e 2",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8043",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8044,
+    "precondition": "Configuração criada antes da alteração, contendo valores 0 e 1.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:53:10.766Z",
+    "objective": "Abrir e salvar configuração legada sem migração\nHistória: ETICS-252562\nBase: H02 AC4",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91727,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Cópia de configuração legada, sem conversão prévia de dados.",
+          "expectedResult": "Valores 0 e 1 aparecem nas opções correspondentes.",
+          "index": 0,
+          "description": "Abrir a configuração legada.",
+          "id": 209094
+        },
+        {
+          "testData": "Cópia de configuração legada, sem conversão prévia de dados.",
+          "expectedResult": "Valores e comportamento existentes preservados sem migração.",
+          "index": 1,
+          "description": "Salvar sem alterar e reabrir.",
+          "id": 209095
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252562"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H02-03 — Abrir e salvar configuração legada sem migração",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8044",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8045,
+    "precondition": "Usuário autorizado; configuração de teste.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:53:16.010Z",
+    "objective": "Alterar sucessivamente o modo de um atributo\nHistória: ETICS-252562\nBase: H02 AC2–3",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91728,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "A inicialmente 0.",
+          "expectedResult": "A=1 persistido e selecionado.",
+          "index": 0,
+          "description": "Alterar A para 1, salvar e reabrir.",
+          "id": 209096
+        },
+        {
+          "testData": "A inicialmente 0.",
+          "expectedResult": "A=2 persistido e selecionado.",
+          "index": 1,
+          "description": "Alterar A para 2, salvar e reabrir.",
+          "id": 209097
+        },
+        {
+          "testData": "A inicialmente 0.",
+          "expectedResult": "A=0 persistido e selecionado, sem múltiplas opções ativas.",
+          "index": 2,
+          "description": "Alterar A para 0, salvar e reabrir.",
+          "id": 209098
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252562"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H02-04 — Alterar sucessivamente o modo de um atributo",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8045",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8046,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:53:21.576Z",
+    "objective": "Comparar somente atributos com valor 1\nHistória: ETICS-252562\nBase: H02 AC5–6\nObservação/pendência: A sincronização funcional de C é coberta pela H01.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91729,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Configuração com A=0, B=1, C=2; valores diferentes entre GP e IM.",
+          "expectedResult": "Configuração aceita pelo consumidor atual.",
+          "index": 0,
+          "description": "Salvar a configuração pela nova lista e executar reconciliação.",
+          "id": 209099
+        },
+        {
+          "testData": "Configuração com A=0, B=1, C=2; valores diferentes entre GP e IM.",
+          "expectedResult": "Somente B gera divergência por comparação; A e C não são comparados.",
+          "index": 1,
+          "description": "Abrir o detalhamento.",
+          "id": 209100
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252562"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H02-05 — Comparar somente atributos com valor 1",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8046",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8047,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:53:57.547Z",
+    "objective": "Inserir singleton inexistente\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91730,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Tipo S registrado sem chave; documento válido sem S; fragmento S com attributes={valor:'novo'}.",
+          "expectedResult": "Documento final contém uma ocorrência de S com os atributos recebidos.",
+          "index": 0,
+          "description": "Aplicar upsert unitário de S.",
+          "id": 209101
+        },
+        {
+          "testData": "Tipo S registrado sem chave; documento válido sem S; fragmento S com attributes={valor:'novo'}.",
+          "expectedResult": "Resultado estruturado informa INSERT para S.",
+          "index": 1,
+          "description": "Inspecionar o resultado da operação.",
+          "id": 209102
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-01 — Inserir singleton inexistente",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8047",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8048,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:00.715Z",
+    "objective": "Substituir singleton inteiro sem merge parcial\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91731,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "S existente com attributes={valor:'antigo',obsoleto:true,lista:[1,2]}; entrada S={valor:'novo',lista:[3]}.",
+          "expectedResult": "valor=novo, lista=[3], obsoleto ausente; resultado UPDATE.",
+          "index": 1,
+          "description": "Inspecionar atributos e resultado.",
+          "id": 209104
+        },
+        {
+          "testData": "S existente com attributes={valor:'antigo',obsoleto:true,lista:[1,2]}; entrada S={valor:'novo',lista:[3]}.",
+          "expectedResult": "Uma ocorrência de S permanece.",
+          "index": 0,
+          "description": "Aplicar upsert de S.",
+          "id": 209103
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-02 — Substituir singleton inteiro sem merge parcial",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8048",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8049,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:03.879Z",
+    "objective": "Inserir e atualizar objetos por chave natural\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91732,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Tipo T com chave registrada id; documento T/id=A; entradas T/id=A e T/id=B.",
+          "expectedResult": "A substituído integralmente; B inserido.",
+          "index": 0,
+          "description": "Aplicar lote com A atualizado e B novo.",
+          "id": 209105
+        },
+        {
+          "testData": "Tipo T com chave registrada id; documento T/id=A; entradas T/id=A e T/id=B.",
+          "expectedResult": "UPDATE para A e INSERT para B, com os respectivos objetos finais.",
+          "index": 1,
+          "description": "Inspecionar resultados por item.",
+          "id": 209106
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-03 — Inserir e atualizar objetos por chave natural",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8049",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8050,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:07.127Z",
+    "objective": "Preservar objetos ausentes do lote\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91733,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Documento contém T/id=A e T/id=B; lote altera somente A.",
+          "expectedResult": "B preservado integralmente; não há exclusão por ausência na entrada.",
+          "index": 1,
+          "description": "Comparar B com o snapshot.",
+          "id": 209108
+        },
+        {
+          "testData": "Documento contém T/id=A e T/id=B; lote altera somente A.",
+          "expectedResult": "Operação concluída.",
+          "index": 0,
+          "description": "Aplicar lote com nova versão de A.",
+          "id": 209107
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-04 — Preservar objetos ausentes do lote",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8050",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8051,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:11.041Z",
+    "objective": "Validar o lote inteiro antes de qualquer alteração\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91734,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Primeiro fragmento válido; segundo fragmento viola formato canônico.",
+          "expectedResult": "Lote rejeitado com erro tipado.",
+          "index": 0,
+          "description": "Aplicar os dois fragmentos no mesmo lote.",
+          "id": 209109
+        },
+        {
+          "testData": "Primeiro fragmento válido; segundo fragmento viola formato canônico.",
+          "expectedResult": "Nenhuma alteração parcial é aplicada; primeiro item não deixa resultado persistido.",
+          "index": 1,
+          "description": "Inspecionar documento e snapshots.",
+          "id": 209110
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-05 — Validar o lote inteiro antes de qualquer alteração",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8051",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8052,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:17.249Z",
+    "objective": "Rejeitar documento JSON malformado\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91735,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Documento atual com sintaxe JSON inválida e fragmento válido.",
+          "expectedResult": "Erro tipado identifica documento inválido.",
+          "index": 0,
+          "description": "Invocar upsert.",
+          "id": 209111
+        },
+        {
+          "testData": "Documento atual com sintaxe JSON inválida e fragmento válido.",
+          "expectedResult": "Nenhum documento final parcialmente atualizado; mensagem útil sem despejar conteúdo sensível.",
+          "index": 1,
+          "description": "Verificar diagnóstico e ausência de resultado de sucesso.",
+          "id": 209112
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-06 — Rejeitar documento JSON malformado",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8052",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8053,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:22.461Z",
+    "objective": "Rejeitar ausência de chave natural obrigatória\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91736,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Tipo T tem chave id; fragmento T contém attributes sem id.",
+          "expectedResult": "Falha de validação de chave; não deve tratar T como singleton.",
+          "index": 0,
+          "description": "Aplicar fragmento sem id.",
+          "id": 209113
+        },
+        {
+          "testData": "Tipo T tem chave id; fragmento T contém attributes sem id.",
+          "expectedResult": "Documento inalterado e erro tipado.",
+          "index": 1,
+          "description": "Comparar documento com snapshot.",
+          "id": 209114
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-07 — Rejeitar ausência de chave natural obrigatória",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8053",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8054,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:25.823Z",
+    "objective": "Executar componente sem dependências de infraestrutura\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91737,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Consumidor mínimo com JAR e dependências declaradas; sem GP, IM, CDK ou banco configurados.",
+          "expectedResult": "Operações funcionam em memória sem exigir serviços externos.",
+          "index": 1,
+          "description": "Executar INSERT e UPDATE válidos.",
+          "id": 209116
+        },
+        {
+          "testData": "Consumidor mínimo com JAR e dependências declaradas; sem GP, IM, CDK ou banco configurados.",
+          "expectedResult": "Módulo disponível no reator e para o consumidor.",
+          "index": 0,
+          "description": "Resolver o artefato via gerenciamento de dependências do OSS Commons.",
+          "id": 209115
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-08 — Executar componente sem dependências de infraestrutura",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8054",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8055,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:28.998Z",
+    "objective": "Produzir resultado determinístico em chamadas independentes\nHistória: ETICS-252569\nBase: H03",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91738,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Mesmo documento inicial e mesmo lote em duas execuções novas.",
+          "expectedResult": "Resultados equivalentes; uma execução não contamina a outra.",
+          "index": 1,
+          "description": "Comparar documentos finais e resultados por item.",
+          "id": 209118
+        },
+        {
+          "testData": "Mesmo documento inicial e mesmo lote em duas execuções novas.",
+          "expectedResult": "Ambas terminam com sucesso.",
+          "index": 0,
+          "description": "Executar duas vezes a mesma operação a partir de cópias do documento inicial.",
+          "id": 209117
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-09 — Produzir resultado determinístico em chamadas independentes",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8055",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8056,
+    "precondition": "Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:33.476Z",
+    "objective": "Não validar regras de domínio no componente genérico\nHistória: ETICS-252569\nBase: H03 exclusões",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91739,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Tipo registrado; chave válida; atributo interno opaco com texto que não representa um IPv4.",
+          "expectedResult": "Componente aceita o atributo interno sem validar IPv4.",
+          "index": 0,
+          "description": "Aplicar fragmento estruturalmente válido.",
+          "id": 209119
+        },
+        {
+          "testData": "Tipo registrado; chave válida; atributo interno opaco com texto que não representa um IPv4.",
+          "expectedResult": "Valor opaco preservado; validação de domínio permanece no consumidor.",
+          "index": 1,
+          "description": "Consultar o resultado.",
+          "id": 209120
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252569"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H03-10 — Não validar regras de domínio no componente genérico",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8056",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8057,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Acesso técnico somente de consulta a RECON_EQPT.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:55.683Z",
+    "objective": "Coletar fragmentos em CLOB sem alterar GP\nHistória: ETICS-252611\nBase: H04 RN2–3,11",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91740,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP contém objeto antigo X; IM retorna dois fragmentos novos Y e Z.",
+          "expectedResult": "Coleta concluída.",
+          "index": 0,
+          "description": "Executar a reconciliação.",
+          "id": 209121
+        },
+        {
+          "testData": "GP contém objeto antigo X; IM retorna dois fragmentos novos Y e Z.",
+          "expectedResult": "CLOB contém array apenas de Y e Z, cada fragmento com objectType e attributes; não contém cópia de X; GP mantém snapshot inicial.",
+          "index": 1,
+          "description": "Inspecionar CLOB de RECON_EQPT e JSON do GP.",
+          "id": 209122
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-01 — Coletar fragmentos em CLOB sem alterar GP",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8057",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8058,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy de NestedRuleCaller disponível.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:54:59.383Z",
+    "objective": "Aplicar lote misto com única atualização\nHistória: ETICS-252611\nBase: H04 RN4–8",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91741,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP contém singleton S e T/id=A; IM atualiza S e A e insere T/id=B.",
+          "expectedResult": "S e A substituídos integralmente; B inserido.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209123
+        },
+        {
+          "testData": "GP contém singleton S e T/id=A; IM atualiza S e A e insere T/id=B.",
+          "expectedResult": "Exatamente uma chamada para o equipamento, contendo JSON final com os três resultados.",
+          "index": 1,
+          "description": "Inspecionar o contador e o argumento do NestedRuleCaller.",
+          "id": 209124
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-02 — Aplicar lote misto com única atualização",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8058",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8059,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy de NestedRuleCaller disponível.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:02.689Z",
+    "objective": "Abortar lote quando qualquer fragmento é inválido\nHistória: ETICS-252611\nBase: H04 RN7,9",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91742,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Lote com fragmento válido seguido de fragmento inválido.",
+          "expectedResult": "Atualização rejeitada; nenhum fragmento aplicado.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209125
+        },
+        {
+          "testData": "Lote com fragmento válido seguido de fragmento inválido.",
+          "expectedResult": "Snapshot original preservado; zero chamadas ao NestedRuleCaller.",
+          "index": 1,
+          "description": "Conferir GP e contador.",
+          "id": 209126
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-03 — Abortar lote quando qualquer fragmento é inválido",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8059",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8060,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy disponível; fixture controlada para JSON inválido.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:06.827Z",
+    "objective": "Abortar atualização com documento GP inválido\nHistória: ETICS-252611\nBase: H04 RN9",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91743,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Documento GP malformado e lote IM válido.",
+          "expectedResult": "Falha diagnosticada sem aplicar fragmentos.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209127
+        },
+        {
+          "testData": "Documento GP malformado e lote IM válido.",
+          "expectedResult": "Zero chamadas ao NestedRuleCaller; conteúdo anterior não substituído parcialmente.",
+          "index": 1,
+          "description": "Conferir contador e inventário.",
+          "id": 209128
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-04 — Abortar atualização com documento GP inválido",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8060",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8061,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:10.815Z",
+    "objective": "Distinguir chaves por maiúsculas e minúsculas\nHistória: ETICS-252611\nBase: H04 RN5–6",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91744,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Tipo T registrado com chave id; GP tem id=abc; IM retorna id=ABC.",
+          "expectedResult": "Objeto id=ABC inserido separadamente; id=abc preservado.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209129
+        },
+        {
+          "testData": "Tipo T registrado com chave id; GP tem id=abc; IM retorna id=ABC.",
+          "expectedResult": "Não há conversão de caixa nem colisão entre as duas identidades.",
+          "index": 1,
+          "description": "Inspecionar o documento final.",
+          "id": 209130
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-05 — Distinguir chaves por maiúsculas e minúsculas",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8061",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8062,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Registro com dois tipos válidos que diferem somente em caixa.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:15.156Z",
+    "objective": "Não normalizar objectType\nHistória: ETICS-252611\nBase: H04 RN6\nObservação/pendência: Requer dois tipos válidos registrados; não presumir aceitação de tipo desconhecido.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91745,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Tipos T e t registrados; GP contém T/id=A; IM retorna t/id=A.",
+          "expectedResult": "T/id=A preservado; t/id=A tratado como identidade distinta.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209131
+        },
+        {
+          "testData": "Tipos T e t registrados; GP contém T/id=A; IM retorna t/id=A.",
+          "expectedResult": "Caixa original mantida.",
+          "index": 1,
+          "description": "Comparar nomes dos tipos no JSON final.",
+          "id": 209132
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-06 — Não normalizar objectType",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8062",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8063,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:18.908Z",
+    "objective": "Preservar configurações ausentes na resposta IM\nHistória: ETICS-252611\nBase: H04 RN10",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91746,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP contém A e B; IM retorna somente atualização de A.",
+          "expectedResult": "A atualizado.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209133
+        },
+        {
+          "testData": "GP contém A e B; IM retorna somente atualização de A.",
+          "expectedResult": "B permanece integralmente, sem exclusão por ausência na resposta.",
+          "index": 1,
+          "description": "Conferir B no GP.",
+          "id": 209134
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-07 — Preservar configurações ausentes na resposta IM",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8063",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8064,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:22.679Z",
+    "objective": "Aceitar resposta IM sem objetos HW\nHistória: ETICS-252611\nBase: H04 RN1,10\nObservação/pendência: Quantidade de chamadas para lote vazio não definida; não impor esse resultado.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91747,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP com configurações existentes; resposta IM válida sem fragmentos HW.",
+          "expectedResult": "Ausência de objetos HW não causa erro de parsing.",
+          "index": 0,
+          "description": "Executar a reconciliação e consultar resultado.",
+          "id": 209135
+        },
+        {
+          "testData": "GP com configurações existentes; resposta IM válida sem fragmentos HW.",
+          "expectedResult": "Configurações existentes preservadas, sem inserção artificial nem exclusão.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209136
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-08 — Aceitar resposta IM sem objetos HW",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8064",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8065,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:26.632Z",
+    "objective": "Combinar com inventário atual no momento da atualização\nHistória: ETICS-252611\nBase: H04 contexto; visão §8",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91748,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Coletar atualização de A; após coleta, inserir objeto B no GP por operação permitida.",
+          "expectedResult": "GP contém B novo; CLOB contém somente fragmentos coletados.",
+          "index": 0,
+          "description": "Concluir coleta e inserir B no GP antes de Atualizar inventário.",
+          "id": 209137
+        },
+        {
+          "testData": "Coletar atualização de A; após coleta, inserir objeto B no GP por operação permitida.",
+          "expectedResult": "A atualizado e B preservado: merge usa documento GP atual, não snapshot da coleta.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209138
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-09 — Combinar com inventário atual no momento da atualização",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8065",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8066,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy disponível.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:33.031Z",
+    "objective": "Rejeitar chave inválida sem atualizar equipamento\nHistória: ETICS-252611\nBase: H04 RN9",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91749,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Lote canônico de tipo com chave registrada, mas fragmento sem a chave.",
+          "expectedResult": "Lote rejeitado por chave inválida.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209139
+        },
+        {
+          "testData": "Lote canônico de tipo com chave registrada, mas fragmento sem a chave.",
+          "expectedResult": "GP preservado; zero chamadas ao NestedRuleCaller.",
+          "index": 1,
+          "description": "Verificar GP e contador.",
+          "id": 209140
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252611"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H04-10 — Rejeitar chave inválida sem atualizar equipamento",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8066",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8067,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04 e H05 disponíveis; fixture XML validada pelo contrato de zona.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:54.794Z",
+    "objective": "Converter cada registry de zona em um objeto\nHistória: ETICS-252614\nBase: H05",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91750,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "equipment/additionalInfo/group/key=zona com duas registry de zonas distintas e suas interfaces.",
+          "expectedResult": "Dois fragmentos de zona correspondem às duas registry, preservando a associação de interfaces.",
+          "index": 0,
+          "description": "Executar reconciliação e consultar CLOB.",
+          "id": 209141
+        },
+        {
+          "testData": "equipment/additionalInfo/group/key=zona com duas registry de zonas distintas e suas interfaces.",
+          "expectedResult": "As duas zonas são inseridas no mesmo documento JSON do roteador.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209142
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252614"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H05-01 — Converter cada registry de zona em um objeto",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8067",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8068,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Chave de zona confirmada no contrato de H05.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:55:59.625Z",
+    "objective": "Atualizar zona existente integralmente\nHistória: ETICS-252614\nBase: H05; H04 RN5\nObservação/pendência: Nome da chave de zona depende do contrato técnico referenciado, ainda não acessível.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91751,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Zona já existente; IM retorna mesma identidade com outra lista de interfaces.",
+          "expectedResult": "Zona substituída pela versão recebida.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209143
+        },
+        {
+          "testData": "Zona já existente; IM retorna mesma identidade com outra lista de interfaces.",
+          "expectedResult": "Uma ocorrência para a identidade; lista final igual à recebida, sem merge com interfaces antigas.",
+          "index": 1,
+          "description": "Comparar zona e interfaces.",
+          "id": 209144
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252614"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H05-02 — Atualizar zona existente integralmente",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8068",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8069,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H05 disponível.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:04.374Z",
+    "objective": "Manter zonas fora da árvore de divergências\nHistória: ETICS-252614\nBase: H05",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91752,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Zona existente no GP com interfaces diferentes das retornadas no IM.",
+          "expectedResult": "Zona não aparece na árvore de divergências.",
+          "index": 0,
+          "description": "Executar reconciliação e detalhar.",
+          "id": 209145
+        },
+        {
+          "testData": "Zona existente no GP com interfaces diferentes das retornadas no IM.",
+          "expectedResult": "Antes mantém valor original; depois reflete zona recebida.",
+          "index": 1,
+          "description": "Consultar GP antes e depois de Atualizar inventário.",
+          "id": 209146
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252614"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H05-03 — Manter zonas fora da árvore de divergências",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8069",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8070,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Harness do conversor H05.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:10.065Z",
+    "objective": "Restringir conversor de zona ao grupo zona\nHistória: ETICS-252614\nBase: H05 escopo\nObservação/pendência: No fluxo integrado, outros conversores habilitados podem tratar seus próprios grupos.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91753,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "XML contendo zona, HA, rotas, BGP, OSPF, RIP, port, card, vlan e pseudowire.",
+          "expectedResult": "Somente registry do grupo zona geram fragmentos.",
+          "index": 0,
+          "description": "Executar o conversor de H05 isoladamente.",
+          "id": 209147
+        },
+        {
+          "testData": "XML contendo zona, HA, rotas, BGP, OSPF, RIP, port, card, vlan e pseudowire.",
+          "expectedResult": "Nenhum fragmento produzido por H05 para os demais grupos.",
+          "index": 1,
+          "description": "Inspecionar os fragmentos produzidos.",
+          "id": 209148
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252614"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H05-04 — Restringir conversor de zona ao grupo zona",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8070",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8071,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H05; spy disponível.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:13.282Z",
+    "objective": "Abortar conjunto de zonas diante de fragmento inválido\nHistória: ETICS-252614\nBase: H05 infraestrutura H04",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91754,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Uma zona válida e outra que gere fragmento inválido conforme contrato.",
+          "expectedResult": "Lote do equipamento rejeitado integralmente.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209149
+        },
+        {
+          "testData": "Uma zona válida e outra que gere fragmento inválido conforme contrato.",
+          "expectedResult": "Nenhuma das zonas aplicada; zero chamadas ao NestedRuleCaller.",
+          "index": 1,
+          "description": "Consultar GP e spy.",
+          "id": 209150
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252614"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H05-05 — Abortar conjunto de zonas diante de fragmento inválido",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8071",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8072,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H06 disponíveis.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:18.095Z",
+    "objective": "Converter os quatro atributos HA de additionalInfo\nHistória: ETICS-252615\nBase: H06 exemplo XML",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91755,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "group-name=SPO-HA-121; hbdev-1=port1; hbdev-2=port2; monitor=[x3,x4], diretamente em additionalInfo.",
+          "expectedResult": "Configuração device contém os quatro atributos e ambos os valores de monitor.",
+          "index": 0,
+          "description": "Executar reconciliação e inspecionar fragmento.",
+          "id": 209151
+        },
+        {
+          "testData": "group-name=SPO-HA-121; hbdev-1=port1; hbdev-2=port2; monitor=[x3,x4], diretamente em additionalInfo.",
+          "expectedResult": "Configuração device persistida no campo HW_OBJECTS_JSON do roteador.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209152
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252615"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H06-01 — Converter os quatro atributos HA de additionalInfo",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8072",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8073,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H05/H06 disponíveis.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:23.334Z",
+    "objective": "Atualizar device preservando zonas existentes\nHistória: ETICS-252615\nBase: H06",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91756,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP contém device antigo e zona válida; IM retorna novos quatro atributos HA.",
+          "expectedResult": "Configuração device atualizada no documento compartilhado.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209153
+        },
+        {
+          "testData": "GP contém device antigo e zona válida; IM retorna novos quatro atributos HA.",
+          "expectedResult": "Zona preservada; não é criado documento paralelo para HA.",
+          "index": 1,
+          "description": "Comparar zona com snapshot.",
+          "id": 209154
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252615"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H06-02 — Atualizar device preservando zonas existentes",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8073",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8074,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Harness do conversor H06.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:29.529Z",
+    "objective": "Converter somente os quatro atributos HA previstos\nHistória: ETICS-252615\nBase: H06 escopo",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91757,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "additionalInfo com quatro atributos HA e atributo extra; grupos zona/BGP; atributos HA homônimos dentro de port.",
+          "expectedResult": "Somente os quatro atributos diretos de equipment/additionalInfo alimentam device.",
+          "index": 0,
+          "description": "Executar conversor H06.",
+          "id": 209155
+        },
+        {
+          "testData": "additionalInfo com quatro atributos HA e atributo extra; grupos zona/BGP; atributos HA homônimos dentro de port.",
+          "expectedResult": "Atributo extra, grupos e atributos da porta não foram indevidamente convertidos.",
+          "index": 1,
+          "description": "Inspecionar attributes de device.",
+          "id": 209156
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252615"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H06-03 — Converter somente os quatro atributos HA previstos",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8074",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8075,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H05/H06 disponíveis; spy de NestedRuleCaller.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:32.995Z",
+    "objective": "Persistir HA e zonas no mesmo lote\nHistória: ETICS-252615\nBase: H06; H04 RN8",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91758,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Resposta IM com zona válida e quatro atributos HA válidos.",
+          "expectedResult": "Documento final contém zona e device.",
+          "index": 0,
+          "description": "Executar reconciliação e acionar Atualizar inventário.",
+          "id": 209157
+        },
+        {
+          "testData": "Resposta IM com zona válida e quatro atributos HA válidos.",
+          "expectedResult": "Uma chamada ao NestedRuleCaller com o documento combinado.",
+          "index": 1,
+          "description": "Inspecionar chamadas por equipamento.",
+          "id": 209158
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252615"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H06-04 — Persistir HA e zonas no mesmo lote",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8075",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8076,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H06 disponível.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:37.285Z",
+    "objective": "Substituir lista de interfaces monitoradas\nHistória: ETICS-252615\nBase: H06; H04 substituição integral",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91759,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "device contém monitor=[x3,x4]; IM retorna monitor=[x5] e demais atributos HA válidos.",
+          "expectedResult": "device atualizado.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209159
+        },
+        {
+          "testData": "device contém monitor=[x3,x4]; IM retorna monitor=[x5] e demais atributos HA válidos.",
+          "expectedResult": "Lista final contém apenas x5; x3 e x4 não são retidos por merge parcial.",
+          "index": 1,
+          "description": "Inspecionar monitor.",
+          "id": 209160
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252615"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H06-05 — Substituir lista de interfaces monitoradas",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8076",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8077,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H07 disponível; XML e mapeamento de rota aprovados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:56:57.800Z",
+    "objective": "Inserir rota estática recebida do IM\nHistória: ETICS-252629\nBase: H07; visão §6.30\nObservação/pendência: Fixture XML e objectType canônico ainda dependem do contrato técnico.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91760,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Rota de teste: destination-address-mask=192.0.2.0/24, priority=10, ip-address=192.0.2.1; demais campos obrigatórios conforme contrato.",
+          "expectedResult": "GP permanece inalterado antes do comando de atualização.",
+          "index": 0,
+          "description": "Coletar rota via reconciliação.",
+          "id": 209161
+        },
+        {
+          "testData": "Rota de teste: destination-address-mask=192.0.2.0/24, priority=10, ip-address=192.0.2.1; demais campos obrigatórios conforme contrato.",
+          "expectedResult": "Rota recebida está presente no documento JSON do roteador com valores mapeados corretamente.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209162
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252629"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H07-01 — Inserir rota estática recebida do IM",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8077",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8078,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Mapeamento da chave da visão confirmado para H07.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:01.981Z",
+    "objective": "Atualizar rota com a mesma chave composta\nHistória: ETICS-252629\nBase: H07; visão §6.30\nObservação/pendência: Confirmar correspondência entre chave do modelo da visão e chave do JSON.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91761,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP e IM com destino 192.0.2.0/24 e prioridade 10; próximo salto muda de 192.0.2.1 para 192.0.2.2.",
+          "expectedResult": "Rota existente atualizada, sem duplicação.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209163
+        },
+        {
+          "testData": "GP e IM com destino 192.0.2.0/24 e prioridade 10; próximo salto muda de 192.0.2.1 para 192.0.2.2.",
+          "expectedResult": "Mesma chave composta; próximo salto final 192.0.2.2.",
+          "index": 1,
+          "description": "Verificar destino, prioridade e próximo salto.",
+          "id": 209164
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252629"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H07-02 — Atualizar rota com a mesma chave composta",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8078",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8079,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Mapeamento da chave da visão confirmado para H07.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:05.937Z",
+    "objective": "Distinguir rotas por prioridade\nHistória: ETICS-252629\nBase: H07; visão §6.30\nObservação/pendência: Confirmar chave no contrato do JSON.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91762,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Duas rotas com destino 192.0.2.0/24, prioridades 10 e 20 e próximos saltos distintos.",
+          "expectedResult": "Duas rotas persistidas.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209165
+        },
+        {
+          "testData": "Duas rotas com destino 192.0.2.0/24, prioridades 10 e 20 e próximos saltos distintos.",
+          "expectedResult": "Não há colisão por considerar somente o destino; prioridade participa da identidade.",
+          "index": 1,
+          "description": "Conferir identidades e atributos.",
+          "id": 209166
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252629"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H07-03 — Distinguir rotas por prioridade",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8079",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8080,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04–H07 disponíveis.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:09.488Z",
+    "objective": "Atualizar rotas junto das demais configurações\nHistória: ETICS-252629\nBase: H07; H04 RN10",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91763,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP contém device e zona; IM retorna rota estática nova.",
+          "expectedResult": "Rota inserida no documento compartilhado.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209167
+        },
+        {
+          "testData": "GP contém device e zona; IM retorna rota estática nova.",
+          "expectedResult": "Configurações não alteradas pelo lote permanecem intactas.",
+          "index": 1,
+          "description": "Comparar device e zona com snapshot.",
+          "id": 209168
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252629"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H07-04 — Atualizar rotas junto das demais configurações",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8080",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8081,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture BGP homologada e mapeamento canônico definido.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:16.066Z",
+    "objective": "Sincronizar configuração BGP do IM\nHistória: ETICS-252632\nBase: H08\nObservação/pendência: A visão §6.28 marca diversos atributos Discovery=NÃO, enquanto H08 solicita sincronização; confirmar mapeamento antes de executar.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91764,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Configuração BGP válida para equipamento suportado, com valores distintos do GP.",
+          "expectedResult": "Coleta concluída sem alterar o documento GP.",
+          "index": 0,
+          "description": "Executar reconciliação com a resposta controlada.",
+          "id": 209169
+        },
+        {
+          "testData": "Configuração BGP válida para equipamento suportado, com valores distintos do GP.",
+          "expectedResult": "Configuração BGP recebida presente no documento JSON do roteador com os valores previstos no mapeamento.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209170
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252632"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H08-01 — Sincronizar configuração BGP do IM",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8081",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8082,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture OSPF homologada e mapeamento canônico definido.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:24.022Z",
+    "objective": "Sincronizar configuração OSPF do IM\nHistória: ETICS-252632\nBase: H08\nObservação/pendência: A visão §6.28 marca diversos atributos Discovery=NÃO, enquanto H08 solicita sincronização; confirmar mapeamento antes de executar.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91765,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Configuração OSPF válida para equipamento suportado, com valores distintos do GP.",
+          "expectedResult": "Coleta concluída sem alterar o documento GP.",
+          "index": 0,
+          "description": "Executar reconciliação com a resposta controlada.",
+          "id": 209171
+        },
+        {
+          "testData": "Configuração OSPF válida para equipamento suportado, com valores distintos do GP.",
+          "expectedResult": "Configuração OSPF recebida presente no documento JSON do roteador com os valores previstos no mapeamento.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209172
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252632"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H08-02 — Sincronizar configuração OSPF do IM",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8082",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8083,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture RIP homologada e mapeamento canônico definido.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:28.600Z",
+    "objective": "Sincronizar configuração RIP do IM\nHistória: ETICS-252632\nBase: H08\nObservação/pendência: A história inclui RIP; detalhamento ausente na visão. Fixture e critérios de mapeamento pendentes.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91766,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "Configuração RIP válida para equipamento suportado, com valores distintos do GP.",
+          "expectedResult": "Coleta concluída sem alterar o documento GP.",
+          "index": 0,
+          "description": "Executar reconciliação com a resposta controlada.",
+          "id": 209173
+        },
+        {
+          "testData": "Configuração RIP válida para equipamento suportado, com valores distintos do GP.",
+          "expectedResult": "Configuração RIP recebida presente no documento JSON do roteador com os valores previstos no mapeamento.",
+          "index": 1,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209174
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252632"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H08-03 — Sincronizar configuração RIP do IM",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8083",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8084,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 e os três contratos de conversão disponíveis; spy.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:33.014Z",
+    "objective": "Sincronizar BGP, OSPF e RIP no mesmo equipamento\nHistória: ETICS-252632\nBase: H08; H04 RN7–8\nObservação/pendência: Confirmar cardinalidade e identidade de cada protocolo no contrato.",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91767,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "IM retorna configurações válidas de BGP, OSPF e RIP para equipamento suportado.",
+          "expectedResult": "As três configurações são aplicadas ao documento JSON do equipamento.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209175
+        },
+        {
+          "testData": "IM retorna configurações válidas de BGP, OSPF e RIP para equipamento suportado.",
+          "expectedResult": "Nenhum protocolo sobrescreve outro indevidamente; uma chamada final por equipamento.",
+          "index": 1,
+          "description": "Inspecionar configurações e chamadas.",
+          "id": 209176
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252632"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H08-04 — Sincronizar BGP, OSPF e RIP no mesmo equipamento",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8084",
+    "status": "Draft"
+  },
+  {
+    "keyNumber": 8085,
+    "precondition": "Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04–H08 disponíveis.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-09T23:57:38.658Z",
+    "objective": "Preservar rotas estáticas, zonas e HA ao atualizar protocolo\nHistória: ETICS-252632\nBase: H08; H04 RN10",
+    "labels": [
+      "CLARO_RECON",
+      "RECON_H01_H08"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 91768,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "GP contém rota estática, zona, device e protocolo; IM altera somente o protocolo.",
+          "expectedResult": "Protocolo atualizado.",
+          "index": 0,
+          "description": "Acionar Atualizar inventário e consultar novamente o roteador no ISP.",
+          "id": 209177
+        },
+        {
+          "testData": "GP contém rota estática, zona, device e protocolo; IM altera somente o protocolo.",
+          "expectedResult": "Rotas estáticas, zonas e HA preservados integralmente.",
+          "index": 1,
+          "description": "Comparar os demais objetos com snapshot.",
+          "id": 209178
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-252632"
+    ],
+    "lastTestResultStatus": "Not Executed",
+    "name": "RECON-H08-05 — Preservar rotas estáticas, zonas e HA ao atualizar protocolo",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8085",
+    "status": "Draft"
+  }
+]

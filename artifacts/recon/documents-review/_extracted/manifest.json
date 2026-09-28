@@ -1,0 +1,32 @@
+﻿[
+    {
+        "output":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\_extracted\\ETICS-ProjInt-ReconxGerenciaRede.txt",
+        "lines":  188,
+        "file":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\analise_design\\especificacoes\\eai\\padrao\\ETICS-ProjInt-ReconxGerenciaRede.odt"
+    },
+    {
+        "output":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\_extracted\\ETICS-ProjInt-Integracao-Recon-ISP-GI.txt",
+        "lines":  966,
+        "file":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\analise_design\\especificacoes\\recon\\ETICS-ProjInt-Integracao-Recon-ISP-GI.odt"
+    },
+    {
+        "output":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\_extracted\\RT-ReconciliacaoInventarioPlantaInterna.txt",
+        "lines":  145,
+        "file":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\testes\\especificacoes\\RT-ReconciliacaoInventarioPlantaInterna.ods"
+    },
+    {
+        "output":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\_extracted\\RT-Sumarizador-ETICS_8.0_ARSAT_RECON_Fernanda.txt",
+        "lines":  211,
+        "file":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\testes\\especificacoes\\Recon\\RT-Sumarizador-ETICS_8.0_ARSAT_RECON_Fernanda.ods"
+    },
+    {
+        "output":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\_extracted\\EstimativaTeste-ARSAT_Recon_De_Para_Teste_Comentarios.txt",
+        "lines":  76,
+        "file":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\testes\\insumos\\Estimativas\\EstimativaTeste-ARSAT_Recon_De_Para_Teste_Comentarios.ods"
+    },
+    {
+        "output":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\_extracted\\EstimativaTeste-ARSAT_Recon_De_Para_Teste_Itens.txt",
+        "lines":  73,
+        "file":  "C:\\bitbucket_Automacao\\gp-vivo-regressao\\artifacts\\recon\\documents-review\\testes\\insumos\\Estimativas\\EstimativaTeste-ARSAT_Recon_De_Para_Teste_Itens.ods"
+    }
+]

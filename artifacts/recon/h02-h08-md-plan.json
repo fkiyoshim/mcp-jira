@@ -1,0 +1,632 @@
+[
+  {
+    "id": "RECON-H02-MD-01",
+    "h": "H02",
+    "story": "ETICS-252562",
+    "title": "Conferir metadados dos 23 atributos e preservar o layout",
+    "source": "h02-md.txt — AC1–3; Campos impactados; Tasks metamodelo",
+    "precondition": "Metamodelo anterior e entregue disponíveis para comparação técnica.",
+    "bdd_script": "Given o objeto ReconConfiguration 194004734 e os 23 campos PACK_MANUFACTURER, PACK_MODEL, PACK_TECHNOLOGY, PACK_SERIAL_NUMBER, PACK_PART_NUMBER, PORT_IP_ADDRESS_IPV4, PORT_IP_ADDRESS_IPV6, PORT_TECHNOLOGY, MAC_ADDRESS, PORT_SERIAL_NUMBER, PORT_SFP, PSEUDOWIRE, VLAN, VRF, VLAN_EQPT, PORT_CIRCUIT, IP_ADDRESS_IPV4, IP_ADDRESS_IPV6, SERIAL_NUMBER, IP_MANUFACTURER, IP_MODEL, IP_TECHNOLOGY, IP_PART_NUMBER\nWhen comparar os metadados entregues com a versão anterior\nThen todos os 23 campos possuem representation_type=2 e apontam para as mesmas colunas de RECON_ATRIB_CFG\nAnd a nova opção possui sequence=2, lower_value=2 e upper_value vazio\nAnd painéis, linhas, colunas, layout e operações existentes permanecem preservados",
+    "note": ""
+  },
+  {
+    "id": "RECON-H02-MD-02",
+    "h": "H02",
+    "story": "ETICS-252562",
+    "title": "Validar labels das listas nos quatro idiomas",
+    "source": "h02-md.txt — AC2; Tasks labels multi-idioma",
+    "precondition": "Build com catálogos pt_BR, en_US, es e es_PE; acesso à configuração.",
+    "bdd_script": "Given os catálogos pt_BR, en_US, es e es_PE do objeto ReconConfiguration\nWhen abrir a configuração em cada idioma e conferir os labels dos 23 atributos configuráveis\nThen cada lista apresenta três rótulos funcionais correspondentes a Ignorar, Comparar IM x GP e Sincronizar IM -> GP\nAnd os rótulos estão associados respectivamente aos valores numéricos 0, 1 e 2 sem chaves de tradução expostas\nAnd os rótulos não apresentam semântica de checkbox Não/Sim",
+    "note": "A redação traduzida final deve ser conferida no catálogo aprovado; o MD não especifica os textos traduzidos."
+  },
+  {
+    "id": "RECON-H02-MD-03",
+    "h": "H02",
+    "story": "ETICS-252562",
+    "title": "Atualizar metadados de ambiente existente sem conflito de IDs",
+    "source": "h02-md.txt — AC7; Tasks carga em ambientes existentes",
+    "precondition": "Cópia controlada de ambiente anterior, backup de metadados e valores 0/1.",
+    "bdd_script": "Given um ambiente existente com metadados de checkbox e configurações numéricas 0 e 1\nWhen aplicar a entrega pelo mecanismo padrão de metamodelo ou pelo patch DBManager definido para o ambiente\nThen object_class, field, valid_value e labels necessários às listas ficam atualizados\nAnd os novos IDs de valid_value não colidem com os existentes\nAnd os valores funcionais 0 e 1 em RECON_ATRIB_CFG permanecem inalterados\nWhen abrir uma configuração e selecionar o valor 2 em um atributo liberado para edição\nThen a opção pode ser salva e reaberta como lista",
+    "note": ""
+  },
+  {
+    "id": "RECON-H02-MD-04",
+    "h": "H02",
+    "story": "ETICS-252562",
+    "title": "Preservar bloqueio de alteração de configuração em uso",
+    "source": "h02-md.txt — Tasks impacto runtime; VerifyMatchAttributesInUseRuleObject",
+    "precondition": "Configuração não nativa em uso por reconciliação, estado anterior registrado.",
+    "bdd_script": "Given uma configuração não nativa que está em uso\nWhen tentar alterar um atributo pela lista para outro valor dentre 0, 1 e 2 e salvar\nThen a regra de configuração em uso impede a alteração\nAnd o valor persistido anteriormente em RECON_ATRIB_CFG permanece inalterado",
+    "note": ""
+  },
+  {
+    "id": "RECON-H02-MD-05",
+    "h": "H02",
+    "story": "ETICS-252562",
+    "title": "Preservar bloqueio de alteração de configuração nativa",
+    "source": "h02-md.txt — Tasks impacto runtime; VerifyMatchAttributesNativeRuleObject",
+    "precondition": "Configuração nativa identificada e valores anteriores registrados.",
+    "bdd_script": "Given uma configuração nativa de atributos reconciliáveis\nWhen tentar alterar um atributo pela nova lista e salvar\nThen a regra de configuração nativa impede a alteração\nAnd os valores persistidos permanecem inalterados",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-01",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Inicializar envelope de recurso a partir do schema",
+    "source": "h03-md.txt — AC1; Contrato do documento atual",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given um schema com name=routerConf, valueType=object e schemaVersion=1\nAnd em execuções independentes o documento atual é null, string vazia ou somente espaços\nWhen aplicar uma lista vazia de patches pela ResourceDocumentPatchService\nThen mergedJson contém o envelope name=routerConf e valueType=object\nAnd value contém schemaVersion=1, nextResourceId=1, attributes={} e resources={}",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-02",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Aplicar patch global preservando atributos omitidos",
+    "source": "h03-md.txt — AC2; Contrato de entrada",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o envelope válido do MD com device-group=A001, device-ha-role=Active e as zonas existentes\nWhen aplicar a entrada {\"attributes\":{\"device-group\":\"A002\"}}\nThen apenas value.attributes.device-group passa a A002\nAnd device-ha-role, os demais atributos globais, resources e nextResourceId permanecem iguais ao snapshot",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-03",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Atualizar recurso por chave exata preservando ID e campos omitidos",
+    "source": "h03-md.txt — AC3; Semântica de patch",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o documento do MD com zona underlay de id=1, type=tipo1 e zone-interface=[\"wan1\"]\nWhen aplicar {\"zona\":{\"zone-name\":\"underlay\",\"zone-interface\":[\"wan1\",\"lan2\"]}}\nThen a zona underlay mantém id=1 e type=tipo1 e passa a zone-interface=[\"wan1\",\"lan2\"]\nAnd a zona layzone e nextResourceId=3 permanecem inalterados\nAnd o resultado do item informa UPDATE para a identidade underlay",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-04",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Inserir recurso obrigatório com ID gerado pelo contador",
+    "source": "h03-md.txt — AC4; Semântica de patch",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o documento do MD com nextResourceId=3 e sem zona dmz\nWhen aplicar {\"zona\":{\"zone-name\":\"dmz\",\"type\":\"tipo1\",\"zone-interface\":[\"dmz1\"]}}\nThen a zona dmz é inserida com id=3 e os campos recebidos\nAnd nextResourceId passa a 4 e os recursos anteriores permanecem\nAnd o resultado informa INSERT e o ID gerado 3",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-05",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Gerar IDs consecutivos e resultados na ordem do lote",
+    "source": "h03-md.txt — AC5; API pública proposta",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o documento do MD com nextResourceId=3\nAnd o lote contém nesta ordem insert da zona dmz, update de underlay e insert da zona interna, com campos válidos\nWhen aplicar o lote pela ResourceDocumentPatchService\nThen dmz recebe id=3, underlay mantém id=1 e interna recebe id=4\nAnd nextResourceId final é 5\nAnd os resultados preservam os índices 0, 1 e 2, coleção zona, identidades dmz, underlay e interna e operações INSERT, UPDATE e INSERT\nAnd os resultados de insert incluem os IDs 3 e 4",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-06",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Compartilhar sequência de IDs entre coleções",
+    "source": "h03-md.txt — AC6; IDs únicos em todo o documento",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given um schema genérico válido com coleções colecaoA e colecaoB e identidades string nome\nAnd o documento possui id=1 em colecaoA e nextResourceId=2\nWhen inserir um recurso válido em colecaoB e depois outro em colecaoA no mesmo lote\nThen os novos recursos recebem respectivamente id=2 e id=3\nAnd nenhum ID se repete entre as coleções e nextResourceId final é 4",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-07",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Substituir array inteiro no patch de recurso",
+    "source": "h03-md.txt — AC8",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given a zona underlay com id=1, type=tipo1 e zone-interface=[\"wan1\",\"lan2\"]\nWhen aplicar {\"zona\":{\"zone-name\":\"underlay\",\"zone-interface\":[\"dmz1\"]}}\nThen zone-interface contém somente [\"dmz1\"]\nAnd wan1 e lan2 não são retidos por merge de listas\nAnd id=1 e type=tipo1 permanecem",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-08",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Comparar identidade composta como tupla exata",
+    "source": "h03-md.txt — AC13; identidade composta",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given um schema com identity.attributes=[\"a\",\"b\"], ambos strings obrigatórias e sensíveis à caixa\nAnd a coleção possui recursos com tuplas (\"ab\",\"c\"), (\"a\",\"bc\") e (\"AB\",\"c\"), IDs distintos e atributo valor=\"antes\"\nWhen aplicar um patch para a tupla (\"ab\",\"c\") com valor=\"depois\"\nThen somente a ocorrência (\"ab\",\"c\") é atualizada e preserva seu ID\nAnd (\"a\",\"bc\") e (\"AB\",\"c\") permanecem integralmente inalteradas\nAnd não ocorre colisão por concatenação nem conversão de caixa",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-09",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Não inferir renomeação de identidade do recurso",
+    "source": "h03-md.txt — Semântica de patch; identidade imutável",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o documento do MD com zona underlay de id=1 e nextResourceId=3\nWhen aplicar uma entrada completa válida para zone-name=Underlay\nThen é inserida uma nova zona Underlay com id=3\nAnd a zona underlay de id=1 permanece inalterada\nAnd o componente não infere renomeação e nextResourceId passa a 4",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-10",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar schema ausente ou inconsistente",
+    "source": "h03-md.txt — AC7; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd o schema é, em execuções independentes, ausente, JSON malformado ou contém uma identidade que referencia atributo não declarado\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_RESOURCE_DOCUMENT_SCHEMA\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-11",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar envelope incompatível com o schema",
+    "source": "h03-md.txt — AC9; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd o documento atual é, em execuções independentes, JSON malformado ou um envelope com name, valueType ou schemaVersion diferente do schema\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_CURRENT_RESOURCE_DOCUMENT\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-12",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar patch inválido ou com múltiplas chaves raiz",
+    "source": "h03-md.txt — Contrato de entrada; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd a entrada é, em execuções independentes, JSON malformado, uma raiz escalar ou {\"attributes\":{\"device-group\":\"A002\"},\"zona\":{\"zone-name\":\"underlay\"}}\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_RESOURCE_PATCH\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-13",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar coleção não cadastrada no schema",
+    "source": "h03-md.txt — AC7; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd a entrada usa a coleção naoCadastrada ausente do schema\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código UNKNOWN_RESOURCE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-14",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar atributo global ou de recurso desconhecido",
+    "source": "h03-md.txt — AC7; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes uma entrada attributes ou uma entrada da zona underlay contém o campo naoDeclarado ausente do schema\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código UNKNOWN_ATTRIBUTE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-15",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar tipo de atributo incompatível com o schema",
+    "source": "h03-md.txt — AC7; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes ha-group recebe a string \"1024\", zone-interface recebe uma string no lugar de array ou um array com item numérico\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_ATTRIBUTE_TYPE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-16",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar identidade ausente ou inválida em recurso",
+    "source": "h03-md.txt — AC7; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes a entrada zona possui zone-name ausente, null, string vazia ou valor numérico\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código MISSING_RESOURCE_IDENTITY\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-17",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar identidade duplicada no documento ou lote",
+    "source": "h03-md.txt — AC7; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes o documento contém duas zonas com zone-name=underlay e IDs distintos ou o lote contém duas entradas para zone-name=underlay\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código DUPLICATE_RESOURCE_IDENTITY\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-18",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar ID repetido entre recursos de qualquer coleção",
+    "source": "h03-md.txt — AC6; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes dois recursos da mesma coleção ou de coleções distintas possuem id=1 no documento atual, com identidades distintas e contador válido\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código DUPLICATE_RESOURCE_ID\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-19",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar contador de recurso ausente ou inválido",
+    "source": "h03-md.txt — AC6; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd com maior ID existente igual a 2, nextResourceId é, em execuções independentes, ausente, zero, negativo, fracionário, string, 1 ou 2\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código INVALID_NEXT_RESOURCE_ID\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-20",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar insert sem atributo obrigatório",
+    "source": "h03-md.txt — AC7; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes a entrada de uma nova zona dmz tem zone-name válido mas omite type ou zone-interface\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código MISSING_REQUIRED_ATTRIBUTE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-21",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar null em atributo global ou campo de recurso",
+    "source": "h03-md.txt — AC8; Validações e erros",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o contexto da nova API ResourceDocumentPatchService e snapshots das entradas\nAnd em execuções independentes a entrada tenta atribuir null a device-group global, ao campo type de underlay ou ao array zone-interface de underlay\nWhen aplicar a entrada ou lote pela nova API, mantendo válidos os demais dados de cada execução\nThen a operação falha com ResourceDocumentPatchException e código NULL_ATTRIBUTE_VALUE\nAnd não devolve mergedJson parcial e não modifica argumentos nem consome contador no documento original\nAnd a mensagem e os logs não incluem o payload JSON",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-22",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Rejeitar array abaixo da cardinalidade do schema",
+    "source": "h03-md.txt — AC7–8; schema minItems",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o schema de zona com zone-interface de minItems=1 e um documento válido\nWhen aplicar um patch para underlay com zone-interface=[]\nThen a validação rejeita o array sem devolver resultado parcial\nAnd o documento e o contador originais permanecem inalterados",
+    "note": "O MD não fixa qual código deve representar violação de minItems; verificar a falha sem inventar código."
+  },
+  {
+    "id": "RECON-H03-MD-23",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Exigir todos os componentes da identidade em insert e update",
+    "source": "h03-md.txt — AC13; Semântica de patch",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given um schema com identity.attributes=[\"a\",\"b\"] e um recurso existente de tupla (\"x\",\"y\")\nWhen aplicar, em execuções independentes de insert e update, uma entrada que fornece a mas omite b\nThen a operação falha com MISSING_RESOURCE_IDENTITY\nAnd não localiza por chave parcial, não insere recurso e preserva o documento original",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-24",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Preservar contador e documento quando o último item falha",
+    "source": "h03-md.txt — Semântica de patch; atomicidade",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given o documento do MD com nextResourceId=3\nAnd o lote tem dois inserts válidos seguidos de um insert que omite type obrigatório\nWhen aplicar o lote completo\nThen a operação falha com MISSING_REQUIRED_ATTRIBUTE e não devolve documento parcial\nAnd o snapshot do documento mantém nextResourceId=3 e nenhum dos novos recursos\nWhen aplicar somente os dois inserts válidos sobre o documento original\nThen eles recebem id=3 e id=4 e nextResourceId final é 5",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-25",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Ler schema em UTF-8 e fechar os recursos recebidos",
+    "source": "h03-md.txt — API pública proposta; parser de schema",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given um schema genérico válido com nomes de atributos acentuados e doubles de InputStream e Reader que registram fechamento\nWhen construir JsonResourceDocumentSchema em execuções independentes usando o InputStream UTF-8 e o Reader\nThen os nomes acentuados são lidos corretamente\nAnd o stream ou reader recebido é fechado em cada execução\nAnd o schema carregado valida e aplica um patch que usa esses nomes",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-26",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Garantir resultados imutáveis e chamadas sem estado",
+    "source": "h03-md.txt — API pública proposta",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given uma mesma instância de ResourceDocumentPatchService, um schema válido, documento inicial e lote com insert\nWhen executar duas chamadas com os mesmos argumentos originais\nThen os dois resultados possuem documentos, operações e IDs equivalentes\nAnd o documento, a lista de patches e o schema de entrada permanecem iguais aos snapshots\nWhen tentar modificar as estruturas expostas pelo resultado\nThen elas não permitem alteração de seu conteúdo",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-27",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Manter compatibilidade binária da API legada no Java 8",
+    "source": "h03-md.txt — AC10–12; build e API pública",
+    "precondition": "Consumidor já compilado contra JsonDocumentUpsertService anterior; suíte legada; Java 8 e Jackson gerenciado.",
+    "bdd_script": "Given um consumidor binário da API JsonDocumentUpsertService anterior e o novo artefato com ResourceDocumentPatchService\nWhen substituir somente o JAR pelo novo e executar a suíte legada de upsert\nThen não ocorre quebra de ligação binária e os resultados de INSERT, UPDATE e substituição integral permanecem compatíveis\nWhen executar o build isolado e no reator cpqd-utils-json com Java 8 e Jackson do ambiente legado\nThen os testes da API nova e da API legada passam\nAnd a assinatura pública da nova API não expõe tipos Jackson",
+    "note": ""
+  },
+  {
+    "id": "RECON-H03-MD-28",
+    "h": "H03",
+    "story": "ETICS-252569",
+    "title": "Manter a API de patch genérica e sem payload nos logs",
+    "source": "h03-md.txt — AC11; limites de domínio",
+    "precondition": "Harness da API ResourceDocumentPatchService, schema consumidor válido do exemplo H03 e snapshots dos argumentos; testes em memória.",
+    "bdd_script": "Given um schema de teste com nomes genéricos de domínio e um valor sentinela JSON_SINTETICO_SIGILOSO\nWhen executar insert e update válidos e uma falha de validação pela nova API sem GP, IM, CDK ou banco\nThen as operações válidas funcionam somente em memória\nAnd a falha não expõe JSON_SINTETICO_SIGILOSO nem o payload completo em mensagem ou logs\nWhen inspecionar código e dependências do artefato\nThen o domínio routerConf, zona e Huawei não está embutido na implementação genérica\nAnd não há dependência de banco, JPA, XML/JAXB ou geração UUID",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-01",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Transportar CLOB extenso sem truncamento",
+    "source": "h04-md.txt — AC1–2; transporte e persistência intermediária",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given um array de fragmentos canônicos válidos cujo conteúdo UTF-8 excede o limite VARCHAR2 do ambiente, com pelo menos 40000 caracteres e sentinelas no início e no fim\nWhen transportar Equipment -> ReconEquipment -> ReconEqpt, gravar e reler HW_OBJECTS_JSON_EXT\nThen o conteúdo completo retorna com as sentinelas, acentos, quantidade de fragmentos e valores preservados\nAnd o mapeamento e o acesso usam CLOB sem conversão para VARCHAR2\nAnd a coleta não modifica o JSON do GP",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-02",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Ler CLOB nulo ou vazio como lista vazia",
+    "source": "h04-md.txt — AC2; transporte",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given em execuções independentes HW_OBJECTS_JSON_EXT com NULL, conteúdo vazio e []\nWhen recuperar a coleção de fragmentos pelo fluxo ReconEqpt -> coordenador\nThen cada representação resulta em lista vazia sem erro de parsing\nAnd o documento existente no GP não recebe inserções artificiais nem exclusões por ausência de fragmentos",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-03",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Inicializar merge a partir de JSON GP nulo ou em branco",
+    "source": "h04-md.txt — AC6; RN5",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given um fragmento canônico válido e destino configurado\nAnd em execuções independentes o valor atual do campo GP é null, string vazia ou somente espaços\nWhen acionar Atualizar inventário\nThen upsertAll recebe [] como documento inicial em cada execução\nAnd o fragmento é inserido e o JSON final chega ao NestedRuleCaller uma vez por equipamento",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-04",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Agrupar múltiplos campos JSON com atualização legada única",
+    "source": "h04-md.txt — AC4 e AC7; RN4 e RN7",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given dois tipos de teste destinados ao campo JSON A e um terceiro tipo ao campo JSON B, ambos válidos no metamodelo\nAnd há uma atualização legada válida do mesmo equipamento\nWhen acionar Atualizar inventário\nThen upsertAll é chamado uma vez para A com os dois fragmentos e uma vez para B com seu fragmento\nAnd os JSONs finais de A e B e a atualização legada compõem o mesmo mapa\nAnd NestedRuleCaller é chamado exatamente uma vez para o equipamento",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-05",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Rejeitar tipo sem destino na allowlist",
+    "source": "h04-md.txt — AC5; RN3",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given um lote com um tipo conhecido e outro objectType não cadastrado em recon-json-fields.json\nWhen acionar Atualizar inventário\nThen o tipo não cadastrado gera erro e não é descartado silenciosamente\nAnd nenhum campo GP é alterado e NestedRuleCaller recebe zero chamadas",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-06",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Validar configuração de destinos antes da atualização",
+    "source": "h04-md.txt — RN6; configuração e serviço de atualização",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given em execuções independentes recon-json-fields.json malformado, versão não suportada, mapa com tipo inválido ou nome de tipo ou destino vazio\nWhen carregar a configuração e tentar coordenar uma atualização JSON\nThen a configuração inválida é rejeitada\nAnd não há atualização parcial nem chamada ao NestedRuleCaller\nWhen carregar uma configuração válida em UTF-8 e processar dois equipamentos\nThen a estrutura carregada é reutilizada e imutável",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-07",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Preservar JSON bruto com dois-pontos e fluxo legado",
+    "source": "h04-md.txt — AC8; RN8–9",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given um fragmento válido contendo uma string com \"texto: valor: final\", aspas escapadas, acentos e espaços nas extremidades\nAnd uma atualização legada válida no mesmo equipamento\nWhen acionar Atualizar inventário e inspecionar o mapa recebido pelo CDK\nThen o valor JSON recebido é igual ao JSON final do coordenador, sem split, trim ou alteração de conteúdo\nAnd o caminho JSON não utiliza ObjectUpdate.value nem conversão de descrição para nome de metamodelo\nAnd a atualização legada mantém os mesmos campo e valor do fluxo anterior",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-08",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Abortar todos os destinos quando um campo falha",
+    "source": "h04-md.txt — RN6–7; AC5",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given fragmentos válidos destinados a dois campos JSON do mesmo equipamento\nAnd o primeiro campo possui documento válido e o segundo possui JSON atual malformado\nWhen montar as atualizações pelo coordenador\nThen a falha do segundo campo impede aplicar o resultado do primeiro\nAnd ambos os campos preservam os snapshots e NestedRuleCaller recebe zero chamadas",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-09",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Conferir metamodelo BLOB e instalação da coluna CLOB",
+    "source": "h04-md.txt — AC3; alterações técnicas 1–2",
+    "precondition": "Ambientes de instalação nova e de atualização; metamodelo/DDL e SQLs de RECON_EQPT disponíveis.",
+    "bdd_script": "Given o pacote da infraestrutura H04 para instalação nova e atualização de ambiente existente\nWhen aplicar respectivamente create schema e patch DBManager e consultar os metadados\nThen RECON_EQPT possui HW_OBJECTS_JSON_EXT como CLOB e os SQLs de colunas explícitas incluem o campo\nAnd o Roteador 152000333 possui HW_OBJECTS_JSON string com persistência extensa/BLOB e labels exigidos pelo build\nWhen salvar um JSON extenso pelo campo e reler pelo CDK\nThen o conteúdo é preservado integralmente\nAnd o campo não aparece na árvore comum de divergências",
+    "note": ""
+  },
+  {
+    "id": "RECON-H04-MD-10",
+    "h": "H04",
+    "story": "ETICS-252611",
+    "title": "Evitar XML e JSON completos nos logs do fluxo",
+    "source": "h04-md.txt — AC9",
+    "precondition": "Ambiente controlado ou harness do coordenador JSON H04; destinos de teste cadastrados; snapshots GP/CLOB e spies de upsertAll e NestedRuleCaller.",
+    "bdd_script": "Given fragmentos com sentinela JSON_FLUXO_TESTE e uma resposta XML de teste identificável\nWhen executar coleta e atualização em um fluxo válido e em outro com falha de validação\nThen os logs não contêm o XML completo nem o JSON completo\nAnd o erro pode ser identificado sem despejar os documentos",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-01",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Preservar cardinalidade, ordem e duplicatas das interfaces de zona",
+    "source": "h05-md.txt — AC2; RN4–5",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given execuções independentes com uma zona underlay contendo zone-interface=[\"wan1\"] e zone-interface=[\"wan1\",\"lan2\",\"wan1\"]\nWhen converter cada resposta XML e reler o CLOB intermediário\nThen cada registry produz exatamente um fragmento objectType=zona sem wrapper por tipo\nAnd zone-interface é array em ambos os casos e mantém respectivamente [\"wan1\"] e [\"wan1\",\"lan2\",\"wan1\"]\nAnd os valores não são deduplicados nem reordenados",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-02",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Rejeitar cardinalidade inválida de zone-name antes da persistência",
+    "source": "h05-md.txt — AC3; RN3",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given uma zona válida seguida de uma zona cujo zone-name é, em execuções independentes, ausente, null, vazio ou possui dois valores\nWhen converter o XML e processar o lote do equipamento\nThen o lote inválido é rejeitado antes de persistir fragmentos parciais em HW_OBJECTS_JSON_EXT\nAnd o GP mantém o snapshot e NestedRuleCaller recebe zero chamadas",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-03",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Rejeitar interface ausente, vazia ou nula no lote de zonas",
+    "source": "h05-md.txt — AC3; RN4",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given uma zona válida seguida de outra com zone-interface ausente, sem valores ou contendo item null ou string vazia em execuções independentes\nWhen processar o XML do equipamento\nThen o conjunto inválido não é persistido parcialmente no CLOB\nAnd nenhuma zona é aplicada ao GP e NestedRuleCaller recebe zero chamadas",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-04",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Rejeitar zone-name repetido com registryId diferente",
+    "source": "h05-md.txt — AC3; RN6 e RN8",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given duas registry do grupo zona com zone-name=underlay, interfaces válidas e registryId diferentes\nWhen converter e processar a resposta do equipamento\nThen a duplicidade de zone-name causa falha atômica\nAnd registryId não torna as zonas distintas\nAnd não há persistência parcial no CLOB nem chamada ao NestedRuleCaller",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-05",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Excluir labels e registryId do JSON e dos logs",
+    "source": "h05-md.txt — AC5; RN6",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given o XML representativo com labels sentinela LABEL_ZONA_TESTE e registryId REG_ZONA_TESTE\nWhen converter, gravar o CLOB e atualizar o inventário\nThen os fragmentos intermediários e o JSON final contêm apenas objectType=zona, zone-name e zone-interface previstos no contrato\nAnd LABEL_ZONA_TESTE e REG_ZONA_TESTE não aparecem no CLOB, JSON final nem logs\nAnd a chave de upsert é attributes.zone-name",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-06",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Processar XML legado e ausência do grupo zona",
+    "source": "h05-md.txt — AC6; contrato EAI e JAXB",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given em execuções independentes um XML legado sem additionalInfo, um XML sem grupo zona e outro com grupo Zona em caixa diferente\nWhen processar as respostas pelo cliente JAXB e conversor H05\nThen não são gerados fragmentos de zona em nenhum dos três casos\nAnd equipamento, placas, portas, VLANs e pseudowires mantêm seu mapeamento legado\nAnd a ausência de zona não impede o processamento do equipamento",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-07",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Distinguir zone-name por caixa e espaços sem normalização",
+    "source": "h05-md.txt — RN1 e RN3; AC4",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given o GP com zona underlay e uma zona não recebida chamada preservada\nAnd o IM retorna zonas com nomes Underlay e \" underlay \" e interfaces válidas\nWhen acionar Atualizar inventário\nThen Underlay e \" underlay \" são inseridas como identidades distintas\nAnd underlay e preservada permanecem inalteradas\nAnd os nomes são mantidos exatamente como recebidos",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-08",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Verificar entrega conjunta de contrato, chave e destino da zona",
+    "source": "h05-md.txt — AC9; identidade e destino",
+    "precondition": "Pacote H05 e build de integração disponíveis para revisão técnica.",
+    "bdd_script": "Given o pacote entregue de H05 e o XML representativo com underlay e overlay\nWhen validar o WSDL, gerar o cliente JAXB pelo build e processar a fixture\nThen group, registry, attribute e múltiplos value são aceitos pelo contrato\nAnd object-key-definitions.json contém zona -> attributes.zone-name preservando as entradas anteriores\nAnd recon-json-fields.json contém zona -> HW_OBJECTS_JSON\nAnd WSDL, cliente gerado, fixture e testes acompanham a mesma entrega",
+    "note": ""
+  },
+  {
+    "id": "RECON-H05-MD-09",
+    "h": "H05",
+    "story": "ETICS-252614",
+    "title": "Inserir zonas com documento vazio e entregar JSON bruto uma vez",
+    "source": "h05-md.txt — AC7–8",
+    "precondition": "Harness JAXB/conversor H05 e fluxo integrado H04 em ambiente controlado; zone-name registrado como chave; zona -> HW_OBJECTS_JSON; snapshots e spies.",
+    "bdd_script": "Given em execuções independentes o JSON GP é null, vazio ou branco\nAnd o XML representativo contém underlay/[\"wan1\"] e overlay/[\"hub_spk1.2.2\"]\nWhen coletar e acionar Atualizar inventário\nThen o documento inicial do merge é [] e o resultado contém exatamente as duas zonas do contrato\nAnd o valor é entregue como JSON bruto sem ObjectUpdate.value nem split baseado em \": \"\nAnd NestedRuleCaller é chamado uma vez por equipamento",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-01",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Conferir de/para HA exato e singleton sem chave artificial",
+    "source": "h06-md.txt — AC1 e AC8; RN1 e RN6",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given atributos diretos group-name=SPO-HA-121, hbdev-1=port1, hbdev-2=port2 e monitor=[\"x3\",\"x4\"]\nWhen converter com o mapa equipment-ha\nThen o resultado é um único objectType=device com device-group=SPO-HA-121, ha-port-1=port1, ha-port-2=port2 e ha-monitor-port-range=[\"x3\",\"x4\"]\nAnd não são persistidos objectType=ha ou objectType=equipment-ha nem nomes de origem como campos de destino\nAnd device é aceito para HW_OBJECTS_JSON sem entrada em object-key-definitions.json",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-02",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Preservar monitor como array sem normalizar seus valores",
+    "source": "h06-md.txt — AC2; Contrato JSON",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given todos os atributos HA válidos e monitor=[\"x3\"] em uma execução e [\" x3 \",\"X4\",\" x3 \"] em outra\nWhen converter os atributos HA\nThen ha-monitor-port-range é array em ambas as execuções\nAnd seu conteúdo é respectivamente [\"x3\"] e [\" x3 \",\"X4\",\" x3 \"]\nAnd ordem, caixa, espaços e duplicatas permanecem sem concatenação",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-03",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Rejeitar HA parcial e campos single com cardinalidade inválida",
+    "source": "h06-md.txt — AC3; RN2 e RN5",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given uma fixture HA válida\nAnd em cada execução é alterado um de group-name, hbdev-1 ou hbdev-2 para ausente, vazio ou dois valores, mantendo os demais campos válidos\nWhen converter e processar o equipamento\nThen o lote falha sem emitir device parcial\nAnd nenhum conjunto parcial é persistido no CLOB nem aplicado no GP\nAnd NestedRuleCaller recebe zero chamadas",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-04",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Rejeitar monitor ausente ou vazio sem aplicar zonas válidas",
+    "source": "h06-md.txt — AC3; RN3 e RN5",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given uma zona válida e os três atributos HA single válidos\nAnd monitor está ausente, sem valores ou contém um valor vazio em execuções independentes\nWhen processar o lote do equipamento\nThen o lote é rejeitado sem emitir device parcial\nAnd a zona válida também não é persistida ou aplicada parcialmente\nAnd NestedRuleCaller recebe zero chamadas",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-05",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Aceitar ausência completa de HA no XML legado",
+    "source": "h06-md.txt — AC4; RN4",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given um XML legado sem nenhum dos quatro atributos HA selecionados\nWhen processar a resposta pelo cliente JAXB e conversor H06\nThen nenhum fragmento device é produzido\nAnd o equipamento continua processável e seu mapeamento legado permanece\nAnd um device preexistente no GP não é removido pela ausência de HA",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-06",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Falhar para mapeamento HA incompleto ou colisão de destinos",
+    "source": "h06-md.txt — RN7; configuração de de/para",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given todos os quatro atributos HA válidos\nAnd em execuções independentes o mapa não define destino para um campo HA selecionado ou mapeia dois campos de origem para o mesmo atributo de destino\nWhen carregar o mapa e converter HA\nThen a inconsistência causa erro sem descarte silencioso nem sobrescrita por colisão\nAnd não há persistência parcial nem chamada ao NestedRuleCaller",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-07",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Excluir labels e dados HA dos logs em sucesso e falha",
+    "source": "h06-md.txt — AC7; WSDL/JAXB e adaptador",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given uma resposta HA sintética com label=LABEL_HA_TESTE e valores sentinela identificáveis nos quatro atributos\nWhen coletar e atualizar uma resposta válida e depois processar outra com cardinalidade inválida\nThen label não é transportado para o CLOB nem para o JSON final\nAnd os logs não contêm os valores HA sentinela, o label, o XML completo ou o JSON completo\nAnd o diagnóstico da falha não revela esses conteúdos",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-08",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Inserir device em documento vazio e substituir singleton por inteiro",
+    "source": "h06-md.txt — AC5; RN10",
+    "precondition": "Harness JAXB/conversor H06 com mapa equipment-ha válido e device -> HW_OBJECTS_JSON; H04 disponível; snapshots CLOB/GP e spies.",
+    "bdd_script": "Given em execuções independentes documento GP null e vazio e HA completo válido\nWhen acionar Atualizar inventário\nThen o documento contém exatamente um device com os quatro atributos mapeados\nWhen repetir a atualização sobre um documento com device antigo contendo atributo adicional obsoleto e uma zona não recebida\nThen o device inteiro é substituído pelo novo fragmento e o atributo obsoleto não permanece\nAnd a zona não recebida permanece integralmente inalterada",
+    "note": ""
+  },
+  {
+    "id": "RECON-H06-MD-09",
+    "h": "H06",
+    "story": "ETICS-252615",
+    "title": "Validar entrega integrada HA e duas zonas por um único merge",
+    "source": "h06-md.txt — AC6 e AC9; transporte e atualização",
+    "precondition": "H04, H05 e H06 disponíveis; fixture com HA do MD e zonas underlay e overlay; spies e pacote de build.",
+    "bdd_script": "Given o cliente JAXB gerado pelo build a partir do WSDL entregue, os mapas HA, allowlist e fixtures da mesma entrega\nWhen coletar a fixture completa e acionar Atualizar inventário\nThen CLOB e documento final usam o mesmo array canônico com um device e as duas zonas underlay e overlay\nAnd os três fragmentos são agrupados em HW_OBJECTS_JSON e upsertAll é chamado uma vez para esse campo\nAnd o JSON bruto é enviado em uma única chamada ao NestedRuleCaller\nAnd não há segundo documento, campo ou fluxo exclusivo para HA",
+    "note": ""
+  },
+  {
+    "id": "RECON-H07-MD-01",
+    "h": "H07",
+    "story": "ETICS-252629",
+    "title": "Impedir persistência de rota estática enquanto o contrato estiver pendente",
+    "source": "h07-md.txt — Regras provisórias 4–5; decisões bloqueadoras",
+    "precondition": "Versão da H07 em draft, sem aprovação de objectType, de/para, cardinalidade, identidade e destino; fixture route-static; spies.",
+    "bdd_script": "Given que as decisões bloqueadoras da H07 continuam pendentes\nAnd o XML contém o grupo route-static representativo do MD\nWhen processar a coleta e solicitar Atualizar inventário\nThen os dados provisórios da rota não são persistidos em HW_OBJECTS_JSON_EXT\nAnd nenhum fragmento de rota é aplicado por upsertAll ou enviado ao NestedRuleCaller\nAnd nenhum objectType final ou chave de negócio é inferido a partir de route-static ou registryId",
+    "note": "Caso de proteção do estado draft, não de sincronização definitiva. Insert/update/duplicidade continuam dependentes do de/para e da identidade aprovados."
+  },
+  {
+    "id": "RECON-H08-MD-01",
+    "h": "H08",
+    "story": "ETICS-252632",
+    "title": "Impedir persistência de protocolos enquanto os contratos estiverem pendentes",
+    "source": "h08-md.txt — Regras provisórias 4; decisões bloqueadoras",
+    "precondition": "H08 em draft; ausência de aprovação de mapeamento, identidade, arrays, destinos e tratamento de credenciais; fixtures sintéticas BGP/OSPF/RIP; spies.",
+    "bdd_script": "Given que as decisões bloqueadoras da H08 continuam pendentes\nAnd o XML contém, em execuções independentes e em conjunto, os grupos bgp, ospf e rip representativos do MD\nWhen processar a coleta e solicitar Atualizar inventário\nThen nenhum fragmento provisório BGP, OSPF ou RIP é persistido em HW_OBJECTS_JSON_EXT\nAnd nenhum desses fragmentos é aplicado por upsertAll ou enviado ao NestedRuleCaller\nAnd não são inferidos objectTypes finais, chaves de upsert ou destinos para os protocolos",
+    "note": "Caso de proteção do estado draft. Contratos finais, semântica dos arrays e tratamento de dados de autenticação continuam pendentes; não usar dados reais sensíveis na fixture."
+  }
+]

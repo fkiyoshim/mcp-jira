@@ -1,0 +1,74 @@
+{
+  "id": "CT19",
+  "key": "ETICS-T8212",
+  "before": {
+    "keyNumber": 8212,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar valores válidos equivalentes se o ambiente não permitir as amostras 123/456 e XYZ/ABC; registrar a equivalência antes de executar.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:59:31.632Z",
+    "objective": "Validar preservar correção em atributo distinto ao cancelar ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92610,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then a Rota permanece ABC\nThen os valores finais são os mesmos para a respectiva operação de OT",
+          "index": 0,
+          "description": "When executar Corrigir inventário sem OT e alterar Rota para ABC",
+          "id": 210989
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT19 | Preservar correção em atributo distinto ao cancelar ot",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8212",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8212,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar valores válidos equivalentes se o ambiente não permitir as amostras 123/456 e XYZ/ABC; registrar a equivalência antes de executar.",
+    "updatedOn": "2026-09-23T18:59:34.857Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:59:31.632Z",
+    "objective": "Validar preservar correção em atributo distinto ao cancelar ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um lance com Lote de Fabricação 123 e Rota XYZ\nAnd Modificar atributos com a OT A alterou Lote de Fabricação para 456\nWhen executar Corrigir inventário sem OT e alterar Rota para ABC\nAnd executar Cancelar OT para a OT A\nThen a Rota permanece ABC\nAnd Lote de Fabricação fica 123\nAnd o histórico preserva as alterações e registra Cancelar OT com usuário e data/hora\nWhen repetir com dados independentes executando a correção de Rota antes da alteração com OT\nThen os valores finais são os mesmos para a respectiva operação de OT",
+      "id": 17560,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT19 | Preservar correção em atributo distinto ao cancelar ot",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8212",
+    "status": "Draft"
+  }
+}

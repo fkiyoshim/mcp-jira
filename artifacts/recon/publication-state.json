@@ -1,0 +1,977 @@
+{
+  "cycle": {
+    "name": "CLARO | RECON lógico | H01–H08 | Visão 01.01",
+    "projectKey": "ETICS",
+    "projectId": 10460,
+    "epic": "ETICS-245531",
+    "version": null,
+    "startDate": null,
+    "endDate": null,
+    "cycleId": "ETICS-C646",
+    "status": "Cadastrado e verificado; 50 testes não executados",
+    "boardScopeVerified": false,
+    "sourceDocument": "GP-Visao-Recon-Claro_0101 (1).docx",
+    "sourceDocumentVersion": "01.01",
+    "stories": [
+      "ETICS-252410",
+      "ETICS-252562",
+      "ETICS-252569",
+      "ETICS-252611",
+      "ETICS-252614",
+      "ETICS-252615",
+      "ETICS-252629",
+      "ETICS-252632"
+    ],
+    "testCount": 50,
+    "description": "Validação da sincronização IM→GP, configuração 0/1/2, upsert JSON, transporte/merge atômico, zonas, HA e roteamento. 50 casos cadastrados e vinculados às oito histórias e ao ciclo; pendências de contratos preservadas. Nenhum teste executado."
+  },
+  "createdCycle": {
+    "estimatedTime": 0,
+    "createdOn": "2026-09-09T23:58:22.815Z",
+    "issueCount": 0,
+    "plannedEndDate": "2026-09-09T23:58:22.815Z",
+    "executionTime": 0,
+    "projectKey": "ETICS",
+    "testCaseCount": 50,
+    "plannedStartDate": "2026-09-09T23:58:22.815Z",
+    "createdBy": "JIRAUSER30629",
+    "issueLinks": [
+      "ETICS-252569",
+      "ETICS-252611",
+      "ETICS-252410",
+      "ETICS-252562",
+      "ETICS-252614",
+      "ETICS-252615",
+      "ETICS-252629",
+      "ETICS-252632"
+    ],
+    "name": "CLARO | RECON lógico | H01–H08 | Visão 01.01",
+    "items": [
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8036",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74464,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8037",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74465,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8038",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74466,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8039",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74467,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8040",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74468,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8041",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74469,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8042",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74470,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8043",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74471,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8044",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74472,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8045",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74473,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8046",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74474,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8047",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74475,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8048",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74476,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8049",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74477,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8050",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74478,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8051",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74479,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8052",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74480,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8053",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74481,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8054",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74482,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8055",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74483,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8056",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74484,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8057",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74485,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8058",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74486,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8059",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74487,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8060",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74488,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8061",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74489,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8062",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74490,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8063",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74491,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8064",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74492,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8065",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74493,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8066",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74494,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8067",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74495,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8068",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74496,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8069",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74497,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8070",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74498,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8071",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74499,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8072",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74500,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8073",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74501,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8074",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74502,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8075",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74503,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8076",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74504,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8077",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74505,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8078",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74506,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8079",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74507,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8080",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74508,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8081",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74509,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8082",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74510,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8083",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74511,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8084",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74512,
+        "status": "Not Executed"
+      },
+      {
+        "actualEndDate": "2026-09-09T23:58:22.815Z",
+        "testCaseKey": "ETICS-T8085",
+        "executionDate": "2026-09-09T23:58:22.815Z",
+        "actualStartDate": "2026-09-09T23:58:22.815Z",
+        "id": 74513,
+        "status": "Not Executed"
+      }
+    ],
+    "key": "ETICS-C646",
+    "executionSummary": {
+      "Not Executed": 50
+    },
+    "status": "Not Executed"
+  },
+  "createdTests": {
+    "value": [
+      {
+        "id": "RECON-H01-01",
+        "story": "ETICS-252410",
+        "key": "ETICS-T8036"
+      },
+      {
+        "id": "RECON-H01-02",
+        "story": "ETICS-252410",
+        "key": "ETICS-T8037"
+      },
+      {
+        "id": "RECON-H01-03",
+        "story": "ETICS-252410",
+        "key": "ETICS-T8038"
+      },
+      {
+        "id": "RECON-H01-04",
+        "story": "ETICS-252410",
+        "key": "ETICS-T8039"
+      },
+      {
+        "id": "RECON-H01-05",
+        "story": "ETICS-252410",
+        "key": "ETICS-T8040"
+      },
+      {
+        "id": "RECON-H01-06",
+        "story": "ETICS-252410",
+        "key": "ETICS-T8041"
+      },
+      {
+        "id": "RECON-H02-01",
+        "story": "ETICS-252562",
+        "key": "ETICS-T8042"
+      },
+      {
+        "id": "RECON-H02-02",
+        "story": "ETICS-252562",
+        "key": "ETICS-T8043"
+      },
+      {
+        "id": "RECON-H02-03",
+        "story": "ETICS-252562",
+        "key": "ETICS-T8044"
+      },
+      {
+        "id": "RECON-H02-04",
+        "story": "ETICS-252562",
+        "key": "ETICS-T8045"
+      },
+      {
+        "id": "RECON-H02-05",
+        "story": "ETICS-252562",
+        "key": "ETICS-T8046"
+      },
+      {
+        "id": "RECON-H03-01",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8047"
+      },
+      {
+        "id": "RECON-H03-02",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8048"
+      },
+      {
+        "id": "RECON-H03-03",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8049"
+      },
+      {
+        "id": "RECON-H03-04",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8050"
+      },
+      {
+        "id": "RECON-H03-05",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8051"
+      },
+      {
+        "id": "RECON-H03-06",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8052"
+      },
+      {
+        "id": "RECON-H03-07",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8053"
+      },
+      {
+        "id": "RECON-H03-08",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8054"
+      },
+      {
+        "id": "RECON-H03-09",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8055"
+      },
+      {
+        "id": "RECON-H03-10",
+        "story": "ETICS-252569",
+        "key": "ETICS-T8056"
+      },
+      {
+        "id": "RECON-H04-01",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8057"
+      },
+      {
+        "id": "RECON-H04-02",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8058"
+      },
+      {
+        "id": "RECON-H04-03",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8059"
+      },
+      {
+        "id": "RECON-H04-04",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8060"
+      },
+      {
+        "id": "RECON-H04-05",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8061"
+      },
+      {
+        "id": "RECON-H04-06",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8062"
+      },
+      {
+        "id": "RECON-H04-07",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8063"
+      },
+      {
+        "id": "RECON-H04-08",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8064"
+      },
+      {
+        "id": "RECON-H04-09",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8065"
+      },
+      {
+        "id": "RECON-H04-10",
+        "story": "ETICS-252611",
+        "key": "ETICS-T8066"
+      },
+      {
+        "id": "RECON-H05-01",
+        "story": "ETICS-252614",
+        "key": "ETICS-T8067"
+      },
+      {
+        "id": "RECON-H05-02",
+        "story": "ETICS-252614",
+        "key": "ETICS-T8068"
+      },
+      {
+        "id": "RECON-H05-03",
+        "story": "ETICS-252614",
+        "key": "ETICS-T8069"
+      },
+      {
+        "id": "RECON-H05-04",
+        "story": "ETICS-252614",
+        "key": "ETICS-T8070"
+      },
+      {
+        "id": "RECON-H05-05",
+        "story": "ETICS-252614",
+        "key": "ETICS-T8071"
+      },
+      {
+        "id": "RECON-H06-01",
+        "story": "ETICS-252615",
+        "key": "ETICS-T8072"
+      },
+      {
+        "id": "RECON-H06-02",
+        "story": "ETICS-252615",
+        "key": "ETICS-T8073"
+      },
+      {
+        "id": "RECON-H06-03",
+        "story": "ETICS-252615",
+        "key": "ETICS-T8074"
+      },
+      {
+        "id": "RECON-H06-04",
+        "story": "ETICS-252615",
+        "key": "ETICS-T8075"
+      },
+      {
+        "id": "RECON-H06-05",
+        "story": "ETICS-252615",
+        "key": "ETICS-T8076"
+      },
+      {
+        "id": "RECON-H07-01",
+        "story": "ETICS-252629",
+        "key": "ETICS-T8077"
+      },
+      {
+        "id": "RECON-H07-02",
+        "story": "ETICS-252629",
+        "key": "ETICS-T8078"
+      },
+      {
+        "id": "RECON-H07-03",
+        "story": "ETICS-252629",
+        "key": "ETICS-T8079"
+      },
+      {
+        "id": "RECON-H07-04",
+        "story": "ETICS-252629",
+        "key": "ETICS-T8080"
+      },
+      {
+        "id": "RECON-H08-01",
+        "story": "ETICS-252632",
+        "key": "ETICS-T8081"
+      },
+      {
+        "id": "RECON-H08-02",
+        "story": "ETICS-252632",
+        "key": "ETICS-T8082"
+      },
+      {
+        "id": "RECON-H08-03",
+        "story": "ETICS-252632",
+        "key": "ETICS-T8083"
+      },
+      {
+        "id": "RECON-H08-04",
+        "story": "ETICS-252632",
+        "key": "ETICS-T8084"
+      },
+      {
+        "id": "RECON-H08-05",
+        "story": "ETICS-252632",
+        "key": "ETICS-T8085"
+      }
+    ],
+    "Count": 50
+  },
+  "createdLinks": [
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8036",
+      "story": "ETICS-252410"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8037",
+      "story": "ETICS-252410"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8038",
+      "story": "ETICS-252410"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8039",
+      "story": "ETICS-252410"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8040",
+      "story": "ETICS-252410"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8041",
+      "story": "ETICS-252410"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8042",
+      "story": "ETICS-252562"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8043",
+      "story": "ETICS-252562"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8044",
+      "story": "ETICS-252562"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8045",
+      "story": "ETICS-252562"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8046",
+      "story": "ETICS-252562"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8047",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8048",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8049",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8050",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8051",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8052",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8053",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8054",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8055",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8056",
+      "story": "ETICS-252569"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8057",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8058",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8059",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8060",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8061",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8062",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8063",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8064",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8065",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8066",
+      "story": "ETICS-252611"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8067",
+      "story": "ETICS-252614"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8068",
+      "story": "ETICS-252614"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8069",
+      "story": "ETICS-252614"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8070",
+      "story": "ETICS-252614"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8071",
+      "story": "ETICS-252614"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8072",
+      "story": "ETICS-252615"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8073",
+      "story": "ETICS-252615"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8074",
+      "story": "ETICS-252615"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8075",
+      "story": "ETICS-252615"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8076",
+      "story": "ETICS-252615"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8077",
+      "story": "ETICS-252629"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8078",
+      "story": "ETICS-252629"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8079",
+      "story": "ETICS-252629"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8080",
+      "story": "ETICS-252629"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8081",
+      "story": "ETICS-252632"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8082",
+      "story": "ETICS-252632"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8083",
+      "story": "ETICS-252632"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8084",
+      "story": "ETICS-252632"
+    },
+    {
+      "cycleKey": "ETICS-C646",
+      "testKey": "ETICS-T8085",
+      "story": "ETICS-252632"
+    }
+  ],
+  "blockers": [],
+  "nextActions": [
+    "Homologar fixtures e contratos técnicos pendentes antes de executar",
+    "Definir ambiente, versão e datas de execução",
+    "Confirmar escopo do quadro para eventual ampliação da cobertura"
+  ],
+  "scriptType": "BDD",
+  "bddConversion": {
+    "count": 50,
+    "verifiedAt": "2026-09-10T00:45:39.999Z",
+    "evidence": "zephyr-bdd-state.json",
+    "backup": "zephyr-before-bdd.json"
+  }
+}

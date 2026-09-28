@@ -1,0 +1,74 @@
+{
+  "id": "CT16",
+  "key": "ETICS-T8209",
+  "before": {
+    "keyNumber": 8209,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:37.344Z",
+    "objective": "Validar alterar tipo conectado com capacidade menor. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.3 e regras detalhadas do §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92607,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then o sistema apresenta uma mensagem de erro e impede a alteração\nThen o estado persistido corresponde ao resultado verificado",
+          "index": 0,
+          "description": "When solicitar por Corrigir inventário a mudança para o tipo de 6 fibras e salvar",
+          "id": 210986
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT16 | Alterar tipo conectado com capacidade menor",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8209",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8209,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T18:58:40.242Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:37.344Z",
+    "objective": "Validar alterar tipo conectado com capacidade menor. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.3 e regras detalhadas do §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um lance conectado de tipo com 12 fibras, com identificadores, contagens e conexões registrados\nAnd existe um tipo alternativo válido com 6 fibras\nWhen solicitar por Corrigir inventário a mudança para o tipo de 6 fibras e salvar\nThen o sistema apresenta uma mensagem de erro e impede a alteração\nAnd o tipo original de 12 fibras permanece\nAnd nenhuma fibra, contagem ou conexão existente é removida ou alterada\nWhen consultar novamente o lance e suas fibras\nThen o estado persistido corresponde ao resultado verificado",
+      "id": 17557,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT16 | Alterar tipo conectado com capacidade menor",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8209",
+    "status": "Draft"
+  }
+}

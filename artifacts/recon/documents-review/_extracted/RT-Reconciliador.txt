@@ -1,0 +1,278 @@
+### Planilha: 'Caso de teste - Aplicação G-PON$'
+1: [5] FECHADO
+2: [5] SUSPENSO
+3: [5] REJEITADO
+4: [5] EM FECHAMENTO
+5: [1] Caso de Teste | [2] Especificação | [3] Dados de Entrada | [4] Resultados Esperados | [5] Resultado Obtido
+8: [2] EXECUTAR RECONCILIAÇÃO:
+9: [1] cenário 1 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia. Obs: com exceção do campo ID Interno, que são campos de controle do sistema de inventário e gerencia de rede.  O reconciliador deverá sinalizar "OK" | [5] FECHADO
+10: [1] cenário 2 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Todos os campos reconciliação recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para os 02 OLTs. Obs: com exceção do campo ID Interno, que são campos de controle do sistema de inventário e gerencia de rede.  O recon | [5] FECHADO
+11: [1] cenário 3 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Todos os campos reconciliação recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para os OLTes. Obs: com exceção do campo ID Interno, que são campos de controle do sistema de inventário e gerencia de rede.  Os OLTes | [5] FECHADO
+12: [1] cenário 4 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Verificar quando da reconciliação se as informações recebidas do sistema de inventário estão consistentes com as recebidas do sistema de gerencia, para o cenário em questão, onde: O OLT deve estar na mesma Localidade / Site; A porta o status da porta 1 de | [5] FECHADO
+13: [1] cenário 4 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Verificar quando da reconciliação se as informações recebidas do sistema de inventário estão consistentes com as recebidas do sistema de gerencia, para o cenário em questão, onde: O OLT deve estar na mesma Localidade / Site; A porta o status da porta 1 de | [5] FECHADO
+14: [1] cenário 5 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o OLT, com excessão da informação da Localidade. | [5] FECHADO
+15: [1] cenário 5 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o OLT, com excessão da informação do Site. | [5] FECHADO
+16: [1] cenário 5 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o OLT, com excessão da informação do Fabricante. | [5] FECHADO
+17: [1] cenário 5 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o OLT, com excessão da informação do Modelo. | [5] FECHADO
+18: [1] cenário 5 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o OLT, com excessão da informação do Serial Number. | [5] FECHADO
+19: [1] cenário 6 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o OLT, com excessão do tipo da estrutura do equipamento. | [5] FECHADO
+20: [1] cenário 07 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave. O reconciliador não encontrar o OLT vindo do sistema de gerencia. | [5] FECHADO
+21: [1] cenário 08 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave. O reconciliador não encontrar o OLT vindo do sistema de inventário. | [5] FECHADO
+22: [1] cenário 09 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave. O reconciliador encontrar o OLT vindo do sistema de inventário e gerencia, porém os IP estão inconsistêntes. | [5] SUSPENSO
+23: [1] cenário 10 | [2] Documento de reconciliação de cadastro | [3] 1- Não cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5-  Executar o reconciliador. | [4] Reconciliação não executada e sinalização de erro grave. O reconciliador encontrar o OLT vindo do sistema de inventário e gerencia, porém o tipo dos equipamentos estão inconsistêntes. | [5] Verificar se faz sentido esse teste
+24: [1] cenário 11 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave. O reconciliador identifica 02 OLTs cadastrados no inventário e apenas 01 descobertos no sistema de gerência. Para um dos descobertos os valor dos atributos não bate totalmente com o do inventário e | [5] FECHADO
+25: [1] cenário 12 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave. O reconciliador identifica 02 OLTs descobertos pelo sistema de gerência, sendo que em 01 deles o tipo de equipamento está inconsistêntes. | [5] FECHADO
+26: [1] cenário 13 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave. O reconciliador identifica 01 OLT cadastrados no inventário e 02 OLTs descobertos pelo sistema de gerência. | [5] FECHADO
+27: [1] cenário 14 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave.  O reconciliador identifica 02 OLT cadastrados no inventário e 02 OLTs descobertos pelo sistema de gerência. sendo que: 1- Durante o processo de reconciliação o sistema sinaliza que que há problemas | [5] FECHADO | [6] Não existe a questão de prevalecer um determinado tipo de erro, pois não estamos tratando OT ainda. A reconciliação, nesse caso, apenas sinaliza quais os tipos de erros ocorridos.
+28: [1] cenário 15 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave.  O reconciliador identifica 02 OLTes cadastrados no inventário e 02 OLTes descobertos pelo sistema de gerência. sendo que: 1- Durante o processo de reconciliação o sistema sinaliza que que há proble | [5] FECHADO | [6] Não existe a questão de prevalecer um determinado tipo de erro, pois não estamos tratando OT ainda. A reconciliação, nesse caso, apenas sinaliza quais os tipos de erros ocorridos.
+29: [1] cenário 16 | [2] Documento de reconciliação de cadastro | [3] 1- Cadastrar um OLT no sistema de planta interna; 2- Carregar e/ou ativar o OLT no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de gerencia para | [4] Reconciliação não executada e sinalização de erro grave.  O reconciliador identifica 02 OLTes cadastrados no inventário e 02 OLTes descobertos pelo sistema de gerência. sendo que: 1- Durante o processo de reconciliação o sistema sinaliza que que há proble | [5] FECHADO | [6] Não existe a questão de prevalecer um determinado tipo de erro, pois não estamos tratando OT ainda. A reconciliação, nesse caso, apenas sinaliza quais os tipos de erros ocorridos.
+33: [1] cenário 16 | [2] Documento de reconciliação de cadastro
+34: [1] cenário 17 | [2] Documento de reconciliação de cadastro
+35: [1] cenário 18 | [2] Documento de reconciliação de cadastro
+36: [1] cenário 19
+37: [1] cenário 20
+38: [1] cenário 21
+39: [1] cenário 22
+40: [1] cenário 23
+41: [1] cenário 24
+42: [1] cenário 25
+43: [1] cenário 26
+44: [1] cenário 27
+45: [1] cenário 28
+46: [1] cenário 29
+47: [1] cenário 30
+48: [1] cenário 31
+49: [1] cenário 32
+50: [1] cenário 33
+51: [1] cenário 34
+52: [1] cenário 35
+53: [1] cenário 36
+54: [1] cenário 37
+55: [1] cenário 38
+56: [1] cenário 39
+57: [1] cenário 40
+58: [1] cenário 41
+59: [1] cenário 42
+60: [1] cenário 43
+61: [1] cenário 44
+62: [1] cenário 45
+63: [1] cenário 46
+64: [1] cenário 47
+65: [1] cenário 48
+66: [1] cenário 49
+67: [1] cenário 50
+68: [1] cenário 51
+69: [1] cenário 52
+70: [1] cenário 53
+71: [1] cenário 54
+72: [1] cenário 55
+73: [1] cenário 56
+74: [1] cenário 57
+75: [1] cenário 58
+76: [1] cenário 59
+77: [1] cenário 60
+78: [1] cenário 61
+79: [1] cenário 62
+80: [1] cenário 63
+81: [1] cenário 64
+82: [1] cenário 65
+83: [1] cenário 66
+84: [1] cenário 67
+### Planilha: 'Casos de Teste - aplicação IP$'
+1: [1] Casos de Testes para EXECUTAR RECONCILIAÇÃO | [6] FECHADO
+2: [6] SUSPENSO
+3: [6] REJEITADO
+4: [6] EM FECHAMENTO
+5: [1] Caso de Uso | [2] Caso de Teste | [3] Especificação | [4] Dados de Entrada | [5] Resultados Esperados | [6] Resultado Obtido
+7: [1] RECONCILIAÇÃO CADASTRO
+8: [3] EXECUTAR RECONCILIAÇÃO:
+9: [2] cenário 1 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia. Obs: com exceção do campo ID Interno, que são campos de controle do sistema de inventário e gerencia de rede.  O reconciliador deverá sinalizar "OK" | [6] FECHADO
+10: [2] cenário 2 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Todos os campos reconciliação recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para os 02 roteadores. Obs: com exceção do campo ID Interno, que são campos de controle do sistema de inventário e gerencia de rede.  O | [6] FECHADO
+11: [2] cenário 3 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Todos os campos reconciliação recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para os roteadores. Obs: com exceção do campo ID Interno, que são campos de controle do sistema de inventário e gerencia de rede.  Os r | [6] FECHADO
+12: [2] cenário 4 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Verificar quando da reconciliação se as informações recebidas do sistema de inventário estão consistentes com as recebidas do sistema de gerencia, para o cenário em questão, onde: O roteador deve estar na mesma Localidade / Site; A porta 1/1 no sistema de | [6] FECHADO
+13: [2] cenário 5 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Verificar quando da reconciliação se as informações recebidas do sistema de inventário estão consistentes com as recebidas do sistema de gerencia, para o cenário em questão, onde: 0 roteador deve estar na mesma Localidade / Site; A porta 1/1 no sistema de | [6] FECHADO
+14: [2] cenário 6 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador. Obs: com exceção do campo ID Interno, que são campos de controle do sistema de inventário e gerencia de rede.  Verificar: 1- 0 rotea | [6] FECHADO
+15: [2] cenário 7 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador, com excessão da informação da Localidade. | [6] FECHADO
+16: [2] cenário 7 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador, com excessão da informação do Site. | [6] FECHADO
+17: [2] cenário 7 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador, com excessão da informação do Fabricante. | [6] FECHADO
+18: [2] cenário 7 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador, com excessão da informação do Modelo. | [6] FECHADO
+19: [2] cenário 7 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador, com excessão da informação do Serial Number. | [6] FECHADO
+20: [2] cenário 7 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador, com excessão da informação do IP. | [6] FECHADO
+21: [2] cenário 08 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro médio. Na reconciliação todos os campos recebidos da rede interna devem bater com as informações recebidas do sistema de gerencia para o roteador, com excessão da informação do IP. Na reconciliação deverá | [6] SUSPENSO
+22: [2] cenário 08 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador não encontrar o roteador vindo do sistema de gerência | [6] FECHADO
+23: [2] cenário 09 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador não encontrar o roteador vindo do sistema de gerencia. | [6] FECHADO
+24: [2] cenário 10 | [3] Documento de reconciliação de cadastro | [4] 1- Não cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5-  Executar o reconciliador. | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador não encontrar o roteador vindo do sistema de inventário. | [6] FECHADO
+25: [2] cenário 11 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador encontrar o roteador vindo do sistema de inventário e gerencia, porém os IP estão inconsistêntes. | [6] FECHADO
+26: [2] cenário 12 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador encontrar o roteador vindo do sistema de inventário e gerencia, porém quantidade de portas estão inconsistêntes. | [6] REJEITADO | [7] Sinalizou erro médio e não indicou visualmente que há problemas na quantidade de portas do equipamento.
+27: [2] cenário 13 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. Para a OT, o reconciliador consegue identificar uma reconciliação, porém,  o outro roteador não é descoberto pelo sistema de gerência gerando assim uma inconsistência. | [6] SUSPENSO
+28: [2] cenário 14 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador identifica 02 roteadores cadastrados no inventário e apenas 02 descobertos no sistema de gerência. Para um dos descobertos os valor dos atributos não bate totalmente com o do inventá | [6] FECHADO
+29: [2] cenário 15 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador identifica 02 roteadores descobertos pelo sistema de gerência, sendo que 01 deles não está cadastrado no inventário. O outro equipamento está com os dados coerentes com o cadastrado. | [6] REJEITADO | [7] Sinalizou erro médio.
+30: [2] cenário 16 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave. O reconciliador identifica 02 roteadores cadastrados no inventário e 02 roteadores descobertos pelo sistema de gerência. Durante o processo de reconciliação o sistema sinaliza que que há problemas r | [6] REJEITADO | [7] Sinalizou erro médio.
+31: [2] cenário 17 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave.  O reconciliador identifica 02 roteadores cadastrados no inventário e 02 roteadores descobertos pelo sistema de gerência. sendo que: 1- Durante o processo de reconciliação o sistema sinaliza que que | [6] FECHADO
+32: [2] cenário 18 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave.  O reconciliador identifica 02 roteadores cadastrados no inventário e 02 roteadores descobertos pelo sistema de gerência. sendo que: 1- Durante o processo de reconciliação o sistema sinaliza que que | [6] SUSPENSO | [7] Caso de teste conflitante com outros casos descritos anteriormente. A informação de localidade inválida deve gerar um erro médio e não baixo.
+33: [2] cenário 19 | [3] Documento de reconciliação de cadastro | [4] 1- Cadastrar um roteador no sistema de planta interna; 2- Carregar e/ou ativar o roteador no simulador; 3- Colocar em operação o sistema de gerencia; 4- Executar a descoberta no sistema de gerencia; 5- Configurar informações de inventário e sistema de ger | [5] Reconciliação não executada e sinalização de erro grave.  O reconciliador identifica 02 roteadores cadastrados no inventário e 02 roteadores descobertos pelo sistema de gerência. sendo que: 1- Durante o processo de reconciliação o sistema sinaliza que que | [6] SUSPENSO | [7] Caso de teste conflitante com outros casos descritos anteriormente. A informação de localidade inválida deve gerar um erro médio e não baixo.
+34: [2] cenário 16 | [3] Documento de reconciliação de cadastro
+35: [2] cenário 17 | [3] Documento de reconciliação de cadastro
+36: [2] cenário 18 | [3] Documento de reconciliação de cadastro
+37: [2] cenário 19
+38: [2] cenário 20
+39: [2] cenário 21
+40: [2] cenário 22
+41: [2] cenário 23
+42: [2] cenário 24
+43: [2] cenário 25
+44: [2] cenário 26
+45: [2] cenário 27
+46: [2] cenário 28
+47: [2] cenário 29
+48: [2] cenário 30
+49: [2] cenário 31
+50: [2] cenário 32
+51: [2] cenário 33
+52: [2] cenário 34
+53: [2] cenário 35
+54: [2] cenário 36
+55: [2] cenário 37
+56: [2] cenário 38
+57: [2] cenário 39
+58: [2] cenário 40
+59: [2] cenário 41
+60: [2] cenário 42
+61: [2] cenário 43
+62: [2] cenário 44
+63: [2] cenário 45
+64: [2] cenário 46
+65: [2] cenário 47
+66: [2] cenário 48
+67: [2] cenário 49
+68: [2] cenário 50
+69: [2] cenário 51
+70: [2] cenário 52
+71: [2] cenário 53
+72: [2] cenário 54
+73: [2] cenário 55
+74: [2] cenário 56
+75: [2] cenário 57
+76: [2] cenário 58
+77: [2] cenário 59
+78: [2] cenário 60
+79: [2] cenário 61
+80: [2] cenário 62
+81: [2] cenário 63
+82: [2] cenário 64
+83: [2] cenário 65
+84: [2] cenário 66
+85: [2] cenário 67
+### Planilha: 'Casos de Teste - Telas$'
+1: [1] Casos de Testes para EXECUTAR RECONCILIAÇÃO | [6] FECHADO
+2: [6] SUSPENSO
+3: [6] REJEITADO
+4: [6] EM FECHAMENTO
+5: [1] Caso de Uso | [2] Caso de Teste | [3] Especificação | [4] Dados de Entrada | [5] Resultados Esperados | [6] Resultado Obtido
+7: [1] RECONCILIAÇÃO CADASTRO
+8: [3] EXECUTAR RECONCILIAÇÃO:
+9: [2] cenário 20 | [3] Preencher os campos de Site e faixa de Ip, e inserir na lista de faixas. | [5] Inclusão na lista de faixas de ip | [6] FECHADO
+10: [2] cenário 20 | [3] Preencher os campos de Site e apenas o Ip inicial da faixa de ip, e inserir na lista | [5] Mensagem de erro de atributo "Ip final" não preenchido | [6] FECHADO | [7] Mensagem de erro de endereço final incorreto, e não de que está faltando o endereço IP
+11: [2] cenário 20 | [3] Preencher os campos de Site e apenas o Ip final da faixa de ip, e inserir na lista | [5] Mensagem de erro de atributo "Ip Inicial" não preenchido | [6] FECHADO
+12: [2] cenário 20 | [3] Preencher apenas o campo de Localidade do Site e os 2 campos da faixa de Ip, inserir na lista e tentar processar | [5] Mensagem de erro de que a identificação do Site deve ser preenchido | [6] FECHADO
+13: [2] cenário 20 | [3] Preencher apenas o campo de Identificação do Site e os 2 campos de faixa de ip,  inserir na lista e tentar processar | [5] Mensagem de erro de que a Localidade deve ser preenchida. | [6] FECHADO
+14: [2] cenário 20 | [3] Preencher os campos com IP inicial maior que o IP final | [4] Inicial : 10.202.72.35 - Final : 10.202.72.29 | [5] Mensagem de erro de que o range de IP está incorreto. | [6] FECHADO
+15: [2] cenário 20 | [3] Remover um dos itens da lista de ranges de IP a serem reconciliados | [5] Item removido da lista | [6] FECHADO
+16: [2] cenário 20 | [3] Inserir o mesmo range de IP mais de uma vez na lista de reconciliação | [5] Mensagem de erro indicando que o range de IP já existe na lista | [6] REJEITADO | [7] O sistema permitiu várias inserções do mesmo range de IP na lista de reconciliação
+17: [2] cenário 20 | [3] Inserir vários ranges de IP e validar a paginação da lista de ranges de IP. | [5] Botões de paginação funcionando. | [6] FECHADO
+18: [2] cenário 21 | [3] Abrir a tela de resultados da reconciliação e verificar se todos os campos estão preenchidos. | [5] Todos os campos preenchidos com os dados da reconciliação. | [6] FECHADO
+19: [2] cenário 21 | [3] Abrir a tela de resultados da reconciliação, selecionar um processo de reconciliação e mandar exibir os detalhes do processo. | [5] Tela de detalhes do processo de reconciliação. | [6] FECHADO
+20: [2] cenário 22 | [3] A partir da escolha de um processo de reconciliação, verificar se a tela de especificação de equipamentos possui os filtros de consulta para os equipamentos envolvidos na reconciliação de acordo com o status no processo: sucesso, erro grave, erro, informa | [5] Especificação de filtro de busca de equipamentos através de componentes "check-box" para seleção. | [6] FECHADO
+21: [2] cenário 22 | [3] A partir da escolha de um processo de reconciliação, verificar se a tela de especificação de equipamentos exibe os equipamentos na forma de grid e se é possível selecionar um desses equipamentos para visualizar mais dados | [5] Grid com os equipamentos reconciliados, no formato de linhas intercalando cores, e com dados "embeded" na própria linha do equipamento na grid. Para cada status do equipamento o ícone correspondente deve ser exibido. | [6] FECHADO
+22: [2] cenário 22 | [3] A partir da escolha de um processo de reconciliação, verificar se a tela de especificação de equipamentos exibe o endereço IP dos equipamentos na grid. | [5] Grid com os equipamentos reconciliados, exibindo o endereço IP dos equipamentos. | [6] FECHADO
+23: [2] cenário 23 | [3] A partir de um equipamento escolhido em um processo de reconciliação, verificar se o formato de árvore exibido possui a estrutura de 2 níveis: dados do equipamento e composição do equipamento. | [5] Estrutura da árvore contendo 2 níveis: dados do equipamento e composição do equipamento. | [6] FECHADO
+24: [2] cenário 23 | [3] A partir de um equipamento escolhido em um processo de reconciliação, verificar se a árvore de exibição de dados funciona corretamente | [5] Estrutura da árvore deve permitir expandir ou não cada nível agrupado em uma sub-pasta. | [6] FECHADO
+25: [2] cenário 24 | [3] Todas as telas | [5] Testar a navegação entre telas através do botão "Voltar". | [6] FECHADO
+26: [2] cenário 25 | [3] Todas as telas | [5] Testar a navegação na paginação de telas da GRID de dados | [6] FECHADO
+27: [2] cenário 26 | [3] Todas as telas | [5] Testar a navegação das telas através do menu da aplicação | [6] FECHADO
+28: [2] cenário 27 | [3] Todas as telas | [5] Testar os botões de "Cancelar" nas telas onde eles apareçam | [6] FECHADO
+29: [2] cenário 28 | [3] Todas as telas | [5] Validar tamanho e cor das fontes utilizadas nas telas de reconciliação | [6] SUSPENSO
+38: [2] cenário 16 | [3] Documento de reconciliação de cadastro
+39: [2] cenário 17 | [3] Documento de reconciliação de cadastro
+40: [2] cenário 18 | [3] Documento de reconciliação de cadastro
+41: [2] cenário 19
+42: [2] cenário 20
+43: [2] cenário 21
+44: [2] cenário 22
+45: [2] cenário 23
+46: [2] cenário 24
+47: [2] cenário 25
+48: [2] cenário 26
+49: [2] cenário 27
+50: [2] cenário 28
+51: [2] cenário 29
+52: [2] cenário 30
+53: [2] cenário 31
+54: [2] cenário 32
+55: [2] cenário 33
+56: [2] cenário 34
+57: [2] cenário 35
+58: [2] cenário 36
+59: [2] cenário 37
+60: [2] cenário 38
+61: [2] cenário 39
+62: [2] cenário 40
+63: [2] cenário 41
+64: [2] cenário 42
+65: [2] cenário 43
+66: [2] cenário 44
+67: [2] cenário 45
+68: [2] cenário 46
+69: [2] cenário 47
+70: [2] cenário 48
+71: [2] cenário 49
+72: [2] cenário 50
+73: [2] cenário 51
+74: [2] cenário 52
+75: [2] cenário 53
+76: [2] cenário 54
+77: [2] cenário 55
+78: [2] cenário 56
+79: [2] cenário 57
+80: [2] cenário 58
+81: [2] cenário 59
+82: [2] cenário 60
+83: [2] cenário 61
+84: [2] cenário 62
+85: [2] cenário 63
+86: [2] cenário 64
+87: [2] cenário 65
+88: [2] cenário 66
+89: [2] cenário 67
+### Planilha: 'Cenários_Testes_G-PON$'
+1: [2] Cenários Regras
+2: [3] Objetivo | [4] Observações
+3: [1] Cenários OK | [2] Cenário-1 | [3] Verificar se a reconciliação é realizada com sucesso. Para o cenário de 01equipamento do tipo OLT cadastrado no sistema de inventário e 01 Para o cenário de 01equipamento do tipo OLT  descoberto pelo sistema de gerencia de rede.
+4: [2] Cenário-2 | [3] Verificar se a reconciliação é realizada com sucesso. Para o cenário de 02 equipamento do tipo OLT cadastrado no sistema de inventário e 02 equipamento do tipo OLT descoberto pelo sistema de gerencia de rede. Na mesma Localidade / Site.
+5: [2] Cenário-3 | [3] Verificar se a reconciliação é realizada com sucesso. Para o cenário de 03 equipamento do tipo OLT cadastrado no sistema de inventário e 03 equipamento do tipo OLT descoberto pelo sistema de gerencia de rede. Sendo 02 equipamentos cadastrados na mesma Localidade / Site e 01 outro equipamento em  outra localidade / site.
+6: [1] Cenário "Ok" inconsistência baixa | [2] Cenário-4 | [3] Verificar se a reconciliação é realizada com sucesso, porém com gravidade Baixa. Para o cenário de 01 OLT cadastrado no sistema de inventário e 01 OLT descoberto pelo sistema de gerencia de rede, onde, as interface de um desses  equipamentos estão com "status" inconsistentes.
+7: [1] Cenários "NOK" Inconsistencia nivel MÉDIA | [2] Cenário-5 | [3] Verificar se o reconciliador sinaliza gravidade Média Para o cenário de 01 OLT cadastrado no sistema de inventário e 01 OLT descoberto pelo sistema de gerencia de rede, onde, há informações inconsistentes dos atributos como: Localidade / site /serial number / fabricante / modelo
+8: [2] Cenário-6 | [3] Verificar se o reconciliador sinaliza gravidade média. Para esse cenário deverá ser descoberto 01 OLT pelo sistema de gerência e 01 OLT pelo sistema de inventário onde a estrutura dos equipamentos estão inconsistencia.
+9: [1] Cenários "NOK" Inconsistencia nivel ALTA | [2] Cenário-7 | [3] Verificar se a reconciliação não é realizada, e se o reconciliador sinaliza gravidade Alta. Para o cenário de 01 OLT cadastrado no sistema de inventário e nenhum OLT descoberto pelo sistema de gerencia de rede.
+10: [2] Cenário-8 | [3] Gravidade alta. Cenário de 01 OLT descoberto pelo sistema de gerência e nenhum OLT cadastrado no sistema de inventário.
+11: [2] Cenário-9 | [3] Gravidade alta. Cenário de 01 OLT cadastrado no inventário e 01 OLT descoberto pelo sistema de gerência, porém com valor do atributo IP diferente.
+12: [2] Cenário-10 | [3] Gravidade alta. Cenário de 01 OLT cadastrado no inventário e 01 OLT descoberto pelo sistema de gerência. Atributos da OLT com batimento correto, porém tipo do equipamento está inconsistentes. | [4] Verificar se esse teste faz sentido para o caso de G-PON.
+13: [2] Cenário-11 | [3] Gravidade alta. Cenário de 02 OLT cadastrados no inventário e apenas 01 descoberto no sistema de gerência. Para apenas 01 OLT descoberto os dados batem com o do inventário e o sistema deve sinalizar erro por não ter encontrado o outro que está cadastrado.
+14: [2] Cenário-12 | [3] Gravidade alta. Cenário de 02 OLTs cadastrados no inventário e apenas 02 descobertos no sistema de gerência. Para um dos descobertos os valor do tipo do equipamento não bate com o tipo cadastrado no inventário e o sistema deve sinalizar erro por causa dessas inconsistências.
+15: [2] Cenário-13 | [3] Gravidade alta. Cenário de 02 OLTs descobertos pelo sistema de gerência, sendo que 01 deles não está cadastrado no inventário. O outro equipamento está com os dados coerentes com o cadastrado.
+16: [2] Cenário-14 | [3] Combinação de inconsistências média e alta prevalecendo a de gravidade alta. Cenário de 02 OLTs cadastrados no inventário e 02 OLTs descobertos pelo sistema de gerência. Durante o processo de reconciliação o sistema sinaliza que que há problemas relacionados ao IP dos equipamentos e a localidade do outro equipamento.
+17: [2] Cenário-15 | [3] Combinação de inconsistências baixa, média e alta prevalecendo a de gravidade alta. Cenário de 02 OLTs cadastrados no inventário e 02 OLTs descobertos pelo sistema de gerência. Durante o processo de reconciliação o sistema sinaliza que que há problemas relacionados ao IP dos equipamentos e ao status e localidade do outro equipamento.
+18: [2] Cenário-16 | [3] Combinação de inconsistências baixa e alta prevalecendo a de gravidade alta. Cenário de 02 OLTs cadastrados no inventário e 02 OLTs descobertos pelo sistema de gerência. Durante o processo de reconciliação o sistema sinaliza que que há problemas relacionados ao IP dos equipamentos e o status da porta do outro equipamento.
+### Planilha: 'Histórico de alterações$'
+1: [1] 5  Histórico de versões deste documento
+3: [1] Data | [3] Versão | [4] Autor | [5] Descrições das alterações realizadas
+4: [1] 10/05/2011 | [3] A | [4] Rivael Strobel Penze Fernando Augusto Teixeira | [5] Primeira versão do roteiro de testes, feita para a feature 'Documento de reconciliação de cadastro'
+5: [1] 06/06/11 | [3] 1 | [4] Fernando | [5] Especificação de testes de tela
+6: [1] 16/06/2011 | [3] 2 | [4] Fernando | [5] Especificação de todos os testes, incluindo GPON
+7: [1] 29/06/2011 | [3] 3 | [4] Fernando | [5] Execução de testes de tela e 50% dos testes IP
+8: [1] 01/07/2011 | [3] 4 | [4] Fernando | [5] Execução de testes GPON
+9: [1] 04/07/2011 | [3] 5 | [4] Fernando | [5] Finalização dos testes
+### Planilha: 'Procedimentos Genéricos e Verif$'
+1: [2] PROCEDIMENTOS GENÉRICOS | [3] VERIFICAÇÕES
+4: [1] Consultar | [2] 1. Filtrar um valor existente para cada um dos campos. (deve retornar o objeto filtrado),  2. Filtrar um valor inexistente para cada um dos campos.  (não deve retornar nenhum objeto),  3. Filtrar um valor parcial existente para cada um dos campos (utilizar o coringa % no ínicio). Exemplo: para filtar o valor Rodrigo da Silva Paro, utilizar %Paro. (deve retornar o objeto filtrado),  4. Filtrar um valor parcial existente para cada um dos campos (utilizar o coringa % no meio). Exemplo: para filtar o valor Rodrigo da Silva Paro, utilizar Rodrigo%Paro. (deve retornar o objeto filtrado),  5. Filtrar um valor parcial existente para cada um dos campos (utilizar o coringa % no fim). Exemplo: para filtar o valor Rodrigo da Silva Paro, utilizar Rodrigo%. (deve retornar o objeto filtrado)  6. Filtrar um valor parcial inexistente (utilizar o coringa %) (não deve retornar nenhum objeto)  7. Filtrar sem informar nenhum campo e não há elementos cadastrados. (não deve retornar nenhum objeto)  8. Filtrar sem informar nenhum campo e há 1 elemento cadastrado. (deve retornar o objeto filtrado)   9. Filtrar sem informar nenhum campo e há N elementos cadastrados. (deve retornar os N objetos filtrados) | [3] (Estas verificações devem ser feitas somente caso não foram verificadas para a operação inserir. Exemplo: Operação Desdobrar para o objeto Conexão Lógica)  10. Conferir se todos e apenas os atributos descritos no requisito são apresentados;  11. Conferir se os nomes dos atributos estão de acordo com o requisito;  12. Verificar se o label dos sub-atributos estão corretos;  13. Para cada atributo acionar o botão de informação e conferir se a descrição está de acordo com o requisito (tipo, tamanho e obrigatoriedade);  14.  Verificar se a lista de valores válidos para o atributo está correta (aplicável para os atributos com auxílio ao preenchimento com valores pré-definidos).   15.  Conferir o tamanho e label dos sub-atributos através do objeto Pai (os tamanhos e labels devem estar consistentes)  16.  Verificar se as mensagens de erro estão coerentes.
+6: [1] procedimentos genérico reconciliador | [2] 1. Alterar um objeto com todos os atributos (inclusive os opcionais), informando o tamanho máximo permitido no campo; (deve obter sucesso).  2. Alterar um objeto com apenas os atributos obrigatórios; (deve obter sucesso).  3. Tentar Alterar um objeto sem cada um dos atributos obrigatórios; (operação deve ser cancelada).  4. Tentar Alterar um objeto com tamanho incorreto de cada um dos campos; (operação deve ser cancelada).  5. Tentar Alterar um objeto com tipo incorreto de cada um dos campos; (operação deve ser cancelada).  6. Tentar violar a regra de unicidade do objeto através da operação de alteração de atributos; (operação deve ser cancelada).  Exemplos: a) Unicidade = Código     O objeto só pode possuir um registro com um determinado Código.  b) Unicade = Código + Tecnologia     O objeto pode possuir mais de um registro com um determinado Código desde que a Tecnologia seja diferente.     O objeto pode possuir mais de um registro com uma determinada Tecnologia desde que o Código seja diferente.  c) Unicidade = Código + Tipo + Tecnologia     O objeto pode possuir mais de um registro com um determinado Código desde que o Tipo seja diferente e,  pode possuir mais de um registro com um determinado Tecnologia desde que a combinação Código + Tipo seja diferente.     O objeto pode possuir mais de um registro com uma determinada Tipo desde que o Código seja diferente e,  pode possuir mais de um registro com uma determinada combinação Código + Tipo desde que a Tecnologia seja diferente.  7. Alterar pelo menos um objeto para cada valor válido para atributos com  auxílio ao preenchimento com uma lista de valores pré-definidos. No caso do atributo ser automaticamente fornecido e modificado pelo sistema, realizar as operações para fazer tais mudanças de atributos; (deve obter sucesso).  8. Executar todas as operações para verificar se os atributos bloqueados ficam realmente bloqueados; (aplicável para objetos que tenham atributos  bloqueados). | [3] 9. Conferir se a obrigatoriedade dos atributos é corretamente destacada no GAT (label em negrito e asterisco em vermelho ao lado)  10. Verificar se as mensagens de erro estão coerentes.         11.  Para objeto versionado, ou seja, que necessita de OT, verificar:     a) se o objeto está na situação Projetado a Modificação antes da implantação da OT, desde que o objeto já tenha sido implantado anteriormente.    b) se o objeto está na situação Projetado a Instalação antes da implantação da OT, desde que o objeto nunca tenha sido implantado anteriormente.    c) se os valores dos atributos da OT deste objeto estão corretos após a implantação da OT.    d) se o objeto está na situação Existente após a implantação da OT.  12. Para objeto não versionado, ou seja, que não necessita de OT, verificar através de filtro se o objeto foi realmente alterado.

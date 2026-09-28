@@ -1,0 +1,26 @@
+{
+    "name":  "CLARO | RECON lógico | H01–H08 | Visão 01.01",
+    "projectKey":  "ETICS",
+    "projectId":  10460,
+    "epic":  "ETICS-245531",
+    "version":  null,
+    "startDate":  null,
+    "endDate":  null,
+    "cycleId":  "ETICS-C646",
+    "status":  "Cadastrado e verificado; 50 testes não executados",
+    "boardScopeVerified":  false,
+    "sourceDocument":  "GP-Visao-Recon-Claro_0101 (1).docx",
+    "sourceDocumentVersion":  "01.01",
+    "stories":  [
+                    "ETICS-252410",
+                    "ETICS-252562",
+                    "ETICS-252569",
+                    "ETICS-252611",
+                    "ETICS-252614",
+                    "ETICS-252615",
+                    "ETICS-252629",
+                    "ETICS-252632"
+                ],
+    "testCount":  50,
+    "description":  "Validação da sincronização IM→GP, configuração 0/1/2, upsert JSON, transporte/merge atômico, zonas, HA e roteamento. 50 casos cadastrados e vinculados às oito histórias e ao ciclo; pendências de contratos preservadas. Nenhum teste executado."
+}

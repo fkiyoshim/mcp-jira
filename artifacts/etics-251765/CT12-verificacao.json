@@ -1,0 +1,74 @@
+{
+  "id": "CT12",
+  "key": "ETICS-T8205",
+  "before": {
+    "keyNumber": 8205,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:57:49.848Z",
+    "objective": "Validar ignorar ot corrente na correção. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92603,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then a correção persiste sem associação à OT corrente e mantém a situação e o vínculo original do lance\nThen a correção também persiste sem associação à OT B e mantém a situação e o vínculo original do lance",
+          "index": 0,
+          "description": "When definir a própria OT A como corrente, corrigir o atributo e salvar",
+          "id": 210982
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT12 | Ignorar OT corrente na correção",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8205",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8205,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T18:57:53.710Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:57:49.848Z",
+    "objective": "Validar ignorar ot corrente na correção. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um lance Projetado/Modificação vinculado à OT A\nAnd um atributo não bloqueado possui valor válido para correção\nWhen definir a própria OT A como corrente, corrigir o atributo e salvar\nThen a correção persiste sem associação à OT corrente e mantém a situação e o vínculo original do lance\nWhen repetir em dados independentes com uma OT B diferente da OT A definida como corrente\nThen a correção também persiste sem associação à OT B e mantém a situação e o vínculo original do lance",
+      "id": 17553,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT12 | Ignorar OT corrente na correção",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8205",
+    "status": "Draft"
+  }
+}

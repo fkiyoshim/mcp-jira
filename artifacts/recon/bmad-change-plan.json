@@ -1,0 +1,144 @@
+{
+  "capturedAt": "2026-09-24T16:23:46.799Z",
+  "sourceSnapshot": "2026-09-24T16:16:18.951Z",
+  "storiesCurrent": [
+    "ETICS-252615",
+    "ETICS-252629",
+    "ETICS-252632",
+    "ETICS-253096"
+  ],
+  "deprecated": [
+    {
+      "key": "ETICS-T8072",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8073",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8074",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8075",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8076",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8146",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8147",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8148",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8149",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8150",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8151",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8152",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8153",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8154",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8077",
+      "reason": "H07 atual especifica Roteamento Estático FN; identidade e de/para dos casos anteriores não estão aprovados para FN."
+    },
+    {
+      "key": "ETICS-T8078",
+      "reason": "H07 atual especifica Roteamento Estático FN; identidade e de/para dos casos anteriores não estão aprovados para FN."
+    },
+    {
+      "key": "ETICS-T8079",
+      "reason": "H07 atual especifica Roteamento Estático FN; identidade e de/para dos casos anteriores não estão aprovados para FN."
+    },
+    {
+      "key": "ETICS-T8080",
+      "reason": "H07 atual especifica Roteamento Estático FN; identidade e de/para dos casos anteriores não estão aprovados para FN."
+    },
+    {
+      "key": "ETICS-T8155",
+      "reason": "H07 atual especifica Roteamento Estático FN; identidade e de/para dos casos anteriores não estão aprovados para FN."
+    },
+    {
+      "key": "ETICS-T8082",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8083",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    },
+    {
+      "key": "ETICS-T8084",
+      "reason": "H08 atual cobre BGP e relacionados; OSPF e RIP não pertencem mais à descrição atual da H08."
+    }
+  ],
+  "refinements": [
+    {
+      "key": "ETICS-T8085",
+      "name": "RECON-H08-05 — Preservar objetos alheios ao atualizar BGP"
+    },
+    {
+      "key": "ETICS-T8156",
+      "name": "RECON-H08-MD-01 — Não persistir BGP com contrato final pendente"
+    }
+  ],
+  "newCases": [
+    {
+      "name": "RECON-H06-OSPF-01 — Sincronizar OSPF no Device do Roteador",
+      "story": "ETICS-252615"
+    },
+    {
+      "name": "RECON-H07-FN-01 — Sincronizar Roteamento Estático FN no JSON do Roteador",
+      "story": "ETICS-252629"
+    },
+    {
+      "name": "RECON-H09-01 — Não divergir para versões de software iguais",
+      "story": "ETICS-253096"
+    },
+    {
+      "name": "RECON-H09-02 — Mostrar divergência e os dois valores da versão",
+      "story": "ETICS-253096"
+    },
+    {
+      "name": "RECON-H09-03 — Ignorar diferença da versão configurada com 0",
+      "story": "ETICS-253096"
+    },
+    {
+      "name": "RECON-H09-04 — Atualizar SOFTWARE_VERSION selecionado",
+      "story": "ETICS-253096"
+    },
+    {
+      "name": "RECON-H09-05 — Inicializar configurações antigas com valor 0",
+      "story": "ETICS-253096"
+    },
+    {
+      "name": "RECON-H09-06 — Aceitar ausência de softwareVersion no IM",
+      "story": "ETICS-253096"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "newCases": [
+    {
+      "id": "RECON-H01-SYS-07",
+      "team": "Sistêmico",
+      "name": "RECON-H01-SYS-07 — Inserir equipamento do IM com atributos silenciosos",
+      "source": "§13 e critérios de aceite",
+      "precondition": "Equipamento existe somente no IM; tipo suporta inserção pelo fluxo atual; atributos A e B suportados com modo 2; dados obrigatórios válidos; fixture homologada.",
+      "bdd": "Given um equipamento suportado existente somente no IM, com A e B configurados como 2 e valores IM_A e IM_B\nWhen executar a reconciliação e consultar o inventário GP\nThen o equipamento ainda não existe no GP\nWhen acionar a inserção pelo fluxo existente de Atualizar inventário\nThen o equipamento é criado no GP com A=IM_A e B=IM_B\nAnd os atributos silenciosos não exigem seleção individual em nós de divergência",
+      "key": "ETICS-T8086"
+    },
+    {
+      "id": "RECON-H01-SYS-08",
+      "team": "Sistêmico",
+      "name": "RECON-H01-SYS-08 — Atualizar a partir de resultado reaberto posteriormente",
+      "source": "§§7 e 10; critérios de aceite",
+      "precondition": "Equipamento pareado; A=2; GP=GP_A; resposta IM controlada com IM_A; resultado concluído e disponível para reabertura; nenhuma nova reconciliação.",
+      "bdd": "Given um equipamento pareado com A configurado como 2 e valor GP_A no GP\nAnd a reconciliação coletou IM_A para A e foi concluída\nWhen fechar o resultado e encerrar a sessão sem acionar Atualizar inventário\nThen A permanece com GP_A no GP\nWhen iniciar outra sessão e reabrir o mesmo resultado sem executar nova reconciliação\nAnd acionar Atualizar inventário\nThen A passa a IM_A no GP sem seleção individual do atributo",
+      "key": "ETICS-T8087"
+    },
+    {
+      "id": "RECON-H01-DEV-01",
+      "team": "Desenvolvimento",
+      "name": "RECON-H01-DEV-01 — Criar esquema com padrão seguro para novas colunas",
+      "source": "§2",
+      "precondition": "Base descartável vazia; instalador da versão alvo; lista de novas colunas efetivamente implementadas aprovada pelo desenvolvimento.",
+      "bdd": "Given uma base vazia destinada à instalação da versão alvo\nWhen criar o esquema pelo instalador oficial\nThen cada nova coluna implementada em RECON_ATRIB_CFG possui DEFAULT 0 e NOT NULL\nWhen criar uma configuração válida omitindo essas novas colunas\nThen cada nova coluna assume o valor 0\nWhen persistir o valor 2 em cada nova coluna por operações válidas\nThen o valor 2 é aceito e recuperado como 2",
+      "key": "ETICS-T8088"
+    },
+    {
+      "id": "RECON-H01-DEV-02",
+      "team": "Desenvolvimento",
+      "name": "RECON-H01-DEV-02 — Aplicar patch preservando configurações legadas",
+      "source": "§2",
+      "precondition": "Cópia descartável de base anterior; snapshot das configurações 0 e 1; patch oficial e novas colunas identificados.",
+      "bdd": "Given uma base da versão anterior com configurações existentes em 0 e 1\nWhen aplicar o patch oficial para as novas colunas de RECON_ATRIB_CFG\nThen os valores preexistentes permanecem iguais ao snapshot\nAnd as novas colunas possuem DEFAULT 0 e NOT NULL e os registros anteriores recebem 0\nWhen salvar 2 nas novas colunas de uma configuração editável\nThen o valor 2 é persistido e recuperado corretamente",
+      "key": "ETICS-T8089"
+    },
+    {
+      "id": "RECON-H01-DEV-03",
+      "team": "Desenvolvimento",
+      "name": "RECON-H01-DEV-03 — Mapear e persistir todos os atributos silenciosos suportados",
+      "source": "§§3, 5, 7 e 13",
+      "precondition": "Harness e banco de teste; matriz aprovada atributo IM → propriedade POJO → chave getAttributesMap → coluna RECON_* → campo GP; incluir apenas tipos implementados e valores distintos por atributo.",
+      "bdd": "Given a matriz aprovada de novos atributos e tipos suportados com todos os atributos configurados como 2\nAnd uma resposta IM válida contendo valores distintos identificáveis para cada atributo\nWhen carregar ReconAttributesConfig e executar a recuperação e persistência da reconciliação\nThen getAttributesMap contém cada chave esperada com valor textual 2\nAnd cada valor IM é mapeado ao POJO e persistido na coluna RECON_* correspondente ao objeto correto\nWhen recuperar o resultado em um novo contexto de persistência\nThen os valores IM são recuperados integralmente para montagem da atualização\nWhen construir o objeto externo para um tipo suportado na inserção\nThen BuildEquipmentExternal disponibiliza os novos valores persistidos sem troca entre atributos ou objetos",
+      "key": "ETICS-T8090"
+    },
+    {
+      "id": "RECON-H01-DEV-04",
+      "team": "Desenvolvimento",
+      "name": "RECON-H01-DEV-04 — Enviar atributos silenciosos pelo mecanismo padrão de update",
+      "source": "§§10 e 12; critérios de aceite",
+      "precondition": "Harness/spy de ReconService e NestedRuleCaller; configuração usada na reconciliação; resultado persistido com A=2, B=0 e valores IM distintos; atributos válidos; nenhum update manual selecionado.",
+      "bdd": "Given um resultado persistido com A configurado como 2 e B como 0 e seus valores IM identificáveis\nWhen montar os atributos para Atualizar inventário sem seleção manual de atributos\nThen a configuração da reconciliação é carregada e um ObjectUpdate silencioso é criado para A com seu valor IM persistido\nAnd B não é incluído como atualização silenciosa\nWhen executar o update\nThen o fluxo padrão chama NestedRuleCaller.execute com o objeto e a operação previstos\nAnd mapAtributes contém o campo de A com o valor IM persistido\nAnd o GP passa a conter esse valor após a execução bem-sucedida",
+      "key": "ETICS-T8091"
+    },
+    {
+      "id": "RECON-H01-DEV-05",
+      "team": "Desenvolvimento",
+      "name": "RECON-H01-DEV-05 — Converter chaves silenciosas para nomes meta do GP",
+      "source": "§11",
+      "precondition": "Harness do conversor e update; dois atributos suportados: A cuja chave difere do nome meta e B cuja chave já é o nome meta; mapeamentos reais aprovados antes da execução.",
+      "bdd": "Given dois atributos silenciosos suportados A e B com valores IM_A e IM_B\nAnd a chave de A exige conversão para seu nome meta e a chave de B já corresponde ao seu nome meta\nWhen montar e converter os atributos para atualização do GP\nThen A usa o nome meta definido no mapeamento e B mantém o nome meta original\nAnd os valores IM_A e IM_B permanecem associados aos respectivos campos\nWhen executar a atualização pelo mecanismo padrão\nThen os dois campos corretos no GP recebem seus valores IM sem criação de campos com nomes de descrição",
+      "key": "ETICS-T8092"
+    },
+    {
+      "id": "RECON-H01-DEV-06",
+      "team": "Desenvolvimento",
+      "name": "RECON-H01-DEV-06 — Preservar normalização da comparação no modo 1",
+      "source": "Contexto atual e §8",
+      "precondition": "Harness do comparador com atributo suportado em modo 1; fixtures sintéticas independentes; null representa ausência Java e não a string null.",
+      "bdd": "Given um atributo configurado como 1 em execuções independentes do comparador\nWhen comparar IM=\"  ABC  \" com GP=\"abc\"\nThen o comparador considera os valores equivalentes\nWhen comparar IM=null com GP=\"\" e depois IM=\"\" com GP=null\nThen o comparador considera os valores equivalentes nas duas execuções\nWhen comparar IM=\"ABC\" com GP=\"ABD\"\nThen o comparador identifica diferença\nAnd nenhuma chamada de comparação persiste atualização no inventário",
+      "key": "ETICS-T8093"
+    }
+  ],
+  "cycles": [
+    {
+      "name": "CLARO | RECON H01 | Testes sistêmicos | Revisão MD",
+      "test_keys": [
+        "ETICS-T8036",
+        "ETICS-T8037",
+        "ETICS-T8038",
+        "ETICS-T8039",
+        "ETICS-T8040",
+        "ETICS-T8041",
+        "ETICS-T8086",
+        "ETICS-T8087"
+      ],
+      "key": "ETICS-C647"
+    },
+    {
+      "name": "CLARO | RECON H01 | Desenvolvimento | Revisão MD",
+      "test_keys": [
+        "ETICS-T8088",
+        "ETICS-T8089",
+        "ETICS-T8090",
+        "ETICS-T8091",
+        "ETICS-T8092",
+        "ETICS-T8093"
+      ],
+      "key": "ETICS-C648"
+    }
+  ]
+}

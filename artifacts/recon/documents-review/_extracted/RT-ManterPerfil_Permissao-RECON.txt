@@ -1,0 +1,28 @@
+### Planilha: 'Histórico de alterações$'
+1: [1] Histórico de versões deste documento
+3: [1] Data | [2] Versão | [3] Autor | [4] Descrições das alterações realizadas
+4: [1] 10/07/2014 | [2] A | [3] Renata França | [4] Roteiro criado para atender a feature "Recon" da versão 8.0 do eTICS.  Histórias:  [ETICS-88672] Novo perfil para módulo Recon [ETICS-88678] Permissão para novo módulo Recon  Tarefa de Elaboração de Roteiro: ETICS-88676 e ETICS-88682  Especificação de Requisito: - http://svn.cpqd.com.br/DSSO/etics/branches/dev/ETICS-REQUISITOS/requisitos/especificacoes/recon/ETICS-Visao-Gestao-FTTx-ReconciliadorInventario.doc  Roteiro de Teste: http://svn.cpqd.com.br/DSSO/etics/trunk/testes/especificacoes/etics-8.0-ARSAT/RECON/RT-ManterPerfil_Permissao-RECON.xls  Planilha de Caso de Teste: Perfil e Permissão - RECON
+### Planilha: 'Perfil e Permissão - RECON$'
+1: [1] Módulo Administração | [10] OK
+2: [10] NOK
+3: [10] PEN
+4: [10] NR
+5: [1] Versão | [2] Caso de Uso | [3] Jira  História | [4] Jira  EXEC. | [5] ID Caso de Teste | [6] Especificação | [7] Procedimento de teste | [8] Dados de Entrada | [9] Resultados Esperados | [10] STATUS | [11] Id do defeito registrado
+6: [1] 8.0 | [2] Não há | [3] ETICS-88672 ETICS-88678 | [4] ETICS-88677 ETICS-88683 | [5] 1 | [6] Inserir permissão para perfil | [7] Perfil | [8] Consultar perfil "RECON" | [9] Verificar que o sistema apresenta o perfil "RECON" | [10] OK
+7: [5] 2 | [7] Perfil/Usuários com perfil | [8] Inserir Usuários com perfil "RECON" | [9] Verificar que ao inserir usuários no perfil "RECON" o usuário tem acesso ao novo módulo "RECON" | [10] OK
+8: [5] 3 | [8] Consultar Usuários com perfil "RECON" | [9] O sistema deve apresentar todos os usuários que estão associados ao perfil selecionado. | [10] OK
+9: [5] 4 | [8] Remover Usuários com perfil "RECON" | [9] Verificar que ao remover os usuários do perfil "RECON" o usuário não tem mais acesso ao novo módulo "RECON" | [10] OK
+10: [5] 5 | [8] Remover vários Usuários com perfil | [10] OK
+11: [5] 6 | [7] Usuário/Perfis de usuários | [8] Inserir perfis de usuário | [9] Verificar que ao inserir usuários no perfil "RECON" o usuário tem acesso ao novo módulo "RECON" | [10] OK
+12: [5] 7 | [8] Consultar perfis de usuário | [9] Após executar o teste acima, o sistema deve apresentar o perfil "RECON" ao usuário selecionado. | [10] OK
+13: [5] 8 | [8] Remover perfis de usuário "RECON" | [9] Verificar que ao remover o perfil "RECON" do usuário selecionado, o usuário não tem mais acesso ao novo módulo "RECON" | [10] OK
+14: [5] 9 | [8] Remover vários perfis de usuários | [9] Verificar que ao remover os perfis do usuário selecionado, o usuário não tem mais acesso aos módulos removidos. | [10] OK
+15: [5] 10 | [7] Usuário/Permissão de usuário | [8] Inserir Permissões de usuário - Permissão de Módulo - "RECON" - Ação "Proibir" | [9] Verificar que ao inserir permissões de usuário "Permissão de Módulo" ação "Proibi" o usuário não terá mais acesso ao módulo "RECON". | [10] OK
+16: [5] 11 | [8] Consultar Permissões de usuário "RECON" | [9] O sistema deve apresentar todas as permissões para o usuário selecionado. | [10] OK
+17: [5] 12 | [8] Remover Permissões de usuário "RECON" | [9] Verificar que ao remover a permissão de usuário "Permissão de Módulo" ação "Proibi" o usuário terá novamente acesso ao módulo"RECON". | [10] OK
+### Planilha: 'Resumo de Execução$'
+1: [1] Resumo de Execução
+4: [1] Casos de Teste
+5: [1] OK | [2] NOK | [3] PEN | [4] NR | [5] Total
+6: [1] 100,00% | [2] 0% | [3] 0% | [4] 0% | [5] 100,00%
+7: [1] 12 | [2] 0 | [3] 0 | [4] 0 | [5] 12

@@ -1,0 +1,148 @@
+{
+  "path": {
+    "components": [
+      "docs",
+      "dev",
+      "13.3.200",
+      "recon"
+    ],
+    "parent": "docs/dev/13.3.200",
+    "name": "recon",
+    "toString": "docs/dev/13.3.200/recon"
+  },
+  "revision": "feature/claro-recon",
+  "children": {
+    "size": 9,
+    "limit": 500,
+    "isLastPage": true,
+    "values": [
+      {
+        "path": {
+          "components": [
+            "01-sync-silencioso-im-para-gp.md"
+          ],
+          "parent": "",
+          "name": "01-sync-silencioso-im-para-gp.md",
+          "extension": "md",
+          "toString": "01-sync-silencioso-im-para-gp.md"
+        },
+        "contentId": "b4855952e6331d02ecdae83c81e04369472e4f40",
+        "type": "FILE",
+        "size": 11982
+      },
+      {
+        "path": {
+          "components": [
+            "02-ajuste-tela-configuracao-reconciliacao-lista.md"
+          ],
+          "parent": "",
+          "name": "02-ajuste-tela-configuracao-reconciliacao-lista.md",
+          "extension": "md",
+          "toString": "02-ajuste-tela-configuracao-reconciliacao-lista.md"
+        },
+        "contentId": "0e74875cccbac1f96e344b17f6a28dc5d1bedef2",
+        "type": "FILE",
+        "size": 8467
+      },
+      {
+        "path": {
+          "components": [
+            "03-artefato-compartilhado-upsert-documento-json.md"
+          ],
+          "parent": "",
+          "name": "03-artefato-compartilhado-upsert-documento-json.md",
+          "extension": "md",
+          "toString": "03-artefato-compartilhado-upsert-documento-json.md"
+        },
+        "contentId": "c08c94c7e2f68bf0061c202f2392130f2cac33a3",
+        "type": "FILE",
+        "size": 12066
+      },
+      {
+        "path": {
+          "components": [
+            "04-integracao-recon-campos-json-im-gp.md"
+          ],
+          "parent": "",
+          "name": "04-integracao-recon-campos-json-im-gp.md",
+          "extension": "md",
+          "toString": "04-integracao-recon-campos-json-im-gp.md"
+        },
+        "contentId": "b770656c9206b1297f0aa44307f0b495deb851e6",
+        "type": "FILE",
+        "size": 8973
+      },
+      {
+        "path": {
+          "components": [
+            "05-sincronizacao-json-im-gp-zona.md"
+          ],
+          "parent": "",
+          "name": "05-sincronizacao-json-im-gp-zona.md",
+          "extension": "md",
+          "toString": "05-sincronizacao-json-im-gp-zona.md"
+        },
+        "contentId": "8664707b10b72cae3ba8208565fde3976c2c1235",
+        "type": "FILE",
+        "size": 8400
+      },
+      {
+        "path": {
+          "components": [
+            "06-sincronizacao-json-im-gp-device-ha.md"
+          ],
+          "parent": "",
+          "name": "06-sincronizacao-json-im-gp-device-ha.md",
+          "extension": "md",
+          "toString": "06-sincronizacao-json-im-gp-device-ha.md"
+        },
+        "contentId": "48828e8bc713f25c4053d7872c57d7fa3de97fb2",
+        "type": "FILE",
+        "size": 9644
+      },
+      {
+        "path": {
+          "components": [
+            "07-sincronizacao-json-im-gp-route-static.md"
+          ],
+          "parent": "",
+          "name": "07-sincronizacao-json-im-gp-route-static.md",
+          "extension": "md",
+          "toString": "07-sincronizacao-json-im-gp-route-static.md"
+        },
+        "contentId": "6b6710d01337163c4c9aa34ab4647070eab7f24f",
+        "type": "FILE",
+        "size": 5506
+      },
+      {
+        "path": {
+          "components": [
+            "08-sincronizacao-json-im-gp-roteamento-dinamico.md"
+          ],
+          "parent": "",
+          "name": "08-sincronizacao-json-im-gp-roteamento-dinamico.md",
+          "extension": "md",
+          "toString": "08-sincronizacao-json-im-gp-roteamento-dinamico.md"
+        },
+        "contentId": "2af5f9c46afeb8b41f4297aa75f4b630cd572d1f",
+        "type": "FILE",
+        "size": 8256
+      },
+      {
+        "path": {
+          "components": [
+            "09-reconciliar-versao-software-roteador.md"
+          ],
+          "parent": "",
+          "name": "09-reconciliar-versao-software-roteador.md",
+          "extension": "md",
+          "toString": "09-reconciliar-versao-software-roteador.md"
+        },
+        "contentId": "cbafaf7b020cee31c3965a27f7203b16d8b771f7",
+        "type": "FILE",
+        "size": 6187
+      }
+    ],
+    "start": 0
+  }
+}

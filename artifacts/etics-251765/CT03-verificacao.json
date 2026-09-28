@@ -1,0 +1,74 @@
+{
+  "id": "CT03",
+  "key": "ETICS-T8196",
+  "before": {
+    "keyNumber": 8196,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Preparar lista de bloqueios esperados a partir do modelo/configuração, não inferida apenas do comportamento observado da tela.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:55:53.088Z",
+    "objective": "Validar manter atributos bloqueados protegidos. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, HU-38, §4 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92594,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then a operação não permite editar esses atributos\nThen todos os atributos bloqueados mantêm os valores anteriores",
+          "index": 0,
+          "description": "When abrir Corrigir inventário e verificar cada atributo bloqueado",
+          "id": 210973
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT03 | Manter atributos bloqueados protegidos",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8196",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8196,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Preparar lista de bloqueios esperados a partir do modelo/configuração, não inferida apenas do comportamento observado da tela.",
+    "updatedOn": "2026-09-23T18:55:56.075Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:55:53.088Z",
+    "objective": "Validar manter atributos bloqueados protegidos. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, HU-38, §4 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um Lance de Cabo Óptico com valores registrados nos atributos classificados como bloqueados pelo modelo e pela configuração\nWhen abrir Corrigir inventário e verificar cada atributo bloqueado\nThen a operação não permite editar esses atributos\nWhen alterar um atributo não bloqueado com valor válido e salvar\nThen todos os atributos bloqueados mantêm os valores anteriores",
+      "id": 17544,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT03 | Manter atributos bloqueados protegidos",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8196",
+    "status": "Draft"
+  }
+}

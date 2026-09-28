@@ -1,0 +1,76 @@
+### Planilha: Estimativa e Insumo para o Planejamento do Teste
+2: [2] Estimativa Macro | [3] Estimativa Especialista | [5] Estimativa Especialista | [14] Estimativa inicial
+3: [2] 3843,25 | [3] 3351,72 | [4] Observação | [5] Documento de Visão | [6] Especificação de Requisitos | [7] Arquitetura | [8] Projetos | [9] Implementação | [10] Execução testes de integração | [11] Especificar casos de teste sistêmico | [12] Execução teste sistêmico | [13] Comentário teste | [15] Documento de Visão | [16] Especificação de Requisitos | [17] Arquitetura | [18] Projetos | [19] Implementação | [20] Execução testes de integração | [21] Especificar casos de teste sistêmico | [22] Execução teste sistêmico | [23] insp Req
+4: [3] 136 | [4] 116 | [5] 243 | [6] 140 | [7] 872 | [8] 172 | [9] 174 | [10] 667,7
+5: [1] ID | [2] Identificador da <Solicitação ou Proposta> | [3] Título da <Solicitação ou Proposta> - Feature | [5] Horas | [6] Horas | [7] Horas | [8] Horas | [9] Horas | [10] Horas | [11] Horas | [12] Horas | [13] “De-Para” Teste. Os números mencionados (1, 3b, etc) são referências próprias da análise do teste | [15] 215,22 | [16] 182,94
+6: [1] 1 | [2] Recon | [3] Agendar reconciliação | [4] Agendamento processo equipamento, somente classe que estende de EticsTask sem conteúdo. | [5] 136,00 | [6] 116,00 | [8] 2,00 | [9] 32,00 | [10] 4,00 | [11] 1,00 | [12] 2,00 | [13] 2) Agendar no ADM a consulta do Recon para o Equipamento (Roteador, Switch, WDM).  / Obs: para cada tipo de Agendamento, os parâmetros da tela serão distinto. exemplos / - Equipamento: intervalo de IP e tempo do agendamento / - Link: Tecnologia
+7: [1] 2 | [2] Recon | [4] Agendamento processo link, somente classe que estende de EticsTask sem conteúdo. | [6] 2,00 | [7] 32,00 | [8] 4,00 | [9] 0,50 | [10] 2,00
+8: [1] 3 | [2] Recon | [4] Agendamento processo rota/circuito, somente classe que estende de EticsTask sem conteúdo. | [6] 2,00 | [7] 32,00 | [8] 4,00 | [9] 0,50 | [10] 2,00
+9: [1] 4 | [2] Recon | [3] Reconciliação de link | [4] Criar hierarquia classes – link | [6] x | [7] x | [8] x | [9] 2,00 | [10] 16,00 | [11] 3b) Consultas executadas no RECON (teste fim-a-fim da consulta) /  / Conexão Lógica entre 2 Equipamentos(Link) - (Roteador, Switch, wdm com os 3 modelos de forma mesclada (modular, com bastidor, sem bastidor) + exercitar várias Consultas (interações) + Detalhamento do resultado no Recon (tela 3.9 do manual: "árvore") com 4 status (OK, Erro, Warning, Fatal)
+10: [1] 5 | [2] Recon | [4] Anotação classes da hierarquia JPA – Link | [6] x | [7] x | [8] x | [9] 2,00 | [10] 10,00
+11: [1] 6 | [2] Recon | [4] Anotação classes da hierarquia Recon – Link | [6] 4,00 | [7] 16,00 | [8] zero | [9] 2,00 | [10] 8,00
+12: [1] 7 | [2] Recon | [4] Classe para invocar o serviço de link – ISP | [6] x | [7] x | [8] x | [9] 2,00 | [10] 8,00
+13: [1] 8 | [2] Recon | [4] Classe para invocar o serviço de link – GI | [6] 4,00 | [7] 16,00 | [8] zero | [9] 2,00 | [10] 8,00
+14: [1] 9 | [2] Recon | [4] Definir XSD do XML de resposta para link – ISP | [6] x | [7] x | [8] x | [9] 1,00 | [10] 8,00
+15: [1] 10 | [2] Recon | [4] Definir XSD do XML de resposta para link – GI | [6] 8,00 | [7] 16,00 | [8] 4,00 | [9] 1,00 | [10] 8,00
+16: [1] 11 | [2] Recon | [4] Atualizar estado/resumo de reconciliação ISP /  / A anotação do Recon colocada nas classes a serem comparadas permite utilizar o componente de comparação de forma genérica. Não é necessário implementar código de comparação para um novo objeto | [6] 2,00 | [7] 8,00 | [8] 2,00 | [9] 2,00 | [10] 8,00 | [11] 10b) Atualizar estado/resumo de reconciliação ISP (Equipamento, Link, Circuito/Rota)
+17: [1] 12 | [2] Recon | [3] Reconciliação de rota/circuito | [4] Criar hierarquia classes – Rota / Circuito | [6] x | [7] x | [8] x | [9] 2,00 | [10] 16,00 | [11] 3c) Consultas executadas no RECON (teste fim-a-fim da consulta) /  / Circuito/Rota - (Roteador, Switch, wdm com os 3 modelos de forma mesclada (modular, com bastidor, sem bastidor) + exercitar várias Consultas (interações) + Detalhamento do resultado no Recon (tela 3.9 do manual: "árvore") com 4 status (OK, Erro, Warning, Fatal).
+18: [1] 13 | [2] Recon | [4] Anotação classes da hierarquia JPA – Rota / Circuito | [6] x | [7] x | [8] x | [9] 2,00 | [10] 16,00
+19: [1] 14 | [2] Recon | [4] Anotação classes da hierarquia Recon – Rota / Circuito | [6] 4,00 | [7] 16,00 | [8] zero | [9] 2,00 | [10] 8,00
+20: [1] 15 | [2] Recon | [4] Classe para invocar o serviço de Rota / Circuito – ISP | [6] x | [7] x | [8] x | [9] 2,00 | [10] 8,00
+21: [1] 16 | [2] Recon | [4] Classe para invocar o serviço de Rota / Circuito – GI | [6] 4,00 | [7] 16,00 | [8] zero | [9] 2,00 | [10] 8,00
+22: [1] 17 | [2] Recon | [4] Definir XSD do XML de resposta para Rota / Circuito – ISP | [6] x | [7] x | [8] x | [9] 2,00 | [10] 8,00
+23: [1] 18 | [2] Recon | [4] Definir XSD do XML de resposta para Rota / Circuito – GI | [6] 8,00 | [7] 16,00 | [8] 4,00 | [9] 2,00 | [10] 8,00
+24: [1] 19 | [2] Recon | [4] Atualizar estado/resumo de reconciliação ISP | [6] 2,00 | [7] 8,00 | [8] 2,00 | [9] 1,00 | [10] 8,00 | [11] 10c) Atualizar estado/resumo de reconciliação ISP (Equipamento, Link, Circuito/Rota)
+25: [1] 20 | [2] Recon | [3] Reconciliação de equipamento | [4] Criar hierarquia classes – Equipamento | [6] x | [7] x | [8] x | [9] 8,00 | [10] 24,00 | [11] 3a) Consultas executadas no RECON (teste fim-a-fim da consulta) /  / Equipamento (Roteador, Switch, wdm com os 3 modelos de forma mesclada (modular, com bastidor, sem bastidor) + Item 1 (testar as Configurações para todos os Equipamentos) + exercitar várias Consultas (interações) + Detalhamento do resultado no Recon (tela 3.9 do manual: "árvore") com 4 status (OK, Erro, Warning, Fatal)
+26: [1] 21 | [2] Recon | [4] Anotação classes da hierarquia JPA – Equipamento | [6] x | [7] x | [8] x | [9] 4,00 | [10] 16,00
+27: [1] 22 | [2] Recon | [4] Anotação classes da hierarquia Recon – Equipamento | [6] 4,00 | [7] 16,00 | [8] zero | [9] 2,00 | [10] 8,00
+28: [1] 23 | [2] Recon | [4] Classe para invocar o serviço de Equipamento – ISP | [6] x | [7] x | [8] x | [9] 2,00 | [10] 8,00
+29: [1] 24 | [2] Recon | [4] Classe para invocar o serviço de Equipamento – GI | [6] 4,00 | [7] 16,00 | [8] zero | [9] 2,00 | [10] 8,00
+30: [1] 25 | [2] Recon | [4] Definir XSD do XML de resposta para Equipamento – ISP | [6] x | [7] x | [8] x | [9] 2,00 | [10] 8,00
+31: [1] 26 | [2] Recon | [4] Definir XSD do XML de resposta para Equipamento – GI | [6] 8,00 | [7] 16,00 | [8] 4,00 | [9] 2,00 | [10] 8,00
+32: [1] 27 | [2] Recon | [4] Atualizar estado/resumo de reconciliação ISP | [6] 18,00 | [7] 72,00 | [8] 18,00 | [9] 2,00 | [10] 8,00 | [11] 10a) Atualizar estado/resumo de reconciliação ISP (Equipamento, Link, Circuito/Rota)
+33: [1] 28 | [2] Recon | [3] Serviço de consulta de equipamento | [4] Implementação para chamar o webservice, receber o xml e converter para objeto | [6] 8,00 | [7] 40,00 | [8] 8,00 | [9] 2,00 | [10] 8,00 | [11] Faz parte do teste fim-a-fim dositens 3a, 3b, 3c)
+34: [1] 29 | [2] Recon | [3] Serviço de consulta de link | [4] Implementação para chamar o webservice, receber o xml e converter para objeto | [6] 8,00 | [7] 40,00 | [8] 8,00 | [9] 2,00 | [10] 8,00
+35: [1] 30 | [2] Recon | [3] Serviço de consulta de rota / circuito | [4] Implementação para chamar o webservice, receber o xml e converter para objeto | [6] 8,00 | [7] 40,00 | [8] 8,00 | [9] 2,00 | [10] 8,00
+36: [1] 31 | [2] Recon | [3] Configuração de atributos reconciliáveis para equipamento | [4] CRUD de atributos configuráveis. Indica se um determinado atributo do equipamento deve ser considerado na comparação ou ignorado (é uma flag por atributo do equipamento) | [6] zero | [7] 8,00 | [8] 1,00 | [9] 4,00 | [10] 8,00 | [11] 12) Teste CRUD cadastro de configuração (válido apenas para Equipamento. Não vale para Conexão Lógica e Circuito/Rota). / Operações: Inserir, Modificar, Remover, Filtrar / Obs: considerar reuso do template de RT de Gat
+37: [1] 32 | [2] Recon | [4] Classe para instanciar os atributos configuráveis (a comparação necessita dessa informação antes de iniciar o processo) | [6] zero | [7] 8,00 | [8] 1,00 | [9] 4,00 | [10] 8,00
+38: [1] 33 | [2] Recon | [3] Interface de consulta reconciliação | [4] Consultar processos de reconciliação (GAT) | [6] zero | [7] 8,00 | [8] 2,00 | [9] 16,00 | [10] 32,00 | [11] 4)Teste Tela tipo 3.7 (tela de parâmetros + tela de resultados) / Obs: não haverá histórico (guardar as consultas anteriores), nesta tela haverá apenas os 3 tipos de consultas: Equipamento, Circuito/Rota, link.
+39: [1] 34 | [2] Recon | [4] Consultar reconciliação de primeiro nível (GAT) – Significa que não entrará na árvore de atributos do elemento comparado. Deve indicar somente que o status e o elemento raiz. /  / Uma tela só para os 3 (equipamento, link, rota/circuito). | [6] zero | [7] 24,00 | [8] 8,00 | [9] 16,00 | [10] 48,00 | [11] 5) Teste Tela tipo 3.8 (tela de parâmetros + tela de resultados) / Obs: tela e com todos os status: ok, error, fatal, warning (possibilidade: haver configuração do que é erros, fatal, etc). Considerar 3 telas com 3 resultados (Eqpto, Circ/Rota, Link) /
+40: [1] 35 | [2] Recon | [3] Interface de link | [4] Há uma tela não GAT que visualiza os elementos a serem comparados. Ela deve ser chamada via a tela de consulta de recon de primeiro nível. Esse trabalho é de arquitetura | [6] 8,00 | [7] 24,00 | [8] 8,00 | [9] 1,00 | [10] 2,00 | [11] 6) Teste Tela tipo 3.9 (“arvore”)
+41: [1] 36 | [2] Recon | [3] Interface de rota/circuito | [4] idem | [6] 8,00 | [7] 24,00 | [8] 8,00 | [9] 1,00 | [10] 2,00
+42: [1] 37 | [2] Recon | [3] Interface de equipamento | [4] idem | [6] 8,00 | [7] 24,00 | [8] 8,00 | [9] 1,00 | [10] 2,00
+43: [1] 38 | [2] Recon | [3] Serviço consulta link ISP | [4] WebService – Equipamento (consultar dados e retornar XML) – está no lado do ISP | [6] x | [7] x | [8] x | [10] NA
+44: [1] 39 | [2] Recon | [3] Serviço consulta equipamento ISP | [4] WebService – Link (consultar dados e retornar XML) – está no lado do ISP | [6] x | [7] x | [8] x
+45: [1] 40 | [2] Recon | [3] Serviço consulta rota / circuito ISP | [4] WebService – Rota / Circuito (consultar dados e retornar XML) – está no lado do ISP | [6] x | [7] x | [8] x
+46: [1] 41 | [2] Recon | [3] Definir ordem de trabalho | [4] Definir ordem de trabalho corrente no módulo Recon (2 operações: filtrar e definir Ordem de trabalho corrente) | [6] zero | [7] 8,00 | [8] 2,00 | [9] 1,00 | [10] 4,00 | [11] 11)  / A-Criar Placa (pelo Recon)  / B-Definir OT corrente no Recon (operações tela: filtrar/definir) / C-Atualizar status Recon /
+47: [1] 42 | [2] Recon | [3] Criar placa slot | [4] Atualizar placa em slot, Recon invoca o serviço do ISP passando a ordem de trabalho corrente e os dados da placa. | [6] 8,00 | [7] 24,00 | [8] 8,00 | [9] 1,00 | [10] 4,00
+48: [1] 43 | [2] Recon | [3] Criar placa slot ISP => Atualizar status do Recon | [4] Criar placa slot ISP => Atualizar status do Recon | [6] 8,00 | [7] 8,00 | [8] 8,00 | [9] 2,00 | [10] 4,00
+49: [1] 44 | [2] Recon | [3] Arquitetura/Infra | [6] 243,00 | [8] 24,00 | [11] Necessidade de manipulação de XML durante o teste – já contado em execução
+50: [1] 45 | [2] Recon | [3] Filtrar dados recon em equipamento | [4] Equipamento / – Incluir estado de reconciliação no objeto meta ISP (show 1) – somente consulta / – Incluir resumo de reconciliação no objeto meta ISP (atributo texto) – somente consulta /  / Obs: filtrar/modificar atributos/inserir/conv/remover (3 equipamentos) / Tratamento de cancelamento de ot | [6] zero | [7] 72,00 | [8] 6,00 | [9] 8,00 | [10] 32,00 | [11] Faz parte do teste fim-a-fim dositens 10a, 10b, 10c + item 7, 8, 13DD e INFRA, 14
+51: [1] 46 | [2] Recon | [3] Filtrar dados recon em slot | [4] Equipamento / Slot / – Incluir estado de reconciliação no objeto meta ISP (show 1) – somente consulta / – Incluir resumo de reconciliação no objeto meta ISP (atributo texto) - somente consulta /  / Obs: filtrar/modificar atributos/inserir/conv/remover (3 equipamentos) / Tratamento de cancelamento de ot | [6] zero | [7] 72,00 | [8] 6,00 | [9] 8,00 | [10] 24,00
+52: [1] 47 | [2] Recon | [3] Filtrar dados recon em porta | [4] Equipamento / Slot / Porta / – Incluir estado de reconciliação no objeto meta ISP (show 1) – somente consulta / – Incluir resumo de reconciliação no objeto meta ISP (atributo texto) – somente consulta /  / Obs: filtrar/modificar atributos/inserir/conv/remover (3 equipamentos) / Tratamento de cancelamento de ot | [6] zero | [7] 72,00 | [8] 6,00 | [9] 4,00 | [10] 24,00
+53: [1] 48 | [2] Recon | [3] Filtrar dados recon em link | [4] Link / – Incluir estado de reconciliação no objeto meta ISP (show 1) – somente consulta / – Incluir resumo de reconciliação no objeto meta ISP (atributo texto) – somente consulta /  / Obs: filtrar/modificar atributos/inserir/conv/remover / Tratamento de cancelamento de ot | [6] zero | [7] 24,00 | [8] 3,00 | [9] 4,00 | [10] 24,00
+54: [1] 49 | [2] Recon | [3] Filtrar dados recon em rota / circuito | [4] Circuito – Incluir estado de reconciliação no objeto meta ISP (show 1) – somente consulta / (*) Circuito – Incluir resumo de reconciliação no objeto meta ISP (atributo texto) /  / Obs: filtrar/modificar atributos/inserir/conv/remover / Tratamento de cancelamento de ot | [6] zero | [7] 24,00 | [8] 3,00 | [9] 2,00 | [10] 28,00
+55: [3] Aprendizado negócio para escrita RT | [6] 40,00
+56: [3] Capacitação Equipe de executores do teste (Requisito e dinâmica do Teste) | [6] 32,00
+57: [3] Gorduras Teste (ambiente) | [6] 40,00
+58: [3] Retrabalho Teste (15%) | [7] 77,7
+62: [3] Esforço obtido para Relatório sem Figuras | [4] 24 horas (3 jornadas)
+63: [3] Esforço obtido para Relatório com Figuras | [4] 32 horas (4 jornadas)
+### Planilha: Rateio
+1: [2] Esforço  / Especialista | [3] Esforço  / Derivado | [4] TOTAL HORAS DO PROJETO
+2: [2] 86,00% | [3] 14,00% | [4] 3351,72
+3: [2] Rateio Disciplina | [3] % | [4] Especialista / Horas | [5] Derivados / Horas | [7] Diferença
+4: [2] GP | [3] 9,00% | [4] - | [5] 301,65 | [6] 9,00% | [7] 0,00% | [9] 0
+5: [2] Requisitos | [3] 14% | [4] 252 | [5] - | [6] 7,52% | [7] -6,48% | [9] 0
+6: [2] Arquitetura | [3] 4% | [4] 243 | [5] - | [6] 7,25% | [7] 3,25% | [9] 0
+7: [2] GC/IP | [3] 3,50% | [4] - | [5] 117,31 | [6] 3,50% | [7] 0,00% | [9] 0
+8: [2] Implementação | [3] 36,00% | [4] 1184 | [5] - | [6] 35,33% | [7] -0,67% | [9] 0
+9: [2] Execução dos testes | [3] 15,00% | [4] 667,7 | [5] - | [6] 19,92% | [7] 4,92% | [9] 0
+10: [2] Roteiro de teste | [3] 6,00% | [4] 174 | [5] - | [6] 5,19% | [7] -0,81% | [9] 0
+11: [2] Retrabalho Implementação | [3] derivado / Implementação / 30,56% / 11,00% | [4] 361,78 | [6] 10,79% | [7] -0,21% | [9] 0
+12: [2] Documentação | [3] 1,50% | [4] - | [5] 50,28 | [6] 1,50% | [7] 0,00% | [9] 0
+13: [2] Total | [3] 100,00% | [4] 2882,48 | [5] 469,24
+14: [2] Tamanho
+15: [2] Produtividade | [3] #DIV/0!

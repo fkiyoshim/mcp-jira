@@ -1,0 +1,258 @@
+{
+  "story": "ETICS-251765",
+  "document": "GP-Visao-CLARO-FlexibilizacaoProjeto (1).doc",
+  "documentVersion": "01.01",
+  "cycleName": "CLARO | HU-38 | Corrigir inventário do Lance de Cabo Óptico | ETICS-251765",
+  "folder": null,
+  "notes": [
+    "A matriz completa de atributos editáveis/bloqueados e regras vigentes deve ser preparada na execução; o documento não enumera todos os campos ampliados.",
+    "Nome/ID do perfil autorizado depende de definição/configuração CLARO.",
+    "Para capacidade igual, seguem-se as regras detalhadas de §6.2.3 e §7.2 que permitem a troca, apesar da frase resumida do §7.2 mencionar somente aumento.",
+    "Escopo limitado ao Lance de Cabo Óptico e às regressões de Corrigir inventário; não inclui TFO, Sobra, reposicionamento ou outras operações de fibras."
+  ],
+  "cases": [
+    {
+      "id": "CT01",
+      "name": "ETICS-251765 | HU-38 | CT01 | Editar todos os atributos não bloqueados em lance Existente",
+      "source": "§4 (escopo adicional), §7.2 e histórico da versão 01.01",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Preparar matriz completa: atributo, bloqueio esperado independente da tela sob teste, valor anterior, valor válido e resultado. A documentação não enumera a lista completa ampliada; a matriz é obrigatória para declarar cobertura de todos os campos.",
+      "objective": "Validar editar todos os atributos não bloqueados em lance existente. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional), §7.2 e histórico da versão 01.01; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico na situação Existente e nenhuma OT corrente\nAnd a matriz de atributos do lance foi conferida contra o modelo e a configuração da versão, identificando todos os atributos não bloqueados e seus valores válidos\nWhen abrir Corrigir inventário\nThen todos os atributos classificados como não bloqueados na matriz permitem edição, inclusive os adicionais à lista original da seção 7.2\nWhen alterar cada atributo não bloqueado com um valor válido, salvar e consultar novamente o lance após cada alteração\nThen cada valor informado permanece gravado no respectivo atributo\nAnd os atributos não alterados preservam seus valores e a situação permanece Existente\nAnd a correção não cria vínculo do lance com uma OT",
+      "criterion": "AMPLIAÇÃO / EXISTENTE — Todos os atributos não bloqueados permitem edição e persistem sem OT."
+    },
+    {
+      "id": "CT02",
+      "name": "ETICS-251765 | HU-38 | CT02 | Editar atributos adicionais em lance Projetado/Modificação",
+      "source": "§4, §6.2 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Identificar os campos adicionais pela matriz validada, sem assumir que a lista original de oito campos limita a HU-38.",
+      "objective": "Validar editar atributos adicionais em lance projetado/modificação. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4, §6.2 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico na situação Projetado/Modificação vinculado à OT A\nAnd não há OT definida como corrente\nAnd a matriz de atributos identifica os campos não bloqueados adicionais à lista original da seção 7.2\nWhen alterar cada campo adicional por Corrigir inventário com um valor válido e salvar\nThen cada alteração persiste ao consultar novamente o lance\nAnd a situação continua Projetado/Modificação e o vínculo original com a OT A é preservado\nAnd a correção é registrada sem associação a uma OT",
+      "criterion": "AMPLIAÇÃO / PROJETADO — Campos adicionais persistem em Projetado/Modificação sem mudar situação ou vínculo original."
+    },
+    {
+      "id": "CT03",
+      "name": "ETICS-251765 | HU-38 | CT03 | Manter atributos bloqueados protegidos",
+      "source": "HU-38, §4 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Preparar lista de bloqueios esperados a partir do modelo/configuração, não inferida apenas do comportamento observado da tela.",
+      "objective": "Validar manter atributos bloqueados protegidos. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, HU-38, §4 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico com valores registrados nos atributos classificados como bloqueados pelo modelo e pela configuração\nWhen abrir Corrigir inventário e verificar cada atributo bloqueado\nThen a operação não permite editar esses atributos\nWhen alterar um atributo não bloqueado com valor válido e salvar\nThen todos os atributos bloqueados mantêm os valores anteriores",
+      "criterion": "BLOQUEIOS — Atributos bloqueados permanecem protegidos e inalterados."
+    },
+    {
+      "id": "CT04",
+      "name": "ETICS-251765 | HU-38 | CT04 | Preservar edição de Rota",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de rota. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Rota diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Rota por Corrigir inventário para o novo valor válido e salvar\nThen Rota apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / ROTA — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT05",
+      "name": "ETICS-251765 | HU-38 | CT05 | Preservar edição de Comprimento Real Total (m)",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de comprimento real total (m). Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd o Comprimento Real Total (m) é 10,00 e o novo valor válido é 20,00\nWhen alterar Comprimento Real Total (m) por Corrigir inventário para o novo valor válido e salvar\nThen Comprimento Real Total (m) apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / COMPRIMENTO REAL TOTAL (M) — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT06",
+      "name": "ETICS-251765 | HU-38 | CT06 | Preservar edição de Propriedade",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de propriedade. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Propriedade diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Propriedade por Corrigir inventário para o novo valor válido e salvar\nThen Propriedade apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / PROPRIEDADE — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT07",
+      "name": "ETICS-251765 | HU-38 | CT07 | Preservar edição de Proprietário",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de proprietário. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Proprietário diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Proprietário por Corrigir inventário para o novo valor válido e salvar\nThen Proprietário apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / PROPRIETÁRIO — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT08",
+      "name": "ETICS-251765 | HU-38 | CT08 | Preservar edição de Tipo de Rede",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de tipo de rede. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Tipo de Rede diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Tipo de Rede por Corrigir inventário para o novo valor válido e salvar\nThen Tipo de Rede apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / TIPO DE REDE — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT09",
+      "name": "ETICS-251765 | HU-38 | CT09 | Preservar edição de Observações",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de observações. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Observações diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Observações por Corrigir inventário para o novo valor válido e salvar\nThen Observações apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / OBSERVAÇÕES — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT10",
+      "name": "ETICS-251765 | HU-38 | CT10 | Preservar edição de Configuração de Cor",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de configuração de cor. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um valor válido para Configuração de Cor diferente do valor atual, respeitando os cadastros e dependências existentes\nWhen alterar Configuração de Cor por Corrigir inventário para o novo valor válido e salvar\nThen Configuração de Cor apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / CONFIGURAÇÃO DE COR — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT11",
+      "name": "ETICS-251765 | HU-38 | CT11 | Preservar edição de Tipo",
+      "source": "§7.2 e §6.2.3",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar edição de tipo. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2 e §6.2.3; história ETICS-251765.",
+      "bdd_script": "Given um Lance de Cabo Óptico Existente e nenhuma OT corrente\nAnd há um tipo alternativo válido com a mesma quantidade de fibras do tipo atual\nWhen alterar Tipo por Corrigir inventário para o novo valor válido e salvar\nThen Tipo apresenta o novo valor ao consultar novamente o lance\nAnd a situação permanece Existente e os demais atributos não envolvidos na regra da alteração preservam seus valores",
+      "criterion": "REGRESSÃO / TIPO — Edição válida permanece disponível e persiste sem OT."
+    },
+    {
+      "id": "CT12",
+      "name": "ETICS-251765 | HU-38 | CT12 | Ignorar OT corrente na correção",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar ignorar ot corrente na correção. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance Projetado/Modificação vinculado à OT A\nAnd um atributo não bloqueado possui valor válido para correção\nWhen definir a própria OT A como corrente, corrigir o atributo e salvar\nThen a correção persiste sem associação à OT corrente e mantém a situação e o vínculo original do lance\nWhen repetir em dados independentes com uma OT B diferente da OT A definida como corrente\nThen a correção também persiste sem associação à OT B e mantém a situação e o vínculo original do lance",
+      "criterion": "OT CORRENTE — A correção ignora tanto a OT do lance quanto outra OT corrente."
+    },
+    {
+      "id": "CT13",
+      "name": "ETICS-251765 | HU-38 | CT13 | Manter validações de consistência dos campos",
+      "source": "§7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Levantar obrigatoriedade, formato, domínio e dependências que efetivamente se aplicam a cada campo. O documento determina preservação das regras, mas não lista limites nem textos de mensagens.",
+      "objective": "Validar manter validações de consistência dos campos. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §7.2; história ETICS-251765.",
+      "bdd_script": "Given a matriz de atributos não bloqueados contém as regras de consistência vigentes e exemplos de valores inválidos\nAnd os valores persistidos do lance foram registrados antes da tentativa\nWhen tentar salvar por Corrigir inventário um valor que viola uma regra vigente, repetindo para cada regra aplicável\nThen o sistema apresenta a validação correspondente e impede persistir o valor inválido\nAnd o atributo permanece com seu valor anterior ao consultar novamente o lance\nWhen informar um valor válido para o mesmo atributo e salvar\nThen o valor válido persiste",
+      "criterion": "CONSISTÊNCIA — Validações vigentes rejeitam valores inválidos e aceitam valores válidos."
+    },
+    {
+      "id": "CT14",
+      "name": "ETICS-251765 | HU-38 | CT14 | Alterar tipo conectado com capacidade igual",
+      "source": "§6.2.3 e regras detalhadas do §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar alterar tipo conectado com capacidade igual. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.3 e regras detalhadas do §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance conectado de tipo com 12 fibras, com identificadores, contagens e conexões registrados\nAnd existe um tipo alternativo válido com 12 fibras\nWhen solicitar por Corrigir inventário a mudança para o tipo de 12 fibras e salvar\nThen o tipo é alterado para o novo tipo de 12 fibras\nAnd as 12 fibras existentes preservam seus identificadores, contagens e conexões\nWhen consultar novamente o lance e suas fibras\nThen o estado persistido corresponde ao resultado verificado",
+      "criterion": "TIPO / CAPACIDADE IGUAL — Aceita troca e preserva fibras, contagens e conexões."
+    },
+    {
+      "id": "CT15",
+      "name": "ETICS-251765 | HU-38 | CT15 | Alterar tipo conectado com capacidade maior",
+      "source": "§6.2.3 e regras detalhadas do §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar alterar tipo conectado com capacidade maior. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.3 e regras detalhadas do §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance conectado de tipo com 12 fibras, com identificadores, contagens e conexões registrados\nAnd existe um tipo alternativo válido com 24 fibras\nWhen solicitar por Corrigir inventário a mudança para o tipo de 24 fibras e salvar\nThen o tipo é alterado para o novo tipo de 24 fibras\nAnd as fibras de 1 a 12 preservam seus identificadores, contagens e conexões\nAnd somente as fibras faltantes de 13 a 24 são criadas automaticamente\nAnd as novas fibras ficam disponíveis para criação manual de contagem e conexão, sem herdar automaticamente as contagens e conexões existentes\nWhen consultar novamente o lance e suas fibras\nThen o estado persistido corresponde ao resultado verificado",
+      "criterion": "TIPO / CAPACIDADE MAIOR — Cria apenas fibras faltantes e preserva a rede existente."
+    },
+    {
+      "id": "CT16",
+      "name": "ETICS-251765 | HU-38 | CT16 | Alterar tipo conectado com capacidade menor",
+      "source": "§6.2.3 e regras detalhadas do §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar alterar tipo conectado com capacidade menor. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.3 e regras detalhadas do §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance conectado de tipo com 12 fibras, com identificadores, contagens e conexões registrados\nAnd existe um tipo alternativo válido com 6 fibras\nWhen solicitar por Corrigir inventário a mudança para o tipo de 6 fibras e salvar\nThen o sistema apresenta uma mensagem de erro e impede a alteração\nAnd o tipo original de 12 fibras permanece\nAnd nenhuma fibra, contagem ou conexão existente é removida ou alterada\nWhen consultar novamente o lance e suas fibras\nThen o estado persistido corresponde ao resultado verificado",
+      "criterion": "TIPO / CAPACIDADE MENOR — Rejeita redução e mantém a rede original."
+    },
+    {
+      "id": "CT17",
+      "name": "ETICS-251765 | HU-38 | CT17 | Registrar histórico da correção",
+      "source": "§6.2.1, §6.2.2 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar registrar histórico da correção. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1, §6.2.2 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com um atributo não bloqueado de valor anterior conhecido e usuário autorizado identificado\nWhen corrigir o atributo para um novo valor válido e salvar\nThen o histórico registra Corrigir inventário, atributo, valor anterior e novo valor\nAnd registra o usuário responsável e a data e hora compatíveis com a operação\nAnd o registro da correção não fica associado a uma OT\nWhen consultar novamente o histórico do lance\nThen o registro permanece disponível com os mesmos dados",
+      "criterion": "HISTÓRICO — Correção rastreável por atributo, antes/depois, usuário e data/hora, sem OT."
+    },
+    {
+      "id": "CT18",
+      "name": "ETICS-251765 | HU-38 | CT18 | Preservar correção em atributo distinto ao implantar ot",
+      "source": "§6.2.1 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar valores válidos equivalentes se o ambiente não permitir as amostras 123/456 e XYZ/ABC; registrar a equivalência antes de executar.",
+      "objective": "Validar preservar correção em atributo distinto ao implantar ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com Lote de Fabricação 123 e Rota XYZ\nAnd Modificar atributos com a OT A alterou Lote de Fabricação para 456\nWhen executar Corrigir inventário sem OT e alterar Rota para ABC\nAnd executar Implantar OT para a OT A\nThen a Rota permanece ABC\nAnd Lote de Fabricação fica 456\nAnd o histórico preserva as alterações e registra Implantar OT com usuário e data/hora\nWhen repetir com dados independentes executando a correção de Rota antes da alteração com OT\nThen os valores finais são os mesmos para a respectiva operação de OT",
+      "criterion": "ATRIBUTOS DISTINTOS / IMPLANTAR OT — Rota corrigida permanece ABC; lote fica 456."
+    },
+    {
+      "id": "CT19",
+      "name": "ETICS-251765 | HU-38 | CT19 | Preservar correção em atributo distinto ao cancelar ot",
+      "source": "§6.2.1 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar valores válidos equivalentes se o ambiente não permitir as amostras 123/456 e XYZ/ABC; registrar a equivalência antes de executar.",
+      "objective": "Validar preservar correção em atributo distinto ao cancelar ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com Lote de Fabricação 123 e Rota XYZ\nAnd Modificar atributos com a OT A alterou Lote de Fabricação para 456\nWhen executar Corrigir inventário sem OT e alterar Rota para ABC\nAnd executar Cancelar OT para a OT A\nThen a Rota permanece ABC\nAnd Lote de Fabricação fica 123\nAnd o histórico preserva as alterações e registra Cancelar OT com usuário e data/hora\nWhen repetir com dados independentes executando a correção de Rota antes da alteração com OT\nThen os valores finais são os mesmos para a respectiva operação de OT",
+      "criterion": "ATRIBUTOS DISTINTOS / CANCELAR OT — Rota corrigida permanece ABC; lote fica 123."
+    },
+    {
+      "id": "CT20",
+      "name": "ETICS-251765 | HU-38 | CT20 | Preservar correção em atributo distinto ao desfazer alterações de ot",
+      "source": "§6.2.1 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar valores válidos equivalentes se o ambiente não permitir as amostras 123/456 e XYZ/ABC; registrar a equivalência antes de executar.",
+      "objective": "Validar preservar correção em atributo distinto ao desfazer alterações de ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com Lote de Fabricação 123 e Rota XYZ\nAnd Modificar atributos com a OT A alterou Lote de Fabricação para 456\nWhen executar Corrigir inventário sem OT e alterar Rota para ABC\nAnd executar Desfazer alterações de OT para a OT A\nThen a Rota permanece ABC\nAnd Lote de Fabricação fica 123\nAnd o histórico preserva as alterações e registra Desfazer alterações de OT com usuário e data/hora\nWhen repetir com dados independentes executando a correção de Rota antes da alteração com OT\nThen os valores finais são os mesmos para a respectiva operação de OT",
+      "criterion": "ATRIBUTOS DISTINTOS / DESFAZER ALTERAÇÕES DE OT — Rota corrigida permanece ABC; lote fica 123."
+    },
+    {
+      "id": "CT21",
+      "name": "ETICS-251765 | HU-38 | CT21 | Preservar última correção no mesmo atributo ao implantar ot",
+      "source": "§6.2.2 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar última correção no mesmo atributo ao implantar ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com Comprimento Real Total (m) igual a 10,00\nAnd Modificar atributos com a OT A alterou o comprimento para 15,00\nWhen executar Corrigir inventário sem OT e alterar o comprimento de 15,00 para 20,00\nAnd executar Implantar OT para a OT A\nThen o Comprimento Real Total (m) permanece 20,00\nAnd o histórico de Corrigir inventário mantém a alteração de 15,00 para 20,00 sem reescrever o valor anterior\nAnd o histórico registra Implantar OT com usuário responsável e data/hora",
+      "criterion": "MESMO ATRIBUTO / IMPLANTAR OT — Correção para 20,00 permanece e o histórico mantém 15,00 → 20,00."
+    },
+    {
+      "id": "CT22",
+      "name": "ETICS-251765 | HU-38 | CT22 | Preservar última correção no mesmo atributo ao cancelar ot",
+      "source": "§6.2.2 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar última correção no mesmo atributo ao cancelar ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com Comprimento Real Total (m) igual a 10,00\nAnd Modificar atributos com a OT A alterou o comprimento para 15,00\nWhen executar Corrigir inventário sem OT e alterar o comprimento de 15,00 para 20,00\nAnd executar Cancelar OT para a OT A\nThen o Comprimento Real Total (m) permanece 20,00\nAnd o histórico de Corrigir inventário mantém a alteração de 15,00 para 20,00 sem reescrever o valor anterior\nAnd o histórico registra Cancelar OT com usuário responsável e data/hora",
+      "criterion": "MESMO ATRIBUTO / CANCELAR OT — Correção para 20,00 permanece e o histórico mantém 15,00 → 20,00."
+    },
+    {
+      "id": "CT23",
+      "name": "ETICS-251765 | HU-38 | CT23 | Preservar última correção no mesmo atributo ao desfazer alterações de ot",
+      "source": "§6.2.2 e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar preservar última correção no mesmo atributo ao desfazer alterações de ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2 e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com Comprimento Real Total (m) igual a 10,00\nAnd Modificar atributos com a OT A alterou o comprimento para 15,00\nWhen executar Corrigir inventário sem OT e alterar o comprimento de 15,00 para 20,00\nAnd executar Desfazer alterações de OT para a OT A\nThen o Comprimento Real Total (m) permanece 20,00\nAnd o histórico de Corrigir inventário mantém a alteração de 15,00 para 20,00 sem reescrever o valor anterior\nAnd o histórico registra Desfazer alterações de OT com usuário responsável e data/hora",
+      "criterion": "MESMO ATRIBUTO / DESFAZER ALTERAÇÕES DE OT — Correção para 20,00 permanece e o histórico mantém 15,00 → 20,00."
+    },
+    {
+      "id": "CT24",
+      "name": "ETICS-251765 | HU-38 | CT24 | Corrigir atributo após implantação da OT",
+      "source": "§6.2.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar corrigir atributo após implantação da ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2; história ETICS-251765.",
+      "bdd_script": "Given um lance com Comprimento Real Total (m) igual a 10,00\nAnd Modificar atributos com a OT A alterou o comprimento para 15,00\nWhen implantar a OT A e depois executar Corrigir inventário sem OT alterando o comprimento para 20,00\nThen o comprimento persistido é 20,00 e o lance permanece Existente\nAnd o histórico apresenta Modificar atributos 10,00 para 15,00, Implantar OT e Corrigir inventário 15,00 para 20,00 nessa ordem",
+      "criterion": "ORDEM / CORREÇÃO APÓS IMPLANTAÇÃO — Valor final 20,00 e sequência histórica preservada."
+    },
+    {
+      "id": "CT25",
+      "name": "ETICS-251765 | HU-38 | CT25 | Respeitar alteração por OT posterior à correção",
+      "source": "§6.2.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+      "objective": "Validar respeitar alteração por ot posterior à correção. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2; história ETICS-251765.",
+      "bdd_script": "Given um lance Existente com Comprimento Real Total (m) igual a 10,00\nWhen executar Corrigir inventário sem OT alterando o comprimento para 20,00\nAnd executar Modificar atributos com a OT A alterando o comprimento de 20,00 para 15,00\nAnd implantar a OT A\nThen o comprimento persistido é 15,00\nAnd o histórico apresenta Corrigir inventário 10,00 para 20,00, Modificar atributos 20,00 para 15,00 e Implantar OT nessa ordem",
+      "criterion": "ORDEM / OT POSTERIOR À CORREÇÃO — Alteração posterior implantada prevalece com valor final 15,00."
+    },
+    {
+      "id": "CT26",
+      "name": "ETICS-251765 | HU-38 | CT26 | Disponibilizar operação ao perfil autorizado",
+      "source": "§4 (escopo adicional) e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Confirmar o nome/ID do perfil com a configuração aprovada pela CLARO; a documentação não o informa.",
+      "objective": "Validar disponibilizar operação ao perfil autorizado. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional) e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um usuário associado ao perfil específico informado pela CLARO para Corrigir inventário\nAnd existe um lance elegível e um atributo não bloqueado com valor válido para alteração\nWhen acessar o lance com esse usuário e executar Corrigir inventário\nThen a operação está disponível e permite salvar a alteração válida\nAnd o valor persiste e o histórico identifica o usuário responsável",
+      "criterion": "PERFIL AUTORIZADO — Usuário do perfil CLARO consegue corrigir atributos elegíveis."
+    },
+    {
+      "id": "CT27",
+      "name": "ETICS-251765 | HU-38 | CT27 | Impedir operação para usuário sem perfil autorizado",
+      "source": "§4 (escopo adicional) e §7.2",
+      "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Usar usuário sem permissões administrativas que concedam o perfil implicitamente.",
+      "objective": "Validar impedir operação para usuário sem perfil autorizado. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional) e §7.2; história ETICS-251765.",
+      "bdd_script": "Given um usuário que pode consultar o lance mas não pertence ao perfil autorizado para Corrigir inventário\nAnd os valores atuais do lance foram registrados\nWhen acessar as operações do lance com esse usuário\nThen Corrigir inventário não está disponível para execução\nAnd o usuário não consegue gravar uma correção por essa operação\nAnd os valores persistidos do lance permanecem inalterados",
+      "criterion": "PERFIL NÃO AUTORIZADO — Usuário fora do perfil não executa nem grava correção."
+    }
+  ]
+}

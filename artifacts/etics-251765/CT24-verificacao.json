@@ -1,0 +1,74 @@
+{
+  "id": "CT24",
+  "key": "ETICS-T8217",
+  "before": {
+    "keyNumber": 8217,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:00:33.167Z",
+    "objective": "Validar corrigir atributo após implantação da ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92615,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then o comprimento persistido é 20,00 e o lance permanece Existente",
+          "index": 0,
+          "description": "When implantar a OT A e depois executar Corrigir inventário sem OT alterando o comprimento para 20,00",
+          "id": 210994
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT24 | Corrigir atributo após implantação da OT",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8217",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8217,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T19:00:36.655Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:00:33.167Z",
+    "objective": "Validar corrigir atributo após implantação da ot. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um lance com Comprimento Real Total (m) igual a 10,00\nAnd Modificar atributos com a OT A alterou o comprimento para 15,00\nWhen implantar a OT A e depois executar Corrigir inventário sem OT alterando o comprimento para 20,00\nThen o comprimento persistido é 20,00 e o lance permanece Existente\nAnd o histórico apresenta Modificar atributos 10,00 para 15,00, Implantar OT e Corrigir inventário 15,00 para 20,00 nessa ordem",
+      "id": 17565,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT24 | Corrigir atributo após implantação da OT",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8217",
+    "status": "Draft"
+  }
+}

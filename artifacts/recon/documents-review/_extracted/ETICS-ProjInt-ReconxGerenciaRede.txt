@@ -1,0 +1,188 @@
+Projeto de Integração - Recon x Sistema de Gerência de Rede
+DSSO
+Versão deste documento: 6
+Data desta impressão: 02/mai/11 08:32
+© Fundação CPqD
+Reservados todos os direitos
+Este documento não deve ser reproduzido sem a expressa autorização da Fundação CpqD.
+Qualquer reprodução, sem prévia autorização, infringe os direitos de copyright
+Sumário
+# 1. Objetivo do documento4
+# 2. Definições e abreviaturas4
+# 3. Descrição funcional4
+Sistemas envolvidos4
+Periodicidade de atualização4
+# 4. Definição do mecanismo de integração4
+4.1. Componentes 5
+4.1.1. cpqd-eai-webservices-contracts5
+4.1.2. cpqd-eai-webservices-clients5
+4.2. Autenticação5
+# 5. Definição dos fluxos7
+# 6. Mensagens de erro7
+# 7. Definição dos dados7
+# 8. Configurações8
+# 9. Referências8
+# 10. Histórico de alterações deste documento9
+# Objetivo do documento
+Esse documento especifica a integração entre o módulo Recon (etics) e o Sistema de Gerência de Rede.
+# Definições e abreviaturas
+Abreviatura
+Definições
+HTTP
+Hyper Text Transfer Protocol
+SOAP
+Simple Object Access Protocol
+WSDL
+Web Services Description Language
+XSD
+Xml Schema Definition
+JAX-WS
+Java API for XML Web Services
+HTTPs
+Hyper Text Transfer Protocol with SSL
+SSL
+Security Socket Layer
+# Descrição funcional
+O módulo Recon tem a função de buscar dados de elementos de rede (físico e lógico) do sistema de gerência de rede e compará-los com os dados de elementos de rede cadastrados no módulo de inventário de rede (módulos ISP e Facilites Management PxP).
+# Sistemas envolvidos
+O módulo Recon será responsável por invocar o serviço adequado e passar os parâmetros conforme definido pela interface e receber uma resposta.
+O Sistema de Gerência de Rede será responsável por validar os parâmetros de entrada dos serviços, executar a consulta e retornar as informações solicitadas de acordo com a interface.
+# Periodicidade de atualização
+Sob demanda programada pela tarefa de reconciliação disponível no módulo de Administração do etics.
+# Definição do mecanismo de integração
+A solução adotada para a integração será a utilização de serviços. Neste contexto, a tecnologia adotada será WebServices.
+A integração entre os sistemas deve ser via HTTP/SOAP e deve utilizar a infra-estrutura de webservices do etics.
+# Componentes
+A estrutura de componentes deve seguir o modelo abaixo:
+- etics
+- eai
+- webservices
+- contracts
+- src
+- main
+- wsdl
+ReconServices.wsdl (novo)
+- clients
+- recon (novo)
+# cpqd-eai-webservices-contracts
+Este componente contém os contratos: WSDL + XSD
+Um plug-in do Maven (jaxws-maven-plugin) gera código Java que implementa a requisição e a devolução dos dados envolvidos no webservice.
+Neste componente deverá ser criado o WSDL.
+# cpqd-eai-webservices-clients
+Contém os componentes que fazem a chamada para webservices. Nesta árvore de componentes deve ser criado um componente para as chamadas de consulta de equipamentos para um sistema externo usando as classes geradas no contrato do recon.
+Recomenda-se fazer uma API para chamada sem autenticação e com autenticação. Entretanto a opção de autenticação depende da determinação do provedor do webservice.
+# Autenticação
+A partir da versão 12.0 do GP, a autenticação nos novos sistemas implantados é feita por intermédio do Keycloak, o qual gera um token de acesso de acordo com a especificação Oauth 2.0.
+Para tanto é utilizado o mecanismo “Bearer Authentication” nas requisições dos Web Services, compreendido pelo seguinte cabeçalho HTTP:
+Authorization: Bearer <access_token>
+O parâmetro <access_token> pode ser obtido doToken Endpoint do Keycloak, de acordo com a especificação OpenID Connect. Por exemplo:
+POST /auth/realms/cpqd-realm/protocol/openid-connect/token HTTP/1.1Host: <keycloak_server_address>Content-Type: application/x-www-form-urlencoded
+grant_type=password&client_id=cpqd-webservice-integration&client_secret=<client_secret>&username=<username>&password=<password>
+Onde:
+client_secret: segredo do cliente “cpqd-webservice-integration” no Keycloakusername: nome do usuário de integração cadastrado no Keycloakpassword: senha do usuário de integração cadastrado no Keycloak
+Para os sistemas já existentes, o método de autenticação a ser utilizado pode continuar a sera autenticação HTTP básica. É a técnica mais simples para o controle de acesso a recursos web:
+não requer cookies;
+não tem identificador de sessão;
+não tem página de login
+não tem protocolos de handshake
+utiliza uma cabeçalho padrão HTTP estático
+Quando o cliente enviar suas credenciais na chamada web, deve-se utilizar o cabeçalho HTTP:
+usuário e senha são combinados numa string "usuário:senha"
+O resultado da string é codificado usando Base64
+O método de autorização e um espaço (no caso Basic) é colocado antes da string codificada.
+Por exemplo, se o usuário for 'recon' e a senha for 'cpqdcpqd' o cabeçalho seria da forma:
+Authorization: Basic cmVjb246Y3BxZGNwcWQ=
+Abaixo temos um exemplo de cliente java nesse cenário de autenticação usando o componente Apache-CXF ([Ref. 5] ):
+package br.com.cpqd.exemplo;
+import java.util.Date;
+import org.apache.cxf.configuration.security.AuthorizationPolicy;
+import org.apache.cxf.endpoint.Client;
+import org.apache.cxf.frontend.ClientProxy;
+import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
+import org.apache.cxf.transport.http.HTTPConduit;
+public class MyServiceWSClient {
+/**
+* @param args
+*/
+public static void main(String[] args) {
+JaxWsProxyFactoryBean factory = new JaxWsProxyFactoryBean();
+factory.setServiceClass(MyService.class);
+factory.setAddress("<URL DO WSDL>");
+MyService myService = (MyService) factory.create();
+Client client = ClientProxy.getClient(MyService);
+HTTPConduit http = (HTTPConduit) client.getConduit();
+AuthorizationPolicy authPolicy = new AuthorizationPolicy();
+authPolicy.setAuthorizationType("Basic");
+authPolicy.setUserName("recon");
+authPolicy.setPassword("cpqdcpqd");
+http.setAuthorization(authPolicy);
+myService.myMethod(.....);
+}
+}
+# Definição dos fluxos
+O Sistema de Gerência de Rede deve disponibilizar um conjunto de serviços (WebServices) os quais são acionados pelo Recon.
+Há 3 fluxos de integração (ver [Ref. 1] ):
+consultar equipamentos
+filtro: intervalo de IPs ou fabricante, modelo e tecnologia
+retorno: lista de equipamentos, placa (quando houver) e porta
+consultar conexões lógicas
+filtro: lista de nomes que identificam a conexão
+retorno: lista de conexões lógicas incluindo os equipamentos/portas de origem e destino
+consultar circuitos
+filtro: a definir
+retorno: a definir
+# Mensagens de erro
+Caso ocorra um erro no processamento do serviço o sistema de gerência de rede deve retornar uma exceção. A mensagem de erro é composta por:
+code : texto representando a mensagem de erro
+message: descrição da mensagem
+Há 3 códigos de mensagens:
+INVALID_INPUT: erro nos parâmetros de entrada. Será retornado a mensagem de erro do parser do XML e o primeiro parâmetro inválido.
+PROCESSING_ERROR: erro interno ao sistema de gerência de rede.
+UNKNOWN_ERROR: erro não conhecido. Será informada a mensagem de erro obtida pelo sistema.
+# Definição dos dados
+A definição dos dados de entrada e saída encontra-se em:
+para equipamentos ver [Ref. 2]
+para conexões lógicas ver [Ref. 3]
+para circuitos ver [Ref. 4]
+Essas referências devem ser disponibilizadas como complemento a este documento.
+A validação dos dados deve ser feita por meio de parsers XML que confrontam a requisição/resposta com contra a interface estipulada para o serviço.
+O WSDL encontra-se em [Ref. 6] .
+# Configurações
+Para que o cliente (etics) invoque o webservice corretamente é necessário que haja no momento da instalação do produto a configuração da URL do webservice a ser invocado para esse processo de reconciliação.
+Essa configuração está fora do escopo deste projeto de integração.
+# Referências
+Visão: ETICS-Visao-ARSAT-ReconciliadorISP-IM.doc
+Dicionário de Dados: DD-ReconConsultarEquipamentos.xls
+Dicionário de Dados: DD-ReconConsultarConexoes.xls
+Dicionário de Dados: DD-ReconConsultarCiruitos.xls
+Apache-CXF - http://cxf.apache.org/ - Acessado em 05 de Agosto de 2014
+WSDL do serviço: http://svn/DSSO/etics/trunk/implementacao/eai/webservices/contracts/src/main/wsdl/ReconServices.wsdl
+# Histórico de alterações deste documento
+Data de elaboração
+Versão
+Autor
+Descrições das alterações realizadas
+27/05/14
+1
+Carlos Machado
+Versão inicial.
+05/06/14
+2
+Carlos Machado
+Ajustes na integração Recon-IM
+14/07/14
+3
+Carlos Machado
+Correções no documento
+24/07/14
+4
+Carlos Machado
+A seção sobre autenticação foi removida
+05/08/14
+5
+Carlos Machado
+Definida a forma de autenticação
+28/12/22
+6
+João Loureiro Jr
+Suporte à autenticação pelo Keycloak

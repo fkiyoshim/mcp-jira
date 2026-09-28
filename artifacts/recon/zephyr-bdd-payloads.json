@@ -1,0 +1,202 @@
+[
+  {
+    "key": "ETICS-T8036",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo reconciliável A: GP=valor_GP, IM=valor_IM; configuração A=0.\nWhen executar a reconciliação e abrir o detalhamento.\nThen A diferença em A não gera divergência.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A permanece com valor_GP; o atributo ignorado não é sincronizado."
+  },
+  {
+    "key": "ETICS-T8037",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo A: GP=valor_GP, IM=valor_IM; A=1.\nWhen executar a reconciliação e detalhar o equipamento.\nThen A diferença aparece na comparação IM x GP.\nWhen consultar o inventário sem acionar atualização.\nThen O GP mantém valor_GP; a comparação não efetiva atualização."
+  },
+  {
+    "key": "ETICS-T8038",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Atributo A: GP=valor_GP, IM=valor_IM; A=2.\nWhen executar a reconciliação e abrir a árvore.\nThen A não gera divergência nem aparece na árvore.\nWhen consultar o GP antes de atualizar.\nThen A permanece com valor_GP.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A passa a valor_IM."
+  },
+  {
+    "key": "ETICS-T8039",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd B é um atributo cuja atualização pelo fluxo existente é permitida; os valores recebidos são válidos e nenhuma regra de negócio impede a atualização do roteador.\nAnd os dados de teste: A=0, B=1, C=2; GP: A=valor_GP_A, B=valor_GP_B, C=valor_GP_C; IM: A=valor_IM_A, B=valor_IM_B, C=valor_IM_C; valores GP e IM diferentes para cada atributo.\nWhen executar a reconciliação e abrir o detalhamento do roteador.\nThen Somente B apresenta divergência na comparação IM x GP, com valor_GP_B e valor_IM_B; A e C não geram divergência e C não aparece na árvore.\nWhen consultar o inventário antes de acionar Atualizar inventário.\nThen A=valor_GP_A, B=valor_GP_B e C=valor_GP_C; a comparação e a consulta não alteram os valores no GP.\nWhen selecionar a divergência de B para resolução com o dado do IM pelo fluxo existente, acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A permanece com valor_GP_A; B passa a valor_IM_B pela atualização da divergência selecionada; C passa a valor_IM_C silenciosamente, sem exigir seleção de C na árvore."
+  },
+  {
+    "key": "ETICS-T8040",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: A=2 e valores diferentes no GP e IM.\nWhen executar reconciliação e abrir/fechar o detalhamento duas vezes.\nThen A não aparece nem gera divergência.\nWhen executar Consultar inventário e conferir A.\nThen Valor GP original preservado até Atualizar inventário."
+  },
+  {
+    "key": "ETICS-T8041",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: A=2; valor IM já aplicado no GP.\nWhen executar novamente a reconciliação com a mesma resposta.\nThen Não há divergência de A nem exibição de A.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A mantém o valor IM, sem duplicação do objeto atualizado."
+  },
+  {
+    "key": "ETICS-T8042",
+    "text": "Given o contexto de teste: Usuário com acesso à configuração de atributos.\nAnd os dados de teste: Configuração de teste existente.\nWhen abrir Configuração/Atributos reconciliáveis e editar.\nThen Cada atributo configurável é apresentado como lista de seleção.\nWhen abrir a lista de cada categoria de atributo disponível.\nThen Opções exatamente 0=Ignorar, 1=Comparar IM x GP, 2=Sincronizar IM -> GP; seleção única."
+  },
+  {
+    "key": "ETICS-T8043",
+    "text": "Given o contexto de teste: Usuário autorizado; consulta técnica de RECON_ATRIB_CFG disponível.\nAnd os dados de teste: Três atributos A, B e C.\nWhen selecionar A=0, B=1, C=2 e salvar.\nThen Gravação concluída.\nWhen reabrir a configuração e consultar os valores persistidos.\nThen Seleções preservadas; valores numéricos 0, 1 e 2 em RECON_ATRIB_CFG."
+  },
+  {
+    "key": "ETICS-T8044",
+    "text": "Given o contexto de teste: Configuração criada antes da alteração, contendo valores 0 e 1.\nAnd os dados de teste: Cópia de configuração legada, sem conversão prévia de dados.\nWhen abrir a configuração legada.\nThen Valores 0 e 1 aparecem nas opções correspondentes.\nWhen salvar sem alterar e reabrir.\nThen Valores e comportamento existentes preservados sem migração."
+  },
+  {
+    "key": "ETICS-T8045",
+    "text": "Given o contexto de teste: Usuário autorizado; configuração de teste.\nAnd os dados de teste: A inicialmente 0.\nWhen alterar A para 1, salvar e reabrir.\nThen A=1 persistido e selecionado.\nWhen alterar A para 2, salvar e reabrir.\nThen A=2 persistido e selecionado.\nWhen alterar A para 0, salvar e reabrir.\nThen A=0 persistido e selecionado, sem múltiplas opções ativas."
+  },
+  {
+    "key": "ETICS-T8046",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Configuração com A=0, B=1, C=2; valores diferentes entre GP e IM.\nWhen salvar a configuração pela nova lista e executar reconciliação.\nThen Configuração aceita pelo consumidor atual.\nWhen abrir o detalhamento.\nThen Somente B gera divergência por comparação; A e C não são comparados."
+  },
+  {
+    "key": "ETICS-T8047",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Tipo S registrado sem chave; documento válido sem S; fragmento S com attributes={valor:'novo'}.\nWhen aplicar upsert unitário de S.\nThen Documento final contém uma ocorrência de S com os atributos recebidos.\nWhen inspecionar o resultado da operação.\nThen Resultado estruturado informa INSERT para S."
+  },
+  {
+    "key": "ETICS-T8048",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: S existente com attributes={valor:'antigo',obsoleto:true,lista:[1,2]}; entrada S={valor:'novo',lista:[3]}.\nWhen aplicar upsert de S.\nThen Uma ocorrência de S permanece.\nWhen inspecionar atributos e resultado.\nThen valor=novo, lista=[3], obsoleto ausente; resultado UPDATE."
+  },
+  {
+    "key": "ETICS-T8049",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Tipo T com chave registrada id; documento T/id=A; entradas T/id=A e T/id=B.\nWhen aplicar lote com A atualizado e B novo.\nThen A substituído integralmente; B inserido.\nWhen inspecionar resultados por item.\nThen UPDATE para A e INSERT para B, com os respectivos objetos finais."
+  },
+  {
+    "key": "ETICS-T8050",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Documento contém T/id=A e T/id=B; lote altera somente A.\nWhen aplicar lote com nova versão de A.\nThen Operação concluída.\nWhen comparar B com o snapshot.\nThen B preservado integralmente; não há exclusão por ausência na entrada."
+  },
+  {
+    "key": "ETICS-T8051",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Primeiro fragmento válido; segundo fragmento viola formato canônico.\nWhen aplicar os dois fragmentos no mesmo lote.\nThen Lote rejeitado com erro tipado.\nWhen inspecionar documento e snapshots.\nThen Nenhuma alteração parcial é aplicada; primeiro item não deixa resultado persistido."
+  },
+  {
+    "key": "ETICS-T8052",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Documento atual com sintaxe JSON inválida e fragmento válido.\nWhen invocar upsert.\nThen Erro tipado identifica documento inválido.\nWhen verificar diagnóstico e ausência de resultado de sucesso.\nThen Nenhum documento final parcialmente atualizado; mensagem útil sem despejar conteúdo sensível."
+  },
+  {
+    "key": "ETICS-T8053",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Tipo T tem chave id; fragmento T contém attributes sem id.\nWhen aplicar fragmento sem id.\nThen Falha de validação de chave; não deve tratar T como singleton.\nWhen comparar documento com snapshot.\nThen Documento inalterado e erro tipado."
+  },
+  {
+    "key": "ETICS-T8054",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Consumidor mínimo com JAR e dependências declaradas; sem GP, IM, CDK ou banco configurados.\nWhen resolver o artefato via gerenciamento de dependências do OSS Commons.\nThen Módulo disponível no reator e para o consumidor.\nWhen executar INSERT e UPDATE válidos.\nThen Operações funcionam em memória sem exigir serviços externos."
+  },
+  {
+    "key": "ETICS-T8055",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Mesmo documento inicial e mesmo lote em duas execuções novas.\nWhen executar duas vezes a mesma operação a partir de cópias do documento inicial.\nThen Ambas terminam com sucesso.\nWhen comparar documentos finais e resultados por item.\nThen Resultados equivalentes; uma execução não contamina a outra."
+  },
+  {
+    "key": "ETICS-T8056",
+    "text": "Given o contexto de teste: Harness do JAR compartilhado; documento e fragmentos canônicos conforme contrato publicado; registro global de tipos configurado; snapshots das entradas.\nAnd os dados de teste: Tipo registrado; chave válida; atributo interno opaco com texto que não representa um IPv4.\nWhen aplicar fragmento estruturalmente válido.\nThen Componente aceita o atributo interno sem validar IPv4.\nWhen consultar o resultado.\nThen Valor opaco preservado; validação de domínio permanece no consumidor."
+  },
+  {
+    "key": "ETICS-T8057",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Acesso técnico somente de consulta a RECON_EQPT.\nAnd os dados de teste: GP contém objeto antigo X; IM retorna dois fragmentos novos Y e Z.\nWhen executar a reconciliação.\nThen Coleta concluída.\nWhen inspecionar CLOB de RECON_EQPT e JSON do GP.\nThen CLOB contém array apenas de Y e Z, cada fragmento com objectType e attributes; não contém cópia de X; GP mantém snapshot inicial."
+  },
+  {
+    "key": "ETICS-T8058",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy de NestedRuleCaller disponível.\nAnd os dados de teste: GP contém singleton S e T/id=A; IM atualiza S e A e insere T/id=B.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen S e A substituídos integralmente; B inserido.\nWhen inspecionar o contador e o argumento do NestedRuleCaller.\nThen Exatamente uma chamada para o equipamento, contendo JSON final com os três resultados."
+  },
+  {
+    "key": "ETICS-T8059",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy de NestedRuleCaller disponível.\nAnd os dados de teste: Lote com fragmento válido seguido de fragmento inválido.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Atualização rejeitada; nenhum fragmento aplicado.\nWhen conferir GP e contador.\nThen Snapshot original preservado; zero chamadas ao NestedRuleCaller."
+  },
+  {
+    "key": "ETICS-T8060",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy disponível; fixture controlada para JSON inválido.\nAnd os dados de teste: Documento GP malformado e lote IM válido.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Falha diagnosticada sem aplicar fragmentos.\nWhen conferir contador e inventário.\nThen Zero chamadas ao NestedRuleCaller; conteúdo anterior não substituído parcialmente."
+  },
+  {
+    "key": "ETICS-T8061",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Tipo T registrado com chave id; GP tem id=abc; IM retorna id=ABC.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Objeto id=ABC inserido separadamente; id=abc preservado.\nWhen inspecionar o documento final.\nThen Não há conversão de caixa nem colisão entre as duas identidades."
+  },
+  {
+    "key": "ETICS-T8062",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Registro com dois tipos válidos que diferem somente em caixa.\nAnd os dados de teste: Tipos T e t registrados; GP contém T/id=A; IM retorna t/id=A.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen T/id=A preservado; t/id=A tratado como identidade distinta.\nWhen comparar nomes dos tipos no JSON final.\nThen Caixa original mantida."
+  },
+  {
+    "key": "ETICS-T8063",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: GP contém A e B; IM retorna somente atualização de A.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A atualizado.\nWhen conferir B no GP.\nThen B permanece integralmente, sem exclusão por ausência na resposta."
+  },
+  {
+    "key": "ETICS-T8064",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: GP com configurações existentes; resposta IM válida sem fragmentos HW.\nWhen executar a reconciliação e consultar resultado.\nThen Ausência de objetos HW não causa erro de parsing.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Configurações existentes preservadas, sem inserção artificial nem exclusão."
+  },
+  {
+    "key": "ETICS-T8065",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois.\nAnd os dados de teste: Coletar atualização de A; após coleta, inserir objeto B no GP por operação permitida.\nWhen concluir coleta e inserir B no GP antes de Atualizar inventário.\nThen GP contém B novo; CLOB contém somente fragmentos coletados.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen A atualizado e B preservado: merge usa documento GP atual, não snapshot da coleta."
+  },
+  {
+    "key": "ETICS-T8066",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Contador/spy disponível.\nAnd os dados de teste: Lote canônico de tipo com chave registrada, mas fragmento sem a chave.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Lote rejeitado por chave inválida.\nWhen verificar GP e contador.\nThen GP preservado; zero chamadas ao NestedRuleCaller."
+  },
+  {
+    "key": "ETICS-T8067",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04 e H05 disponíveis; fixture XML validada pelo contrato de zona.\nAnd os dados de teste: equipment/additionalInfo/group/key=zona com duas registry de zonas distintas e suas interfaces.\nWhen executar reconciliação e consultar CLOB.\nThen Dois fragmentos de zona correspondem às duas registry, preservando a associação de interfaces.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen As duas zonas são inseridas no mesmo documento JSON do roteador."
+  },
+  {
+    "key": "ETICS-T8068",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Chave de zona confirmada no contrato de H05.\nAnd os dados de teste: Zona já existente; IM retorna mesma identidade com outra lista de interfaces.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Zona substituída pela versão recebida.\nWhen comparar zona e interfaces.\nThen Uma ocorrência para a identidade; lista final igual à recebida, sem merge com interfaces antigas."
+  },
+  {
+    "key": "ETICS-T8069",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H05 disponível.\nAnd os dados de teste: Zona existente no GP com interfaces diferentes das retornadas no IM.\nWhen executar reconciliação e detalhar.\nThen Zona não aparece na árvore de divergências.\nWhen consultar GP antes e depois de Atualizar inventário.\nThen Antes mantém valor original; depois reflete zona recebida."
+  },
+  {
+    "key": "ETICS-T8070",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Harness do conversor H05.\nAnd os dados de teste: XML contendo zona, HA, rotas, BGP, OSPF, RIP, port, card, vlan e pseudowire.\nWhen executar o conversor de H05 isoladamente.\nThen Somente registry do grupo zona geram fragmentos.\nWhen inspecionar os fragmentos produzidos.\nThen Nenhum fragmento produzido por H05 para os demais grupos."
+  },
+  {
+    "key": "ETICS-T8071",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H05; spy disponível.\nAnd os dados de teste: Uma zona válida e outra que gere fragmento inválido conforme contrato.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Lote do equipamento rejeitado integralmente.\nWhen consultar GP e spy.\nThen Nenhuma das zonas aplicada; zero chamadas ao NestedRuleCaller."
+  },
+  {
+    "key": "ETICS-T8072",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H06 disponíveis.\nAnd os dados de teste: group-name=SPO-HA-121; hbdev-1=port1; hbdev-2=port2; monitor=[x3,x4], diretamente em additionalInfo.\nWhen executar reconciliação e inspecionar fragmento.\nThen Configuração device contém os quatro atributos e ambos os valores de monitor.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Configuração device persistida no campo HW_OBJECTS_JSON do roteador."
+  },
+  {
+    "key": "ETICS-T8073",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H05/H06 disponíveis.\nAnd os dados de teste: GP contém device antigo e zona válida; IM retorna novos quatro atributos HA.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Configuração device atualizada no documento compartilhado.\nWhen comparar zona com snapshot.\nThen Zona preservada; não é criado documento paralelo para HA."
+  },
+  {
+    "key": "ETICS-T8074",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Harness do conversor H06.\nAnd os dados de teste: additionalInfo com quatro atributos HA e atributo extra; grupos zona/BGP; atributos HA homônimos dentro de port.\nWhen executar conversor H06.\nThen Somente os quatro atributos diretos de equipment/additionalInfo alimentam device.\nWhen inspecionar attributes de device.\nThen Atributo extra, grupos e atributos da porta não foram indevidamente convertidos."
+  },
+  {
+    "key": "ETICS-T8075",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04/H05/H06 disponíveis; spy de NestedRuleCaller.\nAnd os dados de teste: Resposta IM com zona válida e quatro atributos HA válidos.\nWhen executar reconciliação e acionar Atualizar inventário.\nThen Documento final contém zona e device.\nWhen inspecionar chamadas por equipamento.\nThen Uma chamada ao NestedRuleCaller com o documento combinado."
+  },
+  {
+    "key": "ETICS-T8076",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H06 disponível.\nAnd os dados de teste: device contém monitor=[x3,x4]; IM retorna monitor=[x5] e demais atributos HA válidos.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen device atualizado.\nWhen inspecionar monitor.\nThen Lista final contém apenas x5; x3 e x4 não são retidos por merge parcial."
+  },
+  {
+    "key": "ETICS-T8077",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H07 disponível; XML e mapeamento de rota aprovados.\nAnd os dados de teste: Rota de teste: destination-address-mask=192.0.2.0/24, priority=10, ip-address=192.0.2.1; demais campos obrigatórios conforme contrato.\nWhen coletar rota via reconciliação.\nThen GP permanece inalterado antes do comando de atualização.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Rota recebida está presente no documento JSON do roteador com valores mapeados corretamente."
+  },
+  {
+    "key": "ETICS-T8078",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Mapeamento da chave da visão confirmado para H07.\nAnd os dados de teste: GP e IM com destino 192.0.2.0/24 e prioridade 10; próximo salto muda de 192.0.2.1 para 192.0.2.2.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Rota existente atualizada, sem duplicação.\nWhen verificar destino, prioridade e próximo salto.\nThen Mesma chave composta; próximo salto final 192.0.2.2."
+  },
+  {
+    "key": "ETICS-T8079",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. Mapeamento da chave da visão confirmado para H07.\nAnd os dados de teste: Duas rotas com destino 192.0.2.0/24, prioridades 10 e 20 e próximos saltos distintos.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Duas rotas persistidas.\nWhen conferir identidades e atributos.\nThen Não há colisão por considerar somente o destino; prioridade participa da identidade."
+  },
+  {
+    "key": "ETICS-T8080",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04–H07 disponíveis.\nAnd os dados de teste: GP contém device e zona; IM retorna rota estática nova.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Rota inserida no documento compartilhado.\nWhen comparar device e zona com snapshot.\nThen Configurações não alteradas pelo lote permanecem intactas."
+  },
+  {
+    "key": "ETICS-T8081",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture BGP homologada e mapeamento canônico definido.\nAnd os dados de teste: Configuração BGP válida para equipamento suportado, com valores distintos do GP.\nWhen executar reconciliação com a resposta controlada.\nThen Coleta concluída sem alterar o documento GP.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Configuração BGP recebida presente no documento JSON do roteador com os valores previstos no mapeamento."
+  },
+  {
+    "key": "ETICS-T8082",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture OSPF homologada e mapeamento canônico definido.\nAnd os dados de teste: Configuração OSPF válida para equipamento suportado, com valores distintos do GP.\nWhen executar reconciliação com a resposta controlada.\nThen Coleta concluída sem alterar o documento GP.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Configuração OSPF recebida presente no documento JSON do roteador com os valores previstos no mapeamento."
+  },
+  {
+    "key": "ETICS-T8083",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 disponível; fixture RIP homologada e mapeamento canônico definido.\nAnd os dados de teste: Configuração RIP válida para equipamento suportado, com valores distintos do GP.\nWhen executar reconciliação com a resposta controlada.\nThen Coleta concluída sem alterar o documento GP.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Configuração RIP recebida presente no documento JSON do roteador com os valores previstos no mapeamento."
+  },
+  {
+    "key": "ETICS-T8084",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H08 e os três contratos de conversão disponíveis; spy.\nAnd os dados de teste: IM retorna configurações válidas de BGP, OSPF e RIP para equipamento suportado.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen As três configurações são aplicadas ao documento JSON do equipamento.\nWhen inspecionar configurações e chamadas.\nThen Nenhum protocolo sobrescreve outro indevidamente; uma chamada final por equipamento."
+  },
+  {
+    "key": "ETICS-T8085",
+    "text": "Given o contexto de teste: Ambiente de teste GP/IM; usuário autorizado; roteador pareado sem divergência física; modelo reconciliável; resposta IM controlada; registrar inventário antes e depois. H04–H08 disponíveis.\nAnd os dados de teste: GP contém rota estática, zona, device e protocolo; IM altera somente o protocolo.\nWhen acionar Atualizar inventário e consultar novamente o roteador no ISP.\nThen Protocolo atualizado.\nWhen comparar os demais objetos com snapshot.\nThen Rotas estáticas, zonas e HA preservados integralmente."
+  }
+]

@@ -1,0 +1,67 @@
+[
+  {
+    "key": "ETICS-252410",
+    "title": "[CLARO-Recon] H01 - Sincronizacao silenciosa de atributos IM para GP",
+    "status": "Para Teste",
+    "description": "h2. Objetivo\r\n\r\nPreparar o modulo de reconciliacao para suportar atributos e objetos que nao devem participar da comparacao IM x GP, nao devem aparecer na arvore de divergencias, mas devem ser atualizados no inventario GP com o valor vindo do IM quando o usuario executar a acao \"Atualizar inventario\".\r\n\r\nA nova semantica da configuracao de atributos passa a ser:\r\n\r\n \r\nh2. {{0 = ignora1 = compara IM x GP2 = atualiza silenciosamente IM -> GP}}",
+    "comments": [
+      {
+        "body": "Projeto: https://bitbucket.cpqd.com.br/projects/GP/repos/gp/browse/docs/dev/13.3.200/recon/01-sync-silencioso-im-para-gp.md?at=refs%2Fheads%2Ffeature%2Fclaro-recon",
+        "updated": "2026-08-17T15:43:27.538-0300"
+      },
+      {
+        "body": "O sistema foi alterado para que caso o atributo esteja configurado com o valor 2, atualiza silenciosamente IM -> GP, o atributo não seja apresentado na treeview de reconciliação.\r\n\r\nTestes mínimos:\r\nFazer reconciliação com atributos configurado com 0 e 1:\r\nConfigurações 0 e 1 continuam funcionando normalmente.\r\nFazer reconciliação com atributos configurado com 2:\r\nAtributo configurado com 2 não gera divergência.\r\nAtributo configurado com 2 não aparece na arvore.\r\nAtributo configurado com 2 é atualizado no GP com o valor vindo do IM ao acionar \"Atualizar inventario\".",
+        "updated": "2026-08-28T13:52:11.072-0300"
+      }
+    ]
+  },
+  {
+    "key": "ETICS-252562",
+    "title": "[CLARO-Recon] H02 - Ajuste da tela de configuracao de reconciliacao para lista",
+    "status": "Em Implementação",
+    "description": "h2. Story\r\n\r\nComo administrador da reconciliacao, quero configurar cada atributo por meio de uma lista de opcoes, para escolher entre ignorar, comparar ou sincronizar IM -> GP sem depender de checkbox binario.\r\nh2. Acceptance Criteria\r\n # A tela de configuracao de atributos da reconciliacao deve apresentar os atributos configuraveis como lista de selecao, nao como checkbox.\r\n # Cada atributo configuravel deve permitir selecionar exatamente:\r\n ** {{0}} = Ignorar\r\n ** {{1}} = Comparar IM x GP\r\n ** {{2}} = Sincronizar IM -> GP\r\n # O valor gravado em {{RECON_ATRIB_CFG}} deve continuar numerico e compativel com os consumidores atuais.\r\n # Configuracoes existentes com valor {{0}} ou {{1}} devem continuar abrindo e salvando sem migracao de dados.\r\n # O ajuste de tela nao deve alterar a regra de comparacao da reconciliacao: apenas valor {{1}} compara.\r\n # A opcao {{2}} deve ficar disponivel apenas como configuracao visual/persistida nesta historia; o comportamento funcional completo de sincronizacao silenciosa permanece no escopo da historia 01.\r\n\r\n ",
+    "comments": []
+  },
+  {
+    "key": "ETICS-252569",
+    "title": "[CLARO-Recon] H03 - Artefato compartilhado para upsert de objetos em documento JSON",
+    "status": "Em Implementação",
+    "description": "h2. História de usuário\r\n\r\nComo desenvolvedor de módulos do GP,\r\nquero um artefato compartilhado que aplique, de forma determinística, objetos JSON recebidos sobre um documento JSON existente,\r\npara reutilizar a mesma regra de inserção e atualização sem acoplar a solução ao Recon, ao Roteador, ao IM, ao banco de dados ou ao CDK.\r\nh2. Contexto e motivação\r\n\r\nAlguns campos do metamodelo do GP serão strings com conteúdo JSON e persistência física em BLOB tratada pelo CDK. O primeiro caso conhecido é um campo do objeto Roteador contendo uma lista de objetos Huawei, como {{{}security-hw{}}}, {{NATStatic-hw}} e {{{}NATSource-hw{}}}.\r\n\r\nCada entrada possui um {{objectType}} global e invariável. Alguns tipos admitem uma única ocorrência; outros possuem chave natural e admitem várias ocorrências. O artefato deve receber o documento atual e um ou mais objetos de entrada, decidir {{INSERT}} ou {{{}UPDATE{}}}, substituir objetos existentes por completo e devolver o documento final e o resultado de cada operação.\r\n\r\nO componente deve ser pequeno, sem estado e utilizável por qualquer módulo. Regras de SOAP/XML, equipamento, atributo de metamodelo, persistência, transação e autorização pertencem aos consumidores.\r\nh2. Escopo\r\n\r\nInclui:\r\n * novo módulo Maven JAR compartilhado;\r\n * modelo canônico de documento e fragmento JSON;\r\n * cadastro global de chaves por {{{}objectType{}}};\r\n * upsert unitário e em lote;\r\n * validação integral antes da alteração;\r\n * resultado estruturado por item;\r\n * erros tipados e mensagens diagnósticas seguras;\r\n * testes unitários e documentação de consumo;\r\n * inclusão do módulo no reator e no gerenciamento de dependências do OSS Commons.\r\n\r\nNão inclui:\r\n * conversão de XML/JAXB para JSON;\r\n * conhecimento dos atributos internos de cada objeto de negócio;\r\n * acesso a BLOB/CLOB, banco, metamodelo ou CDK;\r\n * chamada ao {{{}NestedRuleCaller{}}};\r\n * merge parcial de atributos ou listas internas;\r\n * exclusão de objetos;\r\n * ordenação semântica ou normalização dos dados;\r\n * validação de IPv4, portas, enumerações ou demais regras de domínio;\r\n * concorrência ou bloqueio do registro persistido.",
+    "comments": []
+  },
+  {
+    "key": "ETICS-252611",
+    "title": "[CLARO-Recon] H04 - Preparar o Recon para sincronização de campos JSON do IM para o GP",
+    "status": "Em Implementação",
+    "description": "h2. História de usuário\r\n\r\nComo operador do Recon,\r\nquero que o “Atualizar inventário” aplique todos os objetos HW recebidos do IM no campo JSON do equipamento no GP,\r\npara inserir novas configurações ou substituir configurações existentes segundo sua identidade, com uma única atualização do equipamento.\r\n\r\nComo desenvolvedor de outro tipo de equipamento,\r\nquero um caminho documentado e extensível para adicionar novos campos JSON,\r\npara evitar replicar regras de parsing, persistência intermediária e atualização.\r\nh2. Contexto funcional\r\n\r\nO IM devolve informações em XML conforme o WSDL do Recon. Um mesmo equipamento pode receber vários fragmentos, inclusive várias instâncias de tipos com chave. O Recon deve convertê-los para o formato canônico, guardar o conjunto em uma única coluna CLOB de {{RECON_EQPT}} e, somente quando o usuário executar “Atualizar inventário”, combinar todos os fragmentos com o JSON atual do objeto GP.\r\n\r\nO campo inicial pertence ao metamodelo do Roteador ({{{}NE_EQUIP_ROUTER{}}}). No metamodelo ele é string e sua persistência física em BLOB será tratada pelo CDK. O Recon manipula somente a string JSON.\r\nh2. Regras de negócio\r\n # O IM pode retornar zero, um ou vários objetos HW para o mesmo equipamento.\r\n # Cada fragmento canônico contém um único objeto com {{objectType}} e {{{}attributes{}}}.\r\n # O conjunto intermediário em {{RECON_EQPT}} é um array JSON somente com os fragmentos recebidos do IM, não uma cópia do documento atual do Roteador.\r\n # Tipos sem chave configurada são singleton; se já existem no documento GP, são atualizados por completo, senão são inseridos.\r\n # Tipos com chave são localizados por {{objectType + chave}} exatos; correspondência atualiza por completo e ausência insere.\r\n # {{objectType}} e chave são sensíveis a maiúsculas/minúsculas, sem normalização.\r\n # Todos os fragmentos do equipamento são aplicados em memória como um lote atômico.\r\n # Após sucesso do lote, o {{NestedRuleCaller}} é chamado exatamente uma vez, com o JSON final.\r\n # Se qualquer fragmento, documento ou chave for inválido, nenhum fragmento é aplicado e o {{NestedRuleCaller}} não é chamado.\r\n # Não há exclusão nesta entrega: objetos existentes no GP e ausentes no IM permanecem.\r\n # O merge ocorre apenas no comando “Atualizar inventário”; coleta, comparação e exibição não alteram o objeto GP.\r\n\r\n \r\n\r\nProjeto dev:\r\nhttps://bitbucket.cpqd.com.br/projects/GP/repos/gp/browse/docs/dev/13.3.200/recon/04-integracao-recon-campos-json-im-gp.md?at=refs%2Fheads%2Ffeature%2Fclaro-recon",
+    "comments": []
+  },
+  {
+    "key": "ETICS-252614",
+    "title": "[CLARO-Recon] H05 - Sincronizar o grupo Zona do IM no documento JSON do Roteador",
+    "status": "Aberta",
+    "description": "h2. História de usuário\r\n\r\nComo operador do Recon, quero que as zonas devolvidas pelo IM sejam sincronizadas no documento JSON do Roteador ao executar “Atualizar inventário”, para manter no GP a configuração de zonas e suas interfaces sem expor esses dados na árvore de divergências.\r\nh2. Contexto e escopo\r\n\r\nO exemplo representativo do IM contém zonas em {{{}equipment/additionalInfo/group{}}}, identificadas por {{{}<key>zona</key>{}}}. Cada {{<registry>}} é uma zona. Esta história trata exclusivamente esse grupo; {{{}HA{}}}, rota estática, BGP, OSPF, RIP, {{{}port{}}}, {{{}card{}}}, {{{}vlan{}}}, {{pseudowire}} e demais grupos não podem gerar fragmentos nesta entrega.\r\n\r\nA História 04 fornece o transporte em CLOB, o merge atômico, a allowlist e a chamada única ao {{{}NestedRuleCaller{}}}. Esta história deve estender essa infraestrutura; não deve criar uma persistência, um documento JSON ou um fluxo de atualização paralelo.\r\n\r\n \r\n\r\nProjeto: https://bitbucket.cpqd.com.br/projects/GP/repos/gp/browse/docs/dev/13.3.200/recon/05-sincronizacao-json-im-gp-zona.md?at=feature%2Fclaro-recon",
+    "comments": []
+  },
+  {
+    "key": "ETICS-252615",
+    "title": "[CLARO-Recon] H06 - Sincronizar atributos HA do IM no objeto JSON Device do Roteador",
+    "status": "Aberta",
+    "description": "h2. História de usuário\r\n\r\nComo operador do Recon, quero que os atributos HA devolvidos pelo IM sejam sincronizados como a configuração {{device}} do Roteador quando eu executar “Atualizar inventário”, para manter grupo HA, portas de heartbeat e interfaces monitoradas no mesmo documento JSON que contém as zonas do equipamento.\r\nh2. Contexto e escopo\r\n\r\nO XML representativo retorna os atributos HA diretamente em {{{}equipment/additionalInfo{}}}, fora de qualquer {{{}group{}}}:\r\nh4. {{<attribute><key>group-name</key><value>SPO-HA-121</value></attribute><attribute><key>hbdev-1</key><value>port1</value></attribute><attribute><key>hbdev-2</key><value>port2</value></attribute><attribute><key>monitor</key><value>x3</value><value>x4</value></attribute>}}\r\n\r\nEsta história trata somente esses quatro atributos. Grupos como {{{}zona{}}}, rota estática, BGP, OSPF, RIP, atributos de porta e qualquer outro atributo de {{additionalInfo}} não são convertidos para {{device}} nesta entrega.\r\n\r\n{{device}} e {{zona}} compartilham o mesmo documento JSON no campo {{{}HW_OBJECTS_JSON{}}}. Isso não cria dependência de ordem entre as histórias: ambas reutilizam a infraestrutura da História 04; o cenário integrado com zonas requer a História 05 disponível.\r\n\r\nProjeto:\r\nhttps://bitbucket.cpqd.com.br/projects/GP/repos/gp/browse/docs/dev/13.3.200/recon/06-sincronizacao-json-im-gp-device-ha.md?at=feature%2Fclaro-recon",
+    "comments": []
+  },
+  {
+    "key": "ETICS-252629",
+    "title": "[CLARO-Recon] H07 - Sincronizar grupo de Roteamento Estático do IM no JSON do Roteador",
+    "status": "Aberta",
+    "description": "h2. História de usuário\r\n\r\nComo operador do Recon, quero que as rotas estáticas retornadas pelo IM sejam sincronizadas no documento JSON do Roteador, para que a configuração de roteamento estático possa ser atualizada no GP junto aos demais objetos de configuração do equipamento.",
+    "comments": []
+  },
+  {
+    "key": "ETICS-252632",
+    "title": "[CLARO-Recon] H08 - Sincronizar Roteamento Dinâmico do IM no JSON do Roteador",
+    "status": "Aberta",
+    "description": "h2. História de usuário\r\n\r\nComo operador do Recon, quero que as configurações de roteamento dinâmico retornadas pelo IM sejam sincronizadas no documento JSON do Roteador, para que os protocolos BGP, OSPF e RIP possam ser atualizados no GP junto aos demais objetos de configuração do equipamento.",
+    "comments": []
+  }
+]

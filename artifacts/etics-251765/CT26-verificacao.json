@@ -1,0 +1,74 @@
+{
+  "id": "CT26",
+  "key": "ETICS-T8219",
+  "before": {
+    "keyNumber": 8219,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Confirmar o nome/ID do perfil com a configuração aprovada pela CLARO; a documentação não o informa.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:00:54.477Z",
+    "objective": "Validar disponibilizar operação ao perfil autorizado. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional) e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92617,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then a operação está disponível e permite salvar a alteração válida",
+          "index": 0,
+          "description": "When acessar o lance com esse usuário e executar Corrigir inventário",
+          "id": 210996
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT26 | Disponibilizar operação ao perfil autorizado",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8219",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8219,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados. Confirmar o nome/ID do perfil com a configuração aprovada pela CLARO; a documentação não o informa.",
+    "updatedOn": "2026-09-23T19:00:58.896Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T19:00:54.477Z",
+    "objective": "Validar disponibilizar operação ao perfil autorizado. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §4 (escopo adicional) e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um usuário associado ao perfil específico informado pela CLARO para Corrigir inventário\nAnd existe um lance elegível e um atributo não bloqueado com valor válido para alteração\nWhen acessar o lance com esse usuário e executar Corrigir inventário\nThen a operação está disponível e permite salvar a alteração válida\nAnd o valor persiste e o histórico identifica o usuário responsável",
+      "id": 17567,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT26 | Disponibilizar operação ao perfil autorizado",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8219",
+    "status": "Draft"
+  }
+}

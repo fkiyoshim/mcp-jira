@@ -1,0 +1,211 @@
+### Planilha: ETICS
+1: [1] ROTEIRO DE TESTE | [2] OK | [3] NOK | [4] PEN | [5] NR | [6] TOTAL | [7] % OK | [8] SPRINT | [9] Feature | [10] Equipe | [11] Baseline | [13] 03/04/13 | [14] 04/04/13 | [15] 05/04/13 | [16] 08/04/13 | [17] 09/04/13 | [18] 10/04/13 | [19] 11/04/13 | [20] 12/04/13 | [21] 15/04/13 | [22] 16/04/13 | [23] 17/04/13 | [24] 18/04/13 | [25] 19/04/13 | [26] 22/04/13 | [27] 23/04/13 | [28] 24/04/13 | [29] 25/04/13 | [30] 26/04/13 | [31] 29/04/13 | [32] 30/04/13 | [33] 02/05//13 | [34] 03/05/13 | [35] 06/05/13 | [36] 07/05/13 | [37] 08/05/13 | [38] 09/05/12 | [39] 10/05/12 | [40] 13/05/12 | [41] 14/05/12 | [42] 15/05/12 | [44] Status Testes – Feature da Versão ETICS 8.0 ARSAT – RECON
+2: [1] RT-ManterAgendamentoRECON.xls | [2] 90 | [3] 0 | [4] 0 | [5] 0 | [6] 90 | [7] 100,00% | [8] Sprint 01 | [9] ARSAT – RECON | [10] Iuri / Arthur | [11] T24 | [14] DATA | [15] META SUCESSO (%) | [16] TOTAL DE SUCESSO (%) | [17] TOTAL EXECUTADO (%) | [18] TOTAL DE CT | [19] TOTAL A EXECUTAR | [20] JIRAS DE TESTE A TRATAR (Defeito IMP) | [21] JIRAS DE TESTE A TRATAR (Defeito ARQ/REQ)
+3: [1] RT-ManterPerfil_Permissao-RECON.xls | [2] 12 | [3] 0 | [4] 0 | [5] 0 | [6] 12 | [7] 100,00% | [8] Sprint 01 | [9] ARSAT – RECON | [10] Arthur | [11] T05 | [15] 07/08/14 | [16] 2,10% | [17] 5,82% | [18] 6,02% | [19] 963 | [20] 907 | [21] 2 | [22] 0
+4: [1] RT-ConfigurarReconciliacaoEquipamento.xls | [2] 30 | [3] 0 | [4] 0 | [5] 0 | [6] 30 | [7] 100,00% | [8] Sprint 01 | [9] ARSAT – RECON | [10] Arthur | [11] T05 | [16] 08/08/14 | [17] 4,20% | [18] 10,90% | [19] 11,21% | [20] 963 | [21] 858 | [22] 2 | [23] 0 | [27] ,
+5: [1] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls | [2] 298 | [3] 0 | [4] 0 | [5] 0 | [6] 298 | [7] 100,00% | [8] Sprint 01 + Sprint 02 | [9] ARSAT – RECON | [10] Renata / Iuri / Arthur | [11] T11 | [16] 11/08/14 | [17] 6,30% | [18] 11,21% | [19] 11,53% | [20] 963 | [21] 855 | [22] 2 | [23] 0
+6: [1] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls | [2] 476 | [3] 0 | [4] 0 | [5] 0 | [6] 476 | [7] 100,00% | [8] Sprint 01 + Sprint 02 | [9] ARSAT – RECON | [10] Renata / Iuri / Arthur | [11] T11 | [16] 12/08/14 | [17] 8,40% | [18] 11,21% | [19] 11,53% | [20] 963 | [21] 855 | [22] 2 | [23] 0
+7: [1] RT-ISP-UC-InserirPlacaAutomaticamente.xls | [2] 35 | [3] 0 | [4] 0 | [5] 0 | [6] 35 | [7] 100,00% | [8] Sprint 02 | [9] ARSAT – RECON | [10] Renata | [11] T11 | [16] 13/08/14 | [17] 10,50% | [18] 11,21% | [19] 11,53% | [20] 963 | [21] 855 | [22] 2 | [23] 0
+8: [1] TOTAL GERAL | [2] 941 | [3] 0 | [4] 0 | [5] 0 | [6] 941 | [14] 14/08/14 | [15] 12,60% | [16] 11,21% | [17] 11,53% | [18] 963 | [19] 855 | [20] 2 | [21] 0
+9: [1] TOTAL A EXECUTAR | [2] 0 | [10] 15/08/14 | [11] 14,70% | [12] 11,21% | [13] 11,53% | [14] 963 | [15] 856 | [16] 4 | [17] 1
+10: [1] % CT A EXECUTAR | [2] 0,00% | [8] 18/08/14 | [9] 16,80% | [10] 11,53% | [11] 11,94% | [12] 963 | [13] 852 | [14] 5 | [15] 0
+11: [1] % CT EXECUTADO | [2] 100,00% | [8] 19/08/14 | [9] 18,90% | [10] 11,53% | [11] 11,94% | [12] 963 | [13] 852 | [14] 5 | [15] 0
+12: [7] 20/08/14 | [8] 21,00% | [9] 12,92% | [10] 13,65% | [11] 960 | [12] 836 | [13] 6 | [14] 1
+13: [14] 21/08/14 | [15] 23,10% | [16] 12,92% | [17] 13,65% | [18] 960 | [19] 836 | [20] 6 | [21] 1
+14: [9] 22/08/14 | [10] 25,20% | [11] 16,51% | [12] 17,56% | [13] 951 | [14] 794 | [15] 7 | [16] 0
+15: [9] 25/08/14 | [10] 27,30% | [11] 16,93% | [12] 17,88% | [13] 951 | [14] 790 | [15] 4 | [16] 0
+16: [9] 26/08/14 | [10] 29,40% | [11] 17,46% | [12] 18,61% | [13] 951 | [14] 785 | [15] 5 | [16] 0
+17: [11] 27/08/14 | [12] 31,50% | [13] 19,35% | [14] 20,29% | [15] 951 | [16] 767 | [17] 6 | [18] 0
+18: [11] 28/08/14 | [12] 33,60% | [13] 19,87% | [14] 20,93% | [15] 951 | [16] 762 | [17] 4 | [18] 0
+19: [11] 29/08/14 | [12] 35,70% | [13] 21,14% | [14] 22,19% | [15] 951 | [16] 750 | [17] 4 | [18] 0
+20: [11] 01/09/14 | [12] 37,80% | [13] 23,76% | [14] 25,24% | [15] 951 | [16] 725 | [17] 8 | [18] 2
+21: [12] 02/09/14 | [13] 39,90% | [14] 26,71% | [15] 28,81% | [16] 951 | [17] 697 | [18] 14 | [19] 2
+22: [10] 03/09/14 | [11] 42,00% | [12] 31,44% | [13] 33,86% | [14] 951 | [15] 652 | [16] 14 | [17] 5
+23: [11] 04/09/14 | [12] 44,10% | [13] 37,75% | [14] 40,17% | [15] 951 | [16] 592 | [17] 12 | [18] 5
+24: [9] 05/09/14 | [10] 46,20% | [11] 41,85% | [12] 44,37% | [13] 951 | [14] 553 | [15] 13 | [16] 5
+25: [6] 08/09/14 | [7] 48,30% | [8] 44,16% | [9] 46,69% | [10] 951 | [11] 531 | [12] 7 | [13] 4
+26: [9] 09/09/14 | [10] 50,40% | [11] 45,74% | [12] 48,05% | [13] 951 | [14] 516 | [15] 8 | [16] 4
+27: [9] 10/09/14 | [10] 52,50% | [11] 45,95% | [12] 48,26% | [13] 951 | [14] 514 | [15] 6 | [16] 5
+28: [9] 11/09/14 | [10] 54,60% | [11] 48,58% | [12] 50,26% | [13] 951 | [14] 489 | [15] 7 | [16] 5
+29: [9] 12/09/14 | [10] 55,70% | [11] 52,16% | [12] 53,63% | [13] 951 | [14] 455 | [15] 7 | [16] 5
+30: [9] 15/09/14 | [10] 55.70% | [11] 52,26% | [12] 53,73% | [13] 951 | [14] 454 | [15] 6 | [16] 4
+31: [9] 16/09/14 | [10] 55,70% | [11] 53,21% | [12] 54,15% | [13] 951 | [14] 445 | [15] 5 | [16] 4
+32: [9] 17/09/14 | [10] 55,70% | [11] 53,63% | [12] 54,47% | [13] 951 | [14] 441 | [15] 5 | [16] 3
+33: [9] 18/09/14 | [10] 55,70% | [11] 53,94% | [12] 54,78% | [13] 951 | [14] 438 | [15] 5 | [16] 4
+34: [9] 19/09/14 | [10] 55,70% | [11] 54,26% | [12] 54,99% | [13] 951 | [14] 435 | [15] 5 | [16] 3
+35: [8] 22/09/14 | [9] 58,00% | [10] 54,26% | [11] 54,99% | [12] 951 | [13] 435 | [14] 5 | [15] 3
+36: [8] 23/09/14 | [9] 60,30% | [10] 55,61% | [11] 56,03% | [12] 953 | [13] 423 | [14] 4 | [15] 3
+37: [8] 24/09/14 | [9] 62,60% | [10] 59,29% | [11] 59,81% | [12] 953 | [13] 388 | [14] 2 | [15] 3
+38: [8] 25/09/14 | [9] 64,90% | [10] 62,64% | [11] 63,17% | [12] 953 | [13] 356 | [14] 3 | [15] 2
+39: [8] 26/09/14 | [9] 67,20% | [10] 65,48% | [11] 66,21% | [12] 953 | [13] 329 | [14] 5 | [15] 2
+40: [9] 29/09/14 | [10] 69,50% | [11] 72,51% | [12] 73,66% | [13] 953 | [14] 262 | [15] 8 | [16] 2
+41: [9] 30/09/14 | [10] 71,80% | [11] 75,55% | [12] 76,71% | [13] 953 | [14] 233 | [15] 7 | [16] 2
+42: [9] 01/10/14 | [10] 74,10% | [11] 77,54% | [12] 78,59% | [13] 953 | [14] 214 | [15] 7 | [16] 2
+43: [9] 02/10/14 | [10] 76,40% | [11] 82,58% | [12] 83,63% | [13] 953 | [14] 166 | [15] 6 | [16] 2
+44: [9] 03/10/14 | [10] 78,70% | [11] 83,53% | [12] 84,37% | [13] 953 | [14] 157 | [15] 4 | [16] 2
+45: [9] 06/10/14 | [10] 81,00% | [11] 86,99% | [12] 87,93% | [13] 953 | [14] 124 | [15] 2 | [16] 3
+46: [7] 07/10/14 | [8] 83,30% | [9] 88,67% | [10] 89,40% | [11] 953 | [12] 108 | [13] 3 | [14] 3
+47: [7] 08/10/14 | [8] 85,60% | [9] 89,93% | [10] 90,66% | [11] 953 | [12] 96 | [13] 3 | [14] 3
+48: [7] 09/10/14 | [8] 87,90% | [9] 89,93% | [10] 90,66% | [11] 953 | [12] 96 | [13] 3 | [14] 3
+49: [4] 10/10/14 | [5] 90,20% | [6] 90,35% | [7] 91,40% | [8] 953 | [9] 92 | [10] 5 | [11] 3
+50: [4] 13/10/14 | [5] 92,50% | [6] 91,61% | [7] 92,44% | [8] 953 | [9] 80 | [10] 4 | [11] 3
+51: [4] 14/10/14 | [5] 94,40% | [6] 92,42% | [7] 93,37% | [8] 950 | [9] 72 | [10] 7 | [11] 4
+52: [4] 15/10/14 | [5] 96,30% | [6] 92,74% | [7] 93,58% | [8] 950 | [9] 69 | [10] 8 | [11] 4
+53: [4] 16/10/14 | [5] 98,20% | [6] 92,95% | [7] 93,89% | [8] 950 | [9] 67 | [10] 9 | [11] 4
+54: [4] 17/10/14 | [5] 100,00% | [6] 93,05% | [7] 94,11% | [8] 950 | [9] 66 | [10] 10 | [11] 4
+55: [2] 20/10/14 | [3] 100,00% | [4] 93,58% | [5] 94,63% | [6] 950 | [7] 61 | [8] 9 | [9] 2
+56: [2] 21/10/14 | [3] 100,00% | [4] 94,47% | [5] 95,32% | [6] 941 | [7] 52 | [8] 3 | [9] 3
+57: [2] 22/10/14 | [3] 100,00% | [4] 95,75% | [5] 96,39% | [6] 941 | [7] 41 | [8] 4 | [9] 1
+58: [2] 23/10/14 | [3] 100,00% | [4] 97,66% | [5] 98,30% | [6] 941 | [7] 22 | [8] 4 | [9] 2
+59: [2] 24/10/14 | [3] 100,00% | [4] 99,57% | [5] 100,00% | [6] 941 | [7] 4 | [8] 4 | [9] 2
+60: [2] 27/10/14 | [3] 100,00% | [4] 99,57% | [5] 100,00% | [6] 941 | [7] 4 | [8] 4 | [9] 2
+61: [2] 28/10/14 | [3] 100,00% | [4] 99,79% | [5] 100,00% | [6] 941 | [7] 2 | [8] 3 | [9] 1
+62: [2] 29/10/14 | [3] 100,00% | [4] 99,79% | [5] 100,00% | [6] 941 | [7] 2 | [8] 1 | [9] 0
+63: [2] 30/10/14 | [3] 100,00% | [4] 99,79% | [5] 100,00% | [6] 941 | [7] 2 | [8] 1 | [9] 0
+64: [2] 31/10/14 | [3] 100,00% | [4] 99,79% | [5] 100,00% | [6] 941 | [7] 2 | [8] 1 | [9] 0
+65: [2] 03/11/14 | [3] 100,00% | [4] 99,79% | [5] 100,00% | [6] 941 | [7] 2 | [8] 2 | [9] 0
+66: [2] 04/11/14 | [3] 100,00% | [4] 100,00% | [5] 100,00% | [6] 941 | [7] 0 | [8] 0 | [9] 0
+68: [2] 0|1|5|51
+70: [2] 0|1|5|74 | [3] 0|1|5|66
+72: [2] 0|1|5|5
+74: [2] 0|1|5|9
+76: [2] 0|1|5|16
+78: [2] 0|1|5|14
+80: [2] 0|1|5|13 | [4] 0|1|5|45 | [5] 0|1|5|24 | [6] 0|1|5|20
+82: [2] 0|1|5|48
+84: [2] 0|1|5|49
+86: [2] 0|1|5|55 | [3] 0|1|5|56
+88: [2] 0|1|5|17 | [4] 0|1|5|17 | [5] 0|1|5|17 | [7] 0|1|5|17
+89: [2] 0|1|5|11 | [4] 0|1|5|12
+91: [2] 0|1|5|15 | [4] 0|1|5|80 | [6] 0|1|5|115 | [7] 0|1|5|117
+93: [2] 0|1|5|117
+95: [2] 0|1|5|42 | [4] 0|1|5|12 | [5] 0|1|5|8
+97: [2] 0|1|5|56
+99: [2] 0|1|5|45
+100: [2] 0|1|5|60 | [4] 0|1|5|60 | [5] 0|1|5|60 | [6] 0|1|5|60 | [8] 0|1|5|45 | [10] 0|1|5|44 | [11] 0|1|5|44 | [13] 0|1|5|44
+102: [2] 0|1|5|10
+104: [2] 0|1|5|10
+106: [2] 0|1|5|10
+107: [2] 0|1|5|10
+109: [2] 0|1|5|10
+### Planilha: Lista de Roteiros
+1: [1] RT-ManterAgendamentoRECON.xls | [2] ARSAT - RECON
+2: [1] RT-ManterPerfil_Permissao-RECON.xls
+3: [1] RT-ConfigurarReconciliacaoEquipamento.xls
+4: [1] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls
+5: [1] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+6: [1] RT-ISP-UC-InserirPlacaAutomaticamente.xls
+### Planilha: Resumo
+1: [1] Features – Versão 8.0 | [2] Testes / OK | [3] Testes / NOK | [4] Testes / PEN | [5] Testes / NR | [6] Testes  / Planejados | [7] (%) Testes  / Realizados / Cobertura | [8] (%) Testes  / Realizados – OK
+2: [1] ARSAT – RECON (Fase 01 + Fase 02) | [2] 941 | [3] 0 | [4] 0 | [5] 0 | [6] 941 | [7] 100,00% | [8] 100,00%
+3: [1] Total | [2] 941 | [3] 0 | [4] 0 | [5] 0 | [6] 941 | [7] 100,00% | [8] 100,00%
+4: [1] % | [2] 100,00% | [3] 0,00% | [4] 0,00% | [5] 0,00%
+7: [1] Fase 01
+8: [1] ROTEIRO DE TESTE | [2] Testes / OK | [3] Testes / NOK | [4] Testes / PEN | [5] Testes / NR | [6] Testes  / Planejados | [7] (%) Testes  / Realizados / Cobertura | [8] (%) Testes  / Realizados – OK
+9: [1] RT-ManterAgendamentoRECON.xls | [2] 75 | [3] 0 | [4] 0 | [5] 0 | [6] 75 | [7] 100,00% | [8] 100,00%
+10: [1] RT-ManterPerfil_Permissao-RECON.xls | [2] 12 | [3] 0 | [4] 0 | [5] 0 | [6] 12 | [7] 100,00% | [8] 100,00%
+11: [1] RT-ConfigurarReconciliacaoEquipamento.xls | [2] 30 | [3] 0 | [4] 0 | [5] 0 | [6] 30 | [7] 100,00% | [8] 100,00%
+12: [1] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls | [2] 185 | [3] 0 | [4] 0 | [5] 0 | [6] 185 | [7] 100,00% | [8] 100,00%
+13: [1] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls | [2] 217 | [3] 0 | [4] 0 | [5] 0 | [6] 217 | [7] 100,00% | [8] 100,00%
+14: [1] TOTAL GERAL | [2] 519 | [3] 0 | [4] 0 | [5] 0 | [6] 519 | [7] 100,00% | [8] 100,00%
+15: [1] TOTAL A EXECUTAR | [2] 0
+16: [1] % CT A EXECUTAR | [2] 0,00%
+17: [1] % CT EXECUTADO | [2] 100,00%
+19: [1] Fase 02
+20: [1] ROTEIRO DE TESTE | [2] Testes / OK | [3] Testes / NOK | [4] Testes / PEN | [5] Testes / NR | [6] Testes  / Planejados | [7] (%) Testes  / Realizados / Cobertura | [8] (%) Testes  / Realizados – OK
+21: [1] RT-ManterAgendamentoRECON.xls | [2] 15 | [3] 0 | [4] 0 | [5] 0 | [6] 15 | [7] 100,00% | [8] 100,00%
+22: [1] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls | [2] 113 | [3] 0 | [4] 0 | [5] 0 | [6] 113 | [7] 100,00% | [8] 100,00%
+23: [1] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls | [2] 259 | [3] 0 | [4] 0 | [5] 0 | [6] 259 | [7] 100,00% | [8] 100,00%
+24: [1] RT-ISP-UC-InserirPlacaAutomaticamente.xls | [2] 35 | [3] 0 | [4] 0 | [5] 0 | [6] 35 | [7] 100,00% | [8] 100,00%
+25: [1] TOTAL GERAL | [2] 422 | [3] 0 | [4] 0 | [5] 0 | [6] 422 | [7] 100,00% | [8] 100,00%
+26: [1] TOTAL A EXECUTAR | [2] 0
+27: [1] % CT A EXECUTAR | [2] 0,00%
+28: [1] % CT EXECUTADO | [2] 100,00%
+30: [1] Fase 01 + Fase 02
+31: [1] ROTEIRO DE TESTE | [2] Testes / OK | [3] Testes / NOK | [4] Testes / PEN | [5] Testes / NR | [6] Testes  / Planejados | [7] (%) Testes  / Realizados / Cobertura | [8] (%) Testes  / Realizados – OK
+32: [1] RT-ManterAgendamentoRECON.xls | [2] 90 | [3] 0 | [4] 0 | [5] 0 | [6] 90 | [7] 100,00% | [8] 100,00%
+33: [1] RT-ManterPerfil_Permissao-RECON.xls | [2] 12 | [3] 0 | [4] 0 | [5] 0 | [6] 12 | [7] 100,00% | [8] 100,00%
+34: [1] RT-ConfigurarReconciliacaoEquipamento.xls | [2] 30 | [3] 0 | [4] 0 | [5] 0 | [6] 30 | [7] 100,00% | [8] 100,00%
+35: [1] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls | [2] 298 | [3] 0 | [4] 0 | [5] 0 | [6] 298 | [7] 100,00% | [8] 100,00%
+36: [1] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls | [2] 476 | [3] 0 | [4] 0 | [5] 0 | [6] 476 | [7] 100,00% | [8] 100,00%
+37: [1] RT-ISP-UC-InserirPlacaAutomaticamente.xls | [2] 35 | [3] 0 | [4] 0 | [5] 0 | [6] 35 | [7] 100,00% | [8] 100,00%
+38: [1] TOTAL GERAL | [2] 941 | [3] 0 | [4] 0 | [5] 0 | [6] 941 | [7] 100,00% | [8] 100,00%
+39: [1] % | [2] 100,00% | [3] 0,00% | [4] 0,00% | [5] 0,00% | [6] 100,00%
+40: [1] TOTAL A EXECUTAR | [2] 0
+41: [1] % CT A EXECUTAR | [2] 0,00%
+42: [1] % CT EXECUTADO | [2] 100,00%
+### Planilha: DiárioTestes
+1: [1] Data | [2] Baseline | [3] Comentário
+### Planilha: Roteiro
+1: [1] [ETICS-82875] - NEED ARSAT - RECON / Versão 8.0 | [11] OK | [12] Roteiros da 8.0 - [NEED] ARSAT - RECON
+2: [11] NÃO ESCOPO | [12] OK | [13] NÃO ESCOPO | [14] INICIADO | [15] NR | [16] Total
+3: [11] INICIADO | [12] 90,63% | [13] 0,00% | [14] 0,00% | [15] 9,38% | [16] 100,00%
+4: [11] NR | [12] 29 | [13] 0 | [14] 0 | [15] 3 | [16] 32
+5: [1] Chave | [2] Resumo | [3] Caso de Uso | [4] Versão | [5] Status | [6] Sprint | [7] Esforço Estimado | [8] Esforço Gasto | [9] Responsável | [10] Roteiro de Teste
+6: [1] ETICS-88539 | [2] Agendar processo de reconciliação | [3] [ETICS-45669] Manter Agendamento | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 2,00 | [8] 16,00 | [9] Renata | [10] RT-ManterAgendamentoRECON.xls
+7: [1] ETICS-88545 | [2] Consultar agendamento | [3] [ETICS-45669] Manter Agendamento | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 16,00 | [9] Renata | [10] RT-ManterAgendamentoRECON.xls
+8: [1] ETICS-88549 | [2] Consultar resultado do processo | [3] [ETICS-14031] Consultar reconciliação do inventário de planta interna | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 8,00 | [8] 12,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+9: [1] ETICS-88554 | [2] Consultar resultado do processo detalhado 1 | [3] [ETICS-14031] Consultar reconciliação do inventário de planta interna | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 16,00 | [8] 19,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+10: [1] ETICS-88559 | [2] Consultar resultado do processo detalhado 2 - equipamento | [3] [ETICS-14031] Consultar reconciliação do inventário de planta interna | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 1,00 | [8] 5,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+11: [1] ETICS-88565 | [2] Serviço reconciliação equipamento (IM) | [3] [ETICS-13685] Executar Reconciliacao de Inventario de Planta Interna / [ETICS-87005] DD-Recon Consultar Equipamentos | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 2,00 | [8] 2,00 | [9] Renata | [10] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls
+12: [1] ETICS-88571 | [2] Serviço reconciliação Conexão lógica (IM) | [3] [ETICS-13685] Executar Reconciliacao de Inventario de Planta Interna / [ETICS-86989] DD-Recon Consultar Conexões | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 2,00 | [8] 2,00 | [9] Renata | [10] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls
+13: [1] ETICS-88578 | [2] Executar Reconciliação Equipamento | [3] [ETICS-13685] Executar Reconciliacao de Inventario de Planta Interna | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 24,00 | [8] 20,00 | [9] Renata | [10] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls
+14: [1] ETICS-88584 | [2] Executar Reconciliação Conexão | [3] [ETICS-13685] Executar Reconciliacao de Inventario de Planta Interna | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 14,00 | [8] 10,00 | [9] Renata | [10] RT-ExecutarReconciliacaoIinventarioPlantaInterna.xls
+15: [1] ETICS-88590 | [2] Configuração de Recon para Equipamento | [3] [ETICS-82778] Configurar Reconciliação de equipamento | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 8,00 | [8] 6,00 | [9] Renata | [10] RT-ConfigurarReconciliacaoEquipamento.xls
+16: [1] ETICS-88596 | [2] Inserir Placa Automaticamente - Roteador | [3] [ETICS-84284] Inserir Placa Automaticamente | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ISP-UC-InserirPlacaAutomaticamente.xls
+17: [1] ETICS-88602 | [2] Inserir Placa Automaticamente - Switch | [3] [ETICS-84284] Inserir Placa Automaticamente | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ISP-UC-InserirPlacaAutomaticamente.xls
+18: [1] ETICS-88608 | [2] Inserir Placa Automaticamente - WDM | [3] [ETICS-84284] Inserir Placa Automaticamente | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ISP-UC-InserirPlacaAutomaticamente.xls
+19: [1] ETICS-88615 | [2] Consultar resultado reconciliação em Roteador | [3] [ETICS-709] ISP-UC-ManterEquipamento | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+20: [1] ETICS-88621 | [2] Consultar resultado reconciliação em Switch | [3] [ETICS-709] ISP-UC-ManterEquipamento | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+21: [1] ETICS-88627 | [2] Consultar resultado reconciliação em WDM | [3] [ETICS-709] ISP-UC-ManterEquipamento | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+22: [1] ETICS-88633 | [2] Consultar resultado reconciliação em Conexão | [3] [ETICS-6634] ISP-UC-ManterConexaoLogica | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 4,00 | [8] 4,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+23: [1] ETICS-88640 | [2] Consultar resultado reconciliação em Placa - Roteador | [3] [ETICS-487] ISP-UC-ManterEquipamentoPlacaFonte | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+24: [1] ETICS-88647 | [2] Consultar resultado reconciliação em Placa - Switch | [3] [ETICS-487] ISP-UC-ManterEquipamentoPlacaFonte | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 3,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+25: [1] ETICS-88653 | [2] Consultar resultado reconciliação em Placa - WDM | [3] [ETICS-487] ISP-UC-ManterEquipamentoPlacaFonte | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 3,00 | [8] 2,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+26: [1] ETICS-88660 | [2] Consultar resultado do processo detalhado 2 - conexão | [3] [ETICS-14031] Consultar reconciliação do inventário de planta interna | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 1,00 | [8] 5,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+27: [1] ETICS-88666 | [2] Auxílio preenchimento Localidade | [3] [ETICS-14031] Consultar reconciliação do inventário de planta interna | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 1,00 | [8] 1,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+28: [1] ETICS-88669 | [2] Auxílio preenchimento Site | [3] [ETICS-14031] Consultar reconciliação do inventário de planta interna | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 1,00 | [8] 1,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+29: [1] ETICS-88672 | [2] Novo perfil para módulo Recon | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 1,00 | [8] 1,00 | [9] Renata | [10] RT-ManterPerfil_Permissao-RECON.xls
+30: [1] ETICS-88678 | [2] Permissão para novo módulo Recon | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] 1,00 | [8] 1,00 | [9] Renata | [10] RT-ManterPerfil_Permissao-RECON.xls
+31: [1] ETICS-88684 | [2] Criar Módulo Recon | [4] 8.0 | [5] OK | [6] Sprint 01 | [7] zero | [9] Renata | [10] Não existe roteiro específico
+32: [1] ETICS-88690 | [2] Teste de Desempenho para Equipamento | [4] 8.0 | [5] NR | [6] Sprint 02 | [7] 1,00 | [9] Renata
+33: [1] ETICS-88694 | [2] Teste de Desempenho para Conexão | [4] 8.0 | [5] NR | [6] Sprint 02 | [7] 1,00 | [9] Renata
+34: [1] ETICS-88698 | [2] Consultar resultado reconciliação em Porta - Roteador | [3] [ETICS-704] ISP-UC-ManterEquipamentoPorta.doc | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 2,00 | [8] 2,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+35: [1] ETICS-88704 | [2] Consultar resultado reconciliação em Porta - Switch | [3] [ETICS-704] ISP-UC-ManterEquipamentoPorta.doc | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 2,00 | [8] 2,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+36: [1] ETICS-88710 | [2] Consultar resultado reconciliação em Porta - WDM | [3] [ETICS-704] ISP-UC-ManterEquipamentoPorta.doc | [4] 8.0 | [5] OK | [6] Sprint 02 | [7] 2,00 | [8] 2,00 | [9] Renata | [10] RT-ConsultarReconciliacaoIinventarioPlantaInterna.xls
+37: [1] ETICS-88447 | [2] Desempenho | [4] 8.0 | [5] NR | [6] Sprint 02 | [8] Renata
+### Planilha: QPR
+1: [1] QPR_GERAL_ETICS-8.0 ARSAT – RECON – Fase 01
+2: [1] Defeitos
+3: [1] Status | [2] QTDE | [3] %
+4: [1] Resolvidos | [2] 72 | [3] 88,89%
+5: [1] Não Resolvidos | [2] 9 | [3] 11,11%
+6: [1] Total | [2] 81 | [3] 100,00%
+7: [1] Defeitos resolvidos por prioridade
+8: [1] Prioridade | [2] QTDE | [3] %
+9: [1] Muito Alta | [2] 1 | [3] 1,23%
+10: [1] Alta | [2] 37 | [3] 45,68%
+11: [1] Média | [2] 20 | [3] 24,69%
+12: [1] Baixa | [2] 14 | [3] 17,28%
+13: [1] Total | [2] 72 | [3] 88,89%
+14: [1] Defeitos não resolvidos por prioridade
+15: [1] Alta | [2] 5 | [3] 6,17%
+16: [1] Média | [2] 2 | [3] 2,47%
+17: [1] Baixa | [2] 2 | [3] 2,47%
+18: [1] Total | [2] 9 | [3] 11,11%
+19: [1] Defeitos não resolvidos por estado
+20: [1] Status | [2] QTDE | [3] %
+21: [1] Aberta | [2] 3 | [3] 3,70%
+22: [1] Adiada | [2] 1 | [3] 1,23%
+23: [1] Analisada | [2] 1 | [3] 1,23%
+24: [1] Em Análise | [2] 1 | [3] 1,23%
+25: [1] Em Tratamento | [2] 2 | [3] 2,47%
+26: [1] Rejeitada | [2] 1 | [3] 1,23%
+27: [1] Total | [2] 9 | [3] 11,11%
+### Planilha: Historias
+1: [1] Histórias fechadas com defeitos associados.
+2: [1] Funcionalidade | [2] História | [3] Resumo | [4] Defeitos
+### Planilha: Defeitos_REQUISITOS
+1: [1] Defeito | [2] Resumo | [3] Status | [4] Prioridade | [5] História | [6] CDK | [7] Versão  / Afetada | [8] Versão  / Corrigida
+### Planilha: Defeito_PEN
+1: [1] Defeito | [2] Resumo | [3] Status | [4] Prioridade | [5] História | [6] CDK | [7] Versão  / Afetada | [8] Versão  / Corrigida

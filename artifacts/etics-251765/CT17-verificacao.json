@@ -1,0 +1,74 @@
+{
+  "id": "CT17",
+  "key": "ETICS-T8210",
+  "before": {
+    "keyNumber": 8210,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:48.180Z",
+    "objective": "Validar registrar histórico da correção. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1, §6.2.2 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "id": 92608,
+      "type": "STEP_BY_STEP",
+      "steps": [
+        {
+          "testData": "",
+          "expectedResult": "Then o histórico registra Corrigir inventário, atributo, valor anterior e novo valor\nThen o registro permanece disponível com os mesmos dados",
+          "index": 0,
+          "description": "When corrigir o atributo para um novo valor válido e salvar",
+          "id": 210987
+        }
+      ]
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT17 | Registrar histórico da correção",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8210",
+    "status": "Draft"
+  },
+  "after": {
+    "updatedBy": "JIRAUSER30629",
+    "keyNumber": 8210,
+    "precondition": "Ambiente CLARO com HU-38 instalada; usuário associado ao perfil autorizado pela CLARO; Lance de Cabo Óptico e valores válidos disponíveis. Registrar IDs reais, valores anteriores e evidências. Executar em dados de teste controlados.",
+    "updatedOn": "2026-09-23T18:58:51.737Z",
+    "priority": "Normal",
+    "majorVersion": 1,
+    "createdOn": "2026-09-23T18:58:48.180Z",
+    "objective": "Validar registrar histórico da correção. Fonte: GP-Visao-CLARO-FlexibilizacaoProjeto, versão 01.01, §6.2.1, §6.2.2 e §7.2; história ETICS-251765.",
+    "labels": [
+      "HU-38",
+      "ETICS-251765"
+    ],
+    "projectKey": "ETICS",
+    "latestVersion": true,
+    "createdBy": "JIRAUSER30629",
+    "testScript": {
+      "text": "Given um lance com um atributo não bloqueado de valor anterior conhecido e usuário autorizado identificado\nWhen corrigir o atributo para um novo valor válido e salvar\nThen o histórico registra Corrigir inventário, atributo, valor anterior e novo valor\nAnd registra o usuário responsável e a data e hora compatíveis com a operação\nAnd o registro da correção não fica associado a uma OT\nWhen consultar novamente o histórico do lance\nThen o registro permanece disponível com os mesmos dados",
+      "id": 17558,
+      "type": "BDD"
+    },
+    "issueLinks": [
+      "ETICS-251765"
+    ],
+    "name": "ETICS-251765 | HU-38 | CT17 | Registrar histórico da correção",
+    "parameters": {
+      "variables": [],
+      "entries": []
+    },
+    "key": "ETICS-T8210",
+    "status": "Draft"
+  }
+}
